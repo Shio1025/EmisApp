@@ -9,12 +9,22 @@
 /* Begin PBXBuildFile section */
 		24C7121429E5B13D00E5DE0B /* BrandBook.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7121329E5B13D00E5DE0B /* BrandBook.docc */; };
 		24C7121529E5B13D00E5DE0B /* BrandBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7121229E5B13D00E5DE0B /* BrandBook.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C7129029E5B2A500E5DE0B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C7128A29E5B2A500E5DE0B /* Colors.xcassets */; };
+		24C7129129E5B2A500E5DE0B /* UserTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7128B29E5B2A500E5DE0B /* UserTheme.swift */; };
+		24C7129229E5B2A500E5DE0B /* ColorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7128C29E5B2A500E5DE0B /* ColorWrapper.swift */; };
+		24C7129329E5B2A500E5DE0B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7128D29E5B2A500E5DE0B /* Color.swift */; };
+		24C7129429E5B2A500E5DE0B /* Brandbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7128F29E5B2A500E5DE0B /* Brandbook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		24C7120F29E5B13D00E5DE0B /* BrandBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BrandBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7121229E5B13D00E5DE0B /* BrandBook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrandBook.h; sourceTree = "<group>"; };
 		24C7121329E5B13D00E5DE0B /* BrandBook.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = BrandBook.docc; sourceTree = "<group>"; };
+		24C7128A29E5B2A500E5DE0B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		24C7128B29E5B2A500E5DE0B /* UserTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTheme.swift; sourceTree = "<group>"; };
+		24C7128C29E5B2A500E5DE0B /* ColorWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorWrapper.swift; sourceTree = "<group>"; };
+		24C7128D29E5B2A500E5DE0B /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		24C7128F29E5B2A500E5DE0B /* Brandbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brandbook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,10 +57,31 @@
 		24C7121129E5B13D00E5DE0B /* BrandBook */ = {
 			isa = PBXGroup;
 			children = (
+				24C7128E29E5B2A500E5DE0B /* Governance */,
+				24C7128929E5B2A500E5DE0B /* ColorBook */,
 				24C7121229E5B13D00E5DE0B /* BrandBook.h */,
 				24C7121329E5B13D00E5DE0B /* BrandBook.docc */,
 			);
 			path = BrandBook;
+			sourceTree = "<group>";
+		};
+		24C7128929E5B2A500E5DE0B /* ColorBook */ = {
+			isa = PBXGroup;
+			children = (
+				24C7128B29E5B2A500E5DE0B /* UserTheme.swift */,
+				24C7128C29E5B2A500E5DE0B /* ColorWrapper.swift */,
+				24C7128D29E5B2A500E5DE0B /* Color.swift */,
+				24C7128A29E5B2A500E5DE0B /* Colors.xcassets */,
+			);
+			path = ColorBook;
+			sourceTree = "<group>";
+		};
+		24C7128E29E5B2A500E5DE0B /* Governance */ = {
+			isa = PBXGroup;
+			children = (
+				24C7128F29E5B2A500E5DE0B /* Brandbook.swift */,
+			);
+			path = Governance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C7129029E5B2A500E5DE0B /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +164,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C7129129E5B2A500E5DE0B /* UserTheme.swift in Sources */,
+				24C7129429E5B2A500E5DE0B /* Brandbook.swift in Sources */,
+				24C7129329E5B2A500E5DE0B /* Color.swift in Sources */,
+				24C7129229E5B2A500E5DE0B /* ColorWrapper.swift in Sources */,
 				24C7121429E5B13D00E5DE0B /* BrandBook.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
