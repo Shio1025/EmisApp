@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "container:Emis.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Core/Core.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SSO/SSO.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:NetworkLayer/NetworkLayer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:BrandBook/BrandBook.xcodeproj">
+   </FileRef>
+</Workspace>

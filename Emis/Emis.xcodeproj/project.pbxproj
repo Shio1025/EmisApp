@@ -13,7 +13,63 @@
 		24C7117729E5ADC200E5DE0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C7117529E5ADC200E5DE0B /* Main.storyboard */; };
 		24C7117929E5ADC300E5DE0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C7117829E5ADC300E5DE0B /* Assets.xcassets */; };
 		24C7117C29E5ADC300E5DE0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C7117A29E5ADC300E5DE0B /* LaunchScreen.storyboard */; };
+		24C7127A29E5B1F000E5DE0B /* BrandBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C7122029E5B13E00E5DE0B /* BrandBook.framework */; };
+		24C7127B29E5B1F000E5DE0B /* BrandBook.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C7122029E5B13E00E5DE0B /* BrandBook.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24C7127F29E5B1F300E5DE0B /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C7127429E5B1CC00E5DE0B /* Core.framework */; };
+		24C7128029E5B1F300E5DE0B /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C7127429E5B1CC00E5DE0B /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24C7128129E5B1F700E5DE0B /* NetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C7123C29E5B18100E5DE0B /* NetworkLayer.framework */; };
+		24C7128229E5B1F700E5DE0B /* NetworkLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C7123C29E5B18100E5DE0B /* NetworkLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24C7128329E5B1FA00E5DE0B /* SSO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C7125829E5B1AE00E5DE0B /* SSO.framework */; };
+		24C7128429E5B1FA00E5DE0B /* SSO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C7125829E5B1AE00E5DE0B /* SSO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24C7121F29E5B13E00E5DE0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24C7121B29E5B13D00E5DE0B /* BrandBook.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24C7120F29E5B13D00E5DE0B;
+			remoteInfo = BrandBook;
+		};
+		24C7123B29E5B18100E5DE0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24C7123729E5B18100E5DE0B /* NetworkLayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24C7122B29E5B18100E5DE0B;
+			remoteInfo = NetworkLayer;
+		};
+		24C7125729E5B1AE00E5DE0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24C7125329E5B1AE00E5DE0B /* SSO.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24C7124729E5B1AE00E5DE0B;
+			remoteInfo = SSO;
+		};
+		24C7127329E5B1CC00E5DE0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24C7126F29E5B1CC00E5DE0B /* Core.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24C7126329E5B1CC00E5DE0B;
+			remoteInfo = Core;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		24C711F929E5B06200E5DE0B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24C7128229E5B1F700E5DE0B /* NetworkLayer.framework in Embed Frameworks */,
+				24C7127B29E5B1F000E5DE0B /* BrandBook.framework in Embed Frameworks */,
+				24C7128429E5B1FA00E5DE0B /* SSO.framework in Embed Frameworks */,
+				24C7128029E5B1F300E5DE0B /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		24C7116C29E5ADC200E5DE0B /* Emis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emis.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +80,10 @@
 		24C7117829E5ADC300E5DE0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24C7117B29E5ADC300E5DE0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24C7117D29E5ADC300E5DE0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24C7121B29E5B13D00E5DE0B /* BrandBook.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BrandBook.xcodeproj; path = BrandBook/BrandBook.xcodeproj; sourceTree = SOURCE_ROOT; };
+		24C7123729E5B18100E5DE0B /* NetworkLayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkLayer.xcodeproj; path = NetworkLayer/NetworkLayer.xcodeproj; sourceTree = SOURCE_ROOT; };
+		24C7125329E5B1AE00E5DE0B /* SSO.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSO.xcodeproj; path = SSO/SSO.xcodeproj; sourceTree = SOURCE_ROOT; };
+		24C7126F29E5B1CC00E5DE0B /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = Core/Core.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +91,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C7128129E5B1F700E5DE0B /* NetworkLayer.framework in Frameworks */,
+				24C7127A29E5B1F000E5DE0B /* BrandBook.framework in Frameworks */,
+				24C7128329E5B1FA00E5DE0B /* SSO.framework in Frameworks */,
+				24C7127F29E5B1F300E5DE0B /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +104,10 @@
 		24C7116329E5ADC200E5DE0B = {
 			isa = PBXGroup;
 			children = (
+				24C7120429E5B10100E5DE0B /* Dependency */,
 				24C7116E29E5ADC200E5DE0B /* Emis */,
 				24C7116D29E5ADC200E5DE0B /* Products */,
+				24C711F629E5B06200E5DE0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +133,56 @@
 			path = Emis;
 			sourceTree = "<group>";
 		};
+		24C711F629E5B06200E5DE0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24C7120429E5B10100E5DE0B /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				24C7126F29E5B1CC00E5DE0B /* Core.xcodeproj */,
+				24C7125329E5B1AE00E5DE0B /* SSO.xcodeproj */,
+				24C7123729E5B18100E5DE0B /* NetworkLayer.xcodeproj */,
+				24C7121B29E5B13D00E5DE0B /* BrandBook.xcodeproj */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
+		24C7121C29E5B13D00E5DE0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24C7122029E5B13E00E5DE0B /* BrandBook.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24C7123829E5B18100E5DE0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24C7123C29E5B18100E5DE0B /* NetworkLayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24C7125429E5B1AE00E5DE0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24C7125829E5B1AE00E5DE0B /* SSO.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24C7127029E5B1CC00E5DE0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24C7127429E5B1CC00E5DE0B /* Core.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +193,7 @@
 				24C7116829E5ADC200E5DE0B /* Sources */,
 				24C7116929E5ADC200E5DE0B /* Frameworks */,
 				24C7116A29E5ADC200E5DE0B /* Resources */,
+				24C711F929E5B06200E5DE0B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -113,12 +230,61 @@
 			mainGroup = 24C7116329E5ADC200E5DE0B;
 			productRefGroup = 24C7116D29E5ADC200E5DE0B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 24C7121C29E5B13D00E5DE0B /* Products */;
+					ProjectRef = 24C7121B29E5B13D00E5DE0B /* BrandBook.xcodeproj */;
+				},
+				{
+					ProductGroup = 24C7127029E5B1CC00E5DE0B /* Products */;
+					ProjectRef = 24C7126F29E5B1CC00E5DE0B /* Core.xcodeproj */;
+				},
+				{
+					ProductGroup = 24C7123829E5B18100E5DE0B /* Products */;
+					ProjectRef = 24C7123729E5B18100E5DE0B /* NetworkLayer.xcodeproj */;
+				},
+				{
+					ProductGroup = 24C7125429E5B1AE00E5DE0B /* Products */;
+					ProjectRef = 24C7125329E5B1AE00E5DE0B /* SSO.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				24C7116B29E5ADC200E5DE0B /* Emis */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		24C7122029E5B13E00E5DE0B /* BrandBook.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BrandBook.framework;
+			remoteRef = 24C7121F29E5B13E00E5DE0B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24C7123C29E5B18100E5DE0B /* NetworkLayer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = NetworkLayer.framework;
+			remoteRef = 24C7123B29E5B18100E5DE0B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24C7125829E5B1AE00E5DE0B /* SSO.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SSO.framework;
+			remoteRef = 24C7125729E5B1AE00E5DE0B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		24C7127429E5B1CC00E5DE0B /* Core.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Core.framework;
+			remoteRef = 24C7127329E5B1CC00E5DE0B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		24C7116A29E5ADC200E5DE0B /* Resources */ = {
