@@ -8,6 +8,15 @@
         "revision" : "531eb22d47a9439a2344fdaf96832189f2c6e925",
         "version" : "3.1.2"
       }
+    },
+    {
+      "identity" : "resolver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Resolver",
+      "state" : {
+        "revision" : "97de0b0320036607564af4a60025b48f8d041221",
+        "version" : "1.5.0"
+      }
     }
   ],
   "version" : 2
