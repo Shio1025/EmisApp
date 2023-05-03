@@ -26,7 +26,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = BrandBookManager.Color.Theme.Component.solid500.uiColor
-        animationView.animation = .named(BrandBookManager.Lottie.student_2,bundle: Bundle(identifier: "Shio.BrandBook")!)
+        animationView.animation = .named(BrandBookManager.Lottie.student_2,
+                                         bundle: Bundle(identifier: "Shio.BrandBook")!)
+        animationView.play()
         self.view.addSubview(animationView)
         animationView.centerVertically(to: self.view)
         animationView.centerHorizontally(to: self.view)

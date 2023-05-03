@@ -1,10 +1,25 @@
 # ``NetworkLayer``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+For Service Calls
 
 ## Overview
 
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+Example of Using NetworkManager ->
+let endPoint = EndPoint<Some Custom Decodable Model>(url: url,
+                                                    method: method)
+
+networkService.makeRequest(endPoint)
+    .sink(receiveCompletion: { completion in
+        switch completion {
+        case .failure(let error):
+            //error
+        case .finished:
+            //success
+        }
+    }, receiveValue: { response in
+        //do something 
+    })
+    .store(in: &cancellables)
 
 ## Topics
 

@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2490E2882A029DF40073DBDE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2872A029DF40073DBDE /* Endpoint.swift */; };
+		2490E28A2A029FA50073DBDE /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2892A029FA50073DBDE /* NetworkLayer.swift */; };
+		2490E28C2A02A0670073DBDE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E28B2A02A0670073DBDE /* NetworkManager.swift */; };
 		24C7123029E5B18100E5DE0B /* NetworkLayer.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7122F29E5B18100E5DE0B /* NetworkLayer.docc */; };
 		24C7123129E5B18100E5DE0B /* NetworkLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7122E29E5B18100E5DE0B /* NetworkLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2490E2872A029DF40073DBDE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2490E2892A029FA50073DBDE /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		2490E28B2A02A0670073DBDE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		24C7122B29E5B18100E5DE0B /* NetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7122E29E5B18100E5DE0B /* NetworkLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkLayer.h; sourceTree = "<group>"; };
 		24C7122F29E5B18100E5DE0B /* NetworkLayer.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NetworkLayer.docc; sourceTree = "<group>"; };
@@ -47,6 +53,9 @@
 		24C7122D29E5B18100E5DE0B /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2490E28B2A02A0670073DBDE /* NetworkManager.swift */,
+				2490E2892A029FA50073DBDE /* NetworkLayer.swift */,
+				2490E2872A029DF40073DBDE /* Endpoint.swift */,
 				24C7122E29E5B18100E5DE0B /* NetworkLayer.h */,
 				24C7122F29E5B18100E5DE0B /* NetworkLayer.docc */,
 			);
@@ -132,6 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2490E28C2A02A0670073DBDE /* NetworkManager.swift in Sources */,
+				2490E28A2A029FA50073DBDE /* NetworkLayer.swift in Sources */,
+				2490E2882A029DF40073DBDE /* Endpoint.swift in Sources */,
 				24C7123029E5B18100E5DE0B /* NetworkLayer.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
