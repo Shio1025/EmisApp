@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2490E2FC2A02ED4F0073DBDE /* ImageResources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2490E2FB2A02ED4F0073DBDE /* ImageResources.xcassets */; };
+		2490E2FE2A02ED600073DBDE /* ImageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2FD2A02ED600073DBDE /* ImageWrapper.swift */; };
+		2490E3002A02EDFD0073DBDE /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2FF2A02EDFD0073DBDE /* Images.swift */; };
+		2490E3422A040B270073DBDE /* DesignSystemConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E3412A040B270073DBDE /* DesignSystemConstants.swift */; };
 		24C7121429E5B13D00E5DE0B /* BrandBook.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7121329E5B13D00E5DE0B /* BrandBook.docc */; };
 		24C7121529E5B13D00E5DE0B /* BrandBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7121229E5B13D00E5DE0B /* BrandBook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C7129029E5B2A500E5DE0B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C7128A29E5B2A500E5DE0B /* Colors.xcassets */; };
@@ -23,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2490E2FB2A02ED4F0073DBDE /* ImageResources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageResources.xcassets; sourceTree = "<group>"; };
+		2490E2FD2A02ED600073DBDE /* ImageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWrapper.swift; sourceTree = "<group>"; };
+		2490E2FF2A02EDFD0073DBDE /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		2490E3252A03848E0073DBDE /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2490E3412A040B270073DBDE /* DesignSystemConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignSystemConstants.swift; sourceTree = "<group>"; };
 		24C7120F29E5B13D00E5DE0B /* BrandBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BrandBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7121229E5B13D00E5DE0B /* BrandBook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrandBook.h; sourceTree = "<group>"; };
 		24C7121329E5B13D00E5DE0B /* BrandBook.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = BrandBook.docc; sourceTree = "<group>"; };
@@ -50,11 +59,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2490E2FA2A02ED2D0073DBDE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2490E2FD2A02ED600073DBDE /* ImageWrapper.swift */,
+				2490E2FF2A02EDFD0073DBDE /* Images.swift */,
+				2490E2FB2A02ED4F0073DBDE /* ImageResources.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		2490E3242A03848E0073DBDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2490E3252A03848E0073DBDE /* Core.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		24C7120529E5B13D00E5DE0B = {
 			isa = PBXGroup;
 			children = (
 				24C7121129E5B13D00E5DE0B /* BrandBook */,
 				24C7121029E5B13D00E5DE0B /* Products */,
+				2490E3242A03848E0073DBDE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,8 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				24C7128E29E5B2A500E5DE0B /* Governance */,
+				2490E2FA2A02ED2D0073DBDE /* Images */,
 				24C7132729E717DF00E5DE0B /* Lottie */,
-				24C712A029E5BB4400E5DE0B /* Constraints */,
+				24C712A029E5BB4400E5DE0B /* Extensions */,
 				24C7128929E5B2A500E5DE0B /* ColorBook */,
 				24C7121229E5B13D00E5DE0B /* BrandBook.h */,
 				24C7121329E5B13D00E5DE0B /* BrandBook.docc */,
@@ -98,12 +127,13 @@
 			path = Governance;
 			sourceTree = "<group>";
 		};
-		24C712A029E5BB4400E5DE0B /* Constraints */ = {
+		24C712A029E5BB4400E5DE0B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2490E3412A040B270073DBDE /* DesignSystemConstants.swift */,
 				24C712A129E5BB6500E5DE0B /* ConstraintsExtension.swift */,
 			);
-			path = Constraints;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		24C7132729E717DF00E5DE0B /* Lottie */ = {
@@ -201,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C7129029E5B2A500E5DE0B /* Colors.xcassets in Resources */,
+				2490E2FC2A02ED4F0073DBDE /* ImageResources.xcassets in Resources */,
 				24C7133C29E718DC00E5DE0B /* student_2.json in Resources */,
 				24C7133B29E718DC00E5DE0B /* student_1.json in Resources */,
 				24C7133D29E718DC00E5DE0B /* student_3.json in Resources */,
@@ -215,8 +246,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C712A229E5BB6500E5DE0B /* ConstraintsExtension.swift in Sources */,
+				2490E2FE2A02ED600073DBDE /* ImageWrapper.swift in Sources */,
 				24C7129129E5B2A500E5DE0B /* UserTheme.swift in Sources */,
 				24C7129429E5B2A500E5DE0B /* Brandbook.swift in Sources */,
+				2490E3002A02EDFD0073DBDE /* Images.swift in Sources */,
+				2490E3422A040B270073DBDE /* DesignSystemConstants.swift in Sources */,
 				24C7129329E5B2A500E5DE0B /* Color.swift in Sources */,
 				24C7133629E7181100E5DE0B /* LottieHandler.swift in Sources */,
 				24C7129229E5B2A500E5DE0B /* ColorWrapper.swift in Sources */,

@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2490E2F32A02EB600073DBDE /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2F22A02EB600073DBDE /* LoginPage.swift */; };
+		2490E2F52A02EB980073DBDE /* MoreMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2F42A02EB980073DBDE /* MoreMenu.swift */; };
+		2490E2F72A02EC120073DBDE /* TimeTablePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2F62A02EC120073DBDE /* TimeTablePage.swift */; };
+		2490E2F92A02EC3C0073DBDE /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2F82A02EC3C0073DBDE /* MainPage.swift */; };
+		2490E3012A02F7D30073DBDE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2EB2A02E38E0073DBDE /* TabBarController.swift */; };
+		2490E32A2A0386E80073DBDE /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E3292A0386E80073DBDE /* TabBarItem.swift */; };
 		24B684BD29E7257D005BDDBA /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 24B684BC29E7257D005BDDBA /* Resolver */; };
 		24C7117029E5ADC200E5DE0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7116F29E5ADC200E5DE0B /* AppDelegate.swift */; };
 		24C7117229E5ADC200E5DE0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7117129E5ADC200E5DE0B /* SceneDelegate.swift */; };
-		24C7117429E5ADC200E5DE0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7117329E5ADC200E5DE0B /* ViewController.swift */; };
+		24C7117429E5ADC200E5DE0B /* EntryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7117329E5ADC200E5DE0B /* EntryPage.swift */; };
 		24C7117929E5ADC300E5DE0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C7117829E5ADC300E5DE0B /* Assets.xcassets */; };
 		24C7127A29E5B1F000E5DE0B /* BrandBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C7122029E5B13E00E5DE0B /* BrandBook.framework */; };
 		24C7127B29E5B1F000E5DE0B /* BrandBook.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C7122029E5B13E00E5DE0B /* BrandBook.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -72,10 +78,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2490E2EB2A02E38E0073DBDE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		2490E2F22A02EB600073DBDE /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		2490E2F42A02EB980073DBDE /* MoreMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreMenu.swift; sourceTree = "<group>"; };
+		2490E2F62A02EC120073DBDE /* TimeTablePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTablePage.swift; sourceTree = "<group>"; };
+		2490E2F82A02EC3C0073DBDE /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		2490E3292A0386E80073DBDE /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		24C7116C29E5ADC200E5DE0B /* Emis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7116F29E5ADC200E5DE0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24C7117129E5ADC200E5DE0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		24C7117329E5ADC200E5DE0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		24C7117329E5ADC200E5DE0B /* EntryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPage.swift; sourceTree = "<group>"; };
 		24C7117829E5ADC300E5DE0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24C7117D29E5ADC300E5DE0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24C7121B29E5B13D00E5DE0B /* BrandBook.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BrandBook.xcodeproj; path = BrandBook/BrandBook.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -101,6 +113,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2490E2E52A02E3670073DBDE /* EntryPage */ = {
+			isa = PBXGroup;
+			children = (
+				24C7117329E5ADC200E5DE0B /* EntryPage.swift */,
+			);
+			path = EntryPage;
+			sourceTree = "<group>";
+		};
+		2490E2EA2A02E3790073DBDE /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				2490E2EB2A02E38E0073DBDE /* TabBarController.swift */,
+				2490E3292A0386E80073DBDE /* TabBarItem.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		2490E2EE2A02EA720073DBDE /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				2490E2F22A02EB600073DBDE /* LoginPage.swift */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		2490E2EF2A02EA8C0073DBDE /* MoreMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2490E2F42A02EB980073DBDE /* MoreMenu.swift */,
+			);
+			path = MoreMenu;
+			sourceTree = "<group>";
+		};
+		2490E2F02A02EAA20073DBDE /* TimeTable */ = {
+			isa = PBXGroup;
+			children = (
+				2490E2F62A02EC120073DBDE /* TimeTablePage.swift */,
+			);
+			path = TimeTable;
+			sourceTree = "<group>";
+		};
+		2490E2F12A02EABE0073DBDE /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				2490E2F82A02EC3C0073DBDE /* MainPage.swift */,
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
 		24C7116329E5ADC200E5DE0B = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +186,7 @@
 				24C7116F29E5ADC200E5DE0B /* AppDelegate.swift */,
 				24C7117129E5ADC200E5DE0B /* SceneDelegate.swift */,
 				24C7129E29E5B55700E5DE0B /* EmisMainManager.swift */,
+				2490E2EA2A02E3790073DBDE /* TabBar */,
 				24C7129929E5B4EB00E5DE0B /* Scenes */,
 				24C712ED29E5E61800E5DE0B /* Resources */,
 				24C7117D29E5ADC300E5DE0B /* Info.plist */,
@@ -185,7 +247,11 @@
 		24C7129929E5B4EB00E5DE0B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				24C7117329E5ADC200E5DE0B /* ViewController.swift */,
+				2490E2F12A02EABE0073DBDE /* Information */,
+				2490E2F02A02EAA20073DBDE /* TimeTable */,
+				2490E2EF2A02EA8C0073DBDE /* MoreMenu */,
+				2490E2EE2A02EA720073DBDE /* LoginPage */,
+				2490E2E52A02E3670073DBDE /* EntryPage */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -323,9 +389,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C7117429E5ADC200E5DE0B /* ViewController.swift in Sources */,
+				24C7117429E5ADC200E5DE0B /* EntryPage.swift in Sources */,
+				2490E2F52A02EB980073DBDE /* MoreMenu.swift in Sources */,
+				2490E2F92A02EC3C0073DBDE /* MainPage.swift in Sources */,
+				2490E3012A02F7D30073DBDE /* TabBarController.swift in Sources */,
+				2490E2F72A02EC120073DBDE /* TimeTablePage.swift in Sources */,
+				2490E32A2A0386E80073DBDE /* TabBarItem.swift in Sources */,
 				24C7117029E5ADC200E5DE0B /* AppDelegate.swift in Sources */,
 				24C7129F29E5B55700E5DE0B /* EmisMainManager.swift in Sources */,
+				2490E2F32A02EB600073DBDE /* LoginPage.swift in Sources */,
 				24C7117229E5ADC200E5DE0B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
