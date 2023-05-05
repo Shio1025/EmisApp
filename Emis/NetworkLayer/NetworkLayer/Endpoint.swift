@@ -14,7 +14,6 @@ public protocol Endpoint {
     var body: [String: Any]? { get }
 }
 
-
 public class EndPoint<T: Decodable>: Endpoint {
     public typealias Response = T
     

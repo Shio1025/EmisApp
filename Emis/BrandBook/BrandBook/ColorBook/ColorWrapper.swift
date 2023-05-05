@@ -7,29 +7,18 @@
 
 import UIKit
 
-protocol ResourceWrappable {
-    var designSystemName: String { get }
-    static var bundle: Bundle? { get }
-}
-
-public struct ColorWrapper: ResourceWrappable {
+public struct ColorWrapper {
     private let name: String
     
-    public init(name: String) { self.name = name}
-    
-    var designSystemName: String {
-        return self.name
+    public init(name: String) {
+        self.name = name
     }
-    
-    static var bundle: Bundle? = Bundle(identifier: "Shio.BrandBook")
-    
     
     public var uiColor: UIColor {
-        return UIColor(named: designSystemName,
-                       in: Self.bundle,
+        return UIColor(named: name,
+                       in: Bundle(identifier: "Shio.BrandBook"),
                        compatibleWith: nil)!
     }
-    
     
     public var cgColor: CGColor {
         return uiColor.cgColor

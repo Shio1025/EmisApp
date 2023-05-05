@@ -7,20 +7,16 @@
 
 import UIKit
 
-public struct ImageWrapper: ResourceWrappable {
+public struct ImageWrapper {
     private let name: String
     
     public init(name: String) { self.name = name }
     
-    var designSystemName: String {
-        return self.name
-    }
-    
-    static var bundle: Bundle? = Bundle(identifier: "Shio.BrandBook")
-
     // UIImage  of selected image
     public var image: UIImage {
-        return UIImage(named: name, in: Self.bundle, compatibleWith: nil)!
+        return UIImage(named: name,
+                       in:  Bundle(identifier: "Shio.BrandBook"),
+                       compatibleWith: nil)!
     }
 
     // UIImage with template rendering mode
