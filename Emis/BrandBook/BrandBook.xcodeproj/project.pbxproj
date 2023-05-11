@@ -26,6 +26,8 @@
 		24C7133B29E718DC00E5DE0B /* student_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 24C7133829E718DC00E5DE0B /* student_1.json */; };
 		24C7133C29E718DC00E5DE0B /* student_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 24C7133929E718DC00E5DE0B /* student_2.json */; };
 		24C7133D29E718DC00E5DE0B /* student_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 24C7133A29E718DC00E5DE0B /* student_3.json */; };
+		24E764502A0CBD9F00E4FA74 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 24E7644F2A0CBD9F00E4FA74 /* IQKeyboardManagerSwift */; };
+		24E764562A0CBDE300E4FA74 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 24E764552A0CBDE300E4FA74 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +58,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24E764562A0CBDE300E4FA74 /* SDWebImage in Frameworks */,
 				24C712EC29E5E5F800E5DE0B /* Lottie in Frameworks */,
+				24E764502A0CBD9F00E4FA74 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +219,8 @@
 			name = BrandBook;
 			packageProductDependencies = (
 				24C712EB29E5E5F800E5DE0B /* Lottie */,
+				24E7644F2A0CBD9F00E4FA74 /* IQKeyboardManagerSwift */,
+				24E764552A0CBDE300E4FA74 /* SDWebImage */,
 			);
 			productName = BrandBook;
 			productReference = 24C7120F29E5B13D00E5DE0B /* BrandBook.framework */;
@@ -245,6 +251,8 @@
 			mainGroup = 24C7120529E5B13D00E5DE0B;
 			packageReferences = (
 				24C712EA29E5E5F800E5DE0B /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				24E7644E2A0CBD9F00E4FA74 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				24E764542A0CBDE300E4FA74 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 24C7121029E5B13D00E5DE0B /* Products */;
 			projectDirPath = "";
@@ -503,6 +511,22 @@
 				version = 3.1.2;
 			};
 		};
+		24E7644E2A0CBD9F00E4FA74 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
+		24E764542A0CBDE300E4FA74 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -510,6 +534,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 24C712EA29E5E5F800E5DE0B /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		24E7644F2A0CBD9F00E4FA74 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24E7644E2A0CBD9F00E4FA74 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		24E764552A0CBDE300E4FA74 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24E764542A0CBDE300E4FA74 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

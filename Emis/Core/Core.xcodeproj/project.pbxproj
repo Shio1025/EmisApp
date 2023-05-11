@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24C7126829E5B1CC00E5DE0B /* Core.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7126729E5B1CC00E5DE0B /* Core.docc */; };
 		24C7126929E5B1CC00E5DE0B /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7126629E5B1CC00E5DE0B /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24E764532A0CBDBE00E4FA74 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 24E764522A0CBDBE00E4FA74 /* SwifterSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24E764532A0CBDBE00E4FA74 /* SwifterSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +83,9 @@
 			dependencies = (
 			);
 			name = Core;
+			packageProductDependencies = (
+				24E764522A0CBDBE00E4FA74 /* SwifterSwift */,
+			);
 			productName = Core;
 			productReference = 24C7126329E5B1CC00E5DE0B /* Core.framework */;
 			productType = "com.apple.product-type.framework";
@@ -108,6 +113,9 @@
 				Base,
 			);
 			mainGroup = 24C7125929E5B1CC00E5DE0B;
+			packageReferences = (
+				24E764512A0CBDBE00E4FA74 /* XCRemoteSwiftPackageReference "SwifterSwift" */,
+			);
 			productRefGroup = 24C7126429E5B1CC00E5DE0B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		24E764512A0CBDBE00E4FA74 /* XCRemoteSwiftPackageReference "SwifterSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwifterSwift/SwifterSwift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		24E764522A0CBDBE00E4FA74 /* SwifterSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24E764512A0CBDBE00E4FA74 /* XCRemoteSwiftPackageReference "SwifterSwift" */;
+			productName = SwifterSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 24C7125A29E5B1CC00E5DE0B /* Project object */;
 }
