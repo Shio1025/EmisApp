@@ -29,7 +29,7 @@ class EntryPage: UIViewController {
     }
     
     private func setUpUI() {
-       view.backgroundColor = BrandBookManager.Color.Theme.Component.solid500.uiColor
+        view.backgroundColor = BrandBookManager.Color.General.white.uiColor
     }
     
     private func addSubviews() {
@@ -44,7 +44,7 @@ class EntryPage: UIViewController {
     }
     
     private func handleAnimation() {
-        animationView.animation = .named(BrandBookManager.Lottie.student_2,
+        animationView.animation = .named(BrandBookManager.Lottie.student_3,
                                          bundle: Bundle(identifier: "Shio.BrandBook")!)
         animationView.play() {[weak self]_ in
             self?.navigationController?.setViewControllers([TabBarController()], animated: false)

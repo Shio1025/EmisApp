@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		246AE7892A0502E700697B87 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246AE7882A0502E700697B87 /* SearchCell.swift */; };
+		242568AB2A0D65600022A132 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242568AA2A0D65600022A132 /* TextFieldView.swift */; };
+		242568AD2A0D65770022A132 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242568AC2A0D65770022A132 /* TextFieldViewModel.swift */; };
+		246622742A12BFAE00287AA7 /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246622732A12BFAE00287AA7 /* TextFieldState.swift */; };
+		2466229F2A13665E00287AA7 /* LocalLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466229E2A13665E00287AA7 /* LocalLabel.swift */; };
+		246622A12A13668800287AA7 /* LocalLabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246622A02A13668800287AA7 /* LocalLabelModel.swift */; };
 		2490E2FC2A02ED4F0073DBDE /* ImageResources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2490E2FB2A02ED4F0073DBDE /* ImageResources.xcassets */; };
 		2490E2FE2A02ED600073DBDE /* ImageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2FD2A02ED600073DBDE /* ImageWrapper.swift */; };
 		2490E3002A02EDFD0073DBDE /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2FF2A02EDFD0073DBDE /* Images.swift */; };
 		2490E3422A040B270073DBDE /* DesignSystemConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E3412A040B270073DBDE /* DesignSystemConstants.swift */; };
-		2490E3462A041A470073DBDE /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E3452A041A470073DBDE /* ActionSheet.swift */; };
 		24C7121429E5B13D00E5DE0B /* BrandBook.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7121329E5B13D00E5DE0B /* BrandBook.docc */; };
 		24C7121529E5B13D00E5DE0B /* BrandBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7121229E5B13D00E5DE0B /* BrandBook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C7129029E5B2A500E5DE0B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C7128A29E5B2A500E5DE0B /* Colors.xcassets */; };
@@ -31,13 +34,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		246AE7882A0502E700697B87 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		242568AA2A0D65600022A132 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		242568AC2A0D65770022A132 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
+		246622732A12BFAE00287AA7 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
+		2466229E2A13665E00287AA7 /* LocalLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLabel.swift; sourceTree = "<group>"; };
+		246622A02A13668800287AA7 /* LocalLabelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLabelModel.swift; sourceTree = "<group>"; };
 		2490E2FB2A02ED4F0073DBDE /* ImageResources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageResources.xcassets; sourceTree = "<group>"; };
 		2490E2FD2A02ED600073DBDE /* ImageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWrapper.swift; sourceTree = "<group>"; };
 		2490E2FF2A02EDFD0073DBDE /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		2490E3252A03848E0073DBDE /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2490E3412A040B270073DBDE /* DesignSystemConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignSystemConstants.swift; sourceTree = "<group>"; };
-		2490E3452A041A470073DBDE /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		24C7120F29E5B13D00E5DE0B /* BrandBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BrandBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7121229E5B13D00E5DE0B /* BrandBook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrandBook.h; sourceTree = "<group>"; };
 		24C7121329E5B13D00E5DE0B /* BrandBook.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = BrandBook.docc; sourceTree = "<group>"; };
@@ -67,12 +73,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		246AE7872A05028800697B87 /* SearchCell */ = {
+		242568A82A0D65300022A132 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				246AE7882A0502E700697B87 /* SearchCell.swift */,
+				242568AA2A0D65600022A132 /* TextFieldView.swift */,
+				242568AC2A0D65770022A132 /* TextFieldViewModel.swift */,
+				246622732A12BFAE00287AA7 /* TextFieldState.swift */,
 			);
-			path = SearchCell;
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		2466229D2A13664D00287AA7 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				2466229E2A13665E00287AA7 /* LocalLabel.swift */,
+				246622A02A13668800287AA7 /* LocalLabelModel.swift */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 		2490E2FA2A02ED2D0073DBDE /* Images */ = {
@@ -96,18 +113,10 @@
 		2490E3432A041A2C0073DBDE /* ComponentBook */ = {
 			isa = PBXGroup;
 			children = (
-				246AE7872A05028800697B87 /* SearchCell */,
-				2490E3442A041A390073DBDE /* ActionSheet */,
+				2466229D2A13664D00287AA7 /* Label */,
+				242568A82A0D65300022A132 /* TextField */,
 			);
 			path = ComponentBook;
-			sourceTree = "<group>";
-		};
-		2490E3442A041A390073DBDE /* ActionSheet */ = {
-			isa = PBXGroup;
-			children = (
-				2490E3452A041A470073DBDE /* ActionSheet.swift */,
-			);
-			path = ActionSheet;
 			sourceTree = "<group>";
 		};
 		24C7120529E5B13D00E5DE0B = {
@@ -237,6 +246,7 @@
 				TargetAttributes = {
 					24C7120E29E5B13D00E5DE0B = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -283,15 +293,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2490E3462A041A470073DBDE /* ActionSheet.swift in Sources */,
-				246AE7892A0502E700697B87 /* SearchCell.swift in Sources */,
 				24C712A229E5BB6500E5DE0B /* ConstraintsExtension.swift in Sources */,
 				2490E2FE2A02ED600073DBDE /* ImageWrapper.swift in Sources */,
+				246622A12A13668800287AA7 /* LocalLabelModel.swift in Sources */,
+				2466229F2A13665E00287AA7 /* LocalLabel.swift in Sources */,
 				24C7129129E5B2A500E5DE0B /* UserTheme.swift in Sources */,
+				242568AB2A0D65600022A132 /* TextFieldView.swift in Sources */,
 				24C7129429E5B2A500E5DE0B /* Brandbook.swift in Sources */,
 				2490E3002A02EDFD0073DBDE /* Images.swift in Sources */,
 				2490E3422A040B270073DBDE /* DesignSystemConstants.swift in Sources */,
 				24C7129329E5B2A500E5DE0B /* Color.swift in Sources */,
+				242568AD2A0D65770022A132 /* TextFieldViewModel.swift in Sources */,
+				246622742A12BFAE00287AA7 /* TextFieldState.swift in Sources */,
 				24C7133629E7181100E5DE0B /* LottieHandler.swift in Sources */,
 				24C7129229E5B2A500E5DE0B /* ColorWrapper.swift in Sources */,
 				24C7121429E5B13D00E5DE0B /* BrandBook.docc in Sources */,
@@ -424,6 +437,7 @@
 		24C7121929E5B13D00E5DE0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -445,6 +459,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -453,6 +469,7 @@
 		24C7121A29E5B13D00E5DE0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -474,6 +491,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

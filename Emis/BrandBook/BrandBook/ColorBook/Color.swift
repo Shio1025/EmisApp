@@ -11,10 +11,21 @@ extension BrandBookManager {
             public struct Background {
                 public static let layer = ColorWrapper(name: "\(currentTheme)-color-background-layer")
                 public static let canvas = ColorWrapper(name: "\(currentTheme)-color-background-canvas")
+                public static let popup = ColorWrapper(name: "\(currentTheme)-color-background-popup")
             }
             
             public struct Component {
                 public static let solid500 = ColorWrapper(name: "\(currentTheme)-color-component-solid500")
+                public static let tr100 = ColorWrapper(name: "\(currentTheme)-color-component-100")
+                public static let tr200 = ColorWrapper(name: "\(currentTheme)-color-component-200")
+                public static let tr300 = ColorWrapper(name: "\(currentTheme)-color-component-300")
+            }
+            
+            public struct Invert {
+                public static let tr100 = ColorWrapper(name: "\(currentTheme)-color-invert-100")
+                public static let tr200 = ColorWrapper(name: "\(currentTheme)-color-invert-200")
+                public static let tr300 = ColorWrapper(name: "\(currentTheme)-color-invert-300")
+                public static let tr400 = ColorWrapper(name: "\(currentTheme)-color-invert-400")
             }
         }
         

@@ -32,18 +32,19 @@ class TabBarController: UITabBarController {
                                                     height: .L))
         let maskLayer = CAShapeLayer()
         maskLayer.path = path.cgPath
+        maskLayer.borderColor = BrandBookManager.Color.Theme.Invert.tr300.cgColor
         tabBar.layer.mask = maskLayer
     }
     
     private func setUpUI() {
         
-        tabBar.backgroundColor =  BrandBookManager.Color.Theme.Component.solid500.uiColor
+        tabBar.backgroundColor =  BrandBookManager.Color.Theme.Background.layer.uiColor
         
         let appearance = self.tabBar.standardAppearance.copy()
-        appearance.stackedLayoutAppearance.normal.iconColor = BrandBookManager.Color.General.tin.uiColor
-        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: BrandBookManager.Color.General.tin.uiColor] // unselected text color
-        appearance.stackedLayoutAppearance.selected.iconColor = BrandBookManager.Color.General.black.uiColor
-        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: BrandBookManager.Color.General.black.uiColor] // selected text color
+        appearance.stackedLayoutAppearance.normal.iconColor = BrandBookManager.Color.Theme.Invert.tr100.uiColor
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: BrandBookManager.Color.Theme.Invert.tr200.uiColor] // unselected text color
+        appearance.stackedLayoutAppearance.selected.iconColor = BrandBookManager.Color.Theme.Component.solid500.uiColor
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: BrandBookManager.Color.Theme.Component.solid500.uiColor] // selected text color
         
         self.tabBar.standardAppearance = appearance
     
