@@ -32,7 +32,7 @@ class TabBarController: UITabBarController {
                                                     height: .L))
         let maskLayer = CAShapeLayer()
         maskLayer.path = path.cgPath
-        maskLayer.borderColor = BrandBookManager.Color.Theme.Invert.tr300.cgColor
+        maskLayer.borderColor = BrandBookManager.Color.Theme.Invert.tr400.cgColor
         tabBar.layer.mask = maskLayer
     }
     
@@ -42,7 +42,7 @@ class TabBarController: UITabBarController {
         
         let appearance = self.tabBar.standardAppearance.copy()
         appearance.stackedLayoutAppearance.normal.iconColor = BrandBookManager.Color.Theme.Invert.tr100.uiColor
-        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: BrandBookManager.Color.Theme.Invert.tr200.uiColor] // unselected text color
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: BrandBookManager.Color.Theme.Invert.tr100.uiColor] // unselected text color
         appearance.stackedLayoutAppearance.selected.iconColor = BrandBookManager.Color.Theme.Component.solid500.uiColor
         appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: BrandBookManager.Color.Theme.Component.solid500.uiColor] // selected text color
         
