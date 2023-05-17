@@ -15,6 +15,7 @@ public class LocalLabel: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.isUserInteractionEnabled = false
         return label
     }()
     
@@ -71,5 +72,9 @@ extension LocalLabel {
     
     @objc private func didTap() {
         tapAction?()
+    }
+    
+    public func changeTextColor(with color: UIColor) {
+        label.textColor = color
     }
 }

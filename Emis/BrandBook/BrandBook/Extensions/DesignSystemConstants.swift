@@ -23,10 +23,22 @@ public extension CGFloat {
     }
     
     static var XL: CGFloat {
-        24
+        20
     }
     
     static var XL2: CGFloat {
+        24
+    }
+    
+    static var XL3: CGFloat {
+        28
+    }
+    
+    static var XL4: CGFloat {
         32
+    }
+    
+    static var XL5: CGFloat {
+        36
     }
 }

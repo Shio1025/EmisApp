@@ -12,6 +12,9 @@
 		246622742A12BFAE00287AA7 /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246622732A12BFAE00287AA7 /* TextFieldState.swift */; };
 		2466229F2A13665E00287AA7 /* LocalLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466229E2A13665E00287AA7 /* LocalLabel.swift */; };
 		246622A12A13668800287AA7 /* LocalLabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246622A02A13668800287AA7 /* LocalLabelModel.swift */; };
+		2466C3DF2A14AFEB00E7B400 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466C3DE2A14AFEB00E7B400 /* PrimaryButton.swift */; };
+		2466C3E12A14B01300E7B400 /* PrimaryButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466C3E02A14B01300E7B400 /* PrimaryButtonModel.swift */; };
+		2466C3E32A14B54B00E7B400 /* PrimaryButtonStateColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466C3E22A14B54B00E7B400 /* PrimaryButtonStateColors.swift */; };
 		2490E2FC2A02ED4F0073DBDE /* ImageResources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2490E2FB2A02ED4F0073DBDE /* ImageResources.xcassets */; };
 		2490E2FE2A02ED600073DBDE /* ImageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2FD2A02ED600073DBDE /* ImageWrapper.swift */; };
 		2490E3002A02EDFD0073DBDE /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2FF2A02EDFD0073DBDE /* Images.swift */; };
@@ -39,6 +42,9 @@
 		246622732A12BFAE00287AA7 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
 		2466229E2A13665E00287AA7 /* LocalLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLabel.swift; sourceTree = "<group>"; };
 		246622A02A13668800287AA7 /* LocalLabelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLabelModel.swift; sourceTree = "<group>"; };
+		2466C3DE2A14AFEB00E7B400 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		2466C3E02A14B01300E7B400 /* PrimaryButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonModel.swift; sourceTree = "<group>"; };
+		2466C3E22A14B54B00E7B400 /* PrimaryButtonStateColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStateColors.swift; sourceTree = "<group>"; };
 		2490E2FB2A02ED4F0073DBDE /* ImageResources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageResources.xcassets; sourceTree = "<group>"; };
 		2490E2FD2A02ED600073DBDE /* ImageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWrapper.swift; sourceTree = "<group>"; };
 		2490E2FF2A02EDFD0073DBDE /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -92,6 +98,16 @@
 			path = Label;
 			sourceTree = "<group>";
 		};
+		2466C3DD2A14AFC400E7B400 /* PrimaryButton */ = {
+			isa = PBXGroup;
+			children = (
+				2466C3DE2A14AFEB00E7B400 /* PrimaryButton.swift */,
+				2466C3E02A14B01300E7B400 /* PrimaryButtonModel.swift */,
+				2466C3E22A14B54B00E7B400 /* PrimaryButtonStateColors.swift */,
+			);
+			path = PrimaryButton;
+			sourceTree = "<group>";
+		};
 		2490E2FA2A02ED2D0073DBDE /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +129,7 @@
 		2490E3432A041A2C0073DBDE /* ComponentBook */ = {
 			isa = PBXGroup;
 			children = (
+				2466C3DD2A14AFC400E7B400 /* PrimaryButton */,
 				2466229D2A13664D00287AA7 /* Label */,
 				242568A82A0D65300022A132 /* TextField */,
 			);
@@ -295,18 +312,21 @@
 			files = (
 				24C712A229E5BB6500E5DE0B /* ConstraintsExtension.swift in Sources */,
 				2490E2FE2A02ED600073DBDE /* ImageWrapper.swift in Sources */,
+				2466C3E32A14B54B00E7B400 /* PrimaryButtonStateColors.swift in Sources */,
 				246622A12A13668800287AA7 /* LocalLabelModel.swift in Sources */,
 				2466229F2A13665E00287AA7 /* LocalLabel.swift in Sources */,
 				24C7129129E5B2A500E5DE0B /* UserTheme.swift in Sources */,
 				242568AB2A0D65600022A132 /* TextFieldView.swift in Sources */,
 				24C7129429E5B2A500E5DE0B /* Brandbook.swift in Sources */,
 				2490E3002A02EDFD0073DBDE /* Images.swift in Sources */,
+				2466C3E12A14B01300E7B400 /* PrimaryButtonModel.swift in Sources */,
 				2490E3422A040B270073DBDE /* DesignSystemConstants.swift in Sources */,
 				24C7129329E5B2A500E5DE0B /* Color.swift in Sources */,
 				242568AD2A0D65770022A132 /* TextFieldViewModel.swift in Sources */,
 				246622742A12BFAE00287AA7 /* TextFieldState.swift in Sources */,
 				24C7133629E7181100E5DE0B /* LottieHandler.swift in Sources */,
 				24C7129229E5B2A500E5DE0B /* ColorWrapper.swift in Sources */,
+				2466C3DF2A14AFEB00E7B400 /* PrimaryButton.swift in Sources */,
 				24C7121429E5B13D00E5DE0B /* BrandBook.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

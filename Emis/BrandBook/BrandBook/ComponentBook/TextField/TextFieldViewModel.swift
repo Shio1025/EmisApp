@@ -6,11 +6,11 @@
 //
 
 public struct TextFieldViewModel {
-    public var placeholder: String?
-    public var detail: String?
-    public var trailingLabelModel: LocalLabelModel?
-    public var leadingLabelModel: LocalLabelModel?
-    public var onEditingDidEnd: ((String) -> Void)
+    let placeholder: String?
+    let detail: String?
+    let trailingLabelModel: LocalLabelModel?
+    let leadingLabelModel: LocalLabelModel?
+    let onEditingDidEnd: ((String) -> Void)
     
     public init(placeholder: String? = nil,
                 detail: String? = nil,

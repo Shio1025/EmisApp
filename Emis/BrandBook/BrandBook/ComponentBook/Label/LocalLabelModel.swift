@@ -7,10 +7,10 @@
 import UIKit
 
 public struct LocalLabelModel {
-    public var text: String
-    public var color: UIColor
-    public var font: UIFont
-    public var action: (() -> Void)?
+    let text: String
+    let color: UIColor
+    let font: UIFont
+    let action: (() -> Void)?
     
     public init(text: String,
                 color: UIColor,
