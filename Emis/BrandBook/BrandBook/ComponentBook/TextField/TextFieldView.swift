@@ -106,10 +106,10 @@ public class TextFieldView: UIView {
     }
     
     private func addConstraints() {
-        textField.top(toView: textFieldHolder, constant: .XS)
-        textField.bottom(toView: textFieldHolder, constant: .XS)
-        textField.left(toView: textFieldHolder, constant: .XS)
-        textField.right(toView: textFieldHolder, constant: .XS)
+        textField.top(toView: textFieldHolder, constant: .S)
+        textField.bottom(toView: textFieldHolder, constant: .S)
+        textField.left(toView: textFieldHolder, constant: .S)
+        textField.right(toView: textFieldHolder, constant: .S)
         
         textFieldHolder.top(toView: textFieldContainer, constant: 1)
         textFieldHolder.bottom(toView: textFieldContainer, constant: 1)

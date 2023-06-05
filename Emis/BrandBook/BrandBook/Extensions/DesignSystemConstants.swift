@@ -41,4 +41,8 @@ public extension CGFloat {
     static var XL5: CGFloat {
         36
     }
+    
+    static var XL6: CGFloat {
+        40
+    }
 }

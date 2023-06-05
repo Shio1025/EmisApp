@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 public enum ButtonState {
     case enabled
@@ -17,11 +18,7 @@ public class PrimaryButton: UIView {
     
     private var tapAction: (() -> Void)?
     
-    private var state: ButtonState = .enabled {
-        didSet {
-            updateButtonAppearance()
-        }
-    }
+    private var subscriptions = Set<AnyCancellable>()
     
     private lazy var loadingIndicator: UIActivityIndicatorView = {
         let loader = UIActivityIndicatorView()
@@ -35,7 +32,7 @@ public class PrimaryButton: UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.height(equalTo: .XL5)
+        view.height(equalTo: .XL6)
         return view
     }()
     
@@ -95,17 +92,12 @@ public class PrimaryButton: UIView {
 
 extension PrimaryButton {
     
-    public func setState(with state: ButtonState) {
-        self.state = state
-    }
-    
-    private func updateButtonAppearance() {
+    private func updateButtonState(with state: ButtonState) {
         switch state {
         case .enabled:
             mainView.backgroundColor = PrimaryButtonState.enabled.backgroundColor
             titleLabel.changeTextColor(with: PrimaryButtonState.enabled.textColor)
             mainView.isUserInteractionEnabled = true
-            
         case .disabled:
             mainView.backgroundColor = PrimaryButtonState.disabled.backgroundColor
             titleLabel.changeTextColor(with: PrimaryButtonState.disabled.textColor)
@@ -132,6 +124,11 @@ extension PrimaryButton {
 extension PrimaryButton {
     
     public func configure(with model: PrimaryButtonModel) {
+        //subscribe state
+        model.state.sink { [weak self] state in
+            self?.updateButtonState(with: state)
+        }.store(in: &subscriptions)
+        
         titleLabel.configure(with: model.titleModel)
         addAction(action: model.action)
     }

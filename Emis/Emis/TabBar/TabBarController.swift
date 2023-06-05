@@ -22,6 +22,11 @@ class TabBarController: UITabBarController {
         setUpUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -52,10 +57,10 @@ class TabBarController: UITabBarController {
     
     private func createViewControllers() {
         //Fix later -> now it shows only login page
-        let firstTab = login.controller
-        let secondTab = main.controller
-        let thirdTab = timetable.controller
-        let fourthTab = more.controller
+        let firstTab = UINavigationController(rootViewController: login.controller)
+        let secondTab = UINavigationController(rootViewController: main.controller)
+        let thirdTab = UINavigationController(rootViewController: timetable.controller)
+        let fourthTab = UINavigationController(rootViewController: more.controller)
         viewControllers = [firstTab, secondTab, thirdTab, fourthTab]
         
         

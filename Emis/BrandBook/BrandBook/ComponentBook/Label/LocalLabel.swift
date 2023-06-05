@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import Combine
 
 public class LocalLabel: UIView {
     
     private var tapAction: (() -> Void)?
+    private var subscriptions = Set<AnyCancellable>()
     
     private lazy var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.text = ""
         label.isUserInteractionEnabled = false
         return label
     }()
@@ -58,7 +61,9 @@ public class LocalLabel: UIView {
 extension LocalLabel {
     
     public func configure(with model: LocalLabelModel) {
-        label.text = model.text
+        model.text
+            .assign(to: \.text!, on: label)
+            .store(in: &subscriptions)
         label.textColor = model.color
         label.font = model.font
         if let action = model.action { configureAction(action: action) }

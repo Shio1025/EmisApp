@@ -14,7 +14,7 @@ final class LoginPageRouter {
                from view: LoginPageController) {
         switch route {
         case .login:
-            print("login")
+            view.navigationController?.pushViewController(LoginPageController(viewModel: LoginPageViewModel()), animated: true)
         }
     }
 }

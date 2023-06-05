@@ -13,18 +13,18 @@ enum textFieldState {
     var placeholderColor: UIColor {
         switch self {
         case .inactive:
-            return BrandBookManager.Color.Theme.Invert.tr100.uiColor
+            return BrandBookManager.Color.Theme.Invert.tr300.uiColor
         case .inProgressOfEditing:
-            return .clear
+            return BrandBookManager.Color.Theme.Component.solid500.uiColor
         }
     }
     
     var borderColor: UIColor {
         switch self {
         case .inactive:
-            return  BrandBookManager.Color.Theme.Invert.tr200.uiColor
+            return  .clear
         case .inProgressOfEditing:
-            return BrandBookManager.Color.Theme.Component.tr300.uiColor
+            return BrandBookManager.Color.Theme.Component.solid500.uiColor
         }
     }
     
