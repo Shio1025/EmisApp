@@ -86,7 +86,7 @@ extension LoginPageViewModel {
                                                                            weight: .semibold)),
                                        state: validToContinue,
                                        action: { [weak self] in
-            if self?.login == "petre" && self?.password == "petre" {
+            if self?.login == "P" && self?.password == "P" {
                 self?.router = .login
             }
         })).eraseToAnyPublisher()

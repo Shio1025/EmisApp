@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		242568AB2A0D65600022A132 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242568AA2A0D65600022A132 /* TextFieldView.swift */; };
 		242568AD2A0D65770022A132 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242568AC2A0D65770022A132 /* TextFieldViewModel.swift */; };
+		2452F0292A2F0E1A005F4DDF /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F0282A2F0E1A005F4DDF /* CustomNavigation.swift */; };
+		2452F02B2A2F168A005F4DDF /* BackBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F02A2A2F168A005F4DDF /* BackBarButtonItem.swift */; };
 		246622742A12BFAE00287AA7 /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246622732A12BFAE00287AA7 /* TextFieldState.swift */; };
 		2466229F2A13665E00287AA7 /* LocalLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466229E2A13665E00287AA7 /* LocalLabel.swift */; };
 		246622A12A13668800287AA7 /* LocalLabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246622A02A13668800287AA7 /* LocalLabelModel.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		242568AA2A0D65600022A132 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		242568AC2A0D65770022A132 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
+		2452F0282A2F0E1A005F4DDF /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
+		2452F02A2A2F168A005F4DDF /* BackBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackBarButtonItem.swift; sourceTree = "<group>"; };
 		246622732A12BFAE00287AA7 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
 		2466229E2A13665E00287AA7 /* LocalLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLabel.swift; sourceTree = "<group>"; };
 		246622A02A13668800287AA7 /* LocalLabelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLabelModel.swift; sourceTree = "<group>"; };
@@ -89,6 +93,15 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
+		2452F0272A2F0E06005F4DDF /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				2452F0282A2F0E1A005F4DDF /* CustomNavigation.swift */,
+				2452F02A2A2F168A005F4DDF /* BackBarButtonItem.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
 		2466229D2A13664D00287AA7 /* Label */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +142,7 @@
 		2490E3432A041A2C0073DBDE /* ComponentBook */ = {
 			isa = PBXGroup;
 			children = (
+				2452F0272A2F0E06005F4DDF /* NavigationBar */,
 				2466C3DD2A14AFC400E7B400 /* PrimaryButton */,
 				2466229D2A13664D00287AA7 /* Label */,
 				242568A82A0D65300022A132 /* TextField */,
@@ -313,8 +327,10 @@
 				24C712A229E5BB6500E5DE0B /* ConstraintsExtension.swift in Sources */,
 				2490E2FE2A02ED600073DBDE /* ImageWrapper.swift in Sources */,
 				2466C3E32A14B54B00E7B400 /* PrimaryButtonStateColors.swift in Sources */,
+				2452F02B2A2F168A005F4DDF /* BackBarButtonItem.swift in Sources */,
 				246622A12A13668800287AA7 /* LocalLabelModel.swift in Sources */,
 				2466229F2A13665E00287AA7 /* LocalLabel.swift in Sources */,
+				2452F0292A2F0E1A005F4DDF /* CustomNavigation.swift in Sources */,
 				24C7129129E5B2A500E5DE0B /* UserTheme.swift in Sources */,
 				242568AB2A0D65600022A132 /* TextFieldView.swift in Sources */,
 				24C7129429E5B2A500E5DE0B /* Brandbook.swift in Sources */,
