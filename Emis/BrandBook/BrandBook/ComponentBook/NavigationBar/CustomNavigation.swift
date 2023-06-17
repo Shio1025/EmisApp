@@ -20,7 +20,7 @@ public struct NavigationTitle {
     let color: UIColor
     
     public init(text: String,
-                color: UIColor) {
+                color: UIColor = BrandBookManager.Color.General.black.uiColor) {
         self.text = text
         self.color = color
     }
@@ -43,6 +43,7 @@ public extension CustomNavigatable where Self: UIViewController {
     func configureNavigationBar() {
         let titleLabel = UILabel()
         titleLabel.text = navTitle.text
+        titleLabel.font = .italicSystemFont(ofSize: .XL)
         titleLabel.textColor = navTitle.color
         
         let titleBarButtonItem = UIBarButtonItem(customView: titleLabel)

@@ -5,8 +5,6 @@
 //  Created by Shio Birbichadze on 11.05.23.
 //
 
-import BrandBook
-
 
 final class LoginPageRouter {
     
@@ -14,7 +12,7 @@ final class LoginPageRouter {
                from view: LoginPageController) {
         switch route {
         case .login:
-            view.navigationController?.pushViewController(LoginPageController(viewModel: LoginPageViewModel()), animated: true)
+            view.navigationController?.pushViewController(ProfilePageController(viewModel: ProfilePageViewModel()), animated: true)
         }
     }
 }

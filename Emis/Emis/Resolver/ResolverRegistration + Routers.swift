@@ -12,5 +12,8 @@ extension Resolver {
         register {
             LoginPageRouter()
         }
+        register {
+            ProfilePageRouter()
+        }
     }
 }
