@@ -1,18 +1,21 @@
 //
-//  LocalLabelCell.swift
+//  RoundedHeaderWithTitle.swift
 //  BrandBook
 //
-//  Created by Shio Birbichadze on 17.06.23.
+//  Created by Shio Birbichadze on 18.06.23.
 //
 
 import UIKit
 import Combine
 
-public class LocalLabelCell: TableCell {
+public class RoundedHeaderWithTitle: TableCell {
     
-    private lazy var label: LocalLabel = {
-        let label = LocalLabel()
+    private lazy var label: UILabel = {
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.textColor = BrandBookManager.Color.General.black.uiColor
+        label.font = .systemFont(ofSize: .L, weight: .bold)
         return label
     }()
     
@@ -32,46 +35,44 @@ public class LocalLabelCell: TableCell {
         addConstraints()
     }
     
-    private func  addSubviews() {
+    private func addSubviews() {
         contentView.addSubview(label)
     }
     
     private func setUpUI() {
         selectionStyle = .none
-        backgroundColor = .clear
     }
     
     private func addConstraints() {
-        label.top(toView: contentView, constant: .XS)
+        label.top(toView: contentView, constant: .M)
         label.bottom(toView: contentView, constant: .XS)
-        label.left(toView: contentView, constant: .M)
-        label.right(toView: contentView)
+        label.left(toView: contentView, constant: .L)
     }
     
-    public override func prepareForReuse() {
-        super.prepareForReuse()
-        label.resetSubscriptions()
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        roundCorners(by: .M, corners: [.topLeft, .topRight])
     }
 }
 
-extension LocalLabelCell {
+extension RoundedHeaderWithTitle {
     public func bind(with data: any CellModel) {
-        if let model = data as? LocalLabelCellModel {
+        if let model = data as? RoundedHeaderWithTitleModel {
+            label.text = model.headerTitle
             self.backgroundColor = model.backgroundColor
-            label.bind(with: model.localLabelmodel)
         }
     }
 }
 
-public class LocalLabelCellModel: CellModel {
-    public typealias T = LocalLabelCell
-    var localLabelmodel: LocalLabelModel
+public class RoundedHeaderWithTitleModel: CellModel {
+    public typealias T = RoundedHeaderWithTitle
     var backgroundColor: UIColor
+    var headerTitle: String
     
-    public init(model: LocalLabelModel,
+    public init(headerTitle: String,
                 backgroundColor: UIColor = BrandBookManager.Color.Theme.Background.layer.uiColor) {
-        self.localLabelmodel = model
         self.backgroundColor = backgroundColor
+        self.headerTitle = headerTitle
     }
 }
-

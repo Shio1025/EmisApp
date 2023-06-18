@@ -9,7 +9,7 @@ import Combine
 
 public class TextFieldView: UIView {
     
-    private var cancellables: Set<AnyCancellable> = []
+    private var subscriptions: Set<AnyCancellable> = []
     private var onEditingDidEnd: ((String) -> Void)?
     
     @Published var bgColor: UIColor = textFieldState.inactive.backgroundColor
@@ -82,7 +82,7 @@ public class TextFieldView: UIView {
     
     public convenience init(model: TextFieldViewModel) {
         self.init()
-        configure(model: model)
+        bind(model: model)
     }
     
     @available(*, unavailable)
@@ -139,15 +139,15 @@ public class TextFieldView: UIView {
 extension TextFieldView {
     
     func setUpTextFieldAppearance() {
-        $bgColor.assign(to: \.backgroundColor!, on: textFieldHolder).store(in: &cancellables)
-        $borderColor.assign(to: \.backgroundColor!, on: textFieldContainer).store(in: &cancellables)
-        $textColor.assign(to: \.textColor!, on: textField).store(in: &cancellables)
+        $bgColor.assign(to: \.backgroundColor!, on: textFieldHolder).store(in: &subscriptions)
+        $borderColor.assign(to: \.backgroundColor!, on: textFieldContainer).store(in: &subscriptions)
+        $textColor.assign(to: \.textColor!, on: textField).store(in: &subscriptions)
     }
 }
 
 extension TextFieldView {
     
-    public func configure(model: TextFieldViewModel) {
+    public func bind(model: TextFieldViewModel) {
         onEditingDidEnd = model.onEditingDidEnd
         textField.delegate = self
         configureTextField(with: model)
@@ -160,14 +160,18 @@ extension TextFieldView {
         }
         
         if let leadingTextModel = model.leadingLabelModel {
-            leadingLabel.configure(with: leadingTextModel)
+            leadingLabel.bind(with: leadingTextModel)
             labelsContainer.isHidden = false
         }
         
         if let trailingTextModel = model.trailingLabelModel {
-            trailingLabel.configure(with: trailingTextModel)
+            trailingLabel.bind(with: trailingTextModel)
             labelsContainer.isHidden = false
         }
+    }
+    
+    public func resetSubscriptions() {
+        subscriptions = Set<AnyCancellable>()
     }
 }
 

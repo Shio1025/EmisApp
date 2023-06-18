@@ -1,19 +1,19 @@
 //
-//  LocalLabelCell.swift
+//  TextFieldCell.swift
 //  BrandBook
 //
-//  Created by Shio Birbichadze on 17.06.23.
+//  Created by Shio Birbichadze on 18.06.23.
 //
 
 import UIKit
-import Combine
 
-public class LocalLabelCell: TableCell {
+public class TextFieldCell: TableCell {
     
-    private lazy var label: LocalLabel = {
-        let label = LocalLabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private lazy var textField: TextFieldView = {
+        let textField = TextFieldView()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.isUserInteractionEnabled = true
+        return textField
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -33,7 +33,7 @@ public class LocalLabelCell: TableCell {
     }
     
     private func  addSubviews() {
-        contentView.addSubview(label)
+        contentView.addSubview(textField)
     }
     
     private func setUpUI() {
@@ -42,36 +42,35 @@ public class LocalLabelCell: TableCell {
     }
     
     private func addConstraints() {
-        label.top(toView: contentView, constant: .XS)
-        label.bottom(toView: contentView, constant: .XS)
-        label.left(toView: contentView, constant: .M)
-        label.right(toView: contentView)
+        textField.top(toView: contentView, constant: .XS)
+        textField.bottom(toView: contentView, constant: .XS)
+        textField.left(toView: contentView, constant: .L)
+        textField.right(toView: contentView, constant: .L)
     }
     
     public override func prepareForReuse() {
         super.prepareForReuse()
-        label.resetSubscriptions()
+        textField.resetSubscriptions()
     }
 }
 
-extension LocalLabelCell {
+extension TextFieldCell {
     public func bind(with data: any CellModel) {
-        if let model = data as? LocalLabelCellModel {
+        if let model = data as? TextFieldCellModel {
             self.backgroundColor = model.backgroundColor
-            label.bind(with: model.localLabelmodel)
+            textField.bind(model: model.textFieldModel)
         }
     }
 }
 
-public class LocalLabelCellModel: CellModel {
-    public typealias T = LocalLabelCell
-    var localLabelmodel: LocalLabelModel
+public class TextFieldCellModel: CellModel {
+    public typealias T = TextFieldCell
+    var textFieldModel: TextFieldViewModel
     var backgroundColor: UIColor
     
-    public init(model: LocalLabelModel,
+    public init(model: TextFieldViewModel,
                 backgroundColor: UIColor = BrandBookManager.Color.Theme.Background.layer.uiColor) {
-        self.localLabelmodel = model
+        self.textFieldModel = model
         self.backgroundColor = backgroundColor
     }
 }
-

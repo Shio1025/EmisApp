@@ -82,7 +82,7 @@ extension ProfilePageController {
 extension ProfilePageController {
     
     private func bindUI() {
-        
+        tableView.bind(with: viewModel.listCellModels)
     }
 }
 

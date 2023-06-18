@@ -52,7 +52,7 @@ public class PrimaryButton: UIView {
     
     public convenience init(model: PrimaryButtonModel) {
         self.init()
-        configure(with: model)
+        bind(with: model)
     }
     
     @available(*, unavailable)
@@ -123,13 +123,17 @@ extension PrimaryButton {
 
 extension PrimaryButton {
     
-    public func configure(with model: PrimaryButtonModel) {
+    public func bind(with model: PrimaryButtonModel) {
         //subscribe state
         model.state.sink { [weak self] state in
             self?.updateButtonState(with: state)
         }.store(in: &subscriptions)
         
-        titleLabel.configure(with: model.titleModel)
+        titleLabel.bind(with: model.titleModel)
         addAction(action: model.action)
+    }
+    
+    public func resetSubscriptions() {
+        subscriptions = Set<AnyCancellable>()
     }
 }

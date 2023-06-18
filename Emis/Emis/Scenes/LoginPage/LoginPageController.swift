@@ -154,19 +154,19 @@ extension LoginPageController {
     
     private func configureUI() {
         viewModel.labelModel.sink {[weak self] model in
-            self?.label.configure(with: model)
+            self?.label.bind(with: model)
         }.store(in: &subscriptions)
         
         viewModel.emailModel.sink { [weak self] model in
-            self?.loginTextField.configure(model: model)
+            self?.loginTextField.bind(model: model)
         }.store(in: &subscriptions)
         
         viewModel.passwordModel.sink { [weak self] model in
-            self?.passwordTextField.configure(model: model)
+            self?.passwordTextField.bind(model: model)
         }.store(in: &subscriptions)
         
         viewModel.continueButtonModel.sink { [weak self] model in
-            self?.button.configure(with: model)
+            self?.button.bind(with: model)
         }.store(in: &subscriptions)
     }
 }

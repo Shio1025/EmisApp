@@ -34,7 +34,7 @@ public class LocalLabel: UIView {
         addSubviews()
         setUpUI()
         addConstraints()
-        configure(with: model)
+        bind(with: model)
     }
     
     @available(*, unavailable)
@@ -60,7 +60,7 @@ public class LocalLabel: UIView {
 
 extension LocalLabel {
     
-    public func configure(with model: LocalLabelModel) {
+    public func bind(with model: LocalLabelModel) {
         model.text
             .assign(to: \.text!, on: label)
             .store(in: &subscriptions)
@@ -81,5 +81,9 @@ extension LocalLabel {
     
     public func changeTextColor(with color: UIColor) {
         label.textColor = color
+    }
+    
+    public func resetSubscriptions() {
+        subscriptions = Set<AnyCancellable>()
     }
 }

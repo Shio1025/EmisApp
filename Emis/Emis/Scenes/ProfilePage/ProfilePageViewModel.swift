@@ -16,6 +16,10 @@ enum ProfilePageRoute {
 final class ProfilePageViewModel {
     
     @Published private var router: ProfilePageRoute?
+    @Published private var listCells: [any CellModel] = []
+    var listCellModels: AnyPublisher<[any CellModel], Never> {
+        $listCells.eraseToAnyPublisher()
+    }
     
     private var subscriptions = Set<AnyCancellable>()
     
@@ -31,7 +35,6 @@ extension ProfilePageViewModel {
 }
 
 extension ProfilePageViewModel {
-    
 }
 
 

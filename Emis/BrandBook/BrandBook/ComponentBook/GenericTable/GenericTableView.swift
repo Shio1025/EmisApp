@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 // Protocol for the table view cells
 public protocol Cell {
@@ -28,6 +29,7 @@ public extension CellModel {
 // Generic table view class that accepts an array of TableViewCell
 public class GenericTableView: UITableView, UITableViewDataSource {
     private var cellModels: [any CellModel] = []
+    private var subscriptions = Set<AnyCancellable>()
     
     public init() {
         super.init(frame: .zero, style: .grouped)
@@ -42,13 +44,16 @@ public class GenericTableView: UITableView, UITableViewDataSource {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func register<Cell: UITableViewCell>(_ cellType: [Cell.Type]) where Cell: TableCell {
-        cellType.forEach { super.register($0, forCellReuseIdentifier: String(describing: $0)) }
+    public func register<Cell: UITableViewCell>(_ cellType: Cell.Type) where Cell: TableCell {
+        super.register(cellType, forCellReuseIdentifier: String(describing: cellType))
     }
     
-    public func bind(with data: [any CellModel]) {
-        self.cellModels = data
-        reloadData()
+    public func bind(with data: AnyPublisher<[any CellModel], Never>) {
+        data.sink { [weak self] cellModels in
+            guard let self else { return }
+            self.cellModels = cellModels
+            self.reloadData()
+        }.store(in: &subscriptions)
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
