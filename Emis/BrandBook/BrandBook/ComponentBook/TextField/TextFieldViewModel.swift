@@ -10,14 +10,17 @@ public class TextFieldViewModel: ObservableObject {
     let trailingLabelModel: LocalLabelModel?
     let leadingLabelModel: LocalLabelModel?
     let onEditingDidEnd: ((String) -> Void)
+    let isSecureEntry: Bool
     
     public init(placeholder: String? = nil,
                 trailingLabelModel: LocalLabelModel? = nil,
                 leadingLabelModel: LocalLabelModel? = nil,
+                isSecureEntry: Bool = false,
                 onEditingDidEnd: @escaping ((String) -> Void)) {
         self.placeholder = placeholder
         self.leadingLabelModel = leadingLabelModel
         self.trailingLabelModel = trailingLabelModel
+        self.isSecureEntry = isSecureEntry
         self.onEditingDidEnd = onEditingDidEnd
     }
 }

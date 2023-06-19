@@ -18,6 +18,7 @@ public class LocalLabel: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.text = ""
+        label.lineBreakMode = .byWordWrapping
         label.isUserInteractionEnabled = false
         return label
     }()
@@ -61,9 +62,16 @@ public class LocalLabel: UIView {
 extension LocalLabel {
     
     public func bind(with model: LocalLabelModel) {
-        model.text
-            .assign(to: \.text!, on: label)
-            .store(in: &subscriptions)
+        if let publisher = model.textPublisher {
+            publisher
+                .assign(to: \.text!, on: label)
+                .store(in: &subscriptions)
+        }
+        
+        if let text = model.text {
+            label.text = text
+        }
+        
         label.textColor = model.color
         label.font = model.font
         if let action = model.action { configureAction(action: action) }
@@ -72,7 +80,7 @@ extension LocalLabel {
     private func configureAction(action: @escaping () -> Void) {
         label.isUserInteractionEnabled = true
         self.tapAction = action
-        label.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(didTap)))
+        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
     }
     
     @objc private func didTap() {
@@ -85,5 +93,9 @@ extension LocalLabel {
     
     public func resetSubscriptions() {
         subscriptions = Set<AnyCancellable>()
+    }
+    
+    public func setAlignment(with alignment: NSTextAlignment) {
+        label.textAlignment = alignment
     }
 }

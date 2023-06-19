@@ -16,12 +16,8 @@ enum LoginPageRoute {
 final class LoginPageViewModel {
     
     @Published private var router: LoginPageRoute?
-    @Published private var labelText: String = "შესვლა"
-    @Published private var leadingInputText: String = "რეგისტრაცია"
-    @Published private var trailingInputText: String = "დაგავიწყდა მონაცემები?"
     @Published private var login: String = ""
     @Published private var password: String = ""
-    @Published private var buttonText: String = "შესვლა"
     private var validToContinue: AnyPublisher<ButtonState, Never> {
         return Publishers.CombineLatest($login, $password)
             .map { login, password in
@@ -51,7 +47,7 @@ extension LoginPageViewModel {
 extension LoginPageViewModel {
     
     var labelModel: AnyPublisher<LocalLabelModel, Never> {
-        return Just (LocalLabelModel.init(text: $labelText.eraseToAnyPublisher(),
+        return Just (LocalLabelModel.init(text: "შესვლა",
                                           color: BrandBookManager.Color.General.black.uiColor,
                                           font: .systemFont(ofSize: .L,
                                                             weight: .semibold))).eraseToAnyPublisher()
@@ -66,29 +62,28 @@ extension LoginPageViewModel {
     
     var passwordModel: AnyPublisher<TextFieldViewModel, Never> {
         return Just (TextFieldViewModel(placeholder: "პაროლი",
-                                        trailingLabelModel: .init(text: $trailingInputText.eraseToAnyPublisher(),
+                                        trailingLabelModel: .init(text: "რეგისტრაცია",
                                                                   color: BrandBookManager.Color.Theme.Component.solid500.uiColor,
                                                                   font: .systemFont(ofSize: .M,
                                                                                     weight: .bold)),
-                                        leadingLabelModel: .init(text: $leadingInputText.eraseToAnyPublisher(),
+                                        leadingLabelModel: .init(text: "დაგავიწყდა მონაცემები?",
                                                                  color: BrandBookManager.Color.Theme.Component.solid500.uiColor,
                                                                  font: .systemFont(ofSize: .M,
                                                                                    weight: .bold)),
+                                        isSecureEntry: true,
                                         onEditingDidEnd: { [weak self] text in
             self?.password = text
         })).eraseToAnyPublisher()
     }
     
     var continueButtonModel: AnyPublisher<PrimaryButtonModel, Never> {
-        return Just(PrimaryButtonModel(titleModel: .init(text: $buttonText.eraseToAnyPublisher(),
+        return Just(PrimaryButtonModel(titleModel: .init(text: "შესვლა",
                                                          color: BrandBookManager.Color.General.white.uiColor,
                                                          font: .systemFont(ofSize: .M,
                                                                            weight: .semibold)),
                                        state: validToContinue,
                                        action: { [weak self] in
-            if self?.login == "P" && self?.password == "P" {
-                self?.router = .login
-            }
+            self?.router = .login
         })).eraseToAnyPublisher()
     }
 }

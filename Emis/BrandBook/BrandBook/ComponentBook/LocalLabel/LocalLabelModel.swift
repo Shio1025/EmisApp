@@ -8,16 +8,19 @@ import UIKit
 import Combine
 
 public class LocalLabelModel: ObservableObject {
-    var text: AnyPublisher<String,Never>
+    var textPublisher: AnyPublisher<String,Never>?
+    var text: String?
     var color: UIColor
     var font: UIFont
     var action: (() -> Void)?
     
-    public init(text: AnyPublisher<String,Never>,
-                color: UIColor,
-                font: UIFont,
+    public init(textPublisher: AnyPublisher<String,Never>? = nil,
+                text: String? = nil,
+                color: UIColor = BrandBookManager.Color.General.black.uiColor,
+                font: UIFont = .italicSystemFont(ofSize: .M),
                 action: (() -> Void)? = nil) {
-        self.text = text
+        self.textPublisher = textPublisher
+        self.text =  text
         self.color = color
         self.font = font
         self.action = action

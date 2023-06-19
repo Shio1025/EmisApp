@@ -159,6 +159,11 @@ extension TextFieldView {
                                                                  attributes: [NSAttributedString.Key.foregroundColor: textFieldState.inactive.placeholderColor])
         }
         
+        if model.isSecureEntry {
+            textField.isSecureTextEntry = true
+            textField.textContentType = .password
+        }
+        
         if let leadingTextModel = model.leadingLabelModel {
             leadingLabel.bind(with: leadingTextModel)
             labelsContainer.isHidden = false
