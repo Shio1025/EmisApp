@@ -11,6 +11,7 @@ public class TextFieldView: UIView {
     
     private var subscriptions: Set<AnyCancellable> = []
     private var onEditingDidEnd: ((String) -> Void)?
+    private var isSecureInput: Bool = false
     
     @Published var bgColor: UIColor = textFieldState.inactive.backgroundColor
     @Published var borderColor: UIColor = textFieldState.inactive.borderColor
@@ -36,6 +37,17 @@ public class TextFieldView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
         return view
+    }()
+    
+    private lazy var passcodeEye: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.width(equalTo: .XL)
+        image.height(equalTo: .XL)
+        image.contentMode = .scaleAspectFit
+        image.isHidden = true
+        image.image = UIImage(systemName: "eye.slash")
+        return image
     }()
     
     private lazy var textFieldContainer: UIView = {
@@ -92,6 +104,7 @@ public class TextFieldView: UIView {
     
     private func  addSubviews() {
         textFieldHolder.addSubview(textField)
+        textFieldHolder.addSubview(passcodeEye)
         textFieldContainer.addSubview(textFieldHolder)
         labelsContainer.addSubview(trailingLabel)
         labelsContainer.addSubview(leadingLabel)
@@ -109,7 +122,10 @@ public class TextFieldView: UIView {
         textField.top(toView: textFieldHolder, constant: .S)
         textField.bottom(toView: textFieldHolder, constant: .S)
         textField.left(toView: textFieldHolder, constant: .S)
-        textField.right(toView: textFieldHolder, constant: .S)
+        textField.right(toView: passcodeEye, constant: .XL3)
+        
+        passcodeEye.right(toView: textFieldHolder, constant: .S)
+        passcodeEye.centerVertically(to: textFieldHolder)
         
         textFieldHolder.top(toView: textFieldContainer, constant: 1)
         textFieldHolder.bottom(toView: textFieldContainer, constant: 1)
@@ -148,21 +164,23 @@ extension TextFieldView {
 extension TextFieldView {
     
     public func bind(model: TextFieldViewModel) {
+        reset()
         onEditingDidEnd = model.onEditingDidEnd
         textField.delegate = self
         configureTextField(with: model)
     }
     
-    func configureTextField(with model: TextFieldViewModel) {
+    private func reset() {
+        passcodeEye.isHidden = true
+    }
+    
+    private func configureTextField(with model: TextFieldViewModel) {
         if let placeholder = model.placeholder {
             textField.attributedPlaceholder = NSAttributedString(string: placeholder,
                                                                  attributes: [NSAttributedString.Key.foregroundColor: textFieldState.inactive.placeholderColor])
         }
         
-        if model.isSecureEntry {
-            textField.isSecureTextEntry = true
-            textField.textContentType = .password
-        }
+        handleSecureEntry(isSecure: model.isSecureEntry)
         
         if let leadingTextModel = model.leadingLabelModel {
             leadingLabel.bind(with: leadingTextModel)
@@ -198,5 +216,27 @@ extension TextFieldView: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    private func handleSecureEntry(isSecure: Bool) {
+        if isSecure {
+            isSecureInput = true
+            textField.isSecureTextEntry = true
+            passcodeEye.isHidden = false
+            addTapActionToImage()
+        } else {
+            isSecureInput = false
+        }
+    }
+    
+    private func addTapActionToImage() {
+        passcodeEye.isUserInteractionEnabled = true
+        passcodeEye.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
+    }
+    
+    @objc private func didTap() {
+        isSecureInput.toggle()
+        passcodeEye.image = isSecureInput ? UIImage(systemName: "eye.slash") : UIImage(systemName: "eye")
+        textField.isSecureTextEntry = isSecureInput
     }
 }
