@@ -7,11 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2444BBB52A409B60000E5721 /* SSOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444BBB42A409B60000E5721 /* SSOManager.swift */; };
+		2444BBB72A40A658000E5721 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444BBB62A40A658000E5721 /* User.swift */; };
+		2444BBBC2A41873F000E5721 /* TemporaryMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444BBBB2A41873F000E5721 /* TemporaryMockData.swift */; };
+		2444BBC62A418CED000E5721 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2444BBC52A418CED000E5721 /* Core.framework */; };
+		2444BBC72A418CED000E5721 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2444BBC52A418CED000E5721 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24C7124C29E5B1AE00E5DE0B /* SSO.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7124B29E5B1AE00E5DE0B /* SSO.docc */; };
 		24C7124D29E5B1AE00E5DE0B /* SSO.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7124A29E5B1AE00E5DE0B /* SSO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2444BBC82A418CED000E5721 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2444BBC72A418CED000E5721 /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2444BBB42A409B60000E5721 /* SSOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSOManager.swift; sourceTree = "<group>"; };
+		2444BBB62A40A658000E5721 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2444BBBB2A41873F000E5721 /* TemporaryMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryMockData.swift; sourceTree = "<group>"; };
+		2444BBC52A418CED000E5721 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7124729E5B1AE00E5DE0B /* SSO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7124A29E5B1AE00E5DE0B /* SSO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSO.h; sourceTree = "<group>"; };
 		24C7124B29E5B1AE00E5DE0B /* SSO.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SSO.docc; sourceTree = "<group>"; };
@@ -22,17 +45,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2444BBC62A418CED000E5721 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2444BBB32A409B47000E5721 /* Governance */ = {
+			isa = PBXGroup;
+			children = (
+				2444BBB42A409B60000E5721 /* SSOManager.swift */,
+				2444BBB62A40A658000E5721 /* User.swift */,
+			);
+			path = Governance;
+			sourceTree = "<group>";
+		};
+		2444BBC42A418CED000E5721 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2444BBC52A418CED000E5721 /* Core.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		24C7123D29E5B1AE00E5DE0B = {
 			isa = PBXGroup;
 			children = (
 				24C7124929E5B1AE00E5DE0B /* SSO */,
 				24C7124829E5B1AE00E5DE0B /* Products */,
+				2444BBC42A418CED000E5721 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +89,8 @@
 		24C7124929E5B1AE00E5DE0B /* SSO */ = {
 			isa = PBXGroup;
 			children = (
+				2444BBBB2A41873F000E5721 /* TemporaryMockData.swift */,
+				2444BBB32A409B47000E5721 /* Governance */,
 				24C7124A29E5B1AE00E5DE0B /* SSO.h */,
 				24C7124B29E5B1AE00E5DE0B /* SSO.docc */,
 			);
@@ -75,6 +119,7 @@
 				24C7124329E5B1AE00E5DE0B /* Sources */,
 				24C7124429E5B1AE00E5DE0B /* Frameworks */,
 				24C7124529E5B1AE00E5DE0B /* Resources */,
+				2444BBC82A418CED000E5721 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +178,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C7124C29E5B1AE00E5DE0B /* SSO.docc in Sources */,
+				2444BBB52A409B60000E5721 /* SSOManager.swift in Sources */,
+				2444BBB72A40A658000E5721 /* User.swift in Sources */,
+				2444BBBC2A41873F000E5721 /* TemporaryMockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

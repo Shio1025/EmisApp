@@ -20,6 +20,7 @@ public class LocalLabel: UIView {
         label.text = ""
         label.lineBreakMode = .byWordWrapping
         label.isUserInteractionEnabled = false
+        label.sizeToFit()
         return label
     }()
     

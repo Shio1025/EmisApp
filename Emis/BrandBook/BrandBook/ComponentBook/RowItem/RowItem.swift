@@ -57,9 +57,15 @@ public class RowItem: UIView {
         let label = LocalLabel()
         label.backgroundColor = .clear
         label.isHidden = true
-        label.width(equalTo: .XL3)
-        label.setAlignment(with: .center)
+        label.setAlignment(with: .right)
         return label
+    }()
+    
+    private lazy var labelContainer: UIStackView = {
+        let stackView = UIStackView.init(arrangedSubviews: [rightLabel])
+        stackView.axis = .horizontal
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
     private lazy var smallButton: SmallButton = {
@@ -71,7 +77,7 @@ public class RowItem: UIView {
     }()
     
     private lazy var rightContainer: UIStackView = {
-        let stackView = UIStackView.init(arrangedSubviews: [rightLabel,
+        let stackView = UIStackView.init(arrangedSubviews: [labelContainer,
                                                             smallButton])
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false

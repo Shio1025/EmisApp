@@ -1,8 +1,8 @@
 //
-//  ProfilePageController.swift
+//  PasswordResetController.swift
 //  Emis
 //
-//  Created by Shio Birbichadze on 17.06.23.
+//  Created by Shio Birbichadze on 21.06.23.
 //
 
 import UIKit
@@ -10,10 +10,10 @@ import BrandBook
 import Combine
 import Resolver
 
-class ProfilePageController: UIViewController {
+class PasswordResetController: UIViewController {
     
-    private var viewModel: ProfilePageViewModel
-    @Injected private var router: ProfilePageRouter
+    private var viewModel: PasswordResetViewModel = PasswordResetViewModel()
+    @Injected private var router: PasswordResetRouter
     
     private var subscriptions = Set<AnyCancellable>()
     
@@ -24,8 +24,13 @@ class ProfilePageController: UIViewController {
         return table
     }()
     
-    init(viewModel: ProfilePageViewModel) {
-        self.viewModel = viewModel
+    private lazy var button: PrimaryButton = {
+        let button = PrimaryButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -40,9 +45,19 @@ class ProfilePageController: UIViewController {
         setUp()
         bindRouter()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
 }
 
-extension ProfilePageController {
+extension PasswordResetController {
     private func setUp() {
         setUpUI()
         addSubviews()
@@ -57,26 +72,28 @@ extension ProfilePageController {
     
     private func addSubviews() {
         view.addSubview(tableView)
+        view.addSubview(button)
     }
     
     private func addConstraints() {
         tableView.top(toView: view, constant: .M)
         tableView.left(toView: view)
         tableView.right(toView: view)
-        tableView.bottom(toView: view)
+        tableView.relativeBottom(toView: button)
+        
+        button.left(toView: view)
+        button.right(toView: view)
+        button.bottom(toView: view)
     }
     
     private func registerTableCells() {
-        tableView.register(PageDescriptionCell.self)
         tableView.register(RoundedFooter.self)
         tableView.register(RoundedHeader.self)
-        tableView.register(RoundedHeaderWithTitle.self)
-        tableView.register(SpacerCell.self)
-        tableView.register(RowItemCell.self)
+        tableView.register(TextFieldCell.self)
     }
 }
 
-extension ProfilePageController {
+extension PasswordResetController {
     
     private func bindRouter() {
         viewModel.getRouter()
@@ -89,17 +106,18 @@ extension ProfilePageController {
 }
 
 
-extension ProfilePageController {
+extension PasswordResetController {
     
     private func bindUI() {
         tableView.bind(with: viewModel.listCellModels)
+        button.bind(with: viewModel.continueButtonModel)
     }
 }
 
 
-extension ProfilePageController: CustomNavigatable {
+extension PasswordResetController: CustomNavigatable {
     var navTitle: NavigationTitle {
-        .init(text: "პირადი მონაცემები")
+        .init(text: "პაროლის განახლება")
     }
     
     var leftBarItems: [UIBarButtonItem]? { nil }

@@ -32,7 +32,7 @@ public class GenericTableView: UITableView, UITableViewDataSource {
     private var subscriptions = Set<AnyCancellable>()
     
     public init() {
-        super.init(frame: .zero, style: .plain)
+        super.init(frame: .zero, style: .grouped)
         dataSource = self
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false

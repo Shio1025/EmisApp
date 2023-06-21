@@ -1,8 +1,8 @@
 //
-//  ProfilePageController.swift
+//  MoreMenuController.swift
 //  Emis
 //
-//  Created by Shio Birbichadze on 17.06.23.
+//  Created by Shio Birbichadze on 03.05.23.
 //
 
 import UIKit
@@ -10,10 +10,10 @@ import BrandBook
 import Combine
 import Resolver
 
-class ProfilePageController: UIViewController {
+class MoreMenuController: UIViewController {
     
-    private var viewModel: ProfilePageViewModel
-    @Injected private var router: ProfilePageRouter
+    private var viewModel: MoreMenuViewModel
+    @Injected private var router: MoreMenuRouter
     
     private var subscriptions = Set<AnyCancellable>()
     
@@ -24,7 +24,7 @@ class ProfilePageController: UIViewController {
         return table
     }()
     
-    init(viewModel: ProfilePageViewModel) {
+    init(viewModel: MoreMenuViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -42,7 +42,7 @@ class ProfilePageController: UIViewController {
     }
 }
 
-extension ProfilePageController {
+extension MoreMenuController {
     private func setUp() {
         setUpUI()
         addSubviews()
@@ -60,14 +60,13 @@ extension ProfilePageController {
     }
     
     private func addConstraints() {
-        tableView.top(toView: view, constant: .M)
+        tableView.top(toView: view)
         tableView.left(toView: view)
         tableView.right(toView: view)
         tableView.bottom(toView: view)
     }
     
     private func registerTableCells() {
-        tableView.register(PageDescriptionCell.self)
         tableView.register(RoundedFooter.self)
         tableView.register(RoundedHeader.self)
         tableView.register(RoundedHeaderWithTitle.self)
@@ -76,7 +75,7 @@ extension ProfilePageController {
     }
 }
 
-extension ProfilePageController {
+extension MoreMenuController {
     
     private func bindRouter() {
         viewModel.getRouter()
@@ -89,7 +88,7 @@ extension ProfilePageController {
 }
 
 
-extension ProfilePageController {
+extension MoreMenuController {
     
     private func bindUI() {
         tableView.bind(with: viewModel.listCellModels)
@@ -97,7 +96,7 @@ extension ProfilePageController {
 }
 
 
-extension ProfilePageController: CustomNavigatable {
+extension MoreMenuController: CustomNavigatable {
     var navTitle: NavigationTitle {
         .init(text: "პირადი მონაცემები")
     }

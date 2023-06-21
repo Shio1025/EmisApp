@@ -26,6 +26,7 @@ extension BrandBookManager {
                 public static let tr200 = ColorWrapper(name: "\(currentTheme)-color-invert-200")
                 public static let tr300 = ColorWrapper(name: "\(currentTheme)-color-invert-300")
                 public static let tr400 = ColorWrapper(name: "\(currentTheme)-color-invert-400")
+                public static let tr500 = ColorWrapper(name: "\(currentTheme)-color-invert-500")
             }
         }
         

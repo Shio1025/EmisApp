@@ -13,6 +13,7 @@ public enum ResourceType {
     case url(imageURL: URL?)
     case animation(model: LottieModel)
     case ovalIcon(ovalIconModel: OvalIconModel)
+    case icon(icon: UIImage, tintColor: UIColor)
 }
 
 public struct LottieModel {

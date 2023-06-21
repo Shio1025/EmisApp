@@ -12,7 +12,9 @@ final class LoginPageRouter {
                from view: LoginPageController) {
         switch route {
         case .login:
-            view.navigationController?.pushViewController(ProfilePageController(viewModel: ProfilePageViewModel()), animated: true)
+            view.navigationController?.viewControllers = [ProfilePageController(viewModel: ProfilePageViewModel())]
+        case .resetPassword:
+            view.navigationController?.viewControllers = [PasswordResetController()]
         }
     }
 }

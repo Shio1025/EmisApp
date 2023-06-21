@@ -8,9 +8,11 @@
 import BrandBook
 import Combine
 import Resolver
+import SSO
 
 enum LoginPageRoute {
     case login
+    case resetPassword
 }
 
 final class LoginPageViewModel {
@@ -18,6 +20,7 @@ final class LoginPageViewModel {
     @Published private var router: LoginPageRoute?
     @Published private var login: String = ""
     @Published private var password: String = ""
+    @Injected private var SSO: SSOManager
     private var validToContinue: AnyPublisher<ButtonState, Never> {
         return Publishers.CombineLatest($login, $password)
             .map { login, password in
@@ -69,7 +72,10 @@ extension LoginPageViewModel {
                                         leadingLabelModel: .init(text: "დაგავიწყდა მონაცემები?",
                                                                  color: BrandBookManager.Color.Theme.Component.solid500.uiColor,
                                                                  font: .systemFont(ofSize: .M,
-                                                                                   weight: .bold)),
+                                                                                   weight: .bold),
+                                                                 action: {
+                                   self.router = .resetPassword
+                               }),
                                         isSecureEntry: true,
                                         onEditingDidEnd: { [weak self] text in
             self?.password = text
@@ -83,8 +89,23 @@ extension LoginPageViewModel {
                                                                            weight: .semibold)),
                                        state: validToContinue,
                                        action: { [weak self] in
-            self?.router = .login
+            self?.handleLogin()
         })).eraseToAnyPublisher()
+    }
+    
+    private func handleLogin() {
+        SSO.logInUser(email: login, password: password)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    print("User ---- \(self?.login ?? "") -- logged in Successfuly")
+                case .failure(_):
+                    print("Something went wrong")
+                }
+            } receiveValue: { [weak self] loginSuccessfuly in
+                self?.router = .resetPassword
+            }.store(in: &subscriptions)
     }
 }
 

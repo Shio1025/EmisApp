@@ -52,7 +52,7 @@ enum TabBarItem {
         case .timetable:
             return TimeTablePage()
         case .more:
-            return MoreMenu()
+            return MoreMenuController(viewModel: MoreMenuViewModel())
         }
     }
 }

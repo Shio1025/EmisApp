@@ -90,6 +90,8 @@ public class ResourceView: UIView {
             configureAnimation(withAnimationModel: model)
         case .ovalIcon(let iconModel):
             configureOvalIcon(with: iconModel)
+        case .icon(let icon, let tintColor):
+            configureIcon(withIcon: icon, tintColor: tintColor)
         }
     }
     
@@ -113,6 +115,12 @@ extension ResourceView {
     private func configureImage(withImage image: UIImage) {
         imageView.isHidden = false
         imageView.image = image
+    }
+    
+    private func configureIcon(withIcon icon: UIImage, tintColor: UIColor) {
+        imageView.isHidden = false
+        imageView.image = icon
+        imageView.tintColor = tintColor
     }
     
     private func configureImage(withUrl url: URL?) {

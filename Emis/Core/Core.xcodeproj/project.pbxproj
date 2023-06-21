@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24C7126829E5B1CC00E5DE0B /* Core.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7126729E5B1CC00E5DE0B /* Core.docc */; };
 		24C7126929E5B1CC00E5DE0B /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7126629E5B1CC00E5DE0B /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C93E692A419F700008AD90 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C93E682A419F700008AD90 /* Formatter.swift */; };
 		24E764532A0CBDBE00E4FA74 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 24E764522A0CBDBE00E4FA74 /* SwifterSwift */; };
 /* End PBXBuildFile section */
 
@@ -16,6 +17,7 @@
 		24C7126329E5B1CC00E5DE0B /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7126629E5B1CC00E5DE0B /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		24C7126729E5B1CC00E5DE0B /* Core.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Core.docc; sourceTree = "<group>"; };
+		24C93E682A419F700008AD90 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,10 +51,19 @@
 		24C7126529E5B1CC00E5DE0B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				24C93E672A419F510008AD90 /* Helper Functions */,
 				24C7126629E5B1CC00E5DE0B /* Core.h */,
 				24C7126729E5B1CC00E5DE0B /* Core.docc */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		24C93E672A419F510008AD90 /* Helper Functions */ = {
+			isa = PBXGroup;
+			children = (
+				24C93E682A419F700008AD90 /* Formatter.swift */,
+			);
+			path = "Helper Functions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C93E692A419F700008AD90 /* Formatter.swift in Sources */,
 				24C7126829E5B1CC00E5DE0B /* Core.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -65,8 +65,8 @@ class TabBarController: UITabBarController {
         
         
         firstTab.tabBarItem = UITabBarItem(title: login.text, image: login.icon.resizeImage(targetSize: .init(width: 24, height: 24)), tag: 0)
-        secondTab.tabBarItem = UITabBarItem(title: main.text, image: main.icon.resizeImage(targetSize: .init(width: 24, height: 24)), tag: 0)
-        thirdTab.tabBarItem = UITabBarItem(title: timetable.text, image: timetable.icon.resizeImage(targetSize: .init(width: 24, height: 24)), tag: 0)
-        fourthTab.tabBarItem = UITabBarItem(title: more.text, image: more.icon.resizeImage(targetSize: .init(width: 24, height: 24)), tag: 0)
+        secondTab.tabBarItem = UITabBarItem(title: main.text, image: main.icon.resizeImage(targetSize: .init(width: 24, height: 24)), tag: 1)
+        thirdTab.tabBarItem = UITabBarItem(title: timetable.text, image: timetable.icon.resizeImage(targetSize: .init(width: 24, height: 24)), tag: 2)
+        fourthTab.tabBarItem = UITabBarItem(title: more.text, image: more.icon.resizeImage(targetSize: .init(width: 24, height: 24)), tag: 3)
     }
 }

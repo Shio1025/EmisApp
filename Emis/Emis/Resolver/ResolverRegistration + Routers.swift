@@ -15,5 +15,11 @@ extension Resolver {
         register {
             ProfilePageRouter()
         }
+        register {
+            MoreMenuRouter()
+        }
+        register {
+            PasswordResetRouter()
+        }
     }
 }
