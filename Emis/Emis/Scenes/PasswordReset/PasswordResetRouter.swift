@@ -9,6 +9,9 @@ final class PasswordResetRouter {
     
     func route(to route: PasswordResetRoute,
                from view: PasswordResetController) {
-        
+        switch route {
+        case .successPage:
+            view.navigationController?.popToRootViewController(animated: true)
+        }
     }
 }

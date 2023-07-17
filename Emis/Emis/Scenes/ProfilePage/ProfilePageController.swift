@@ -12,7 +12,7 @@ import Resolver
 
 class ProfilePageController: UIViewController {
     
-    private var viewModel: ProfilePageViewModel
+    private var viewModel: ProfilePageViewModel = ProfilePageViewModel()
     @Injected private var router: ProfilePageRouter
     
     private var subscriptions = Set<AnyCancellable>()
@@ -24,8 +24,7 @@ class ProfilePageController: UIViewController {
         return table
     }()
     
-    init(viewModel: ProfilePageViewModel) {
-        self.viewModel = viewModel
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     

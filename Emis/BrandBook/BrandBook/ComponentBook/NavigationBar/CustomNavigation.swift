@@ -30,7 +30,7 @@ public extension CustomNavigatable where Self: UIViewController {
     
     var leftBarItems: [UIBarButtonItem]? {
         let button = BackBarButtonItem()
-        button.backButtonTappedAction = {[ weak self] in
+        button.backButtonTappedAction = { [weak self] in
             self?.navigationController?.popViewController(animated: true)
         }
         return [button]

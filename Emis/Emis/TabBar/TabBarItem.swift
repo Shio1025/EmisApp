@@ -44,9 +44,9 @@ enum TabBarItem {
     var controller: UIViewController {
         switch self {
         case .login:
-            return LoginPageController(viewModel: LoginPageViewModel())
+            return LoginPageController()
         case .profile:
-            return LoginPageController(viewModel: LoginPageViewModel())
+            return LoginPageController()
         case .main:
             return MainPage()
         case .timetable:

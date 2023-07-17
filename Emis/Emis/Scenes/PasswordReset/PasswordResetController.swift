@@ -76,7 +76,7 @@ extension PasswordResetController {
     }
     
     private func addConstraints() {
-        tableView.top(toView: view, constant: .M)
+        tableView.top(toView: view)
         tableView.left(toView: view)
         tableView.right(toView: view)
         tableView.relativeBottom(toView: button)
@@ -119,6 +119,4 @@ extension PasswordResetController: CustomNavigatable {
     var navTitle: NavigationTitle {
         .init(text: "პაროლის განახლება")
     }
-    
-    var leftBarItems: [UIBarButtonItem]? { nil }
 }

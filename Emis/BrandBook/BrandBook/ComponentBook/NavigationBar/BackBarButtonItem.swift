@@ -12,7 +12,7 @@ public class BackBarButtonItem: UIBarButtonItem {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
         button.tintColor = BrandBookManager.Color.General.black.uiColor
-        button.addTarget(BackBarButtonItem.self, action: #selector(backButtonTapped), for: .touchUpInside)
+        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonTapped)))
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -21,8 +21,8 @@ public class BackBarButtonItem: UIBarButtonItem {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = BrandBookManager.Color.Theme.Background.layer.uiColor
-        view.layer.borderWidth = 1
-        view.layer.borderColor = BrandBookManager.Color.Theme.Background.popup.cgColor
+//        view.layer.borderWidth = 1
+//        view.layer.borderColor = BrandBookManager.Color.Theme.Background.popup.cgColor
         return view
     }()
     
@@ -48,9 +48,9 @@ public class BackBarButtonItem: UIBarButtonItem {
         button.left(toView: containerView)
         button.right(toView: containerView)
        
-        containerView.width(equalTo: .XL3)
-        containerView.height(equalTo: .XL3)
-        containerView.layer.cornerRadius = .XL3 / 2
+        containerView.width(equalTo: .XL4)
+        containerView.height(equalTo: .XL4)
+        containerView.layer.cornerRadius = .XL4 / 2
     }
     
     private func addSubviews() {

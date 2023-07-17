@@ -20,7 +20,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F21DB97D-D352-4FE6-B281-6473F30A400D - a158108f3b0c566c"
+                  uuid = "F21DB97D-D352-4FE6-B281-6473F30A400D - a158108f3b0c57a2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -30,12 +30,12 @@
                   urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/Emis/Scenes/MoreMenu/MoreMenuRouter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
                   offsetFromSymbolStart = "152">
                </Location>
                <Location
-                  uuid = "F21DB97D-D352-4FE6-B281-6473F30A400D - a158108f3b0c566c"
+                  uuid = "F21DB97D-D352-4FE6-B281-6473F30A400D - a158108f3b0c57a2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -45,8 +45,8 @@
                   urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/Emis/Scenes/MoreMenu/MoreMenuRouter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
                   offsetFromSymbolStart = "192">
                </Location>
             </Locations>
@@ -98,6 +98,117 @@
             endingLineNumber = "88"
             landmarkName = "didTap()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2AD37329-A687-4DA5-A491-A0F8BEF5B1CE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrandBook/BrandBook/ComponentBook/NavigationBar/BackBarButtonItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2AD37329-A687-4DA5-A491-A0F8BEF5B1CE - 653bd80b0628868e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BrandBook.BackBarButtonItem.__allocating_init() -&gt; BrandBook.BackBarButtonItem"
+                  moduleName = "BrandBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/NavigationBar/BackBarButtonItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "2AD37329-A687-4DA5-A491-A0F8BEF5B1CE - 89f1b283166bd15f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BrandBook.BackBarButtonItem.init() -&gt; BrandBook.BackBarButtonItem"
+                  moduleName = "BrandBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/NavigationBar/BackBarButtonItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "2AD37329-A687-4DA5-A491-A0F8BEF5B1CE - 89f1b283166bcca4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BrandBook.BackBarButtonItem.init() -&gt; BrandBook.BackBarButtonItem"
+                  moduleName = "BrandBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/NavigationBar/BackBarButtonItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "144">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90E051DB-4FC8-49D4-A9CD-F9D0D4BACB69"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrandBook/BrandBook/ComponentBook/NavigationBar/BackBarButtonItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "backButtonTapped()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "90E051DB-4FC8-49D4-A9CD-F9D0D4BACB69 - 3144f2800568686b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BrandBook.BackBarButtonItem.backButtonTapped() -&gt; ()"
+                  moduleName = "BrandBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/NavigationBar/BackBarButtonItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "90E051DB-4FC8-49D4-A9CD-F9D0D4BACB69 - 3144f2800568680a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BrandBook.BackBarButtonItem.backButtonTapped() -&gt; ()"
+                  moduleName = "BrandBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/NavigationBar/BackBarButtonItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

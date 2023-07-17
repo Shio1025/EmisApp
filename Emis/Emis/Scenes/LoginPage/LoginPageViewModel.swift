@@ -105,7 +105,7 @@ extension LoginPageViewModel {
                     print("Something went wrong")
                 }
             } receiveValue: { [weak self] loginSuccessfuly in
-                self?.router = .login
+                self?.router = .resetPassword
             }.store(in: &subscriptions)
     }
 }

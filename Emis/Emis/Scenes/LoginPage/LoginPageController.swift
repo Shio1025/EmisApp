@@ -12,7 +12,7 @@ import Resolver
 
 class LoginPageController: UIViewController {
     
-    private var viewModel: LoginPageViewModel
+    private var viewModel: LoginPageViewModel = LoginPageViewModel()
     @Injected private var router: LoginPageRouter
     
     private var subscriptions = Set<AnyCancellable>()
@@ -68,8 +68,7 @@ class LoginPageController: UIViewController {
         return button
     }()
     
-    init(viewModel: LoginPageViewModel) {
-        self.viewModel = viewModel
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
