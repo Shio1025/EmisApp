@@ -12,6 +12,7 @@
 		2444BBBC2A41873F000E5721 /* TemporaryMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444BBBB2A41873F000E5721 /* TemporaryMockData.swift */; };
 		2444BBC62A418CED000E5721 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2444BBC52A418CED000E5721 /* Core.framework */; };
 		2444BBC72A418CED000E5721 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2444BBC52A418CED000E5721 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		245B98C22A6548F200682D19 /* SSO + Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B98C12A6548F200682D19 /* SSO + Injection.swift */; };
 		24C7124C29E5B1AE00E5DE0B /* SSO.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7124B29E5B1AE00E5DE0B /* SSO.docc */; };
 		24C7124D29E5B1AE00E5DE0B /* SSO.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7124A29E5B1AE00E5DE0B /* SSO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		2444BBB62A40A658000E5721 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2444BBBB2A41873F000E5721 /* TemporaryMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryMockData.swift; sourceTree = "<group>"; };
 		2444BBC52A418CED000E5721 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		245B98C12A6548F200682D19 /* SSO + Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSO + Injection.swift"; sourceTree = "<group>"; };
 		24C7124729E5B1AE00E5DE0B /* SSO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7124A29E5B1AE00E5DE0B /* SSO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSO.h; sourceTree = "<group>"; };
 		24C7124B29E5B1AE00E5DE0B /* SSO.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SSO.docc; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		245B98C02A6548C000682D19 /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				245B98C12A6548F200682D19 /* SSO + Injection.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
 		24C7123D29E5B1AE00E5DE0B = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 			children = (
 				2444BBBB2A41873F000E5721 /* TemporaryMockData.swift */,
 				2444BBB32A409B47000E5721 /* Governance */,
+				245B98C02A6548C000682D19 /* Injection */,
 				24C7124A29E5B1AE00E5DE0B /* SSO.h */,
 				24C7124B29E5B1AE00E5DE0B /* SSO.docc */,
 			);
@@ -178,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C7124C29E5B1AE00E5DE0B /* SSO.docc in Sources */,
+				245B98C22A6548F200682D19 /* SSO + Injection.swift in Sources */,
 				2444BBB52A409B60000E5721 /* SSOManager.swift in Sources */,
 				2444BBB72A40A658000E5721 /* User.swift in Sources */,
 				2444BBBC2A41873F000E5721 /* TemporaryMockData.swift in Sources */,

@@ -14,8 +14,4 @@ extension Resolver: ResolverRegistering {
         registerRouters()
         registerSSOInterfaces()
     }
-    
-    private static func registerSSOInterfaces() {
-        register(SSOManager.self) { SSOManagerImpl() }.scope(.application)
-    }
 }

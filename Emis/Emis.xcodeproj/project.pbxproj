@@ -25,7 +25,6 @@
 		24A925052A42FBAB00FEF291 /* PasswordResetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A925042A42FBAB00FEF291 /* PasswordResetController.swift */; };
 		24A925072A42FC0700FEF291 /* PasswordResetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A925062A42FC0700FEF291 /* PasswordResetViewModel.swift */; };
 		24A925092A42FC7B00FEF291 /* PasswordResetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A925082A42FC7B00FEF291 /* PasswordResetRouter.swift */; };
-		24B684BD29E7257D005BDDBA /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 24B684BC29E7257D005BDDBA /* Resolver */; };
 		24C7117029E5ADC200E5DE0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7116F29E5ADC200E5DE0B /* AppDelegate.swift */; };
 		24C7117229E5ADC200E5DE0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7117129E5ADC200E5DE0B /* SceneDelegate.swift */; };
 		24C7117429E5ADC200E5DE0B /* EntryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7117329E5ADC200E5DE0B /* EntryPage.swift */; };
@@ -129,7 +128,6 @@
 				24C7128129E5B1F700E5DE0B /* NetworkLayer.framework in Frameworks */,
 				24C7127A29E5B1F000E5DE0B /* BrandBook.framework in Frameworks */,
 				24C7128329E5B1FA00E5DE0B /* SSO.framework in Frameworks */,
-				24B684BD29E7257D005BDDBA /* Resolver in Frameworks */,
 				24C7127F29E5B1F300E5DE0B /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,7 +340,6 @@
 			);
 			name = Emis;
 			packageProductDependencies = (
-				24B684BC29E7257D005BDDBA /* Resolver */,
 			);
 			productName = Emis;
 			productReference = 24C7116C29E5ADC200E5DE0B /* Emis.app */;
@@ -373,7 +370,6 @@
 			);
 			mainGroup = 24C7116329E5ADC200E5DE0B;
 			packageReferences = (
-				24B684BB29E7257D005BDDBA /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = 24C7116D29E5ADC200E5DE0B /* Products */;
 			projectDirPath = "";
@@ -673,25 +669,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		24B684BB29E7257D005BDDBA /* XCRemoteSwiftPackageReference "Resolver" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hmlongco/Resolver";
-			requirement = {
-				kind = exactVersion;
-				version = 1.5.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		24B684BC29E7257D005BDDBA /* Resolver */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 24B684BB29E7257D005BDDBA /* XCRemoteSwiftPackageReference "Resolver" */;
-			productName = Resolver;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 24C7116429E5ADC200E5DE0B /* Project object */;
 }

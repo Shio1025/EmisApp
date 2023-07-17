@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		245B98BF2A65485C00682D19 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 245B98BE2A65485C00682D19 /* Resolver */; };
 		24C7126829E5B1CC00E5DE0B /* Core.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7126729E5B1CC00E5DE0B /* Core.docc */; };
 		24C7126929E5B1CC00E5DE0B /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7126629E5B1CC00E5DE0B /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C93E692A419F700008AD90 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C93E682A419F700008AD90 /* Formatter.swift */; };
@@ -25,6 +26,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				245B98BF2A65485C00682D19 /* Resolver in Frameworks */,
 				24E764532A0CBDBE00E4FA74 /* SwifterSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +98,7 @@
 			name = Core;
 			packageProductDependencies = (
 				24E764522A0CBDBE00E4FA74 /* SwifterSwift */,
+				245B98BE2A65485C00682D19 /* Resolver */,
 			);
 			productName = Core;
 			productReference = 24C7126329E5B1CC00E5DE0B /* Core.framework */;
@@ -126,6 +129,7 @@
 			mainGroup = 24C7125929E5B1CC00E5DE0B;
 			packageReferences = (
 				24E764512A0CBDBE00E4FA74 /* XCRemoteSwiftPackageReference "SwifterSwift" */,
+				245B98BD2A65485C00682D19 /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = 24C7126429E5B1CC00E5DE0B /* Products */;
 			projectDirPath = "";
@@ -361,6 +365,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		245B98BD2A65485C00682D19 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver";
+			requirement = {
+				kind = exactVersion;
+				version = 1.5.0;
+			};
+		};
 		24E764512A0CBDBE00E4FA74 /* XCRemoteSwiftPackageReference "SwifterSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwifterSwift/SwifterSwift";
@@ -372,6 +384,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		245B98BE2A65485C00682D19 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 245B98BD2A65485C00682D19 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
 		24E764522A0CBDBE00E4FA74 /* SwifterSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 24E764512A0CBDBE00E4FA74 /* XCRemoteSwiftPackageReference "SwifterSwift" */;
