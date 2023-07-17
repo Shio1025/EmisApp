@@ -47,7 +47,7 @@ public class RowItem: UIView {
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = .XS
-        stackView.layoutMargins = UIEdgeInsets(top: 0, left: .M, bottom: 0, right: 0)
+        stackView.layoutMargins = UIEdgeInsets(top: 0, left: .XL, bottom: 0, right: 0)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.setContentHuggingPriority(.defaultLow, for: .horizontal)
         return stackView

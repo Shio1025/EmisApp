@@ -35,7 +35,6 @@ public class SSOManagerImpl: SSOManager {
             self.user = user1
             self.userType = user1.userType
             promise(.success(true))
-            //promise(.failure(CustomError.loginFailed))
         }.eraseToAnyPublisher()
     }
     

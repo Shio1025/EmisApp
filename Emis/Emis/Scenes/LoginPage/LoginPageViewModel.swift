@@ -13,6 +13,7 @@ import SSO
 enum LoginPageRoute {
     case login
     case resetPassword
+    case register
 }
 
 final class LoginPageViewModel {
@@ -104,7 +105,7 @@ extension LoginPageViewModel {
                     print("Something went wrong")
                 }
             } receiveValue: { [weak self] loginSuccessfuly in
-                self?.router = .resetPassword
+                self?.router = .login
             }.store(in: &subscriptions)
     }
 }

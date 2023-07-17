@@ -52,7 +52,6 @@ class TabBarController: UITabBarController {
         appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: BrandBookManager.Color.Theme.Component.solid500.uiColor] // selected text color
         
         self.tabBar.standardAppearance = appearance
-    
     }
     
     private func createViewControllers() {

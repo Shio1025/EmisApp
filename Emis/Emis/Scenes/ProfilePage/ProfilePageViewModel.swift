@@ -69,14 +69,13 @@ extension ProfilePageViewModel {
     var headerSection: [any CellModel]? {
         guard let userInfo = SSO.user else { return nil }
         let header = PageDescriptionCellModel(model: .init(resourceType: .image(image: BrandBookManager.Icon.mortarboard.image),
-                                                           description: .init(text: "\(userInfo.name) \(userInfo.surname)")))
+                                                           description: .init(text: "\(userInfo.name) \(userInfo.surname)",
+                                                                              font: .boldSystemFont(ofSize: .L))))
         return [getRoundedHeaderModel(), header, getRoundedFooterModel(), getSpacerCell()]
     }
     
     var personalInfoSection: [any CellModel]? {
         guard let userInfo = SSO.user else { return nil }
-        _ = RowItemCellModel(model: .init(labels: .one(model: .init(text: "დაბადების თარიღი")),
-                                                      rightItem: .label(model: .init(text: userInfo.birthDate))))
         let phoneNumber = RowItemCellModel(model: .init(labels: .one(model: .init(text: "ტელეფონის ნომერი")),
                                                         rightItem: .label(model: .init(text: userInfo.phoneNumber))))
         return [getRoundedHeaderWithTitle(title: "პერსონალური მონაცემები"),
@@ -87,7 +86,7 @@ extension ProfilePageViewModel {
     
     var educationalInfoSection: [any CellModel]? {
         guard let userInfo = SSO.user else { return nil }
-        let speciality = RowItemCellModel(model: .init(labels: .one(model: .init(text: "სპეციალობა")),
+        let speciality = RowItemCellModel(model: .init(labels: .one(model: .init(text: "კურსი")),
                                                        rightItem: .label(model: .init(text: userInfo.speciality))))
         let term = RowItemCellModel(model: .init(labels: .one(model: .init(text: "მიმდინარე სემესტრი")),
                                                  rightItem: .label(model: .init(text: userInfo.currentTerm.description))))

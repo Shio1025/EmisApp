@@ -45,7 +45,7 @@ public class LocalLabel: UIView {
     }
     
     private func  addSubviews() {
-        self.addSubview(label)
+        addSubview(label)
     }
     
     private func setUpUI() {
