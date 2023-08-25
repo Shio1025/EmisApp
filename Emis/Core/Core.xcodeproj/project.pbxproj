@@ -11,6 +11,10 @@
 		24C7126829E5B1CC00E5DE0B /* Core.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7126729E5B1CC00E5DE0B /* Core.docc */; };
 		24C7126929E5B1CC00E5DE0B /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7126629E5B1CC00E5DE0B /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C93E692A419F700008AD90 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C93E682A419F700008AD90 /* Formatter.swift */; };
+		24E3F1B62A98E937008A0430 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B42A98E937008A0430 /* KeyChain.swift */; };
+		24E3F1B72A98E937008A0430 /* KeychainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B52A98E937008A0430 /* KeychainKeys.swift */; };
+		24E3F1B92A98E985008A0430 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B82A98E985008A0430 /* UserDefaults.swift */; };
+		24E3F1BB2A98EA9D008A0430 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1BA2A98EA9D008A0430 /* UserDefaultKeys.swift */; };
 		24E764532A0CBDBE00E4FA74 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 24E764522A0CBDBE00E4FA74 /* SwifterSwift */; };
 /* End PBXBuildFile section */
 
@@ -19,6 +23,10 @@
 		24C7126629E5B1CC00E5DE0B /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		24C7126729E5B1CC00E5DE0B /* Core.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Core.docc; sourceTree = "<group>"; };
 		24C93E682A419F700008AD90 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		24E3F1B42A98E937008A0430 /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		24E3F1B52A98E937008A0430 /* KeychainKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
+		24E3F1B82A98E985008A0430 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		24E3F1BA2A98EA9D008A0430 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,8 @@
 		24C7126529E5B1CC00E5DE0B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				24E3F1B32A98E921008A0430 /* Keychain */,
+				24E3F1B02A98E89F008A0430 /* UserDefaults */,
 				24C93E672A419F510008AD90 /* Helper Functions */,
 				24C7126629E5B1CC00E5DE0B /* Core.h */,
 				24C7126729E5B1CC00E5DE0B /* Core.docc */,
@@ -66,6 +76,24 @@
 				24C93E682A419F700008AD90 /* Formatter.swift */,
 			);
 			path = "Helper Functions";
+			sourceTree = "<group>";
+		};
+		24E3F1B02A98E89F008A0430 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				24E3F1B82A98E985008A0430 /* UserDefaults.swift */,
+				24E3F1BA2A98EA9D008A0430 /* UserDefaultKeys.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		24E3F1B32A98E921008A0430 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				24E3F1B42A98E937008A0430 /* KeyChain.swift */,
+				24E3F1B52A98E937008A0430 /* KeychainKeys.swift */,
+			);
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +184,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C93E692A419F700008AD90 /* Formatter.swift in Sources */,
+				24E3F1B92A98E985008A0430 /* UserDefaults.swift in Sources */,
+				24E3F1BB2A98EA9D008A0430 /* UserDefaultKeys.swift in Sources */,
+				24E3F1B72A98E937008A0430 /* KeychainKeys.swift in Sources */,
+				24E3F1B62A98E937008A0430 /* KeyChain.swift in Sources */,
 				24C7126829E5B1CC00E5DE0B /* Core.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
