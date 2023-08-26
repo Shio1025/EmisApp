@@ -7,11 +7,15 @@
 
 import Resolver
 import SSO
+import Core
 
 extension Resolver: ResolverRegistering {
     
     public static func registerAllServices() {
         registerRouters()
         registerSSOInterfaces()
+        registerNetworkLayer()
+        registerGateways()
+        registerUseCases()
     }
 }

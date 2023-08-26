@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2442EB7D2A9A625D00B11CE3 /* gatewaysRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EB7C2A9A625D00B11CE3 /* gatewaysRegistration.swift */; };
+		2442EB7F2A9A628500B11CE3 /* useCasesRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EB7E2A9A628500B11CE3 /* useCasesRegistration.swift */; };
 		245B98BF2A65485C00682D19 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 245B98BE2A65485C00682D19 /* Resolver */; };
 		24C7126829E5B1CC00E5DE0B /* Core.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7126729E5B1CC00E5DE0B /* Core.docc */; };
 		24C7126929E5B1CC00E5DE0B /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7126629E5B1CC00E5DE0B /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2442EB7C2A9A625D00B11CE3 /* gatewaysRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gatewaysRegistration.swift; sourceTree = "<group>"; };
+		2442EB7E2A9A628500B11CE3 /* useCasesRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = useCasesRegistration.swift; sourceTree = "<group>"; };
 		24C7126329E5B1CC00E5DE0B /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7126629E5B1CC00E5DE0B /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		24C7126729E5B1CC00E5DE0B /* Core.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Core.docc; sourceTree = "<group>"; };
@@ -42,6 +46,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2442EB772A9A61E300B11CE3 /* Domain Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Domain Models";
+			sourceTree = "<group>";
+		};
+		2442EB782A9A61EF00B11CE3 /* Api Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Api Models";
+			sourceTree = "<group>";
+		};
+		2442EB792A9A620400B11CE3 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		2442EB7A2A9A621300B11CE3 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		2442EB7B2A9A622A00B11CE3 /* Core + Injection */ = {
+			isa = PBXGroup;
+			children = (
+				2442EB7C2A9A625D00B11CE3 /* gatewaysRegistration.swift */,
+				2442EB7E2A9A628500B11CE3 /* useCasesRegistration.swift */,
+			);
+			path = "Core + Injection";
+			sourceTree = "<group>";
+		};
 		24C7125929E5B1CC00E5DE0B = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +102,11 @@
 		24C7126529E5B1CC00E5DE0B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2442EB7B2A9A622A00B11CE3 /* Core + Injection */,
+				2442EB7A2A9A621300B11CE3 /* UseCases */,
+				2442EB792A9A620400B11CE3 /* Gateways */,
+				2442EB782A9A61EF00B11CE3 /* Api Models */,
+				2442EB772A9A61E300B11CE3 /* Domain Models */,
 				24E3F1B32A98E921008A0430 /* Keychain */,
 				24E3F1B02A98E89F008A0430 /* UserDefaults */,
 				24C93E672A419F510008AD90 /* Helper Functions */,
@@ -186,6 +232,8 @@
 				24C93E692A419F700008AD90 /* Formatter.swift in Sources */,
 				24E3F1B92A98E985008A0430 /* UserDefaults.swift in Sources */,
 				24E3F1BB2A98EA9D008A0430 /* UserDefaultKeys.swift in Sources */,
+				2442EB7D2A9A625D00B11CE3 /* gatewaysRegistration.swift in Sources */,
+				2442EB7F2A9A628500B11CE3 /* useCasesRegistration.swift in Sources */,
 				24E3F1B72A98E937008A0430 /* KeychainKeys.swift in Sources */,
 				24E3F1B62A98E937008A0430 /* KeyChain.swift in Sources */,
 				24C7126829E5B1CC00E5DE0B /* Core.docc in Sources */,

@@ -7,13 +7,15 @@
 
 import Combine
 
-protocol NetworkLayer {
+public protocol NetworkLayer {
     func makeRequest<T: Decodable, R: Endpoint>(_ endpoint: R) -> AnyPublisher<T, Error> where R.Response == T
 }
 
-class NetworkManager: NetworkLayer {
+public class NetworkManager: NetworkLayer {
     
-    func makeRequest<T: Decodable, R: Endpoint>(_ endpoint: R) -> AnyPublisher<T, Error> where R.Response == T {
+    public init() { }
+    
+    public func makeRequest<T: Decodable, R: Endpoint>(_ endpoint: R) -> AnyPublisher<T, Error> where R.Response == T {
         guard let url = endpoint.url else {
             let error = NetworkError.invalidURL
             return Fail(error: error).eraseToAnyPublisher()

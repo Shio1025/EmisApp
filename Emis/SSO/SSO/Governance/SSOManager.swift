@@ -6,6 +6,7 @@
 //
 
 import Combine
+import NetworkLayer
 
 public protocol SSOManager {
     var isUserLoggedPublisher: Published<Bool>.Publisher { get }
@@ -26,15 +27,15 @@ public class SSOManagerImpl: SSOManager {
     
     public var userType: UserType?
     
+    private var cancellables = Set<AnyCancellable>()
     
     public init() { }
     
     public func logInUser(email: String, password: String) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { promise in
-            self.isUserLogged = true
-            self.user = user1
-            self.userType = user1.userType
-            promise(.success(true))
+            
+            
+            
         }.eraseToAnyPublisher()
     }
     
