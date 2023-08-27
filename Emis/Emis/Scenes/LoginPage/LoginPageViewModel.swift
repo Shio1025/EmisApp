@@ -109,8 +109,7 @@ extension LoginPageViewModel {
             }
         } receiveValue: { [weak self] model in
             self?.SSO.userLoggedInSuccessfully(userId: model.userId, userType: model.userType)
-            
-        }
+        }.store(in: &subscriptions)
     }
 }
 

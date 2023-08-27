@@ -28,6 +28,9 @@
 		243CBC682A4058EE00EEE080 /* RowItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CBC672A4058EE00EEE080 /* RowItemCell.swift */; };
 		2442EB822A9A7E4F00B11CE3 /* StatusBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EB812A9A7E4F00B11CE3 /* StatusBanner.swift */; };
 		2442EB842A9A818A00B11CE3 /* UIViewController + Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EB832A9A818A00B11CE3 /* UIViewController + Banner.swift */; };
+		2442EB932A9B4EC000B11CE3 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EB922A9B4EC000B11CE3 /* Loader.swift */; };
+		2442EB952A9B4EE300B11CE3 /* UIViewConroller + Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EB942A9B4EE300B11CE3 /* UIViewConroller + Loader.swift */; };
+		2442EB972A9B53A200B11CE3 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 2442EB962A9B53A200B11CE3 /* loader.json */; };
 		2452F0292A2F0E1A005F4DDF /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F0282A2F0E1A005F4DDF /* CustomNavigation.swift */; };
 		2452F02B2A2F168A005F4DDF /* BackBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F02A2A2F168A005F4DDF /* BackBarButtonItem.swift */; };
 		2452F0362A2F6EB7005F4DDF /* GenericTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F0352A2F6EB7005F4DDF /* GenericTableView.swift */; };
@@ -83,6 +86,9 @@
 		243CBC672A4058EE00EEE080 /* RowItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItemCell.swift; sourceTree = "<group>"; };
 		2442EB812A9A7E4F00B11CE3 /* StatusBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBanner.swift; sourceTree = "<group>"; };
 		2442EB832A9A818A00B11CE3 /* UIViewController + Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Banner.swift"; sourceTree = "<group>"; };
+		2442EB922A9B4EC000B11CE3 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		2442EB942A9B4EE300B11CE3 /* UIViewConroller + Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewConroller + Loader.swift"; sourceTree = "<group>"; };
+		2442EB962A9B53A200B11CE3 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		2452F0282A2F0E1A005F4DDF /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		2452F02A2A2F168A005F4DDF /* BackBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackBarButtonItem.swift; sourceTree = "<group>"; };
 		2452F0352A2F6EB7005F4DDF /* GenericTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableView.swift; sourceTree = "<group>"; };
@@ -200,6 +206,15 @@
 			path = "Status Banner";
 			sourceTree = "<group>";
 		};
+		2442EB912A9B4EB100B11CE3 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				2442EB922A9B4EC000B11CE3 /* Loader.swift */,
+				2442EB942A9B4EE300B11CE3 /* UIViewConroller + Loader.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
 		2452F0272A2F0E06005F4DDF /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +272,7 @@
 		2490E3432A041A2C0073DBDE /* ComponentBook */ = {
 			isa = PBXGroup;
 			children = (
+				2442EB912A9B4EB100B11CE3 /* Loader */,
 				243CBC112A3E097E00EEE080 /* TableCells */,
 				2442EB802A9A7E2C00B11CE3 /* Status Banner */,
 				243CBC422A403E0500EEE080 /* RowItem */,
@@ -346,6 +362,7 @@
 		24C7133729E718BF00E5DE0B /* Lottie Animations */ = {
 			isa = PBXGroup;
 			children = (
+				2442EB962A9B53A200B11CE3 /* loader.json */,
 				24C7133829E718DC00E5DE0B /* student_1.json */,
 				24C7133929E718DC00E5DE0B /* student_2.json */,
 				24C7133A29E718DC00E5DE0B /* student_3.json */,
@@ -444,6 +461,7 @@
 			files = (
 				24C7129029E5B2A500E5DE0B /* Colors.xcassets in Resources */,
 				2490E2FC2A02ED4F0073DBDE /* ImageResources.xcassets in Resources */,
+				2442EB972A9B53A200B11CE3 /* loader.json in Resources */,
 				24C7133C29E718DC00E5DE0B /* student_2.json in Resources */,
 				24C7133B29E718DC00E5DE0B /* student_1.json in Resources */,
 				24C7133D29E718DC00E5DE0B /* student_3.json in Resources */,
@@ -481,12 +499,14 @@
 				2490E3002A02EDFD0073DBDE /* Images.swift in Sources */,
 				243CBC152A3F165E00EEE080 /* RoundedHeader.swift in Sources */,
 				2466C3E12A14B01300E7B400 /* PrimaryButtonModel.swift in Sources */,
+				2442EB952A9B4EE300B11CE3 /* UIViewConroller + Loader.swift in Sources */,
 				243CBC192A3F167600EEE080 /* SpacerCell.swift in Sources */,
 				243CBC412A403C0400EEE080 /* SmallButtonViewModel.swift in Sources */,
 				243CBC442A403E3500EEE080 /* RowItem.swift in Sources */,
 				24E3F1C22A98F1A3008A0430 /* BannerCell.swift in Sources */,
 				243CBC172A3F166B00EEE080 /* RoundedFooter.swift in Sources */,
 				243CBC2A2A3F185800EEE080 /* RoundCorners.swift in Sources */,
+				2442EB932A9B4EC000B11CE3 /* Loader.swift in Sources */,
 				243CBC682A4058EE00EEE080 /* RowItemCell.swift in Sources */,
 				2490E3422A040B270073DBDE /* DesignSystemConstants.swift in Sources */,
 				24C7129329E5B2A500E5DE0B /* Color.swift in Sources */,

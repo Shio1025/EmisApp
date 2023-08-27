@@ -72,7 +72,16 @@ public extension UIView {
     func centerVertically(to view: UIView) {
         self.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
+    
     func centerHorizontally(to view: UIView) {
         self.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    func bottomNotSafe(toView view: UIView, constant value: CGFloat = 0) {
+        self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -value).isActive = true
+    }
+    
+    func topNotSafe(toView view: UIView, constant value: CGFloat = 0) {
+        self.topAnchor.constraint(equalTo: view.topAnchor, constant: -value).isActive = true
     }
 }
