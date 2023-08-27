@@ -35,6 +35,7 @@ public class NetworkManager: NetworkLayer {
         }
         
         return URLSession.shared.dataTaskPublisher(for: request)
+            .timeout(5, scheduler: DispatchQueue.global())
             .tryMap { data, response in
                 guard let httpResponse = response as? HTTPURLResponse else {
                     throw NetworkError.unknown

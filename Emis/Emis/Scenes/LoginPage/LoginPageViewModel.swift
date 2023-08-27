@@ -9,9 +9,10 @@ import BrandBook
 import Combine
 import Resolver
 import SSO
+import Core
 
 enum LoginPageRoute {
-    case login
+    case profile
     case resetPassword
     case register
 }
@@ -95,18 +96,21 @@ extension LoginPageViewModel {
     }
     
     private func handleLogin() {
-        SSO.logInUser(email: login, password: password)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                switch completion {
-                case .finished:
-                    print("User ---- \(self?.login ?? "") -- logged in Successfuly")
-                case .failure(_):
-                    print("Something went wrong")
-                }
-            } receiveValue: { [weak self] loginSuccessfuly in
-                self?.router = .resetPassword
-            }.store(in: &subscriptions)
+        @Injected var loginUseCase: LoginUseCase
+        
+        loginUseCase.loginUser(email: login,
+                               password: password)
+        .sink { [weak self] completion in
+            switch completion {
+            case .failure(let error):
+                print(error)
+            case .finished:
+                self?.router = .profile
+            }
+        } receiveValue: { [weak self] model in
+            self?.SSO.userLoggedInSuccessfully(userId: model.userId, userType: model.userType)
+            
+        }
     }
 }
 

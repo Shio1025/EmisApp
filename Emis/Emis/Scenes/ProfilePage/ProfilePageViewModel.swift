@@ -29,10 +29,10 @@ final class ProfilePageViewModel {
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        headerSection.map { listCells.append(contentsOf: $0) }
-        personalInfoSection.map { listCells.append(contentsOf: $0) }
-        educationalInfoSection.map { listCells.append(contentsOf: $0) }
-        financeInfoSection.map { listCells.append(contentsOf: $0) }
+//        headerSection.map { listCells.append(contentsOf: $0) }
+//        personalInfoSection.map { listCells.append(contentsOf: $0) }
+//        educationalInfoSection.map { listCells.append(contentsOf: $0) }
+//        financeInfoSection.map { listCells.append(contentsOf: $0) }
     }
     
 }
@@ -66,81 +66,81 @@ extension ProfilePageViewModel {
 
 extension ProfilePageViewModel {
     
-    var headerSection: [any CellModel]? {
-        guard let userInfo = SSO.user else { return nil }
-        let header = PageDescriptionCellModel(model: .init(resourceType: .image(image: BrandBookManager.Icon.mortarboard.image),
-                                                           description: .init(text: "\(userInfo.name) \(userInfo.surname)",
-                                                                              font: .boldSystemFont(ofSize: .L))))
-        return [getRoundedHeaderModel(), header, getRoundedFooterModel(), getSpacerCell()]
-    }
-    
-    var personalInfoSection: [any CellModel]? {
-        guard let userInfo = SSO.user else { return nil }
-        let phoneNumber = RowItemCellModel(model: .init(labels: .one(model: .init(text: "ტელეფონის ნომერი")),
-                                                        rightItem: .label(model: .init(text: userInfo.phoneNumber))))
-        return [getRoundedHeaderWithTitle(title: "პერსონალური მონაცემები"),
-                phoneNumber,
-                getRoundedFooterModel(),
-                getSpacerCell()]
-    }
-    
-    var educationalInfoSection: [any CellModel]? {
-        guard let userInfo = SSO.user else { return nil }
-        let speciality = RowItemCellModel(model: .init(labels: .one(model: .init(text: "კურსი")),
-                                                       rightItem: .label(model: .init(text: userInfo.speciality))))
-        let term = RowItemCellModel(model: .init(labels: .one(model: .init(text: "მიმდინარე სემესტრი")),
-                                                 rightItem: .label(model: .init(text: userInfo.currentTerm.description))))
-        let credits = RowItemCellModel(model: .init(labels: .one(model: .init(text: "სულ კრედიტები")),
-                                                    rightItem: .label(model: .init(text: userInfo.totalCredits.description))))
-        let gpa = RowItemCellModel(model: .init(labels: .one(model: .init(text: "GPA")),
-                                                rightItem: .label(model: .init(text: Formatter.formatNumber(number: userInfo.GPA)))))
-        let status = RowItemCellModel(model: .init(labels: .one(model: .init(text: "სტატუსი")),
-                                                    rightItem: .label(model: .init(text: userInfo.status.desc,
-                                                                                   color: BrandBookManager.Color.General.green.uiColor,
-                                                                                   font: .systemFont(ofSize: .M,
-                                                                                                     weight: .regular)))))
-        let gradesBook = RowItemCellModel(model: .init(labels: .one(model: .init(text: "ნიშნების ფურცელი")),
-                                                       rightItem: .button(model:
-                                                            .init(resourceType: .icon(icon: UIImage(systemName: "arrow.down.to.line")!,
-                                                                                      tintColor: BrandBookManager.Color.Theme.Invert.tr500.uiColor), action: {
-            
-        }))))
-        
-        
-        return [getRoundedHeaderWithTitle(title: "განათლება"),
-                status,
-                speciality,
-                term,
-                credits,
-                gpa,
-                gradesBook,
-                getRoundedFooterModel(),
-                getSpacerCell()]
-    }
-    
-    var financeInfoSection: [any CellModel]? {
-        guard let userInfo = SSO.user else { return nil }
-        
-        var statusText = "გადასახდელია"
-        var statusColor = BrandBookManager.Color.General.red.uiColor
-        if userInfo.finances.debt >= 0 {
-            statusText = "გადახდილია"
-            statusColor = BrandBookManager.Color.General.green.uiColor
-        }
-        
-        let financies = RowItemCellModel(model: .init(labels: .one(model: .init(text: "ფინანსები")),
-                                                      rightItem: .labelAndButton(labelModel: .init(text: statusText,
-                                                                                                  color: statusColor),
-                                                                                 buttonModel: .init(resourceType: .icon(icon: UIImage(systemName: "chevron.right")!,
-                                                                                                                        tintColor: BrandBookManager.Color.Theme.Invert.tr500.uiColor), action: {
-            
-        }))))
-        
-        return [getRoundedHeaderModel(),
-                financies,
-                getRoundedFooterModel(),
-                getSpacerCell()]
-    }
+//    var headerSection: [any CellModel]? {
+//        guard let userInfo = SSO.user else { return nil }
+//        let header = PageDescriptionCellModel(model: .init(resourceType: .image(image: BrandBookManager.Icon.mortarboard.image),
+//                                                           description: .init(text: "\(userInfo.name) \(userInfo.surname)",
+//                                                                              font: .boldSystemFont(ofSize: .L))))
+//        return [getRoundedHeaderModel(), header, getRoundedFooterModel(), getSpacerCell()]
+//    }
+//
+//    var personalInfoSection: [any CellModel]? {
+//        guard let userInfo = SSO.user else { return nil }
+//        let phoneNumber = RowItemCellModel(model: .init(labels: .one(model: .init(text: "ტელეფონის ნომერი")),
+//                                                        rightItem: .label(model: .init(text: userInfo.phoneNumber))))
+//        return [getRoundedHeaderWithTitle(title: "პერსონალური მონაცემები"),
+//                phoneNumber,
+//                getRoundedFooterModel(),
+//                getSpacerCell()]
+//    }
+//
+//    var educationalInfoSection: [any CellModel]? {
+//        guard let userInfo = SSO.user else { return nil }
+//        let speciality = RowItemCellModel(model: .init(labels: .one(model: .init(text: "კურსი")),
+//                                                       rightItem: .label(model: .init(text: userInfo.speciality))))
+//        let term = RowItemCellModel(model: .init(labels: .one(model: .init(text: "მიმდინარე სემესტრი")),
+//                                                 rightItem: .label(model: .init(text: userInfo.currentTerm.description))))
+//        let credits = RowItemCellModel(model: .init(labels: .one(model: .init(text: "სულ კრედიტები")),
+//                                                    rightItem: .label(model: .init(text: userInfo.totalCredits.description))))
+//        let gpa = RowItemCellModel(model: .init(labels: .one(model: .init(text: "GPA")),
+//                                                rightItem: .label(model: .init(text: Formatter.formatNumber(number: userInfo.GPA)))))
+//        let status = RowItemCellModel(model: .init(labels: .one(model: .init(text: "სტატუსი")),
+//                                                    rightItem: .label(model: .init(text: userInfo.status.desc,
+//                                                                                   color: BrandBookManager.Color.General.green.uiColor,
+//                                                                                   font: .systemFont(ofSize: .M,
+//                                                                                                     weight: .regular)))))
+//        let gradesBook = RowItemCellModel(model: .init(labels: .one(model: .init(text: "ნიშნების ფურცელი")),
+//                                                       rightItem: .button(model:
+//                                                            .init(resourceType: .icon(icon: UIImage(systemName: "arrow.down.to.line")!,
+//                                                                                      tintColor: BrandBookManager.Color.Theme.Invert.tr500.uiColor), action: {
+//
+//        }))))
+//
+//
+//        return [getRoundedHeaderWithTitle(title: "განათლება"),
+//                status,
+//                speciality,
+//                term,
+//                credits,
+//                gpa,
+//                gradesBook,
+//                getRoundedFooterModel(),
+//                getSpacerCell()]
+//    }
+//
+//    var financeInfoSection: [any CellModel]? {
+//        guard let userInfo = SSO.user else { return nil }
+//
+//        var statusText = "გადასახდელია"
+//        var statusColor = BrandBookManager.Color.General.red.uiColor
+//        if userInfo.finances.debt >= 0 {
+//            statusText = "გადახდილია"
+//            statusColor = BrandBookManager.Color.General.green.uiColor
+//        }
+//
+//        let financies = RowItemCellModel(model: .init(labels: .one(model: .init(text: "ფინანსები")),
+//                                                      rightItem: .labelAndButton(labelModel: .init(text: statusText,
+//                                                                                                  color: statusColor),
+//                                                                                 buttonModel: .init(resourceType: .icon(icon: UIImage(systemName: "chevron.right")!,
+//                                                                                                                        tintColor: BrandBookManager.Color.Theme.Invert.tr500.uiColor), action: {
+//
+//        }))))
+//
+//        return [getRoundedHeaderModel(),
+//                financies,
+//                getRoundedFooterModel(),
+//                getSpacerCell()]
+//    }
 }
 
 

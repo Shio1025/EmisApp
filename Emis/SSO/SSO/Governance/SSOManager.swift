@@ -7,23 +7,25 @@
 
 import Combine
 import NetworkLayer
+import Core
 
 public protocol SSOManager {
     var isUserLoggedPublisher: Published<Bool>.Publisher { get }
-    var user: User? { get }
     var userType: UserType? { get }
+    var userId: Int64? { get }
     
-    func logInUser(email: String, password: String) -> AnyPublisher<Bool, Error>
+    func userLoggedInSuccessfully(userId: Int64?,
+                                  userType: UserType)
     func logOutUser()
 }
 
 public class SSOManagerImpl: SSOManager {
     
+    public var userId: Int64?
+    
     @Published private var isUserLogged: Bool = false
     
     public var isUserLoggedPublisher: Published<Bool>.Publisher { $isUserLogged }
-    
-    public var user: User?
     
     public var userType: UserType?
     
@@ -31,21 +33,16 @@ public class SSOManagerImpl: SSOManager {
     
     public init() { }
     
-    public func logInUser(email: String, password: String) -> AnyPublisher<Bool, Error> {
-        return Future<Bool, Error> { promise in
-            
-            
-            
-        }.eraseToAnyPublisher()
+    public func userLoggedInSuccessfully(userId: Int64?,
+                                         userType: UserType) {
+        isUserLogged = true
+        self.userType = userType
+        self.userId = userId
     }
     
     public func logOutUser() {
-        user = nil
         userType = nil
+        userId = nil
         isUserLogged = false
     }
-}
-
-enum CustomError: Error {
-    case loginFailed
 }

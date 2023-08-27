@@ -11,7 +11,7 @@ final class LoginPageRouter {
     func route(to route: LoginPageRoute,
                from view: LoginPageController) {
         switch route {
-        case .login:
+        case .profile:
             view.navigationController?.viewControllers = [ProfilePageController()]
         case .resetPassword:
             view.navigationController?.pushViewController(PasswordResetController(), animated: true)

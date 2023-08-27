@@ -10,6 +10,6 @@ import Resolver
 extension Resolver {
     
     public static func registerUseCases() {
-//        register(SSOManager.self) { SSOManagerImpl() }.scope(.application)
+        register(LoginUseCase.self) { LoginUseCaseImpl() }
     }
 }

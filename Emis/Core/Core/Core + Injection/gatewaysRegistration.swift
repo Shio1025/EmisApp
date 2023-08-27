@@ -10,6 +10,6 @@ import Resolver
 extension Resolver {
     
     public static func registerGateways() {
-//        register(SSOManager.self) { SSOManagerImpl() }.scope(.application)
+        register(LoginGateway.self) { LoginGatewayImpl() }
     }
 }

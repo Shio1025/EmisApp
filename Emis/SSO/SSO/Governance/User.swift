@@ -4,6 +4,7 @@
 //
 //  Created by Shio Birbichadze on 19.06.23.
 //
+import Core
 
 public class User: ObservableObject {
     public var userType: UserType
@@ -52,12 +53,6 @@ public class User: ObservableObject {
         self.gradesURL = gradesURL
         self.finances = finances
     }
-}
-
-public enum UserType {
-    case student
-    case lecturer
-    case none
 }
 
 public enum StudentStatus {

@@ -17,5 +17,6 @@ extension Resolver: ResolverRegistering {
         registerNetworkLayer()
         registerGateways()
         registerUseCases()
+        registerCoreProviders()
     }
 }

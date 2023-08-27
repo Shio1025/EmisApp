@@ -26,6 +26,8 @@
 		243CBC442A403E3500EEE080 /* RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CBC432A403E3500EEE080 /* RowItem.swift */; };
 		243CBC462A403E4100EEE080 /* RowItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CBC452A403E4100EEE080 /* RowItemViewModel.swift */; };
 		243CBC682A4058EE00EEE080 /* RowItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CBC672A4058EE00EEE080 /* RowItemCell.swift */; };
+		2442EB822A9A7E4F00B11CE3 /* StatusBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EB812A9A7E4F00B11CE3 /* StatusBanner.swift */; };
+		2442EB842A9A818A00B11CE3 /* UIViewController + Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EB832A9A818A00B11CE3 /* UIViewController + Banner.swift */; };
 		2452F0292A2F0E1A005F4DDF /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F0282A2F0E1A005F4DDF /* CustomNavigation.swift */; };
 		2452F02B2A2F168A005F4DDF /* BackBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F02A2A2F168A005F4DDF /* BackBarButtonItem.swift */; };
 		2452F0362A2F6EB7005F4DDF /* GenericTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F0352A2F6EB7005F4DDF /* GenericTableView.swift */; };
@@ -79,6 +81,8 @@
 		243CBC432A403E3500EEE080 /* RowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItem.swift; sourceTree = "<group>"; };
 		243CBC452A403E4100EEE080 /* RowItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItemViewModel.swift; sourceTree = "<group>"; };
 		243CBC672A4058EE00EEE080 /* RowItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItemCell.swift; sourceTree = "<group>"; };
+		2442EB812A9A7E4F00B11CE3 /* StatusBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBanner.swift; sourceTree = "<group>"; };
+		2442EB832A9A818A00B11CE3 /* UIViewController + Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Banner.swift"; sourceTree = "<group>"; };
 		2452F0282A2F0E1A005F4DDF /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		2452F02A2A2F168A005F4DDF /* BackBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackBarButtonItem.swift; sourceTree = "<group>"; };
 		2452F0352A2F6EB7005F4DDF /* GenericTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableView.swift; sourceTree = "<group>"; };
@@ -187,6 +191,15 @@
 			path = RowItem;
 			sourceTree = "<group>";
 		};
+		2442EB802A9A7E2C00B11CE3 /* Status Banner */ = {
+			isa = PBXGroup;
+			children = (
+				2442EB812A9A7E4F00B11CE3 /* StatusBanner.swift */,
+				2442EB832A9A818A00B11CE3 /* UIViewController + Banner.swift */,
+			);
+			path = "Status Banner";
+			sourceTree = "<group>";
+		};
 		2452F0272A2F0E06005F4DDF /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				243CBC112A3E097E00EEE080 /* TableCells */,
+				2442EB802A9A7E2C00B11CE3 /* Status Banner */,
 				243CBC422A403E0500EEE080 /* RowItem */,
 				243CBC3D2A403BC700EEE080 /* SmallButton */,
 				243CBC342A4033AB00EEE080 /* PageDescription */,
@@ -476,8 +490,10 @@
 				243CBC682A4058EE00EEE080 /* RowItemCell.swift in Sources */,
 				2490E3422A040B270073DBDE /* DesignSystemConstants.swift in Sources */,
 				24C7129329E5B2A500E5DE0B /* Color.swift in Sources */,
+				2442EB822A9A7E4F00B11CE3 /* StatusBanner.swift in Sources */,
 				242568AD2A0D65770022A132 /* TextFieldViewModel.swift in Sources */,
 				246622742A12BFAE00287AA7 /* TextFieldState.swift in Sources */,
+				2442EB842A9A818A00B11CE3 /* UIViewController + Banner.swift in Sources */,
 				24C7133629E7181100E5DE0B /* LottieHandler.swift in Sources */,
 				24C7129229E5B2A500E5DE0B /* ColorWrapper.swift in Sources */,
 				2466C3DF2A14AFEB00E7B400 /* PrimaryButton.swift in Sources */,
