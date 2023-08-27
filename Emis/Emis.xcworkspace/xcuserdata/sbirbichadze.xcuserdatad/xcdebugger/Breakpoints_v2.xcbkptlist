@@ -119,54 +119,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D6871C73-04B2-409C-8ABD-5AA6017C0BE5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Core/Core/Gateways/LoginGateway.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "loginUser(email:password:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D6871C73-04B2-409C-8ABD-5AA6017C0BE5 - c041acaf711d034"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 ((Swift.Result&lt;Core.LoginModel, Swift.Error&gt;) -&gt; ()) -&gt; () in Core.LoginGatewayImpl.loginUser(email: Swift.String, password: Swift.String) -&gt; Combine.AnyPublisher&lt;Core.LoginModel, Swift.Error&gt;"
-                  moduleName = "Core"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/Core/Core/Gateways/LoginGateway.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "172">
-               </Location>
-               <Location
-                  uuid = "D6871C73-04B2-409C-8ABD-5AA6017C0BE5 - ba07e2b3f0b812c5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Core.LoginGatewayImpl.loginUser(email: Swift.String, password: Swift.String) -&gt; Combine.AnyPublisher&lt;Core.LoginModel, Swift.Error&gt;"
-                  moduleName = "Core"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/Core/Core/Gateways/LoginGateway.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "1160">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "39807D82-0940-4142-B1B0-B914B971FDD0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"

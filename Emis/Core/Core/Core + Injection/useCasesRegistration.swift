@@ -11,5 +11,8 @@ extension Resolver {
     
     public static func registerUseCases() {
         register(LoginUseCase.self) { LoginUseCaseImpl() }
+        register(StudentInfoUseCase.self) { StudentInfoUseCaseImpl() }
+        register(StudentFinancialUseCase.self) { StudentFinancialUseCaseImpl() }
+        register(StudentDashboardUseCase.self) { StudentDashboardUseCaseImpl() }
     }
 }

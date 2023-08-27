@@ -55,13 +55,17 @@ public class NetworkManager: NetworkLayer {
                 }
             }
             .mapError { error -> Error in
-                error is NetworkError ? error : NetworkError.decodingError
+                if let urlError = error as? URLError, urlError.code == .timedOut {
+                    return NetworkError.timeout
+                }
+                return error is NetworkError ? error : NetworkError.decodingError
             }
             .eraseToAnyPublisher()
     }
 }
 
 enum NetworkError: Error {
+    case timeout
     case invalidURL
     case serializationError
     case invalidResponse
