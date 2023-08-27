@@ -24,7 +24,7 @@ public class StudentDashboardOptionsGatewayImpl: StudentDashboardOptionsGateway 
                                         params: ["id": userId])
         
         let endpoint = EndPoint<[String]>(url: url,
-                                               method: .get)
+                                          method: .get)
         
         let publisher: AnyPublisher<StudentDashboardOptions, Error> = dataTransport.makeRequest(endpoint)
             .map { model in

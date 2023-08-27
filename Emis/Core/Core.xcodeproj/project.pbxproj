@@ -27,6 +27,13 @@
 		2442EBB62A9BC87500B11CE3 /* TeacherDashboardOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBB52A9BC87500B11CE3 /* TeacherDashboardOptions.swift */; };
 		2442EBB82A9BC8E800B11CE3 /* StudentDashboardOptionsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBB72A9BC8E800B11CE3 /* StudentDashboardOptionsGateway.swift */; };
 		2442EBBA2A9BC99A00B11CE3 /* StudentDashboardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBB92A9BC99A00B11CE3 /* StudentDashboardUseCase.swift */; };
+		2442EBBC2A9BCD4800B11CE3 /* ApiStudentSubjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBBB2A9BCD4800B11CE3 /* ApiStudentSubjectCard.swift */; };
+		2442EBBE2A9BCD8100B11CE3 /* StudentSubjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBBD2A9BCD8100B11CE3 /* StudentSubjectCard.swift */; };
+		2442EBC02A9BD0E500B11CE3 /* StudentSubjectCardGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBBF2A9BD0E500B11CE3 /* StudentSubjectCardGateway.swift */; };
+		2442EBC22A9BD18B00B11CE3 /* StudentSubjectCardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBC12A9BD18B00B11CE3 /* StudentSubjectCardUseCase.swift */; };
+		2442EBC42A9BD36B00B11CE3 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBC32A9BD36B00B11CE3 /* Empty.swift */; };
+		2442EBC62A9BD3D300B11CE3 /* UpdateStudentPhoneNumberGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBC52A9BD3D300B11CE3 /* UpdateStudentPhoneNumberGateway.swift */; };
+		2442EBC82A9BD50600B11CE3 /* UpdateStudentPhoneNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBC72A9BD50600B11CE3 /* UpdateStudentPhoneNumberUseCase.swift */; };
 		245B98BF2A65485C00682D19 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 245B98BE2A65485C00682D19 /* Resolver */; };
 		24C7126829E5B1CC00E5DE0B /* Core.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7126729E5B1CC00E5DE0B /* Core.docc */; };
 		24C7126929E5B1CC00E5DE0B /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7126629E5B1CC00E5DE0B /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,6 +66,13 @@
 		2442EBB52A9BC87500B11CE3 /* TeacherDashboardOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDashboardOptions.swift; sourceTree = "<group>"; };
 		2442EBB72A9BC8E800B11CE3 /* StudentDashboardOptionsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDashboardOptionsGateway.swift; sourceTree = "<group>"; };
 		2442EBB92A9BC99A00B11CE3 /* StudentDashboardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDashboardUseCase.swift; sourceTree = "<group>"; };
+		2442EBBB2A9BCD4800B11CE3 /* ApiStudentSubjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStudentSubjectCard.swift; sourceTree = "<group>"; };
+		2442EBBD2A9BCD8100B11CE3 /* StudentSubjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectCard.swift; sourceTree = "<group>"; };
+		2442EBBF2A9BD0E500B11CE3 /* StudentSubjectCardGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectCardGateway.swift; sourceTree = "<group>"; };
+		2442EBC12A9BD18B00B11CE3 /* StudentSubjectCardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectCardUseCase.swift; sourceTree = "<group>"; };
+		2442EBC32A9BD36B00B11CE3 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		2442EBC52A9BD3D300B11CE3 /* UpdateStudentPhoneNumberGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStudentPhoneNumberGateway.swift; sourceTree = "<group>"; };
+		2442EBC72A9BD50600B11CE3 /* UpdateStudentPhoneNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStudentPhoneNumberUseCase.swift; sourceTree = "<group>"; };
 		24C7126329E5B1CC00E5DE0B /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7126629E5B1CC00E5DE0B /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		24C7126729E5B1CC00E5DE0B /* Core.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Core.docc; sourceTree = "<group>"; };
@@ -98,6 +112,7 @@
 				2442EBA22A9BACFE00B11CE3 /* Student */,
 				2442EBA12A9BACF800B11CE3 /* Teacher */,
 				2442EB8D2A9A8AB200B11CE3 /* ApiLoginModel.swift */,
+				2442EBC32A9BD36B00B11CE3 /* Empty.swift */,
 			);
 			path = "Api Models";
 			sourceTree = "<group>";
@@ -145,6 +160,8 @@
 				2442EBA92A9BB23E00B11CE3 /* StudentInfoUseCase.swift */,
 				2442EBB12A9BB4A900B11CE3 /* StudentFinancialUseCase.swift */,
 				2442EBB92A9BC99A00B11CE3 /* StudentDashboardUseCase.swift */,
+				2442EBC12A9BD18B00B11CE3 /* StudentSubjectCardUseCase.swift */,
+				2442EBC72A9BD50600B11CE3 /* UpdateStudentPhoneNumberUseCase.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -162,6 +179,8 @@
 				2442EBA72A9BB12A00B11CE3 /* StudentInfoGateway.swift */,
 				2442EBAF2A9BB38700B11CE3 /* StudentFinancialGateway.swift */,
 				2442EBB72A9BC8E800B11CE3 /* StudentDashboardOptionsGateway.swift */,
+				2442EBBF2A9BD0E500B11CE3 /* StudentSubjectCardGateway.swift */,
+				2442EBC52A9BD3D300B11CE3 /* UpdateStudentPhoneNumberGateway.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -180,6 +199,7 @@
 				2442EBA52A9BAFC900B11CE3 /* StudentInfo.swift */,
 				2442EBAD2A9BB32E00B11CE3 /* StudentFinancials.swift */,
 				2442EBB32A9BB5B600B11CE3 /* StudentDashboardOptions.swift */,
+				2442EBBD2A9BCD8100B11CE3 /* StudentSubjectCard.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -196,6 +216,7 @@
 			children = (
 				2442EBA32A9BAF5A00B11CE3 /* ApiStudentInfo.swift */,
 				2442EBAB2A9BB30600B11CE3 /* ApiStudentFinancials.swift */,
+				2442EBBB2A9BCD4800B11CE3 /* ApiStudentSubjectCard.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -360,10 +381,16 @@
 				2442EBAE2A9BB32E00B11CE3 /* StudentFinancials.swift in Sources */,
 				2442EBB82A9BC8E800B11CE3 /* StudentDashboardOptionsGateway.swift in Sources */,
 				2442EB7F2A9A628500B11CE3 /* useCasesRegistration.swift in Sources */,
+				2442EBC02A9BD0E500B11CE3 /* StudentSubjectCardGateway.swift in Sources */,
 				24E3F1B72A98E937008A0430 /* KeychainKeys.swift in Sources */,
 				2442EBBA2A9BC99A00B11CE3 /* StudentDashboardUseCase.swift in Sources */,
+				2442EBC82A9BD50600B11CE3 /* UpdateStudentPhoneNumberUseCase.swift in Sources */,
 				2442EBB42A9BB5B600B11CE3 /* StudentDashboardOptions.swift in Sources */,
+				2442EBBE2A9BCD8100B11CE3 /* StudentSubjectCard.swift in Sources */,
+				2442EBBC2A9BCD4800B11CE3 /* ApiStudentSubjectCard.swift in Sources */,
 				2442EB8E2A9A8AB200B11CE3 /* ApiLoginModel.swift in Sources */,
+				2442EBC22A9BD18B00B11CE3 /* StudentSubjectCardUseCase.swift in Sources */,
+				2442EBC42A9BD36B00B11CE3 /* Empty.swift in Sources */,
 				2442EB8C2A9A885400B11CE3 /* providersRegistration.swift in Sources */,
 				2442EBB62A9BC87500B11CE3 /* TeacherDashboardOptions.swift in Sources */,
 				2442EBAC2A9BB30600B11CE3 /* ApiStudentFinancials.swift in Sources */,
@@ -373,6 +400,7 @@
 				2442EBB22A9BB4A900B11CE3 /* StudentFinancialUseCase.swift in Sources */,
 				2442EB882A9A86CF00B11CE3 /* LoginUseCase.swift in Sources */,
 				2442EBA62A9BAFC900B11CE3 /* StudentInfo.swift in Sources */,
+				2442EBC62A9BD3D300B11CE3 /* UpdateStudentPhoneNumberGateway.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

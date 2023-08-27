@@ -14,5 +14,7 @@ extension Resolver {
         register(StudentInfoUseCase.self) { StudentInfoUseCaseImpl() }
         register(StudentFinancialUseCase.self) { StudentFinancialUseCaseImpl() }
         register(StudentDashboardUseCase.self) { StudentDashboardUseCaseImpl() }
+        register(StudentSubjectCardUseCase.self) { StudentSubjectCardUseCaseImpl() }
+        register(UpdateStudentPhoneNumberUseCase.self) { UpdateStudentPhoneNumberUseCaseImpl() }
     }
 }
