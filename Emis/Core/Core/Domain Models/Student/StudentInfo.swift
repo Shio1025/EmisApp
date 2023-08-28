@@ -6,6 +6,19 @@
 //
 
 public struct StudentInfo {
+    public init(firstName: String, lastName: String, birthDate: String, email: String, address: String, phoneNumber: String, status: StudentStatus, degreeLevel: DegreeLevel, credits: Int, gpa: Double) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.birthDate = birthDate
+        self.email = email
+        self.address = address
+        self.phoneNumber = phoneNumber
+        self.status = status
+        self.degreeLevel = degreeLevel
+        self.credits = credits
+        self.gpa = gpa
+    }
+    
     public let firstName: String
     public let lastName: String
     public let birthDate: String

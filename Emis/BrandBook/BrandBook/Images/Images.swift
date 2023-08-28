@@ -22,4 +22,8 @@ extension BrandBookManager {
         public static let graduate = ImageWrapper(name: "graduate")
         public static let profile = ImageWrapper(name: "profile")
     }
+    
+    public struct Images {
+        public static let tmp = ImageWrapper(name: "tmp")
+    }
 }

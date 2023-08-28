@@ -22,11 +22,12 @@ final class LoginPageViewModel {
     @Published private var router: LoginPageRoute?
     @Published private var login: String = ""
     @Published private var password: String = ""
+    @Published private var isButtonLoading: Bool = false
     @Injected private var SSO: SSOManager
     private var validToContinue: AnyPublisher<ButtonState, Never> {
-        return Publishers.CombineLatest($login, $password)
-            .map { login, password in
-                //Add some validation in Future if Needed
+        return Publishers.CombineLatest3($login, $password,$isButtonLoading)
+            .map { login, password, isLoading in
+                guard !isLoading else { return .loading }
                 if !login.isEmpty && !password.isEmpty {
                     return .enabled
                 } else {
@@ -91,25 +92,29 @@ extension LoginPageViewModel {
                                                                            weight: .semibold)),
                                        state: validToContinue,
                                        action: { [weak self] in
+            self?.isButtonLoading = true
             self?.handleLogin()
         })).eraseToAnyPublisher()
     }
     
     private func handleLogin() {
-        @Injected var loginUseCase: LoginUseCase
-        
-        loginUseCase.loginUser(email: login,
-                               password: password)
-        .sink { [weak self] completion in
-            switch completion {
-            case .failure(let error):
-                print(error)
-            case .finished:
-                self?.router = .profile
-            }
-        } receiveValue: { [weak self] model in
-            self?.SSO.userLoggedInSuccessfully(userId: model.userId, userType: model.userType)
-        }.store(in: &subscriptions)
+        SSO.userLoggedInSuccessfully(userId: 12342, userEmail: login, userType: .student)
+        router = .profile
+//        @Injected var loginUseCase: LoginUseCase
+//
+//        loginUseCase.loginUser(email: login,
+//                               password: password)
+//        .sink { [weak self] completion in
+//            switch completion {
+//            case .failure(let error):
+//                print(error)
+//            case .finished:
+//                self?.router = .profile
+//            }
+//            self?.isButtonLoading = false
+//        } receiveValue: { [weak self] model in
+//            self?.SSO.userLoggedInSuccessfully(userId: model.userId, userEmail: login, userType: model.userType)
+//        }.store(in: &subscriptions)
     }
 }
 

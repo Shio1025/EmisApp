@@ -72,6 +72,8 @@ extension ProfilePageController {
         tableView.register(RoundedHeaderWithTitle.self)
         tableView.register(SpacerCell.self)
         tableView.register(RowItemCell.self)
+        tableView.register(BannerCell.self)
+        tableView.register(InfoCell.self)
     }
 }
 
@@ -92,6 +94,9 @@ extension ProfilePageController {
     
     private func bindUI() {
         tableView.bind(with: viewModel.listCellModels)
+        viewModel.pageIsLoading.sink { [weak self] isLoading in
+            isLoading ? self?.showLoader() : self?.hideLoader()
+        }.store(in: &subscriptions)
     }
 }
 

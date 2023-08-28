@@ -13,9 +13,12 @@ public protocol SSOManager {
     var isUserLoggedPublisher: Published<Bool>.Publisher { get }
     var userType: UserType? { get }
     var userId: Int64? { get }
+    var userEmail: String? { get }
     
     func userLoggedInSuccessfully(userId: Int64?,
+                                  userEmail: String?,
                                   userType: UserType)
+    
     func logOutUser()
 }
 
@@ -29,20 +32,25 @@ public class SSOManagerImpl: SSOManager {
     
     public var userType: UserType?
     
+    public var userEmail: String?
+    
     private var cancellables = Set<AnyCancellable>()
     
     public init() { }
     
     public func userLoggedInSuccessfully(userId: Int64?,
+                                         userEmail: String?,
                                          userType: UserType) {
         isUserLogged = true
         self.userType = userType
         self.userId = userId
+        self.userEmail = userEmail
     }
     
     public func logOutUser() {
         userType = nil
         userId = nil
         isUserLogged = false
+        userEmail = nil
     }
 }

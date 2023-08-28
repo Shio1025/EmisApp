@@ -105,7 +105,7 @@ extension PrimaryButton {
         case .loading:
             mainView.backgroundColor = PrimaryButtonState.loading.backgroundColor
             titleLabel.changeTextColor(with: PrimaryButtonState.loading.textColor)
-            mainView.isUserInteractionEnabled = true
+            mainView.isUserInteractionEnabled = false
             loadingIndicator.isHidden = false
             loadingIndicator.startAnimating()
         }
