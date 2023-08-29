@@ -9,6 +9,12 @@ import UIKit
 
 public class InfoCell: TableCell {
     
+    private lazy var topView: UIView = {
+        let topView = UIView()
+        topView.translatesAutoresizingMaskIntoConstraints = false
+        return topView
+    }()
+    
     private lazy var topLabel: LocalLabel = {
         let label = LocalLabel()
         label.backgroundColor = .clear
@@ -29,12 +35,21 @@ public class InfoCell: TableCell {
         return label
     }()
     
+    private lazy var separator: UIView = {
+        let separator = UIView()
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        separator.height(equalTo: 1)
+        separator.backgroundColor = BrandBookManager.Color.Theme.Component.tr200.uiColor.withAlphaComponent(0.5)
+        return separator
+    }()
+    
     private lazy var labelContainer: UIStackView = {
         let stackView = UIStackView.init(arrangedSubviews: [topLabel,
                                                             bottomLabel])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.alignment = .leading
+        stackView.spacing = .S
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -56,8 +71,10 @@ public class InfoCell: TableCell {
     }
     
     private func  addSubviews() {
-        contentView.addSubview(labelContainer)
-        contentView.addSubview(button)
+        contentView.addSubview(topView)
+        topView.addSubview(labelContainer)
+        topView.addSubview(button)
+        contentView.addSubview(separator)
     }
     
     private func setUpUI() {
@@ -66,12 +83,22 @@ public class InfoCell: TableCell {
     }
     
     private func addConstraints() {
-        labelContainer.left(toView: contentView, constant: .L)
+        labelContainer.left(toView: topView, constant: .L)
         labelContainer.width(equalTo: 250)
-        labelContainer.centerVertically(to: contentView)
+        labelContainer.bottom(toView: topView)
+        labelContainer.top(toView: topView, constant: .M)
         
-        button.right(toView: contentView, constant: .M)
-        button.centerVertically(to: contentView)
+        button.right(toView: topView, constant: .M)
+        button.centerVertically(to: topView)
+        
+        topView.top(toView: contentView)
+        topView.left(toView: contentView)
+        topView.right(toView: contentView)
+        topView.relativeBottom(toView: separator, constant: .M)
+        
+        separator.left(toView: contentView, constant: .XL3)
+        separator.right(toView: contentView, constant: .XL)
+        separator.bottom(toView: contentView)
     }
     
     public override func prepareForReuse() {
@@ -84,6 +111,7 @@ extension InfoCell {
     public func bind(with data: any CellModel) {
         if let model = data as? InfoCellModel {
             button.isHidden = true
+            separator.isHidden = !model.isSeparatorNeeded
             self.backgroundColor = model.backgroundColor
             topLabel.bind(with: model.topLabelModel)
             bottomLabel.bind(with: model.bottomLabelModel)
@@ -100,15 +128,18 @@ public class InfoCellModel: CellModel {
     var topLabelModel: LocalLabelModel
     var bottomLabelModel: LocalLabelModel
     var buttonModel: SecondaryButtonModel?
+    var isSeparatorNeeded: Bool
     var backgroundColor: UIColor
     
     public init(topLabelModel: LocalLabelModel,
                 bottomLabelModel: LocalLabelModel,
                 buttonModel: SecondaryButtonModel? = nil,
+                isSeparatorNeeded: Bool = false,
                 backgroundColor: UIColor = BrandBookManager.Color.Theme.Background.layer.uiColor) {
         self.topLabelModel = topLabelModel
         self.bottomLabelModel = bottomLabelModel
         self.buttonModel = buttonModel
+        self.isSeparatorNeeded = isSeparatorNeeded
         self.backgroundColor = backgroundColor
     }
 }

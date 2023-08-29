@@ -51,7 +51,7 @@ extension ProfilePageController {
     }
     
     private func setUpUI() {
-        view.backgroundColor = BrandBookManager.Color.Theme.Background.canvas.uiColor
+        view.backgroundColor = BrandBookManager.Color.Theme.Component.tr100.uiColor
     }
     
     private func addSubviews() {

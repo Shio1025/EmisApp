@@ -17,7 +17,7 @@ public class LocalLabelModel: ObservableObject {
     public init(textPublisher: AnyPublisher<String,Never>? = nil,
                 text: String? = nil,
                 color: UIColor = BrandBookManager.Color.General.black.uiColor,
-                font: UIFont = .italicSystemFont(ofSize: .M),
+                font: UIFont = .systemFont(ofSize: .L),
                 action: (() -> Void)? = nil) {
         self.textPublisher = textPublisher
         self.text =  text

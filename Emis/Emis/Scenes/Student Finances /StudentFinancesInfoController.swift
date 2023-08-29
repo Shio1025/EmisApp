@@ -1,8 +1,8 @@
 //
-//  MainPageController.swift
+//  StudentFinancesInfoController.swift
 //  Emis
 //
-//  Created by Shio Birbichadze on 03.05.23.
+//  Created by Shio Birbichadze on 29.08.23.
 //
 
 import UIKit
@@ -10,10 +10,9 @@ import BrandBook
 import Combine
 import Resolver
 
-class MainPageController: UIViewController {
+class StudentFinancesInfoController: UIViewController {
     
-    private var viewModel: MainPageViewModel = MainPageViewModel()
-    @Injected private var router: MainPageRouter
+    private var viewModel: StudentFinancesInfoViewModel = StudentFinancesInfoViewModel()
     
     private var subscriptions = Set<AnyCancellable>()
     
@@ -37,11 +36,21 @@ class MainPageController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         setUp()
-        bindRouter()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
     }
 }
 
-extension MainPageController {
+extension StudentFinancesInfoController {
+    
     private func setUp() {
         setUpUI()
         addSubviews()
@@ -66,26 +75,13 @@ extension MainPageController {
     }
     
     private func registerTableCells() {
-        tableView.register(SpacerCell.self)
+        tableView.register(RowItemCell.self)
         tableView.register(BannerCell.self)
         tableView.register(InlineFeedbackCell.self)
     }
 }
 
-extension MainPageController {
-    
-    private func bindRouter() {
-        viewModel.getRouter()
-            .compactMap { $0 }
-            .sink { [weak self] route in
-                guard let self else { return }
-                self.router.route(to: route, from: self)
-            }.store(in: &subscriptions)
-    }
-}
-
-
-extension MainPageController {
+extension StudentFinancesInfoController {
     
     private func bindUI() {
         tableView.bind(with: viewModel.listCellModels)
@@ -96,10 +92,9 @@ extension MainPageController {
 }
 
 
-extension MainPageController: CustomNavigatable {
+extension StudentFinancesInfoController: CustomNavigatable {
     var navTitle: NavigationTitle {
-        .init(text: "მთავარი")
+        .init(text: "ჩემი ფინანსები")
     }
-    
-    var leftBarItems: [UIBarButtonItem]? { nil }
 }
+

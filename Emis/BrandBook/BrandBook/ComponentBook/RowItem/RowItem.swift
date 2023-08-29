@@ -96,7 +96,7 @@ public class RowItem: UIView {
         let separator = UIView()
         separator.translatesAutoresizingMaskIntoConstraints = false
         separator.height(equalTo: 1)
-        separator.backgroundColor = BrandBookManager.Color.Theme.Invert.tr50.uiColor
+        separator.backgroundColor = BrandBookManager.Color.Theme.Component.tr200.uiColor.withAlphaComponent(0.5)
         return separator
     }()
     

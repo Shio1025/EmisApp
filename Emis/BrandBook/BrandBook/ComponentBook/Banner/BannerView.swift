@@ -15,8 +15,8 @@ public class BannerView: UIView {
         let view = ResourceView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.height(equalTo: .XL6 + .XL4)
-        view.width(equalTo: .XL6 + .XL4)
+        view.height(equalTo: .XL6 + .XL6 + .S)
+        view.width(equalTo: .XL6 + .XL5)
         return view
     }()
     
@@ -83,9 +83,9 @@ public class BannerView: UIView {
     }
     
     private func addConstraints() {
-        resourceView.top(toView: self, constant: .M)
-        resourceView.bottom(toView: self, constant: .M)
-        resourceView.left(toView: self, constant: .L)
+        resourceView.top(toView: self)
+        resourceView.bottom(toView: self)
+        resourceView.left(toView: self, constant: .M)
         
         labelContainer.relativeLeft(toView: resourceView, constant: .S)
         labelContainer.width(equalTo: 200)

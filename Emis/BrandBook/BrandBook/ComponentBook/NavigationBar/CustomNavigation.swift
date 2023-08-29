@@ -43,7 +43,7 @@ public extension CustomNavigatable where Self: UIViewController {
     func configureNavigationBar() {
         let titleLabel = UILabel()
         titleLabel.text = navTitle.text
-        titleLabel.font = .italicSystemFont(ofSize: .XL)
+        titleLabel.font = .boldSystemFont(ofSize: .XL2)
         titleLabel.textColor = navTitle.color
         
         let titleBarButtonItem = UIBarButtonItem(customView: titleLabel)

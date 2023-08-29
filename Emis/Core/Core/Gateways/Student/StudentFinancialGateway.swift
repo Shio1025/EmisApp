@@ -10,7 +10,7 @@ import Combine
 import Resolver
 
 public protocol StudentFinancialGateway {
-    func getStudentFinancialInfo(userId: String) -> AnyPublisher<StudentInfo, Error>
+    func getStudentFinancialInfo(userId: String) -> AnyPublisher<StudentFinancials, Error>
 }
 
 public class StudentFinancialGatewayImpl: StudentFinancialGateway {
@@ -18,18 +18,18 @@ public class StudentFinancialGatewayImpl: StudentFinancialGateway {
     @Injected var dataTransport: NetworkLayer
     @Injected var apiURLProvider: ApiURLProvider
     
-    public func getStudentFinancialInfo(userId: String) -> AnyPublisher<StudentInfo, Error> {
+    public func getStudentFinancialInfo(userId: String) -> AnyPublisher<StudentFinancials, Error> {
         let params = ["id": userId]
         
         let url = apiURLProvider.getURL(path: "/emis/api/student/finances",
                                         params: params)
         
-        let endpoint = EndPoint<ApiStudentInfo>(url: url,
+        let endpoint = EndPoint<ApiStudentFinancials>(url: url,
                                                method: .get)
         
-        let publisher: AnyPublisher<StudentInfo, Error> = dataTransport.makeRequest(endpoint)
-            .map { studentModel in
-                return StudentInfo(with: studentModel)
+        let publisher: AnyPublisher<StudentFinancials, Error> = dataTransport.makeRequest(endpoint)
+            .map { studentFinancesModel in
+                return StudentFinancials(with: studentFinancesModel)
             }
             .eraseToAnyPublisher()
         

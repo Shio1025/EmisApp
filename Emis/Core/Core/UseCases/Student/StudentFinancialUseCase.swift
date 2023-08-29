@@ -9,14 +9,14 @@ import Combine
 import Resolver
 
 public protocol StudentFinancialUseCase {
-    func getStudentFinancialInfo(userId: String) -> AnyPublisher<StudentInfo, Error>
+    func getStudentFinancialInfo(userId: String) -> AnyPublisher<StudentFinancials, Error>
 }
 
 public class StudentFinancialUseCaseImpl: StudentFinancialUseCase {
     
-    @Injected var studentFinancialInfoGateway: StudentInfoGateway
+    @Injected var studentFinancialInfoGateway: StudentFinancialGateway
     
-    public func getStudentFinancialInfo(userId: String) -> AnyPublisher<StudentInfo, Error> {
-        studentFinancialInfoGateway.getStudentInfo(userId: userId)
+    public func getStudentFinancialInfo(userId: String) -> AnyPublisher<StudentFinancials, Error> {
+        studentFinancialInfoGateway.getStudentFinancialInfo(userId: userId)
     }
 }

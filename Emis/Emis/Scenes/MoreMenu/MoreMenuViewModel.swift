@@ -83,7 +83,7 @@ extension MoreMenuViewModel {
                 model:
                         .init(labels: .one(model: .init(text: item.title,
                                                         color: item.textColor,
-                                                        font: .italicSystemFont(ofSize: .L))),
+                                                        font: .systemFont(ofSize: .L))),
                               rightItem: .button(model:
                                     .init(resourceType: .icon(icon: UIImage(systemName: "chevron.right")!,
                                                               tintColor: BrandBookManager.Color.Theme.Invert.tr500.uiColor),

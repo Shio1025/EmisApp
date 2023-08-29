@@ -36,6 +36,7 @@
 		2442EBC82A9BD50600B11CE3 /* UpdateStudentPhoneNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBC72A9BD50600B11CE3 /* UpdateStudentPhoneNumberUseCase.swift */; };
 		2442EBCA2A9BD72300B11CE3 /* TeacherDashboardOptionsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBC92A9BD72300B11CE3 /* TeacherDashboardOptionsGateway.swift */; };
 		2442EBCC2A9BD7B600B11CE3 /* TeacherDashboardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBCB2A9BD7B600B11CE3 /* TeacherDashboardUseCase.swift */; };
+		2442EC262A9E2C6700B11CE3 /* ApiTeacherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EC252A9E2C6700B11CE3 /* ApiTeacherInfo.swift */; };
 		245B98BF2A65485C00682D19 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 245B98BE2A65485C00682D19 /* Resolver */; };
 		24C7126829E5B1CC00E5DE0B /* Core.docc in Sources */ = {isa = PBXBuildFile; fileRef = 24C7126729E5B1CC00E5DE0B /* Core.docc */; };
 		24C7126929E5B1CC00E5DE0B /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C7126629E5B1CC00E5DE0B /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -77,6 +78,7 @@
 		2442EBC72A9BD50600B11CE3 /* UpdateStudentPhoneNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStudentPhoneNumberUseCase.swift; sourceTree = "<group>"; };
 		2442EBC92A9BD72300B11CE3 /* TeacherDashboardOptionsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDashboardOptionsGateway.swift; sourceTree = "<group>"; };
 		2442EBCB2A9BD7B600B11CE3 /* TeacherDashboardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDashboardUseCase.swift; sourceTree = "<group>"; };
+		2442EC252A9E2C6700B11CE3 /* ApiTeacherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTeacherInfo.swift; sourceTree = "<group>"; };
 		24C7126329E5B1CC00E5DE0B /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7126629E5B1CC00E5DE0B /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		24C7126729E5B1CC00E5DE0B /* Core.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Core.docc; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		2442EBA12A9BACF800B11CE3 /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
+				2442EC252A9E2C6700B11CE3 /* ApiTeacherInfo.swift */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2442EB8A2A9A873D00B11CE3 /* ApiURLProvider.swift in Sources */,
+				2442EC262A9E2C6700B11CE3 /* ApiTeacherInfo.swift in Sources */,
 				2442EBCA2A9BD72300B11CE3 /* TeacherDashboardOptionsGateway.swift in Sources */,
 				2442EBA82A9BB12A00B11CE3 /* StudentInfoGateway.swift in Sources */,
 				2442EB902A9A8B1600B11CE3 /* LoginModel.swift in Sources */,

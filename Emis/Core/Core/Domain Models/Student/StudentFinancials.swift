@@ -6,6 +6,12 @@
 //
 
 public struct StudentFinancials {
+    public init(tuitionFee: Double, tuitionFeePaid: Double, scholarship: Double) {
+        self.tuitionFee = tuitionFee
+        self.tuitionFeePaid = tuitionFeePaid
+        self.scholarship = scholarship
+    }
+    
     public let tuitionFee: Double
     public let tuitionFeePaid: Double
     public let scholarship: Double

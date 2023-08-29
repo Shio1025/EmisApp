@@ -45,7 +45,7 @@ public class SpacerCellModel: CellModel {
     public typealias T = SpacerCell
     var backgroundColor: UIColor
     
-    public init(backgroundColor: UIColor = BrandBookManager.Color.Theme.Background.canvas.uiColor) {
+    public init(backgroundColor: UIColor = BrandBookManager.Color.Theme.Component.tr100.uiColor) {
         self.backgroundColor = backgroundColor
     }
 }

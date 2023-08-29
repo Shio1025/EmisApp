@@ -55,7 +55,7 @@ extension LoginPageViewModel {
     var labelModel: AnyPublisher<LocalLabelModel, Never> {
         return Just (LocalLabelModel.init(text: "შესვლა",
                                           color: BrandBookManager.Color.General.black.uiColor,
-                                          font: .systemFont(ofSize: .L,
+                                          font: .systemFont(ofSize: .XL2,
                                                             weight: .semibold))).eraseToAnyPublisher()
     }
     

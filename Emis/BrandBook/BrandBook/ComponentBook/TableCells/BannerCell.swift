@@ -41,8 +41,8 @@ public class BannerCell: TableCell {
     }
     
     private func addConstraints() {
-        banner.top(toView: contentView, constant: .S)
-        banner.bottom(toView: contentView, constant: .S)
+        banner.top(toView: contentView)
+        banner.bottom(toView: contentView)
         banner.left(toView: contentView, constant: .M)
         banner.right(toView: contentView, constant: .M)
     }
@@ -63,7 +63,7 @@ public class BannerCellModel: CellModel {
     var backgroundColor: UIColor
     
     public init(model: BannerViewModel,
-                backgroundColor: UIColor = BrandBookManager.Color.Theme.Background.canvas.uiColor) {
+                backgroundColor: UIColor = BrandBookManager.Color.Theme.Component.tr100.uiColor) {
         self.bannerModel = model
         self.backgroundColor = backgroundColor
     }

@@ -15,7 +15,7 @@ public class RoundedHeaderWithTitle: TableCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.textColor = BrandBookManager.Color.General.black.uiColor
-        label.font = .systemFont(ofSize: .L, weight: .bold)
+        label.font = .systemFont(ofSize: .XL2, weight: .bold)
         return label
     }()
     

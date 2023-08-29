@@ -55,7 +55,6 @@ class TabBarController: UITabBarController {
     }
     
     private func createViewControllers() {
-        //Fix later -> now it shows only login page
         let firstTab = UINavigationController(rootViewController: login.controller)
         let secondTab = UINavigationController(rootViewController: main.controller)
         let thirdTab = UINavigationController(rootViewController: timetable.controller)

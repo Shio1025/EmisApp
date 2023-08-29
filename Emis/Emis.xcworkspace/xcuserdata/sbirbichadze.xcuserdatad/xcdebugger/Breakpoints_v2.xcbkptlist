@@ -7,70 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F21DB97D-D352-4FE6-B281-6473F30A400D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Emis/Scenes/MoreMenu/MoreMenuRouter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "handleLogOut(view:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F21DB97D-D352-4FE6-B281-6473F30A400D - a158108f3b0c57a2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Emis.MoreMenuRouter.handleLogOut(view: Emis.MoreMenuController) -&gt; ()"
-                  moduleName = "Emis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/Emis/Scenes/MoreMenu/MoreMenuRouter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "152">
-               </Location>
-               <Location
-                  uuid = "F21DB97D-D352-4FE6-B281-6473F30A400D - a158108f3b0c57a2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Emis.MoreMenuRouter.handleLogOut(view: Emis.MoreMenuController) -&gt; ()"
-                  moduleName = "Emis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/Emis/Scenes/MoreMenu/MoreMenuRouter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "192">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "629BB275-9C21-43DB-BBAF-967C187464DE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Emis/Scenes/MoreMenu/MoreMenuRouter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "handleLogOut(view:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "08C39278-02CF-4F7B-A691-17412525824A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -104,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DAA9D49C-6B37-4420-8056-93E381EDC711"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Emis/Scenes/LoginPage/LoginPageViewModel.swift"
@@ -152,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "88BCF3E5-67FF-4234-9EDA-C37498956E00"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Emis/Scenes/Information/MainPageViewModel.swift"
@@ -168,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5343FADE-FF03-4EC3-A973-3E004D926971"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Emis/Scenes/Information/MainPageViewModel.swift"
@@ -184,7 +120,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7EAE227B-9664-45F2-9221-A32C2044D43D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Emis/Scenes/Information/MainPageViewModel.swift"
@@ -200,7 +136,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "453337AE-7185-4A09-AB57-EFB8A9590D1C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BrandBook/BrandBook/ComponentBook/SecondaryButton/SecondaryButton.swift"
@@ -216,7 +152,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0C5BFF23-AFF0-457C-B508-134D4D374225"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Emis/Scenes/Information/MainPageViewModel.swift"
@@ -232,7 +168,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E7C8EB0D-8984-4ABC-9F08-672FF911207C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Emis/Scenes/Information/MainPageViewModel.swift"
@@ -264,7 +200,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6A0058D4-A131-4F28-AF5B-6C9E72B7C3B8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Emis/Scenes/MoreMenu/MoreMenuViewModel.swift"
@@ -280,7 +216,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3A712476-3AF2-4E8E-B144-5A6E80B6646E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Emis/Scenes/MoreMenu/MoreMenuViewModel.swift"
@@ -321,22 +257,6 @@
             startingLineNumber = "94"
             endingLineNumber = "94"
             landmarkName = "MoreMenuItemsSection(items:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4C507C8C-7A25-46FD-A2C0-86F58EAE2D1F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BrandBook/BrandBook/ComponentBook/RowItem/RowItem.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "configureSeparator(isSeparatorNeeded:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -63,7 +63,7 @@ public class InlineFeedbackCellModel: CellModel {
     var backgroundColor: UIColor
     
     public init(model: InlineFeedbackModel,
-                backgroundColor: UIColor = BrandBookManager.Color.Theme.Background.canvas.uiColor) {
+                backgroundColor: UIColor = BrandBookManager.Color.Theme.Component.tr100.uiColor) {
         self.inlineFeedbackModel = model
         self.backgroundColor = backgroundColor
     }
