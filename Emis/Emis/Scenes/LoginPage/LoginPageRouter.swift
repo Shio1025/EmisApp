@@ -16,7 +16,7 @@ final class LoginPageRouter {
         case .resetPassword:
             view.navigationController?.pushViewController(PasswordResetController(), animated: true)
         case .register:
-            view.navigationController?.viewControllers = [PasswordResetController()]
+            view.navigationController?.pushViewController(PasswordResetController(), animated: true)
         }
     }
 }

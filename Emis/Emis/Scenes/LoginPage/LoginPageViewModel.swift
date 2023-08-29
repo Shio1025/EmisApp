@@ -68,20 +68,29 @@ extension LoginPageViewModel {
     
     var passwordModel: AnyPublisher<TextFieldViewModel, Never> {
         return Just (TextFieldViewModel(placeholder: "პაროლი",
-                                        trailingLabelModel: .init(text: "რეგისტრაცია",
-                                                                  color: BrandBookManager.Color.Theme.Component.solid500.uiColor,
-                                                                  font: .systemFont(ofSize: .M,
-                                                                                    weight: .bold)),
-                                        leadingLabelModel: .init(text: "დაგავიწყდა მონაცემები?",
-                                                                 color: BrandBookManager.Color.Theme.Component.solid500.uiColor,
-                                                                 font: .systemFont(ofSize: .M,
-                                                                                   weight: .bold),
-                                                                 action: {
-                                   self.router = .resetPassword
-                               }),
                                         isSecureEntry: true,
                                         onEditingDidEnd: { [weak self] text in
             self?.password = text
+        })).eraseToAnyPublisher()
+    }
+    
+    var passwordResetLabelModel: AnyPublisher<LocalLabelModel, Never> {
+        return Just (LocalLabelModel.init(text: "დაგავიწყდა პაროლი?",
+                                          color: BrandBookManager.Color.Theme.Component.solid500.uiColor,
+                                          font: .systemFont(ofSize: .M,
+                                                            weight: .semibold),
+                                          action: {
+            self.router = .resetPassword
+        })).eraseToAnyPublisher()
+    }
+    
+    var RegistrationLabelModel: AnyPublisher<LocalLabelModel, Never> {
+        return Just (LocalLabelModel.init(text: "ჯერ კიდევ არ ხარ დარეგისტრირებული? დარეგისტრირდი უმარტივესად",
+                                          color: BrandBookManager.Color.Theme.Component.solid500.uiColor,
+                                          font: .systemFont(ofSize: .M,
+                                                            weight: .semibold),
+                                          action: {
+            self.router = .register
         })).eraseToAnyPublisher()
     }
     

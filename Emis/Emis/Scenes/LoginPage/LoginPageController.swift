@@ -52,6 +52,21 @@ class LoginPageController: UIViewController {
         return textField
     }()
     
+    private lazy var passwordResetLabel: LocalLabel = {
+        let label = LocalLabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .clear
+        return label
+    }()
+    
+    private lazy var registrationLabel: LocalLabel = {
+        let label = LocalLabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .clear
+        label.setAlignment(with: .center)
+        return label
+    }()
+    
     private lazy var textFieldsContainer: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -104,7 +119,9 @@ extension LoginPageController {
     func addSubviews() {
         containerView.addSubview(label)
         containerView.addSubview(textFieldsContainer)
+        containerView.addSubview(passwordResetLabel)
         containerView.addSubview(button)
+        containerView.addSubview(registrationLabel)
         mainStackView.addArrangedSubview(containerView)
         view.addSubview(mainStackView)
     }
@@ -117,10 +134,18 @@ extension LoginPageController {
         textFieldsContainer.right(toView: containerView, constant: .XL2)
         textFieldsContainer.relativeTop(toView: label, constant: .XL)
         
-        button.relativeTop(toView: textFieldsContainer, constant: .XL2)
+        passwordResetLabel.relativeTop(toView: textFieldsContainer, constant: .S)
+        passwordResetLabel.left(toView: containerView, constant: .XL)
+        passwordResetLabel.right(toView: containerView, constant: .M)
+        
+        button.relativeTop(toView: passwordResetLabel, constant: .M)
         button.left(toView: containerView)
         button.right(toView: containerView)
-        button.bottom(toView: containerView, constant: .L)
+        
+        registrationLabel.relativeTop(toView: button, constant: .S)
+        registrationLabel.left(toView: containerView, constant: .L)
+        registrationLabel.right(toView: containerView, constant: .L)
+        registrationLabel.bottom(toView: containerView, constant: .M)
         
         mainStackView.left(toView: view)
         mainStackView.right(toView: view)
@@ -171,6 +196,14 @@ extension LoginPageController {
         
         viewModel.continueButtonModel.sink { [weak self] model in
             self?.button.bind(with: model)
+        }.store(in: &subscriptions)
+        
+        viewModel.passwordResetLabelModel.sink {[weak self] model in
+            self?.passwordResetLabel.bind(with: model)
+        }.store(in: &subscriptions)
+        
+        viewModel.RegistrationLabelModel.sink {[weak self] model in
+            self?.registrationLabel.bind(with: model)
         }.store(in: &subscriptions)
     }
 }
