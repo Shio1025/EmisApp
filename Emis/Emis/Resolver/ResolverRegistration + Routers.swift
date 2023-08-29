@@ -21,5 +21,8 @@ extension Resolver {
         register {
             PasswordResetRouter()
         }
+        register {
+            MainPageRouter()
+        }
     }
 }

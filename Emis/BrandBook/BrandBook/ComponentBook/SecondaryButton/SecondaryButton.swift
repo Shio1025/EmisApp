@@ -92,13 +92,13 @@ extension SecondaryButton {
 extension SecondaryButton {
     
     public func bind(with model: SecondaryButtonModel) {
+        titleLabel.bind(with: model.titleModel)
+        addAction(action: model.action)
+        
         //subscribe state
         model.state.sink { [weak self] state in
             self?.updateButtonState(with: state)
         }.store(in: &subscriptions)
-        
-        titleLabel.bind(with: model.titleModel)
-        addAction(action: model.action)
     }
     
     public func resetSubscriptions() {

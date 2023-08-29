@@ -66,7 +66,7 @@ public class InfoCell: TableCell {
     }
     
     private func addConstraints() {
-        labelContainer.left(toView: contentView, constant: .S)
+        labelContainer.left(toView: contentView, constant: .L)
         labelContainer.width(equalTo: 250)
         labelContainer.centerVertically(to: contentView)
         

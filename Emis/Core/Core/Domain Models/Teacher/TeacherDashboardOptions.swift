@@ -6,6 +6,10 @@
 //
 
 public struct TeacherDashboardOptions {
+    public init(options: [TeacherDashboardOption]) {
+        self.options = options
+    }
+    
     var options: [TeacherDashboardOption]
     
     init(with options: [String]) {
@@ -31,7 +35,7 @@ public struct TeacherDashboardOptions {
 
 public enum TeacherDashboardOption: String {
     case subjectCard = "SUBJECT_CARD_FOR_TEACHER"
-    case subjectRegistration = "SUBJECT_HISTORY_FOR_TEACHER"
+    case subjectHistory = "SUBJECT_HISTORY_FOR_TEACHER"
     case library = "LIBRARY"
     case none
 }

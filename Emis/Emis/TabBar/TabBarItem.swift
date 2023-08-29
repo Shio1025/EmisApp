@@ -48,7 +48,7 @@ enum TabBarItem {
         case .profile:
             return LoginPageController()
         case .main:
-            return MainPage()
+            return MainPageController()
         case .timetable:
             return TimeTablePage()
         case .more:

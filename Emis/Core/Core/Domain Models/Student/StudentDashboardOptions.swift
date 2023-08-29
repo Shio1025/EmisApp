@@ -6,6 +6,10 @@
 //
 
 public struct StudentDashboardOptions {
+    public init(options: [StudentDashboardOption]) {
+        self.options = options
+    }
+    
     var options: [StudentDashboardOption]
     
     init(with options: [String]) {

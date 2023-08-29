@@ -41,10 +41,10 @@ public class SSOManagerImpl: SSOManager {
     public func userLoggedInSuccessfully(userId: Int64?,
                                          userEmail: String?,
                                          userType: UserType) {
-        isUserLogged = true
         self.userType = userType
         self.userId = userId
         self.userEmail = userEmail
+        isUserLogged = true
     }
     
     public func logOutUser() {
