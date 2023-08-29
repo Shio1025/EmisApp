@@ -12,8 +12,16 @@ final class MoreMenuRouter {
     func route(to route: MoreMenuRoute,
                from view: MoreMenuController) {
         switch route {
-        case .loginPage:
-            handleLogOut(view: view)
+        case .changePassword:
+            break
+        case .easyAuthorization:
+            break
+        case .GPACalculator:
+            break
+        case .changeTheme:
+            break
+        case .logOut:
+            break
         }
     }
     

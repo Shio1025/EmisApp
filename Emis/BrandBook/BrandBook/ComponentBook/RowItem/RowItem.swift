@@ -9,6 +9,8 @@ import UIKit
 
 public class RowItem: UIView {
     
+    var tapAction: (() -> Void)?
+    
     private lazy var resourceView: ResourceView = {
         let view = ResourceView()
         view.backgroundColor = .clear
@@ -90,6 +92,14 @@ public class RowItem: UIView {
         return stackView
     }()
     
+    private lazy var separator: UIView = {
+        let separator = UIView()
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        separator.height(equalTo: 1)
+        separator.backgroundColor = BrandBookManager.Color.Theme.Invert.tr50.uiColor
+        return separator
+    }()
+    
     private lazy var containerStack: UIStackView = {
         let stackView = UIStackView.init(arrangedSubviews: [ResourceAndLabelsContainer,
                                                             rightContainer])
@@ -119,7 +129,9 @@ public class RowItem: UIView {
     }
     
     private func  addSubviews() {
-        self.addSubview(containerStack)
+        addSubview(containerStack)
+        
+        addSubview(separator)
     }
     
     private func setUpUI() {
@@ -128,10 +140,14 @@ public class RowItem: UIView {
     }
     
     private func addConstraints() {
-        containerStack.top(toView: self)
-        containerStack.bottom(toView: self)
-        containerStack.left(toView: self)
+        containerStack.top(toView: self, constant: .M)
         containerStack.right(toView: self)
+        containerStack.left(toView: self)
+        containerStack.relativeBottom(toView: separator, constant: .M)
+        
+        separator.left(toView: self, constant: .XL3)
+        separator.right(toView: self, constant: .XL)
+        separator.bottom(toView: self)
     }
 }
 
@@ -148,6 +164,24 @@ extension RowItem {
         configureLabels(labels: model.labels)
         
         configureRightItem(rightItem: model.rightItem)
+        
+        configureSeparator(isSeparatorNeeded: model.isSeparatorNeeded)
+        
+        if let tapAction = model.tapAction { configureTapAction(action: tapAction) }
+    }
+    
+    private func configureTapAction(action: @escaping () -> Void) {
+        self.tapAction = action
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleItemTap)))
+    }
+    
+    @objc
+    private func handleItemTap() {
+        tapAction?()
+    }
+    
+    private func configureSeparator(isSeparatorNeeded: Bool) {
+        separator.isHidden = !isSeparatorNeeded
     }
     
     private func configureLabels(labels: Labels?) {
@@ -189,5 +223,6 @@ extension RowItem {
         bottomLabel.isHidden = true
         rightLabel.isHidden = true
         smallButton.isHidden = true
+        separator.isHidden = true
     }
 }

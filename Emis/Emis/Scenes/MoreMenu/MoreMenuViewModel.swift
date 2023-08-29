@@ -13,7 +13,11 @@ import Core
 import UIKit
 
 enum MoreMenuRoute {
-    case loginPage
+    case changePassword
+    case easyAuthorization
+    case GPACalculator
+    case changeTheme
+    case logOut
 }
 
 final class MoreMenuViewModel {
@@ -29,7 +33,11 @@ final class MoreMenuViewModel {
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        listCells.append(contentsOf: logOutSection)
+        SSO.isUserLoggedPublisher
+            .sink { [weak self] isLogged in
+                guard let self else { return }
+                self.draw(with: self.handleMoreMenuItems(isLogged: isLogged))
+            }.store(in: &subscriptions)
     }
 }
 
@@ -62,19 +70,69 @@ extension MoreMenuViewModel {
 
 extension MoreMenuViewModel {
     
-    var logOutSection: [any CellModel] {
-        let logOut = RowItemCellModel(model: .init(labels: .one(model: .init(text: "გასვლა")),
-                                                       rightItem: .button(model:
-                                                            .init(resourceType: .icon(icon: UIImage(systemName: "arrow.down.to.line")!,
-                                                                                      tintColor: BrandBookManager.Color.Theme.Invert.tr500.uiColor), action: {
-            self.SSO.logOutUser()
-            self.router = .loginPage
-        }))))
+    private func draw(with items: [MoreMenuItem]) {
+        listCells = MoreMenuItemsSection(items: items)
+    }
+    
+    private func MoreMenuItemsSection(items: [MoreMenuItem]) -> [any CellModel] {
+        var rows: [any CellModel] = []
+        rows.append(getRoundedHeaderModel())
+        
+        items.enumerated().forEach { index, item in
+            let itemRow = RowItemCellModel(
+                model:
+                        .init(labels: .one(model: .init(text: item.title,
+                                                        color: item.textColor,
+                                                        font: .italicSystemFont(ofSize: .L))),
+                              rightItem: .button(model:
+                                    .init(resourceType: .icon(icon: UIImage(systemName: "chevron.right")!,
+                                                              tintColor: BrandBookManager.Color.Theme.Invert.tr500.uiColor),
+                                          action: { [weak self] in
+                                              self?.handleMoreMenuItemsNavigation(with: item)
+                                          })),
+                              tapAction: { [weak self] in
+                                  self?.handleMoreMenuItemsNavigation(with: item)
+                              },
+                              isSeparatorNeeded: index != (items.count - 1)))
+            rows.append(itemRow)
+        }
         
         
-        return [getRoundedHeaderModel(),
-                logOut,
-                getRoundedFooterModel(),
-                getSpacerCell()]
+        rows.append(getRoundedFooterModel())
+        return rows
+    }
+}
+
+extension MoreMenuViewModel {
+    
+    private func handleMoreMenuItems(isLogged: Bool) -> [MoreMenuItem] {
+        guard isLogged else { return [.GPACalculator, .changeTheme] }
+        switch SSO.userType {
+        case .student:
+            return  [.changePassword, .easyAuthorization, .GPACalculator, .changeTheme, .logOut]
+        case .teacher:
+            return [.changePassword, .easyAuthorization, .changeTheme, .logOut]
+        default:
+            return []
+        }
+    }
+}
+
+//Handle Navigation
+extension MoreMenuViewModel {
+    
+    private func handleMoreMenuItemsNavigation(with item: MoreMenuItem) {
+        switch item {
+        case .changePassword:
+            break
+        case .easyAuthorization:
+            break
+        case .GPACalculator:
+            break
+        case .changeTheme:
+            break
+        case .logOut:
+            router = .logOut
+        }
     }
 }

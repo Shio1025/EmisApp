@@ -17,6 +17,7 @@
 		2442EB722A9A5F3500B11CE3 /* ResolverRegistration + NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EB712A9A5F3500B11CE3 /* ResolverRegistration + NetworkLayer.swift */; };
 		2442EBD72A9DB4A600B11CE3 /* MainPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBD62A9DB4A600B11CE3 /* MainPageViewModel.swift */; };
 		2442EBD92A9DB4B600B11CE3 /* MainPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBD82A9DB4B600B11CE3 /* MainPageRouter.swift */; };
+		2442EC1D2A9DE6DA00B11CE3 /* MoreMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EC1C2A9DE6DA00B11CE3 /* MoreMenuItem.swift */; };
 		2490E2F32A02EB600073DBDE /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2F22A02EB600073DBDE /* LoginPageController.swift */; };
 		2490E2F52A02EB980073DBDE /* MoreMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2F42A02EB980073DBDE /* MoreMenuController.swift */; };
 		2490E2F72A02EC120073DBDE /* TimeTablePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2F62A02EC120073DBDE /* TimeTablePage.swift */; };
@@ -102,6 +103,7 @@
 		2442EB712A9A5F3500B11CE3 /* ResolverRegistration + NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResolverRegistration + NetworkLayer.swift"; sourceTree = "<group>"; };
 		2442EBD62A9DB4A600B11CE3 /* MainPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewModel.swift; sourceTree = "<group>"; };
 		2442EBD82A9DB4B600B11CE3 /* MainPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageRouter.swift; sourceTree = "<group>"; };
+		2442EC1C2A9DE6DA00B11CE3 /* MoreMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreMenuItem.swift; sourceTree = "<group>"; };
 		2490E2EB2A02E38E0073DBDE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		2490E2F22A02EB600073DBDE /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
 		2490E2F42A02EB980073DBDE /* MoreMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreMenuController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,14 @@
 			path = ProfilePage;
 			sourceTree = "<group>";
 		};
+		2442EC1B2A9DE6CB00B11CE3 /* MoreMenuItems */ = {
+			isa = PBXGroup;
+			children = (
+				2442EC1C2A9DE6DA00B11CE3 /* MoreMenuItem.swift */,
+			);
+			path = MoreMenuItems;
+			sourceTree = "<group>";
+		};
 		2490E2E52A02E3670073DBDE /* EntryPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +201,7 @@
 		2490E2EF2A02EA8C0073DBDE /* MoreMenu */ = {
 			isa = PBXGroup;
 			children = (
+				2442EC1B2A9DE6CB00B11CE3 /* MoreMenuItems */,
 				2490E2F42A02EB980073DBDE /* MoreMenuController.swift */,
 				24A924F52A423C0400FEF291 /* MoreMenuViewModel.swift */,
 				24A924F72A423C0D00FEF291 /* MoreMenuRouter.swift */,
@@ -472,6 +483,7 @@
 				2490E2F32A02EB600073DBDE /* LoginPageController.swift in Sources */,
 				24C7117229E5ADC200E5DE0B /* SceneDelegate.swift in Sources */,
 				24A924F62A423C0400FEF291 /* MoreMenuViewModel.swift in Sources */,
+				2442EC1D2A9DE6DA00B11CE3 /* MoreMenuItem.swift in Sources */,
 				24A924F82A423C0D00FEF291 /* MoreMenuRouter.swift in Sources */,
 				242568822A0D4E030022A132 /* LoginPageRouter.swift in Sources */,
 				243CBC102A3E001100EEE080 /* ProfilePageRouter.swift in Sources */,

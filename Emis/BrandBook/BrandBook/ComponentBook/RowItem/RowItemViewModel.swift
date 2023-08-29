@@ -11,13 +11,19 @@ public class RowItemViewModel {
     var leftItem: ResourceType?
     var labels: Labels?
     var rightItem: Item?
+    var tapAction: (() -> Void)?
+    var isSeparatorNeeded: Bool
     
     public init(leftItem: ResourceType? = nil,
-         labels: Labels? = nil,
-         rightItem: Item? = nil) {
+                labels: Labels? = nil,
+                rightItem: Item? = nil,
+                tapAction: (() -> Void)? = nil,
+                isSeparatorNeeded: Bool = false) {
         self.leftItem = leftItem
         self.labels = labels
         self.rightItem = rightItem
+        self.tapAction = tapAction
+        self.isSeparatorNeeded = isSeparatorNeeded
     }
 }
 

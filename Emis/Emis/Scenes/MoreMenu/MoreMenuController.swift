@@ -61,8 +61,8 @@ extension MoreMenuController {
     
     private func addConstraints() {
         tableView.top(toView: view)
-        tableView.left(toView: view)
-        tableView.right(toView: view)
+        tableView.left(toView: view, constant: .M)
+        tableView.right(toView: view, constant: .M)
         tableView.bottom(toView: view)
     }
     
@@ -98,7 +98,7 @@ extension MoreMenuController {
 
 extension MoreMenuController: CustomNavigatable {
     var navTitle: NavigationTitle {
-        .init(text: "პირადი მონაცემები")
+        .init(text: "მეტი")
     }
     
     var leftBarItems: [UIBarButtonItem]? { nil }
