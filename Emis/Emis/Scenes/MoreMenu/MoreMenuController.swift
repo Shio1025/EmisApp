@@ -61,8 +61,8 @@ extension MoreMenuController {
     
     private func addConstraints() {
         tableView.top(toView: view)
-        tableView.left(toView: view, constant: .M)
-        tableView.right(toView: view, constant: .M)
+        tableView.left(toView: view, constant: .S)
+        tableView.right(toView: view, constant: .S)
         tableView.bottom(toView: view)
     }
     

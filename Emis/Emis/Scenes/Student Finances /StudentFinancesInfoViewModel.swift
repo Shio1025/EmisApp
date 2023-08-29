@@ -6,6 +6,7 @@
 //
 
 import BrandBook
+import UIKit
 import Combine
 import Resolver
 import SSO
@@ -38,12 +39,20 @@ extension StudentFinancesInfoViewModel {
     private func getSpacerCell() -> SpacerCellModel {
         .init()
     }
+    
+    private func getRoundedHeaderWithTitle(title: String) -> RoundedHeaderWithTitleModel {
+        .init(headerTitle: title)
+    }
+    
+    private func getRoundedFooterModel() -> RoundedFooterModel {
+        .init()
+    }
 }
 
 extension StudentFinancesInfoViewModel {
     
     private func loadStudentFinancialInfo() {
-        financialInfo = .init(tuitionFee: 100, tuitionFeePaid: 200, scholarship: 190)
+        financialInfo = .init(tuitionFee: 100, scholarship: 100, effectiveFee: 100, tuitionFeePaid: 100, debt: 100)
         isLoading = false
         draw()
 //        @Injected var studentFinancialInfoUseCase: StudentFinancialUseCase
@@ -72,9 +81,34 @@ extension StudentFinancesInfoViewModel {
     
     func getFinancialInfo() -> [any CellModel]? {
         guard let financialInfo else { return nil }
+        var rows: [any CellModel] = []
+        rows.append(getRoundedHeaderWithTitle(title: "ფინანსური მონაცემები"))
         
-        let row = RowItemCellModel(model: .init(labels: .one(model: .init(text: financialInfo.tuitionFee.description))))
+        rows.append(RowItemCellModel(model:
+                .init(labels: .one(model: .init(text: "საფასური")),
+                      rightItem: .label(model: .init(text: financialInfo.tuitionFee.description)),
+                      isSeparatorNeeded: true)))
+        rows.append(RowItemCellModel(model:
+                .init(labels: .one(model: .init(text: "გრანტი")),
+                      rightItem: .label(model: .init(text: financialInfo.scholarship.description)),
+                      isSeparatorNeeded: true)))
+        rows.append(RowItemCellModel(model:
+                .init(labels: .one(model: .init(text: "ეფ. გადასახადი")),
+                      rightItem: .label(model: .init(text: financialInfo.effectiveFee.description)),
+                      isSeparatorNeeded: true)))
+        rows.append(RowItemCellModel(model:
+                .init(labels: .one(model: .init(text: "გადახდილი თანხა")),
+                      rightItem: .label(model: .init(text: financialInfo.tuitionFeePaid.description)),
+                      isSeparatorNeeded: true)))
+        let debtColor: UIColor = financialInfo.debt <= .zero
+                ? BrandBookManager.Color.General.green.uiColor
+                : BrandBookManager.Color.General.red.uiColor
+        rows.append(RowItemCellModel(model:
+                .init(labels: .one(model: .init(text: "დავალიანება")),
+                      rightItem: .label(model: .init(text: financialInfo.debt.description,
+                                                    color: debtColor)))))
+        rows.append(getRoundedFooterModel())
         
-        return [row]
+        return rows
     }
 }

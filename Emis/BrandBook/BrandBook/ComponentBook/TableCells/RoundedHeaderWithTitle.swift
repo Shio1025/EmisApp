@@ -47,6 +47,7 @@ public class RoundedHeaderWithTitle: TableCell {
         label.top(toView: contentView, constant: .M)
         label.bottom(toView: contentView, constant: .XS)
         label.left(toView: contentView, constant: .L)
+        label.right(toView: contentView, constant: .M)
     }
     
     public override func draw(_ rect: CGRect) {

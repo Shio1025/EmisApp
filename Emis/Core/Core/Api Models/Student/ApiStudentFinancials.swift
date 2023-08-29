@@ -7,6 +7,8 @@
 
 struct ApiStudentFinancials: Codable {
     let tuitionFee: Double
-    let tuitionFeePaid: Double
     let scholarship: Double
+    let effectiveFee: Double
+    let tuitionFeePaid: Double
+    let debt: Double
 }

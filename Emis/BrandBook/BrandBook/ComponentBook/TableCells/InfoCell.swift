@@ -49,7 +49,7 @@ public class InfoCell: TableCell {
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.alignment = .leading
-        stackView.spacing = .S
+        stackView.spacing = .XS
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()

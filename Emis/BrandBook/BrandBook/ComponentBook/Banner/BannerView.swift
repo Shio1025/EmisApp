@@ -87,7 +87,7 @@ public class BannerView: UIView {
         resourceView.bottom(toView: self)
         resourceView.left(toView: self, constant: .M)
         
-        labelContainer.relativeLeft(toView: resourceView, constant: .S)
+        labelContainer.relativeLeft(toView: resourceView, constant: .XS)
         labelContainer.width(equalTo: 200)
         labelContainer.centerVertically(to: self)
         

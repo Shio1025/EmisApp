@@ -69,15 +69,15 @@ extension StudentFinancesInfoController {
     
     private func addConstraints() {
         tableView.topNotSafe(toView: view)
-        tableView.left(toView: view)
-        tableView.right(toView: view)
+        tableView.left(toView: view, constant: .S)
+        tableView.right(toView: view, constant: .S)
         tableView.bottom(toView: view)
     }
     
     private func registerTableCells() {
         tableView.register(RowItemCell.self)
-        tableView.register(BannerCell.self)
-        tableView.register(InlineFeedbackCell.self)
+        tableView.register(RoundedHeaderWithTitle.self)
+        tableView.register(RoundedFooter.self)
     }
 }
 

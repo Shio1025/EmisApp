@@ -144,7 +144,8 @@ extension ProfilePageViewModel {
         var rows: [any CellModel] = []
         rows.append(getRoundedHeaderWithTitle(title: "პერსონალური მონაცემები"))
         
-        let phoneNumberRow = InfoCellModel(topLabelModel: .init(text: "მობილურის ნომერი"),
+        let phoneNumberRow = InfoCellModel(topLabelModel: .init(text: "მობილურის ნომერი",
+                                                                color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
                                            bottomLabelModel: .init(text: userInfo.phoneNumber,
                                                                    font: .systemFont(ofSize: .XL)),
                                            buttonModel: .init(titleModel: .init(text: "შეცვლა"),
@@ -155,14 +156,16 @@ extension ProfilePageViewModel {
                                            isSeparatorNeeded: true)
         rows.append(phoneNumberRow)
         
-        let addressRow = InfoCellModel(topLabelModel: .init(text: "მისამართი"),
+        let addressRow = InfoCellModel(topLabelModel: .init(text: "მისამართი",
+                                                            color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
                                        bottomLabelModel: .init(text: userInfo.address,
                                                                font: .systemFont(ofSize: .XL,
                                                                                  weight: .regular)),
                                        isSeparatorNeeded: true)
         rows.append(addressRow)
         
-        let emailRow = InfoCellModel(topLabelModel: .init(text: "ელ-ფოსტა"),
+        let emailRow = InfoCellModel(topLabelModel: .init(text: "ელ-ფოსტა",
+                                                          color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
                                      bottomLabelModel: .init(text: userInfo.email,
                                                              font: .systemFont(ofSize: .XL,
                                                                                weight: .regular)))
@@ -214,7 +217,8 @@ extension ProfilePageViewModel {
         let financesBanner = BannerCellModel(model:
                 .init(resourceType: .animation(model: .init(animationName: BrandBookManager.Lottie.finances,
                                                             bundle: Bundle(identifier: "Shio.BrandBook")!)),
-                      topLabelModel: .init(text: "ჩემი ფინანსები"),
+                      topLabelModel: .init(text: "ჩემი ფინანსები",
+                                           font: .systemFont(ofSize: .L)),
                       isChevronNeeded: true,
                       action: {
             self.router = .finances

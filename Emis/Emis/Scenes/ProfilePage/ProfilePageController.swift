@@ -60,8 +60,8 @@ extension ProfilePageController {
     
     private func addConstraints() {
         tableView.top(toView: view)
-        tableView.left(toView: view)
-        tableView.right(toView: view)
+        tableView.left(toView: view, constant: .S)
+        tableView.right(toView: view, constant: .S)
         tableView.bottom(toView: view)
     }
     
