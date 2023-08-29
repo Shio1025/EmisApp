@@ -68,6 +68,7 @@ extension MainPageController {
     private func registerTableCells() {
         tableView.register(SpacerCell.self)
         tableView.register(BannerCell.self)
+        tableView.register(InlineFeedbackCell.self)
     }
 }
 

@@ -22,6 +22,7 @@ extension BrandBookManager {
             }
             
             public struct Invert {
+                public static let tr50 = ColorWrapper(name: "\(currentTheme)-color-invert-50")
                 public static let tr100 = ColorWrapper(name: "\(currentTheme)-color-invert-100")
                 public static let tr200 = ColorWrapper(name: "\(currentTheme)-color-invert-200")
                 public static let tr300 = ColorWrapper(name: "\(currentTheme)-color-invert-300")

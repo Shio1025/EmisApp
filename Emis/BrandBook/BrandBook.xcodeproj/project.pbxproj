@@ -34,6 +34,8 @@
 		2442EBCF2A9D173C00B11CE3 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBCE2A9D173C00B11CE3 /* SecondaryButton.swift */; };
 		2442EBD12A9D18D800B11CE3 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBD02A9D18D800B11CE3 /* InfoCell.swift */; };
 		2442EBD52A9D2BDF00B11CE3 /* finances.json in Resources */ = {isa = PBXBuildFile; fileRef = 2442EBD42A9D2BDF00B11CE3 /* finances.json */; };
+		2442EBDC2A9DC92D00B11CE3 /* InlineFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBDB2A9DC92D00B11CE3 /* InlineFeedback.swift */; };
+		2442EC1A2A9DCBDD00B11CE3 /* InlineFeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EC192A9DCBDD00B11CE3 /* InlineFeedbackCell.swift */; };
 		2452F0292A2F0E1A005F4DDF /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F0282A2F0E1A005F4DDF /* CustomNavigation.swift */; };
 		2452F02B2A2F168A005F4DDF /* BackBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F02A2A2F168A005F4DDF /* BackBarButtonItem.swift */; };
 		2452F0362A2F6EB7005F4DDF /* GenericTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F0352A2F6EB7005F4DDF /* GenericTableView.swift */; };
@@ -95,6 +97,8 @@
 		2442EBCE2A9D173C00B11CE3 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		2442EBD02A9D18D800B11CE3 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		2442EBD42A9D2BDF00B11CE3 /* finances.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = finances.json; sourceTree = "<group>"; };
+		2442EBDB2A9DC92D00B11CE3 /* InlineFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineFeedback.swift; sourceTree = "<group>"; };
+		2442EC192A9DCBDD00B11CE3 /* InlineFeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineFeedbackCell.swift; sourceTree = "<group>"; };
 		2452F0282A2F0E1A005F4DDF /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		2452F02A2A2F168A005F4DDF /* BackBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackBarButtonItem.swift; sourceTree = "<group>"; };
 		2452F0352A2F6EB7005F4DDF /* GenericTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableView.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				243CBC672A4058EE00EEE080 /* RowItemCell.swift */,
 				24E3F1C12A98F1A3008A0430 /* BannerCell.swift */,
 				2442EBD02A9D18D800B11CE3 /* InfoCell.swift */,
+				2442EC192A9DCBDD00B11CE3 /* InlineFeedbackCell.swift */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -230,6 +235,14 @@
 			path = SecondaryButton;
 			sourceTree = "<group>";
 		};
+		2442EBDA2A9DC90B00B11CE3 /* InlineFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				2442EBDB2A9DC92D00B11CE3 /* InlineFeedback.swift */,
+			);
+			path = InlineFeedback;
+			sourceTree = "<group>";
+		};
 		2452F0272A2F0E06005F4DDF /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,8 +300,8 @@
 		2490E3432A041A2C0073DBDE /* ComponentBook */ = {
 			isa = PBXGroup;
 			children = (
-				2442EB912A9B4EB100B11CE3 /* Loader */,
 				243CBC112A3E097E00EEE080 /* TableCells */,
+				2442EB912A9B4EB100B11CE3 /* Loader */,
 				2442EB802A9A7E2C00B11CE3 /* Status Banner */,
 				243CBC422A403E0500EEE080 /* RowItem */,
 				243CBC3D2A403BC700EEE080 /* SmallButton */,
@@ -299,6 +312,7 @@
 				2466C3DD2A14AFC400E7B400 /* PrimaryButton */,
 				2442EBCD2A9BDEFD00B11CE3 /* SecondaryButton */,
 				2466229D2A13664D00287AA7 /* LocalLabel */,
+				2442EBDA2A9DC90B00B11CE3 /* InlineFeedback */,
 				24E3F1BC2A98ECE7008A0430 /* Banner */,
 				242568A82A0D65300022A132 /* TextField */,
 			);
@@ -496,6 +510,7 @@
 				24C712A229E5BB6500E5DE0B /* ConstraintsExtension.swift in Sources */,
 				2490E2FE2A02ED600073DBDE /* ImageWrapper.swift in Sources */,
 				24E3F1C02A98ED18008A0430 /* BannerViewModel.swift in Sources */,
+				2442EBDC2A9DC92D00B11CE3 /* InlineFeedback.swift in Sources */,
 				24E3F1BE2A98ED0B008A0430 /* BannerView.swift in Sources */,
 				2442EBCF2A9D173C00B11CE3 /* SecondaryButton.swift in Sources */,
 				2466C3E32A14B54B00E7B400 /* PrimaryButtonStateColors.swift in Sources */,
@@ -526,6 +541,7 @@
 				24E3F1C22A98F1A3008A0430 /* BannerCell.swift in Sources */,
 				243CBC172A3F166B00EEE080 /* RoundedFooter.swift in Sources */,
 				243CBC2A2A3F185800EEE080 /* RoundCorners.swift in Sources */,
+				2442EC1A2A9DCBDD00B11CE3 /* InlineFeedbackCell.swift in Sources */,
 				2442EB932A9B4EC000B11CE3 /* Loader.swift in Sources */,
 				243CBC682A4058EE00EEE080 /* RowItemCell.swift in Sources */,
 				2490E3422A040B270073DBDE /* DesignSystemConstants.swift in Sources */,

@@ -42,8 +42,11 @@ final class MainPageViewModel {
     init() {
         SSO.isUserLoggedPublisher
             .sink { [weak self] isLogged in
-                guard let self,
-                      isLogged else { return }
+                guard let self else { return }
+                guard isLogged else {
+                    self.listCells = [self.getInlineFeedbackCell(text: "იმისთვის რომ შეძლო მოცემულ გვერდზე შენი ციფრული სერვისებით სარგებლობა, გაიარე ავტორიზაცია ან დარეგისტრირდი უმარტივესად")]
+                    return
+                }
                 self.isLoading = true
                 switch self.SSO.userType {
                 case .student:
@@ -74,7 +77,7 @@ extension MainPageViewModel {
 extension MainPageViewModel {
     
     private func getStudentOptions() {
-        studentDashboardOptions = .init(options: [.subjectCard, .subjectCard, .library, .subjectRegistration])
+        studentDashboardOptions = .init(options: [ .library, .subjectCard])
         draw()
         isLoading = false
 //        @Injected var studentOptionsUseCase: StudentDashboardUseCase
@@ -94,7 +97,7 @@ extension MainPageViewModel {
     }
     
     private func getTeacherOptions() {
-        teacherDashboardOptions = .init(options: [.library, .library, .subjectCard, .subjectHistory, .subjectCard, .none])
+        teacherDashboardOptions = .init(options: [.library, .library, .subjectCard, .subjectCard, .none])
         draw()
         isLoading = false
 //        @Injected var teacherOptionsUseCase: TeacherDashboardUseCase
@@ -128,11 +131,19 @@ extension MainPageViewModel {
     }
     
     private func handleStudentOptions() {
-        studentBanners.map { listCells.append(contentsOf: $0) }
+        studentBanners.map { listCells = $0 }
+        if let studentDashboardOptions,
+           !studentDashboardOptions.userDashboardOptions.contains(where: { $0 == .subjectRegistration }) {
+            listCells.append(getInlineFeedbackCell(text: "აკადემიური რეგისტრაცია ჯერ არ არის ხელმისაწვდომი, გახსნის შემთხვევაში გამოგიჩნდებათ ბანერების სივრცეში"))
+        }
     }
     
     private func handleTeacherOptions() {
-        teacherBanners.map { listCells.append(contentsOf: $0) }
+        teacherBanners.map { listCells = $0 }
+        if let teacherDashboardOptions,
+           !teacherDashboardOptions.userDashboardOptions.contains(where: { $0 == .subjectHistory }) {
+            listCells.append(getInlineFeedbackCell(text: "შენ ჯერ არ გაქვს საგნების ისტორია, შემდეგ სემესტრში უკვე გამოგიჩნდებათ ბანერების სივრცეში საგნების ისტორია"))
+        }
     }
 }
 
@@ -255,5 +266,13 @@ extension MainPageViewModel {
         case .none:
             break
         }
+    }
+}
+
+//Inline FeedBack
+extension MainPageViewModel {
+    
+    private func getInlineFeedbackCell(text: String) -> InlineFeedbackCellModel {
+        .init(model: .init(titleModel: .init(text: text)))
     }
 }
