@@ -132,6 +132,7 @@ extension MoreMenuViewModel {
         case .changeTheme:
             break
         case .logOut:
+            SSO.logOutUser()
             router = .logOut
         }
     }

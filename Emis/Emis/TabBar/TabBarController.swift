@@ -11,7 +11,6 @@ import BrandBook
 class TabBarController: UITabBarController {
     
     var login: TabBarItem = .login
-    var profile: TabBarItem = .profile
     var main: TabBarItem = .main
     var timetable: TabBarItem = .timetable
     var more: TabBarItem = .more
@@ -49,12 +48,14 @@ class TabBarController: UITabBarController {
         appearance.stackedLayoutAppearance.normal.iconColor = BrandBookManager.Color.Theme.Invert.tr100.uiColor
         appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: BrandBookManager.Color.Theme.Invert.tr100.uiColor] // unselected text color
         appearance.stackedLayoutAppearance.selected.iconColor = BrandBookManager.Color.Theme.Component.solid500.uiColor
-        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: BrandBookManager.Color.Theme.Component.solid500.uiColor] // selected text color
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: BrandBookManager.Color.Theme.Component.solid500.uiColor,
+                                                                           .font : UIFont.systemFont(ofSize: .M)]
+        // selected text color
         
         self.tabBar.standardAppearance = appearance
     }
     
-    private func createViewControllers() {
+    public func createViewControllers() {
         let firstTab = UINavigationController(rootViewController: login.controller)
         let secondTab = UINavigationController(rootViewController: main.controller)
         let thirdTab = UINavigationController(rootViewController: timetable.controller)
@@ -62,9 +63,9 @@ class TabBarController: UITabBarController {
         viewControllers = [firstTab, secondTab, thirdTab, fourthTab]
         
         
-        firstTab.tabBarItem = UITabBarItem(title: login.text, image: login.icon.resizeImage(targetSize: .init(width: 24, height: 24)), tag: 0)
-        secondTab.tabBarItem = UITabBarItem(title: main.text, image: main.icon.resizeImage(targetSize: .init(width: 24, height: 24)), tag: 1)
-        thirdTab.tabBarItem = UITabBarItem(title: timetable.text, image: timetable.icon.resizeImage(targetSize: .init(width: 24, height: 24)), tag: 2)
-        fourthTab.tabBarItem = UITabBarItem(title: more.text, image: more.icon.resizeImage(targetSize: .init(width: 24, height: 24)), tag: 3)
+        firstTab.tabBarItem = UITabBarItem(title: login.text, image: login.icon.resizeImage(targetSize: .init(width: .XL3, height: .XL3)), tag: 0)
+        secondTab.tabBarItem = UITabBarItem(title: main.text, image: main.icon.resizeImage(targetSize: .init(width: .XL3, height: .XL3)), tag: 1)
+        thirdTab.tabBarItem = UITabBarItem(title: timetable.text, image: timetable.icon.resizeImage(targetSize: .init(width: .XL3, height: .XL3)), tag: 2)
+        fourthTab.tabBarItem = UITabBarItem(title: more.text, image: more.icon.resizeImage(targetSize: .init(width: .XL3, height: .XL3)), tag: 3)
     }
 }

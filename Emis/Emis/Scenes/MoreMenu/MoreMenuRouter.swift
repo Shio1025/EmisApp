@@ -26,14 +26,8 @@ final class MoreMenuRouter {
     }
     
     private func handleLogOut(view: MoreMenuController) {
-        guard let tabBarController = view.tabBarController else { return }
+        guard let tabBarController = view.tabBarController  as? TabBarController else { return }
+        tabBarController.createViewControllers()
         tabBarController.selectedIndex = 0
-        let firstTab = UINavigationController(rootViewController: LoginPageController())
-        let secondTab = UINavigationController(rootViewController: MainPageController())
-        let thirdTab = UINavigationController(rootViewController: TimeTablePage())
-        let fourthTab = UINavigationController(rootViewController: MoreMenuController(viewModel: MoreMenuViewModel()))
-        tabBarController.viewControllers = [firstTab, secondTab, thirdTab, fourthTab]
-        
-//        view.tabBarController?.setViewControllers([TabBarController()], animated: true)
     }
 }

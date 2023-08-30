@@ -9,7 +9,6 @@ import UIKit
 
 enum TabBarItem {
     case login
-    case profile
     case main
     case timetable
     case more
@@ -17,7 +16,7 @@ enum TabBarItem {
     
     var text: String {
         switch self {
-        case .profile, .login:
+        case .login:
             return "პროფილი"
         case .main:
             return "მთავარი"
@@ -30,7 +29,7 @@ enum TabBarItem {
     
     var icon: UIImage {
         switch self {
-        case .profile, .login:
+        case .login:
             return BrandBookManager.Icon.student.template
         case .main:
             return BrandBookManager.Icon.main_idea.template
@@ -44,8 +43,6 @@ enum TabBarItem {
     var controller: UIViewController {
         switch self {
         case .login:
-            return LoginPageController()
-        case .profile:
             return LoginPageController()
         case .main:
             return MainPageController()

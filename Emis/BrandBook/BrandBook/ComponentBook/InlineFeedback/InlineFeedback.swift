@@ -40,7 +40,7 @@ public class InlineFeedback: UIView {
     }
     
     private func setUpUI() {
-        backgroundColor = BrandBookManager.Color.Theme.Invert.tr50.uiColor
+        backgroundColor = BrandBookManager.Color.Theme.Invert.tr50.uiColor.withAlphaComponent(0.3)
         
     }
     

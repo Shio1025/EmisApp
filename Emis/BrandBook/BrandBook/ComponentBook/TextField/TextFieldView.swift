@@ -29,6 +29,7 @@ public class TextFieldView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = .clear
         textField.textColor = .clear
+        textField.font = .systemFont(ofSize: .XL)
         return textField
     }()
     
@@ -124,7 +125,7 @@ public class TextFieldView: UIView {
         textField.left(toView: textFieldHolder, constant: .S)
         textField.right(toView: passcodeEye, constant: .XL3)
         
-        passcodeEye.right(toView: textFieldHolder, constant: .S)
+        passcodeEye.right(toView: textFieldHolder, constant: .M)
         passcodeEye.centerVertically(to: textFieldHolder)
         
         textFieldHolder.top(toView: textFieldContainer, constant: 1)
