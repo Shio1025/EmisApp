@@ -12,8 +12,6 @@ public class SecondaryButton: UIView {
     
     private var tapAction: (() -> Void)?
     
-    private var subscriptions = Set<AnyCancellable>()
-    
     private lazy var titleLabel: LocalLabel = {
         let view = LocalLabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -62,24 +60,8 @@ public class SecondaryButton: UIView {
 
 extension SecondaryButton {
     
-    private func updateButtonState(with state: ButtonState) {
-        switch state {
-        case .enabled:
-            backgroundColor = PrimaryButtonState.enabled.backgroundColor
-            titleLabel.changeTextColor(with: PrimaryButtonState.enabled.textColor)
-            isUserInteractionEnabled = true
-        case .disabled:
-            backgroundColor = PrimaryButtonState.disabled.backgroundColor
-            titleLabel.changeTextColor(with: PrimaryButtonState.disabled.textColor)
-            isUserInteractionEnabled = false
-        case .loading:
-            backgroundColor = PrimaryButtonState.loading.backgroundColor
-            titleLabel.changeTextColor(with: PrimaryButtonState.loading.textColor)
-            isUserInteractionEnabled = false
-        }
-    }
-    
     private func addAction(action: @escaping () -> Void) {
+        isUserInteractionEnabled = true
         tapAction = action
         addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(viewDidTapped)))
     }
@@ -94,28 +76,26 @@ extension SecondaryButton {
     public func bind(with model: SecondaryButtonModel) {
         titleLabel.bind(with: model.titleModel)
         addAction(action: model.action)
-        
-        //subscribe state
-        model.state.sink { [weak self] state in
-            self?.updateButtonState(with: state)
-        }.store(in: &subscriptions)
-    }
     
-    public func resetSubscriptions() {
-        subscriptions = Set<AnyCancellable>()
+        backgroundColor = model.backgroundColor
+        titleLabel.changeTextColor(with: model.textColor)
+        
     }
 }
 
 public struct SecondaryButtonModel {
     let titleModel: LocalLabelModel
-    var state: AnyPublisher<ButtonState, Never>
+    let backgroundColor: UIColor
+    let textColor: UIColor
     let action: (() -> Void)
     
     public init(titleModel: LocalLabelModel,
-                state: AnyPublisher<ButtonState, Never>,
+                backgroundColor: UIColor = BrandBookManager.Color.Theme.Component.solid500.uiColor,
+                textColor: UIColor = BrandBookManager.Color.General.white.uiColor,
                 action: @escaping (() -> Void)) {
         self.titleModel = titleModel
-        self.state = state
+        self.backgroundColor = backgroundColor
+        self.textColor = textColor
         self.action = action
     }
 }

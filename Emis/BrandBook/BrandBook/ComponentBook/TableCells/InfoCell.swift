@@ -100,11 +100,6 @@ public class InfoCell: TableCell {
         separator.right(toView: contentView, constant: .XL)
         separator.bottom(toView: contentView)
     }
-    
-    public override func prepareForReuse() {
-        super.prepareForReuse()
-        button.resetSubscriptions()
-    }
 }
 
 extension InfoCell {

@@ -11,8 +11,6 @@ final class ProfilePageRouter {
     func route(to route: ProfilePageRoute,
                from view: ProfilePageController) {
         switch route {
-        case .changePhoneNumber:
-            break
         case .finances:
             view.navigationController?.pushViewController(StudentFinancesInfoController(), animated: true)
         }

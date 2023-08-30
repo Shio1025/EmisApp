@@ -74,6 +74,9 @@ extension ProfilePageController {
         tableView.register(RowItemCell.self)
         tableView.register(BannerCell.self)
         tableView.register(InfoCell.self)
+        tableView.register(TextFieldCell.self)
+        tableView.register(SecondaryButtonsCell.self)
+        tableView.register(SeparatorCell.self)
     }
 }
 

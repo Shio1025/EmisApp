@@ -12,7 +12,6 @@ import SSO
 import Core
 
 enum ProfilePageRoute {
-    case changePhoneNumber
     case finances
 }
 
@@ -21,8 +20,12 @@ final class ProfilePageViewModel {
     @Published private var router: ProfilePageRoute?
     @Published private var listCells: [any CellModel] = []
     @Published private var isLoading: Bool = true
+    @Published private var isPhoneNumberChanging: Bool = false
+    private var newPhoneNumber: String = ""
     @Published private var phoneNumberChangeButton: ButtonState = .enabled
+    
     private var studentInfo: StudentInfo?
+    
     @Injected private var SSO: SSOManager
     
     var listCellModels: AnyPublisher<[any CellModel], Never> {
@@ -33,9 +36,21 @@ final class ProfilePageViewModel {
         $isLoading.eraseToAnyPublisher()
     }
     
+//    var phoneNumberLabelText: AnyPublisher<String, Never> {
+//        return $isPhoneNumberChanging
+//            .map { isChanging in
+//                isChanging
+//                    ? "შენახვა"
+//            }
+//    }
+    
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
+        load()
+    }
+    
+    private func load() {
         switch SSO.userType {
         case .student:
             getStudentInfo()
@@ -115,10 +130,14 @@ extension ProfilePageViewModel {
     }
     
     private func handleStudentProfile() {
-        headerSection.map { listCells.append(contentsOf: $0) }
-        educationalInfoSection.map { listCells.append(contentsOf: $0) }
-        financeInfoSection.map { listCells.append(contentsOf: $0) }
-        personalInfoSection.map { listCells.append(contentsOf: $0) }
+        var rows: [any CellModel] = []
+        
+        headerSection.map { rows.append(contentsOf: $0) }
+        educationalInfoSection.map { rows.append(contentsOf: $0) }
+        financeInfoSection.map { rows.append(contentsOf: $0) }
+        personalInfoSection.map { rows.append(contentsOf: $0) }
+        
+        listCells = rows
     }
     
     private func handleTeacherProfile() {
@@ -144,17 +163,45 @@ extension ProfilePageViewModel {
         var rows: [any CellModel] = []
         rows.append(getRoundedHeaderWithTitle(title: "პერსონალური მონაცემები"))
         
+        
+        let buttonModel = isPhoneNumberChanging
+            ? nil
+            : SecondaryButtonModel(titleModel: .init(text: "შეცვლა"),
+                                   action: { [weak self] in
+                guard let self else { return }
+                self.isPhoneNumberChanging.toggle()
+                self.draw()
+            })
         let phoneNumberRow = InfoCellModel(topLabelModel: .init(text: "მობილურის ნომერი",
                                                                 color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
                                            bottomLabelModel: .init(text: userInfo.phoneNumber,
                                                                    font: .systemFont(ofSize: .XL)),
-                                           buttonModel: .init(titleModel: .init(text: "შეცვლა"),
-                                                              state: $phoneNumberChangeButton.eraseToAnyPublisher(),
-                                                              action: { [weak self] in
-            self?.router = .changePhoneNumber
-        }),
-                                           isSeparatorNeeded: true)
+                                           buttonModel: buttonModel,
+                                           isSeparatorNeeded: !isPhoneNumberChanging)
         rows.append(phoneNumberRow)
+        
+        if isPhoneNumberChanging {
+            rows.append(TextFieldCellModel(model: .init(placeholder: "შეიყვანეთ ახალი ტელ. ნომერი",
+                                                        onEditingDidEnd: { [weak self] phoneNumber in
+                self?.newPhoneNumber = phoneNumber
+            })))
+            
+            let editButton = SecondaryButtonModel(titleModel: .init(text: "დამახსოვრება")) { [weak self] in
+                self?.draw()
+            }
+            
+            let cancelButton = SecondaryButtonModel(titleModel: .init(text: "გაუქმება"),
+                                                    backgroundColor: BrandBookManager.Color.Theme.Invert.tr100.uiColor.withAlphaComponent(0.5),
+                                                    textColor: BrandBookManager.Color.General.black.uiColor) { [weak self] in
+                self?.isPhoneNumberChanging.toggle()
+                self?.draw()
+            }
+            
+            rows.append(SecondaryButtonsCellModel(buttonModels: [editButton, cancelButton]))
+            rows.append(SeparatorCellModel())
+        }
+        
+        
         
         let addressRow = InfoCellModel(topLabelModel: .init(text: "მისამართი",
                                                             color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),

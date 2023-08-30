@@ -78,10 +78,42 @@
             filePath = "BrandBook/BrandBook/ComponentBook/SecondaryButton/SecondaryButton.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "viewDidTapped()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9263F3D1-1D04-4728-B9CE-51C877748F62 - 42a462357c5bf2aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BrandBook.SecondaryButton.updateButtonState(with: BrandBook.ButtonState) -&gt; ()"
+                  moduleName = "BrandBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/SecondaryButton/SecondaryButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "9263F3D1-1D04-4728-B9CE-51C877748F62 - 923b77624e1878f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BrandBook.SecondaryButton.viewDidTapped() -&gt; ()"
+                  moduleName = "BrandBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/SecondaryButton/SecondaryButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -129,22 +161,6 @@
             startingLineNumber = "123"
             endingLineNumber = "123"
             landmarkName = "draw()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "453337AE-7185-4A09-AB57-EFB8A9590D1C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BrandBook/BrandBook/ComponentBook/SecondaryButton/SecondaryButton.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "updateButtonState(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -306,6 +322,22 @@
             endingLineNumber = "83"
             landmarkName = "passwordResetLabelModel"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DCC7704-E84C-4333-A480-35C29276731F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrandBook/BrandBook/ComponentBook/TableCells/SecondaryButtonsCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "SecondaryButtonsCellModel"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

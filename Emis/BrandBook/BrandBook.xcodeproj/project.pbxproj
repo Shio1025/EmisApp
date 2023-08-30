@@ -36,6 +36,8 @@
 		2442EBD52A9D2BDF00B11CE3 /* finances.json in Resources */ = {isa = PBXBuildFile; fileRef = 2442EBD42A9D2BDF00B11CE3 /* finances.json */; };
 		2442EBDC2A9DC92D00B11CE3 /* InlineFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EBDB2A9DC92D00B11CE3 /* InlineFeedback.swift */; };
 		2442EC1A2A9DCBDD00B11CE3 /* InlineFeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EC192A9DCBDD00B11CE3 /* InlineFeedbackCell.swift */; };
+		2442EC292A9E6A5600B11CE3 /* SecondaryButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EC282A9E6A5600B11CE3 /* SecondaryButtonsCell.swift */; };
+		2442EC2B2A9F15F200B11CE3 /* SeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EC2A2A9F15F200B11CE3 /* SeparatorCell.swift */; };
 		2452F0292A2F0E1A005F4DDF /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F0282A2F0E1A005F4DDF /* CustomNavigation.swift */; };
 		2452F02B2A2F168A005F4DDF /* BackBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F02A2A2F168A005F4DDF /* BackBarButtonItem.swift */; };
 		2452F0362A2F6EB7005F4DDF /* GenericTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452F0352A2F6EB7005F4DDF /* GenericTableView.swift */; };
@@ -99,6 +101,8 @@
 		2442EBD42A9D2BDF00B11CE3 /* finances.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = finances.json; sourceTree = "<group>"; };
 		2442EBDB2A9DC92D00B11CE3 /* InlineFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineFeedback.swift; sourceTree = "<group>"; };
 		2442EC192A9DCBDD00B11CE3 /* InlineFeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineFeedbackCell.swift; sourceTree = "<group>"; };
+		2442EC282A9E6A5600B11CE3 /* SecondaryButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonsCell.swift; sourceTree = "<group>"; };
+		2442EC2A2A9F15F200B11CE3 /* SeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorCell.swift; sourceTree = "<group>"; };
 		2452F0282A2F0E1A005F4DDF /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		2452F02A2A2F168A005F4DDF /* BackBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackBarButtonItem.swift; sourceTree = "<group>"; };
 		2452F0352A2F6EB7005F4DDF /* GenericTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableView.swift; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				24E3F1C12A98F1A3008A0430 /* BannerCell.swift */,
 				2442EBD02A9D18D800B11CE3 /* InfoCell.swift */,
 				2442EC192A9DCBDD00B11CE3 /* InlineFeedbackCell.swift */,
+				2442EC282A9E6A5600B11CE3 /* SecondaryButtonsCell.swift */,
+				2442EC2A2A9F15F200B11CE3 /* SeparatorCell.swift */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 				243CBC312A402F1B00EEE080 /* ResourceType.swift in Sources */,
 				243CBC3A2A4033FD00EEE080 /* PageDescriptionViewModel.swift in Sources */,
 				2466229F2A13665E00287AA7 /* LocalLabel.swift in Sources */,
+				2442EC2B2A9F15F200B11CE3 /* SeparatorCell.swift in Sources */,
 				2452F0292A2F0E1A005F4DDF /* CustomNavigation.swift in Sources */,
 				243CBC2C2A3F264700EEE080 /* RoundedHeaderWithTitle.swift in Sources */,
 				243CBC382A4033D900EEE080 /* PageDescription.swift in Sources */,
@@ -547,6 +554,7 @@
 				2490E3422A040B270073DBDE /* DesignSystemConstants.swift in Sources */,
 				24C7129329E5B2A500E5DE0B /* Color.swift in Sources */,
 				2442EB822A9A7E4F00B11CE3 /* StatusBanner.swift in Sources */,
+				2442EC292A9E6A5600B11CE3 /* SecondaryButtonsCell.swift in Sources */,
 				242568AD2A0D65770022A132 /* TextFieldViewModel.swift in Sources */,
 				246622742A12BFAE00287AA7 /* TextFieldState.swift in Sources */,
 				2442EB842A9A818A00B11CE3 /* UIViewController + Banner.swift in Sources */,
