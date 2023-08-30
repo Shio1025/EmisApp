@@ -66,9 +66,8 @@ extension StatusBanner {
 }
 
 public class StatusBannerViewModel {
-    
-    var bannerType: StatusBannerType
-    var description: String
+    public var bannerType: StatusBannerType
+    public var description: String
     
     public init(bannerType: StatusBannerType,
                 description: String) {

@@ -20,9 +20,20 @@ final class ProfilePageViewModel {
     @Published private var router: ProfilePageRoute?
     @Published private var listCells: [any CellModel] = []
     @Published private var isLoading: Bool = true
-    @Published private var isPhoneNumberChanging: Bool = false
-    private var newPhoneNumber: String = ""
+    @Published private var isPhoneNumberChanging: Bool = false {
+        didSet {
+            newPhoneNumber = ""
+        }
+    }
+    @Published private var newPhoneNumber: String = ""
     @Published private var phoneNumberChangeButton: ButtonState = .enabled
+    @Published private var statusBanner: StatusBannerViewModel?
+    
+    var displayBannerPublisher: AnyPublisher<StatusBannerViewModel, Never> {
+         $statusBanner
+            .compactMap { $0 }
+            .eraseToAnyPublisher()
+    }
     
     private var studentInfo: StudentInfo?
     
@@ -89,14 +100,16 @@ extension ProfilePageViewModel {
         isLoading = false
 //        @Injected var studentInfoUseCase: StudentInfoUseCase
 //
-//        studentInfoUseCase.getStudentInfo(userId: SSO.userId?.description ?? "")
+//        studentInfoUseCase.getStudentInfo(userId: SSO.userInfo?.userId?.description ?? "")
 //            .sink { [weak self] completion in
 //                switch completion {
 //                case .failure(let error):
 //                    self?.isLoading = false
+//                    self?.statusBanner = .init(bannerType: .failure,
+//                                               description: error.localizedDescription)
 //                case .finished:
-//                    self?.draw()
 //                    self?.isLoading = false
+//                    self?.draw()
 //                }
 //            } receiveValue: { [weak self] model in
 //                self?.studentInfo = model
@@ -168,7 +181,7 @@ extension ProfilePageViewModel {
         let phoneNumberRow = InfoCellModel(topLabelModel: .init(text: "მობილურის ნომერი",
                                                                 color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
                                            bottomLabelModel: .init(text: userInfo.phoneNumber,
-                                                                   font: .systemFont(ofSize: .XL)),
+                                                                   font: .systemFont(ofSize: .L)),
                                            buttonModel: buttonModel,
                                            isSeparatorNeeded: !isPhoneNumberChanging)
         rows.append(phoneNumberRow)
@@ -180,11 +193,11 @@ extension ProfilePageViewModel {
             })))
             
             let editButton = SecondaryButtonModel(titleModel: .init(text: "დამახსოვრება")) { [weak self] in
-                self?.draw()
+                self?.handlePhoneNumberChangeAction()
             }
             
             let cancelButton = SecondaryButtonModel(titleModel: .init(text: "გაუქმება"),
-                                                    backgroundColor: BrandBookManager.Color.Theme.Invert.tr100.uiColor.withAlphaComponent(0.5),
+                                                    backgroundColor: BrandBookManager.Color.Theme.Invert.tr50.uiColor.withAlphaComponent(0.5),
                                                     textColor: BrandBookManager.Color.General.black.uiColor) { [weak self] in
                 self?.isPhoneNumberChanging.toggle()
                 self?.draw()
@@ -199,7 +212,7 @@ extension ProfilePageViewModel {
         let addressRow = InfoCellModel(topLabelModel: .init(text: "მისამართი",
                                                             color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
                                        bottomLabelModel: .init(text: userInfo.address,
-                                                               font: .systemFont(ofSize: .XL,
+                                                               font: .systemFont(ofSize: .L,
                                                                                  weight: .regular)),
                                        isSeparatorNeeded: true)
         rows.append(addressRow)
@@ -207,7 +220,7 @@ extension ProfilePageViewModel {
         let emailRow = InfoCellModel(topLabelModel: .init(text: "ელ-ფოსტა",
                                                           color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
                                      bottomLabelModel: .init(text: userInfo.email,
-                                                             font: .systemFont(ofSize: .XL,
+                                                             font: .systemFont(ofSize: .L,
                                                                                weight: .regular)))
         rows.append(emailRow)
         
@@ -275,21 +288,27 @@ extension ProfilePageViewModel {
 extension ProfilePageViewModel {
     
     private func handlePhoneNumberChangeAction() {
-        @Injected var updatePhoneNumberUseCase: UpdatePhoneNumberUseCase
-        
-        updatePhoneNumberUseCase.updateStudentPhoneNumber(userId: SSO.userInfo?.generalID?.description ?? "",
-                                                          phoneNumber: newPhoneNumber)
-        .sink { [weak self] completion in
-            switch completion {
-            case .finished:
-                self?.isPhoneNumberChanging = false
-                self?.load()
-            case .failure(let error):
-                print("error")
-            }
-        } receiveValue: { _ in
-            
-        }.store(in: &subscriptions)
-
+        statusBanner = .init(bannerType: .success,
+                                   description: "ნომერი წარმატებით განახლდა!")
+        isPhoneNumberChanging = false
+        load()
+//        @Injected var updatePhoneNumberUseCase: UpdatePhoneNumberUseCase
+//
+//        updatePhoneNumberUseCase.updateStudentPhoneNumber(userId: SSO.userInfo?.generalID?.description ?? "",
+//                                                          phoneNumber: newPhoneNumber)
+//        .sink { [weak self] completion in
+//            switch completion {
+//            case .finished:
+//                self?.isPhoneNumberChanging = false
+//                self?.statusBanner = .init(bannerType: .success,
+//                                           description: "ნომერი წარმატებით განახლდა !")
+//                self?.load()
+//            case .failure(let error):
+//                self?.statusBanner = .init(bannerType: .failure,
+//                                           description: error.localizedDescription)
+//            }
+//        } receiveValue: { _ in
+//
+//        }.store(in: &subscriptions)
     }
 }

@@ -23,6 +23,8 @@ final class LoginPageViewModel {
     @Published private var login: String = ""
     @Published private var password: String = ""
     @Published private var isButtonLoading: Bool = false
+    @Published private var statusBanner: StatusBannerViewModel?
+    
     @Injected private var SSO: SSOManager
     private var validToContinue: AnyPublisher<ButtonState, Never> {
         return Publishers.CombineLatest3($login, $password,$isButtonLoading)
@@ -34,6 +36,12 @@ final class LoginPageViewModel {
                     return .disabled
                 }
             }.eraseToAnyPublisher()
+    }
+    
+    var displayBannerPublisher: AnyPublisher<StatusBannerViewModel, Never> {
+         $statusBanner
+            .compactMap { $0 }
+            .eraseToAnyPublisher()
     }
     
     
@@ -85,9 +93,9 @@ extension LoginPageViewModel {
     }
     
     var RegistrationLabelModel: AnyPublisher<LocalLabelModel, Never> {
-        return Just (LocalLabelModel.init(text: "ჯერ კიდევ არ ხარ დარეგისტრირებული? დარეგისტრირდი უმარტივესად",
+        return Just (LocalLabelModel.init(text: "ჯერ კიდევ არ ხარ დარეგისტრირებული? დარეგისტრირდი",
                                           color: BrandBookManager.Color.Theme.Component.solid500.uiColor,
-                                          font: .systemFont(ofSize: .M,
+                                          font: .systemFont(ofSize: .L,
                                                             weight: .semibold),
                                           action: {
             self.router = .register
@@ -97,7 +105,7 @@ extension LoginPageViewModel {
     var continueButtonModel: AnyPublisher<PrimaryButtonModel, Never> {
         return Just(PrimaryButtonModel(titleModel: .init(text: "შესვლა",
                                                          color: BrandBookManager.Color.General.white.uiColor,
-                                                         font: .systemFont(ofSize: .M,
+                                                         font: .systemFont(ofSize: .L,
                                                                            weight: .semibold)),
                                        state: validToContinue,
                                        action: { [weak self] in
@@ -117,13 +125,15 @@ extension LoginPageViewModel {
 //        .sink { [weak self] completion in
 //            switch completion {
 //            case .failure(let error):
-//                print(error)
+//                self?.statusBanner = .init(bannerType: .failure,
+//                                           description: error.localizedDescription)
 //            case .finished:
 //                self?.router = .profile
 //            }
 //            self?.isButtonLoading = false
 //        } receiveValue: { [weak self] model in
-//            self?.SSO.userLoggedInSuccessfully(userId: model.userId, userEmail: login, userType: model.userType)
+//            self?.SSO.userLoggedInSuccessfully(userEmail: self?.login,
+//                                               with: model)
 //        }.store(in: &subscriptions)
     }
 }

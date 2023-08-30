@@ -205,5 +205,9 @@ extension LoginPageController {
         viewModel.RegistrationLabelModel.sink {[weak self] model in
             self?.registrationLabel.bind(with: model)
         }.store(in: &subscriptions)
+        viewModel.displayBannerPublisher.sink { [weak self] statusBannerModel in
+            self?.displayBanner(with: statusBannerModel.description,
+                                state: statusBannerModel.bannerType)
+        }.store(in: &subscriptions)
     }
 }

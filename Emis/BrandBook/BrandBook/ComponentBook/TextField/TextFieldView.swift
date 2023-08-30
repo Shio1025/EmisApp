@@ -195,6 +195,7 @@ extension TextFieldView {
     
     public func resetSubscriptions() {
         subscriptions = Set<AnyCancellable>()
+        textField.text = ""
     }
 }
 

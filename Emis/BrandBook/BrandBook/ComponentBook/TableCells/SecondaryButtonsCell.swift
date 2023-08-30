@@ -50,7 +50,7 @@ public class SecondaryButtonsCell: TableCell {
     }
     
     private func addConstraints() {
-        containerStack.top(toView: contentView)
+        containerStack.top(toView: contentView, constant: .S)
         containerStack.bottom(toView: contentView)
         containerStack.left(toView: contentView)
         containerStack.right(toView: contentView)
