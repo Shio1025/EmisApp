@@ -12,6 +12,7 @@ public class StatusBanner: UIView {
     private lazy var label: LocalLabel = {
         let label = LocalLabel()
         label.backgroundColor = .clear
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.setAlignment(with: .center)
         return label
     }()
@@ -44,13 +45,13 @@ public class StatusBanner: UIView {
     private func addConstraints() {
         label.top(toView: self, constant: .M)
         label.bottom(toView: self, constant: .M)
-        label.left(toView: self, constant: .M)
-        label.right(toView: self, constant: .M)
+        
+        label.centerHorizontally(to: self)
+        label.width(equalTo: UIScreen.main.bounds.size.width - .XL6)
     }
     
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
         roundCorners(by: .M)
     }
 }

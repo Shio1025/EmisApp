@@ -11,26 +11,22 @@ import Core
 
 public protocol SSOManager {
     var isUserLoggedPublisher: Published<Bool>.Publisher { get }
-    var userType: UserType? { get }
-    var userId: Int64? { get }
+    var userInfo: LoginModel? { get }
     var userEmail: String? { get }
     
-    func userLoggedInSuccessfully(userId: Int64?,
-                                  userEmail: String?,
-                                  userType: UserType)
+    func userLoggedInSuccessfully(userEmail: String?,
+                                  with userLoginModel: LoginModel)
     
     func logOutUser()
 }
 
 public class SSOManagerImpl: SSOManager {
     
-    public var userId: Int64?
+    public var userInfo: LoginModel?
     
     @Published private var isUserLogged: Bool = false
     
     public var isUserLoggedPublisher: Published<Bool>.Publisher { $isUserLogged }
-    
-    public var userType: UserType?
     
     public var userEmail: String?
     
@@ -38,19 +34,16 @@ public class SSOManagerImpl: SSOManager {
     
     public init() { }
     
-    public func userLoggedInSuccessfully(userId: Int64?,
-                                         userEmail: String?,
-                                         userType: UserType) {
-        self.userType = userType
-        self.userId = userId
+    public func userLoggedInSuccessfully(userEmail: String?,
+                                         with userLoginModel: LoginModel) {
+        self.userInfo = userLoginModel
         self.userEmail = userEmail
         isUserLogged = true
     }
     
     public func logOutUser() {
-        userType = nil
-        userId = nil
-        isUserLogged = false
+        userInfo = nil
         userEmail = nil
+        isUserLogged = false
     }
 }

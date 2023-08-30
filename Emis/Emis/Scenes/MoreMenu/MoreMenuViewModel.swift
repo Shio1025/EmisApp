@@ -107,7 +107,7 @@ extension MoreMenuViewModel {
     
     private func handleMoreMenuItems(isLogged: Bool) -> [MoreMenuItem] {
         guard isLogged else { return [.GPACalculator, .changeTheme] }
-        switch SSO.userType {
+        switch SSO.userInfo?.userType {
         case .student:
             return  [.changePassword, .easyAuthorization, .GPACalculator, .changeTheme, .logOut]
         case .teacher:

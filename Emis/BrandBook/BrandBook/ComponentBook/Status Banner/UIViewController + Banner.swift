@@ -7,39 +7,38 @@
 
 import UIKit
 
-//Will be fixed
+
 public extension UIViewController {
-    func displayBanner(with description: String, state: StatusBannerType) {
+    func displayBanner(with description: String,
+                       state: StatusBannerType) {
         let banner = StatusBanner(model: .init(bannerType: state, description: description))
         banner.translatesAutoresizingMaskIntoConstraints = false
         
         guard let window = UIApplication.shared.keyWindow else { return }
         window.addSubview(banner)
+        self
+        banner.top(toView: window, constant: -banner.bounds.height)
+        banner.left(toView: window, constant: .M)
+        banner.right(toView: window, constant: .M)
         
-        NSLayoutConstraint.activate([
-            banner.leadingAnchor.constraint(equalTo: window.leadingAnchor),
-            banner.trailingAnchor.constraint(equalTo: window.trailingAnchor),
-            banner.topAnchor.constraint(equalTo: window.topAnchor),
-            banner.heightAnchor.constraint(equalToConstant: banner.bounds.height)
-        ])
+        banner.transform = CGAffineTransform(translationX: 0, y: -banner.bounds.height)
         
-        UIView.animate(withDuration: 0.3, animations: {
-            banner.transform = CGAffineTransform(translationX: 0, y: banner.bounds.height)
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseInOut, animations: {
+            banner.transform = .identity
         }) { _ in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.hideBanner(banner: banner)
+                UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+                    banner.transform = CGAffineTransform(translationX: 0, y: -banner.bounds.height)
+                }) { _ in
+                    banner.removeFromSuperview()
+                }
             }
         }
     }
-    
-    private func hideBanner(banner: StatusBanner) {
-        UIView.animate(withDuration: 0.3, animations: {
-            banner.transform = CGAffineTransform.identity
-        }) { _ in
-            banner.removeFromSuperview()
-        }
-    }
 }
+
+
+
 
 
 

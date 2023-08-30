@@ -36,14 +36,6 @@ final class ProfilePageViewModel {
         $isLoading.eraseToAnyPublisher()
     }
     
-//    var phoneNumberLabelText: AnyPublisher<String, Never> {
-//        return $isPhoneNumberChanging
-//            .map { isChanging in
-//                isChanging
-//                    ? "შენახვა"
-//            }
-//    }
-    
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
@@ -51,7 +43,7 @@ final class ProfilePageViewModel {
     }
     
     private func load() {
-        switch SSO.userType {
+        switch SSO.userInfo?.userType {
         case .student:
             getStudentInfo()
         case .teacher:
@@ -119,7 +111,7 @@ extension ProfilePageViewModel {
 extension ProfilePageViewModel {
     
     private func draw() {
-        switch SSO.userType {
+        switch SSO.userInfo?.userType {
         case .student:
             handleStudentProfile()
         case .teacher:
@@ -145,6 +137,7 @@ extension ProfilePageViewModel {
     }
 }
 
+//Student
 extension ProfilePageViewModel {
     
     var headerSection: [any CellModel]? {
@@ -158,7 +151,7 @@ extension ProfilePageViewModel {
         return [getRoundedHeaderModel(), header, getRoundedFooterModel(), getSpacerCell()]
     }
 
-    var personalInfoSection: [any CellModel]? {
+    private var personalInfoSection: [any CellModel]? {
         guard let userInfo = studentInfo else { return nil }
         var rows: [any CellModel] = []
         rows.append(getRoundedHeaderWithTitle(title: "პერსონალური მონაცემები"))
@@ -223,7 +216,7 @@ extension ProfilePageViewModel {
         return rows
     }
     
-    var educationalInfoSection: [any CellModel]? {
+    private var educationalInfoSection: [any CellModel]? {
         guard let userInfo = studentInfo else { return nil }
         let degree = RowItemCellModel(model:
                 .init(labels: .one(model: .init(text: "ხარისხი")),
@@ -258,7 +251,7 @@ extension ProfilePageViewModel {
                 getSpacerCell()]
     }
     
-    var financeInfoSection: [any CellModel]? {
+    private var financeInfoSection: [any CellModel]? {
         guard let userInfo = studentInfo else { return nil }
         
         let financesBanner = BannerCellModel(model:
@@ -278,3 +271,25 @@ extension ProfilePageViewModel {
 
 
 
+//Update Phone Number
+extension ProfilePageViewModel {
+    
+    private func handlePhoneNumberChangeAction() {
+        @Injected var updatePhoneNumberUseCase: UpdatePhoneNumberUseCase
+        
+        updatePhoneNumberUseCase.updateStudentPhoneNumber(userId: SSO.userInfo?.generalID?.description ?? "",
+                                                          phoneNumber: newPhoneNumber)
+        .sink { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.isPhoneNumberChanging = false
+                self?.load()
+            case .failure(let error):
+                print("error")
+            }
+        } receiveValue: { _ in
+            
+        }.store(in: &subscriptions)
+
+    }
+}

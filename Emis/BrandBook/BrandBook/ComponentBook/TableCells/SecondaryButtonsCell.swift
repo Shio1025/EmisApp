@@ -17,9 +17,9 @@ public class SecondaryButtonsCell: TableCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = .M
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.directionalLayoutMargins = .init(top: 0,
+        stackView.directionalLayoutMargins = .init(top: .zero,
                                                    leading: .M,
-                                                   bottom: 0,
+                                                   bottom: .zero,
                                                    trailing: .M)
         return stackView
     }()

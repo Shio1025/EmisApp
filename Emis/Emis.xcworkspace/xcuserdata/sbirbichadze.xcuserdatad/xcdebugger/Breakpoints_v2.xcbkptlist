@@ -30,8 +30,8 @@
             filePath = "Emis/Scenes/LoginPage/LoginPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "handleLogin()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "Emis/Scenes/LoginPage/LoginPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "handleLogin()"
             landmarkType = "7">
          </BreakpointContent>
@@ -81,54 +81,6 @@
             startingLineNumber = "70"
             endingLineNumber = "70"
             landmarkName = "viewDidTapped()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9263F3D1-1D04-4728-B9CE-51C877748F62 - 42a462357c5bf2aa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BrandBook.SecondaryButton.updateButtonState(with: BrandBook.ButtonState) -&gt; ()"
-                  moduleName = "BrandBook"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/SecondaryButton/SecondaryButton.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "188">
-               </Location>
-               <Location
-                  uuid = "9263F3D1-1D04-4728-B9CE-51C877748F62 - 923b77624e1878f2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BrandBook.SecondaryButton.viewDidTapped() -&gt; ()"
-                  moduleName = "BrandBook"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/SecondaryButton/SecondaryButton.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "88BCF3E5-67FF-4234-9EDA-C37498956E00"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Emis/Scenes/Information/MainPageViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -158,8 +110,8 @@
             filePath = "Emis/Scenes/Information/MainPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "draw()"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +142,8 @@
             filePath = "Emis/Scenes/Information/MainPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "handleStudentOptions()"
             landmarkType = "7">
          </BreakpointContent>
@@ -322,22 +274,6 @@
             endingLineNumber = "83"
             landmarkName = "passwordResetLabelModel"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2DCC7704-E84C-4333-A480-35C29276731F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BrandBook/BrandBook/ComponentBook/TableCells/SecondaryButtonsCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "SecondaryButtonsCellModel"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

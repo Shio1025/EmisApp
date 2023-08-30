@@ -8,18 +8,18 @@
 import Combine
 import Resolver
 
-public protocol UpdateStudentPhoneNumberUseCase {
+public protocol UpdatePhoneNumberUseCase {
     func updateStudentPhoneNumber(userId: String,
                                   phoneNumber: String) -> AnyPublisher<Void, Error>
 }
 
-public class UpdateStudentPhoneNumberUseCaseImpl: UpdateStudentPhoneNumberUseCase {
+public class UpdatePhoneNumberUseCaseImpl: UpdatePhoneNumberUseCase {
     
-    @Injected var updateStudentPhoneNumberGateway: UpdateStudentPhoneNumberGateway
+    @Injected var updatePhoneNumberGateway: UpdatePhoneNumberGateway
     
     public func updateStudentPhoneNumber(userId: String,
                                          phoneNumber: String) -> AnyPublisher<Void, Error> {
-        updateStudentPhoneNumberGateway.updateStudentPhoneNumber(userId: userId,
-                                                                 phoneNumber: phoneNumber)
+        updatePhoneNumberGateway.updateStudentPhoneNumber(userId: userId,
+                                                          phoneNumber: phoneNumber)
     }
 }

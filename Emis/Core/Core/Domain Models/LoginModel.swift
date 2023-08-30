@@ -6,14 +6,20 @@
 //
 
 public struct LoginModel {
-    public var successful: Bool?
+    public init(userType: UserType, userId: Int64? = nil, generalID: Int64? = nil) {
+        self.userType = userType
+        self.userId = userId
+        self.generalID = generalID
+    }
+    
     public var userType: UserType
     public var userId: Int64?
+    public var generalID: Int64?
     
     public init(with model: ApiLoginModel) {
-        self.successful = model.successful
         self.userType = UserType(rawValue: model.userType ?? "") ?? .none
-        self.userId = model.userId
+        self.userId = model.idByRole
+        self.generalID = model.userId
     }
 }
 

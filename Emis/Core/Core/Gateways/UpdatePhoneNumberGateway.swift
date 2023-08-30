@@ -9,12 +9,12 @@ import NetworkLayer
 import Combine
 import Resolver
 
-public protocol UpdateStudentPhoneNumberGateway {
+public protocol UpdatePhoneNumberGateway {
     func updateStudentPhoneNumber(userId: String,
                                   phoneNumber: String) -> AnyPublisher<Void, Error>
 }
 
-public class UpdateStudentPhoneNumberGatewayImpl: UpdateStudentPhoneNumberGateway {
+public class UpdatePhoneNumberGatewayImpl: UpdatePhoneNumberGateway {
     
     @Injected var dataTransport: NetworkLayer
     @Injected var apiURLProvider: ApiURLProvider
@@ -22,7 +22,7 @@ public class UpdateStudentPhoneNumberGatewayImpl: UpdateStudentPhoneNumberGatewa
     public func updateStudentPhoneNumber(userId: String,
                                          phoneNumber: String) -> AnyPublisher<Void, Error> {
         
-        let url = apiURLProvider.getURL(path: "/emis/api/student/update/phoneNumber",
+        let url = apiURLProvider.getURL(path: "/emis/api/user/update/phoneNumber",
                                         params: ["id": userId,
                                                  "phoneNumber": phoneNumber])
         

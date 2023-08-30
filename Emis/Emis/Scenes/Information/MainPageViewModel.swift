@@ -47,16 +47,20 @@ final class MainPageViewModel {
                     self.listCells = [self.getInlineFeedbackCell(text: "იმისთვის რომ შეძლო მოცემულ გვერდზე შენი ციფრული სერვისებით სარგებლობა, გაიარე ავტორიზაცია ან დარეგისტრირდი უმარტივესად")]
                     return
                 }
-                self.isLoading = true
-                switch self.SSO.userType {
-                case .student:
-                    self.getStudentOptions()
-                case .teacher:
-                    self.getTeacherOptions()
-                default:
-                    self.isLoading = false
-                }
+                self.loadInfo()
             }.store(in: &subscriptions)
+    }
+    
+    private func loadInfo() {
+        isLoading = true
+        switch SSO.userInfo?.userType {
+        case .student:
+            getStudentOptions()
+        case .teacher:
+            getTeacherOptions()
+        default:
+            isLoading = false
+        }
     }
 }
 
@@ -120,7 +124,7 @@ extension MainPageViewModel {
 extension MainPageViewModel {
     
     private func draw() {
-        switch SSO.userType {
+        switch SSO.userInfo?.userType {
         case .student:
             handleStudentOptions()
         case .teacher:

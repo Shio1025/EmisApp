@@ -15,7 +15,7 @@ extension Resolver {
         register(StudentFinancialGateway.self) { StudentFinancialGatewayImpl() }
         register(StudentDashboardOptionsGateway.self) { StudentDashboardOptionsGatewayImpl() }
         register(StudentSubjectCardGateway.self) { StudentSubjectCardGatewayImpl() }
-        register(UpdateStudentPhoneNumberGateway.self) { UpdateStudentPhoneNumberGatewayImpl() }
+        register(UpdatePhoneNumberGateway.self) { UpdatePhoneNumberGatewayImpl() }
         register(TeacherDashboardOptionsGateway.self) { TeacherDashboardOptionsGatewayImpl() }
     }
 }
