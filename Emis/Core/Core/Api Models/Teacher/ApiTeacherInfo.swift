@@ -12,4 +12,6 @@ struct ApiTeacherInfo: Codable {
     let email: String
     let address: String
     let phoneNumber: String
+    let status: String
+    let position: String
 }

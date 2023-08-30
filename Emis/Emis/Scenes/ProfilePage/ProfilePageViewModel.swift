@@ -36,6 +36,7 @@ final class ProfilePageViewModel {
     }
     
     private var studentInfo: StudentInfo?
+    private var teacherInfo: TeacherInfo?
     
     @Injected private var SSO: SSOManager
     
@@ -117,7 +118,25 @@ extension ProfilePageViewModel {
     }
     
     private func getTeacherInfo() {
-      
+        teacherInfo = .init(firstName: "Shota", lastName: "Shota", birthDate: "sdvs", email: "asdcasd", address: "sdcs", phoneNumber: "sdv", position: "sdcds", status: "Active")
+        draw()
+        isLoading = false
+//        @Injected var teacherInfoUseCase: TeacherInfoUseCase
+//
+//        teacherInfoUseCase.getTeacherInfo(userId: SSO.userInfo?.userId?.description ?? "")
+//            .sink { [weak self] completion in
+//                switch completion {
+//                case .finished:
+//                    self?.isLoading = false
+//                    self?.draw()
+//                case .failure(let error):
+//                    self?.isLoading = false
+//                    self?.statusBanner = .init(bannerType: .failure,
+//                                               description: error.localizedDescription)
+//                }
+//            } receiveValue: { [weak self] model in
+//                self?.teacherInfo = model
+//            }.store(in: &subscriptions)
     }
 }
 
@@ -137,25 +156,34 @@ extension ProfilePageViewModel {
     private func handleStudentProfile() {
         var rows: [any CellModel] = []
         
-        headerSection.map { rows.append(contentsOf: $0) }
-        educationalInfoSection.map { rows.append(contentsOf: $0) }
+        getHeaderSection(name: studentInfo?.firstName,
+                         surname: studentInfo?.lastName).map { rows.append(contentsOf: $0) }
+        studentEducationalInfoSection.map { rows.append(contentsOf: $0) }
         financeInfoSection.map { rows.append(contentsOf: $0) }
-        personalInfoSection.map { rows.append(contentsOf: $0) }
+        studentPersonalInfoSection.map { rows.append(contentsOf: $0) }
         
         listCells = rows
     }
     
     private func handleTeacherProfile() {
+        var rows: [any CellModel] = []
         
+        getHeaderSection(name: teacherInfo?.firstName,
+                         surname: teacherInfo?.lastName).map { rows.append(contentsOf: $0) }
+        teacherEducationalInfoSection.map { rows.append(contentsOf: $0) }
+        teacherPersonalInfoSection.map { rows.append(contentsOf: $0) }
+        
+        listCells = rows
     }
 }
 
 //Student
 extension ProfilePageViewModel {
     
-    var headerSection: [any CellModel]? {
-        guard let name = studentInfo?.firstName,
-              let surname = studentInfo?.lastName
+    private func getHeaderSection(name: String?,
+                                  surname: String?) -> [any CellModel]? {
+        guard let name,
+              let surname
         else { return nil }
         let header = PageDescriptionCellModel(model: .init(resourceType: .image(image: BrandBookManager.Images.tmp.image),
                                                            description: .init(text: "\(name) \(surname)",
@@ -164,11 +192,36 @@ extension ProfilePageViewModel {
         return [getRoundedHeaderModel(), header, getRoundedFooterModel(), getSpacerCell()]
     }
 
-    private var personalInfoSection: [any CellModel]? {
+    private var studentPersonalInfoSection: [any CellModel]? {
         guard let userInfo = studentInfo else { return nil }
         var rows: [any CellModel] = []
         rows.append(getRoundedHeaderWithTitle(title: "პერსონალური მონაცემები"))
         
+        rows.append(contentsOf: getPhoneNumberSections(phoneNumber: userInfo.phoneNumber))
+        
+        let addressRow = InfoCellModel(topLabelModel: .init(text: "მისამართი",
+                                                            color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
+                                       bottomLabelModel: .init(text: userInfo.address,
+                                                               font: .systemFont(ofSize: .L,
+                                                                                 weight: .regular)),
+                                       isSeparatorNeeded: true)
+        rows.append(addressRow)
+        
+        let emailRow = InfoCellModel(topLabelModel: .init(text: "ელ-ფოსტა",
+                                                          color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
+                                     bottomLabelModel: .init(text: userInfo.email,
+                                                             font: .systemFont(ofSize: .L,
+                                                                               weight: .regular)))
+        rows.append(emailRow)
+        
+        rows.append(getRoundedFooterModel())
+        rows.append(getSpacerCell())
+        return rows
+    }
+    
+    
+    private func getPhoneNumberSections(phoneNumber: String) -> [any CellModel] {
+        var rows: [any CellModel] = []
         
         let buttonModel = isPhoneNumberChanging
             ? nil
@@ -180,7 +233,7 @@ extension ProfilePageViewModel {
             })
         let phoneNumberRow = InfoCellModel(topLabelModel: .init(text: "მობილურის ნომერი",
                                                                 color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
-                                           bottomLabelModel: .init(text: userInfo.phoneNumber,
+                                           bottomLabelModel: .init(text: phoneNumber,
                                                                    font: .systemFont(ofSize: .L)),
                                            buttonModel: buttonModel,
                                            isSeparatorNeeded: !isPhoneNumberChanging)
@@ -207,29 +260,10 @@ extension ProfilePageViewModel {
             rows.append(SeparatorCellModel())
         }
         
-        
-        
-        let addressRow = InfoCellModel(topLabelModel: .init(text: "მისამართი",
-                                                            color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
-                                       bottomLabelModel: .init(text: userInfo.address,
-                                                               font: .systemFont(ofSize: .L,
-                                                                                 weight: .regular)),
-                                       isSeparatorNeeded: true)
-        rows.append(addressRow)
-        
-        let emailRow = InfoCellModel(topLabelModel: .init(text: "ელ-ფოსტა",
-                                                          color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
-                                     bottomLabelModel: .init(text: userInfo.email,
-                                                             font: .systemFont(ofSize: .L,
-                                                                               weight: .regular)))
-        rows.append(emailRow)
-        
-        rows.append(getRoundedFooterModel())
-        rows.append(getSpacerCell())
         return rows
     }
     
-    private var educationalInfoSection: [any CellModel]? {
+    private var studentEducationalInfoSection: [any CellModel]? {
         guard let userInfo = studentInfo else { return nil }
         let degree = RowItemCellModel(model:
                 .init(labels: .one(model: .init(text: "ხარისხი")),
@@ -278,6 +312,60 @@ extension ProfilePageViewModel {
         }))
         
         return [financesBanner,
+                getSpacerCell()]
+    }
+}
+
+//Teacher
+extension ProfilePageViewModel {
+    
+    private var teacherPersonalInfoSection: [any CellModel]? {
+        guard let userInfo = teacherInfo else { return nil }
+        
+        var rows: [any CellModel] = []
+        rows.append(getRoundedHeaderWithTitle(title: "პერსონალური მონაცემები"))
+        
+        rows.append(contentsOf: getPhoneNumberSections(phoneNumber: userInfo.phoneNumber))
+        
+        let emailRow = InfoCellModel(topLabelModel: .init(text: "ელ-ფოსტა",
+                                                          color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
+                                     bottomLabelModel: .init(text: userInfo.email,
+                                                             font: .systemFont(ofSize: .L,
+                                                                               weight: .regular)),
+                                     isSeparatorNeeded: true)
+        rows.append(emailRow)
+        
+        let addressRow = InfoCellModel(topLabelModel: .init(text: "მისამართი",
+                                                            color: BrandBookManager.Color.Theme.Invert.tr400.uiColor),
+                                       bottomLabelModel: .init(text: userInfo.address,
+                                                               font: .systemFont(ofSize: .L,
+                                                                                 weight: .regular)))
+        rows.append(addressRow)
+        rows.append(getRoundedFooterModel())
+        rows.append(getSpacerCell())
+        
+        return rows
+    }
+    
+    private var teacherEducationalInfoSection: [any CellModel]? {
+        guard let userInfo = teacherInfo else { return nil }
+        let position = RowItemCellModel(model:
+                .init(labels: .one(model: .init(text: "პოზიცია")),
+                      rightItem: .label(model: .init(text: userInfo.position,
+                                                     font: .systemFont(ofSize: .L,
+                                                                       weight: .semibold))),
+                      isSeparatorNeeded: true))
+        
+        let status = RowItemCellModel(model:
+                .init(labels: .one(model: .init(text: "სტატუსი")),
+                      rightItem: .label(model: .init(text: userInfo.status,
+                                                     color: BrandBookManager.Color.General.green.uiColor,
+                                                     font: .systemFont(ofSize: .L,
+                                                                       weight: .regular)))))
+        return [getRoundedHeaderWithTitle(title: "განათლება"),
+                position,
+                status,
+                getRoundedFooterModel(),
                 getSpacerCell()]
     }
 }

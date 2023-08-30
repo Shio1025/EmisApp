@@ -16,7 +16,7 @@ public extension UIViewController {
         
         guard let window = UIApplication.shared.keyWindow else { return }
         window.addSubview(banner)
-        self
+        
         banner.top(toView: window, constant: -banner.bounds.height)
         banner.left(toView: window, constant: .M)
         banner.right(toView: window, constant: .M)

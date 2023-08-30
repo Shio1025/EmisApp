@@ -52,8 +52,18 @@ public class GenericTableView: UITableView, UITableViewDataSource {
         data.sink { [weak self] cellModels in
             guard let self else { return }
             self.cellModels = cellModels
-            self.reloadData()
+            self.reloadWithAnimation()
         }.store(in: &subscriptions)
+    }
+    
+    private func reloadWithAnimation() {
+        UIView.transition(with: self,
+                          duration: 0.3,
+                          options: .transitionCrossDissolve,
+                          animations: { [weak self] in
+            self?.reloadData()
+        },
+                          completion: nil)
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
