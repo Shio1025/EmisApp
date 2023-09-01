@@ -11,7 +11,7 @@ final class MainPageRouter {
                from view: MainPageController) {
         switch route {
         case .studentSubjectCard:
-            break
+            view.navigationController?.pushViewController(StudentSubjectCardController(), animated: true)
         case .teacherSubjectCard:
             break
         case .studentSubjectRegistration:

@@ -70,6 +70,7 @@
 		24E764502A0CBD9F00E4FA74 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 24E7644F2A0CBD9F00E4FA74 /* IQKeyboardManagerSwift */; };
 		24E764562A0CBDE300E4FA74 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 24E764552A0CBDE300E4FA74 /* SDWebImage */; };
 		24F4ED452AA0ED1E00882C19 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED442AA0ED1E00882C19 /* Navigator.swift */; };
+		24F4ED782AA2653E00882C19 /* lazy.json in Resources */ = {isa = PBXBuildFile; fileRef = 24F4ED772AA2653E00882C19 /* lazy.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +136,7 @@
 		24E3F1BF2A98ED18008A0430 /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
 		24E3F1C12A98F1A3008A0430 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		24F4ED442AA0ED1E00882C19 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		24F4ED772AA2653E00882C19 /* lazy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lazy.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +403,7 @@
 		24C7133729E718BF00E5DE0B /* Lottie Animations */ = {
 			isa = PBXGroup;
 			children = (
+				24F4ED772AA2653E00882C19 /* lazy.json */,
 				2442EBD42A9D2BDF00B11CE3 /* finances.json */,
 				2442EB962A9B53A200B11CE3 /* loader.json */,
 				24C7133829E718DC00E5DE0B /* student_1.json */,
@@ -508,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C7129029E5B2A500E5DE0B /* Colors.xcassets in Resources */,
+				24F4ED782AA2653E00882C19 /* lazy.json in Resources */,
 				2490E2FC2A02ED4F0073DBDE /* ImageResources.xcassets in Resources */,
 				2442EB972A9B53A200B11CE3 /* loader.json in Resources */,
 				24C7133C29E718DC00E5DE0B /* student_2.json in Resources */,

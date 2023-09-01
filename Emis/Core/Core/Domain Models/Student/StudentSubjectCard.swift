@@ -6,7 +6,11 @@
 //
 
 public struct StudentSubjectCard {
-    public let subjectsBySemester: [[SubjectInfo]]
+    public init(subjectsBySemester: [[SubjectInfo]]) {
+        self.subjectsBySemester = subjectsBySemester
+    }
+    
+    let subjectsBySemester: [[SubjectInfo]]
     
     init(with model: ApiStudentSubjectCard) {
         self.subjectsBySemester = model.subjectsBySemester.map { elems in
@@ -15,30 +19,35 @@ public struct StudentSubjectCard {
             }
         }
     }
-}
-
-public struct SubjectInfo {
-    public let subject: Subject
-    public let semester: Int
-    public let grade: String
-    public let markInSubject: Double
     
-    init(with model: ApiSubjectInfo) {
-        self.subject = Subject(with: model.subject)
-        self.semester = model.semester
-        self.grade = model.grade
-        self.markInSubject = model.markInSubject
+    public var reversedSubjectsList: [[SubjectInfo]] {
+        Array(subjectsBySemester.reversed())
     }
 }
 
-public struct Subject {
-    let name: String
-    let description: String
-    let teachers: [String]
+public struct SubjectInfo {
+    public init(studentId: Int, courseName: String, subjectCode: String, grade: String, markInSubject: Double, description: String) {
+        self.studentId = studentId
+        self.courseName = courseName
+        self.subjectCode = subjectCode
+        self.grade = grade
+        self.markInSubject = markInSubject
+        self.description = description
+    }
     
-    init(with model: ApiSubject) {
-        self.name = model.name
+    public let studentId: Int
+    public let courseName: String
+    public let subjectCode: String
+    public let grade: String
+    public let markInSubject: Double
+    public let description: String
+    
+    init(with model: ApiSubjectInfo) {
+        self.studentId = model.studentId
+        self.courseName = model.courseName
+        self.subjectCode = model.subjectCode
+        self.grade = model.grade
+        self.markInSubject = model.markInSubject
         self.description = model.description
-        self.teachers = model.teachers
     }
 }

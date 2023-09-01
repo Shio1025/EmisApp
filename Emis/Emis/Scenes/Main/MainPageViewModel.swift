@@ -220,7 +220,7 @@ extension MainPageViewModel {
     private func handleStudentBannerNavigation(type: StudentDashboardOption) {
         switch type {
         case .subjectCard:
-            break
+            router = .studentSubjectCard
         case .subjectRegistration:
             break
         case .library:

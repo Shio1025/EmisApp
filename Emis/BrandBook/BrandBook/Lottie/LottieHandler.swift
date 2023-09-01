@@ -13,5 +13,6 @@ extension BrandBookManager {
         public static let student_3 = "student_3"
         public static let loader = "loader"
         public static let finances = "finances"
+        public static let lazy = "lazy"
     }
 }

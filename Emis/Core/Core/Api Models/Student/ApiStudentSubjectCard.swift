@@ -11,17 +11,10 @@ struct ApiStudentSubjectCard: Codable {
 }
 
 struct ApiSubjectInfo: Codable {
-    let id: Int
     let studentId: Int
-    let subject: ApiSubject
-    let semester: Int
+    let courseName: String
+    let subjectCode: String
     let grade: String
     let markInSubject: Double
-}
-
-struct ApiSubject: Codable {
-    let id: Int
-    let name: String
     let description: String
-    let teachers: [String]
 }
