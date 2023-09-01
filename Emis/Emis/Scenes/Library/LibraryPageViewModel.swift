@@ -22,6 +22,7 @@ final class LibraryPageViewModel {
     @Published private var name: String?
     @Published private var author: String?
     @Published private var statusBanner: StatusBannerViewModel?
+    @Published private var tappedBookURL : URL?
     
     @Injected private var libraryUseCase: LibraryUseCase
     
@@ -49,6 +50,16 @@ final class LibraryPageViewModel {
         return Publishers.CombineLatest($isLoading, $tableLoading)
             .map { isLoading, tableIsLoading in
                 return !(isLoading || tableIsLoading)
+            }.eraseToAnyPublisher()
+    }
+    
+    var pdfURL: AnyPublisher <URL, Never> {
+        return $tappedBookURL
+            .drop(while: { url in
+                url == nil
+            })
+            .map { url in
+                url!
             }.eraseToAnyPublisher()
     }
     
@@ -138,7 +149,11 @@ extension LibraryPageViewModel {
                           bottomLabelModel: .init(text: book.genre,font: .systemFont(ofSize: .L,
                                                                                      weight: .thin)),
                           buttonModel: .init(titleModel: .init(text: "გადმოწერა"),
-                                             action: {
+                                             action: { [weak self] in
+                @Injected var urlProvider: ApiURLProvider
+                
+                self?.tappedBookURL = urlProvider.getURL(path: "/emis/api/library/download",
+                                                         params: ["id": book.id.description])
                 
             }),
                           isSeparatorNeeded: index != (libriryInfo.content.count - 1))

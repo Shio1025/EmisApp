@@ -219,6 +219,40 @@ extension LibraryPageController {
                                     state: statusBannerModel.bannerType)
             }
         }.store(in: &subscriptions)
+        
+        viewModel.pdfURL.sink { [weak self] url in
+            guard let self else { return }
+            DispatchQueue.main.async {
+//                let documentInteractionController = UIDocumentInteractionController(url: url)
+//                documentInteractionController.delegate = self
+//                documentInteractionController.presentOptionsMenu(from: self.view.bounds, in: self.view, animated: true)
+                let alertController = UIAlertController(title: "Download PDF", message: "Do you want to download the PDF?", preferredStyle: .alert)
+
+                alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+                alertController.addAction(UIAlertAction(title: "Download", style: .default) { _ in
+                    let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                    let destinationURL = documentsDirectory.appendingPathComponent("downloaded.pdf")
+                    do {
+                        try FileManager.default.moveItem(at: url, to: destinationURL)
+                        print("Downloaded PDF saved at: \(destinationURL)")
+                    } catch {
+                        print("Failed to save downloaded PDF: \(error.localizedDescription)")
+                    }
+                })
+
+                self.present(alertController, animated: true, completion: nil)
+
+            }
+        }.store(in: &subscriptions)
+    }
+}
+
+extension LibraryPageController: UIDocumentInteractionControllerDelegate {
+    
+    func documentInteractionControllerDidDismissOpenInMenu(_ controller: UIDocumentInteractionController) {
+        // Update the isLoading property to false when the Open In menu is dismissed.
+//        isLoading = false
     }
 }
 
