@@ -133,7 +133,9 @@ extension PrimaryButton {
         
         //subscribe state
         model.state.sink { [weak self] state in
-            self?.updateButtonState(with: state)
+            DispatchQueue.main.async {
+                self?.updateButtonState(with: state)
+            }
         }.store(in: &subscriptions)
     }
     

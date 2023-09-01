@@ -20,12 +20,14 @@ class LibraryPageController: UIViewController {
     private lazy var bookNameTextField: TextFieldView = {
         let textField = TextFieldView()
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.height(equalTo: 40)
         return textField
     }()
     
     private lazy var bookAuthorTextField: TextFieldView = {
         let textField = TextFieldView()
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.height(equalTo: 40)
         return textField
     }()
     
@@ -53,6 +55,7 @@ class LibraryPageController: UIViewController {
     private lazy var tableView: GenericTableView = {
         let table = GenericTableView()
         table.translatesAutoresizingMaskIntoConstraints = false
+        table.backgroundColor = BrandBookManager.Color.Theme.Background.layer.uiColor
         return table
     }()
     
@@ -81,7 +84,8 @@ class LibraryPageController: UIViewController {
         let stack = UIStackView(arrangedSubviews: [tableView,
                                                    animationContainerView])
         stack.axis = .vertical
-        stack.alignment = .center
+        stack.alignment = .fill
+        stack.distribution = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.backgroundColor = BrandBookManager.Color.Theme.Background.layer.uiColor
         return stack
@@ -190,17 +194,30 @@ extension LibraryPageController {
         bookAuthorTextField.bind(model: viewModel.authorTextFieldModel)
         button.bind(with: viewModel.continueButtonModel)
         viewModel.resultLabelModel.sink { [weak self] model in
-            self?.label.bind(with: model)
+            DispatchQueue.main.async {
+                self?.label.bind(with: model)
+            }
         }.store(in: &subscriptions)
         
         viewModel.tableIsLoading.sink { [weak self] isLoading in
-            self?.animationContainerView.isHidden = !isLoading
-            self?.tableView.isHidden = isLoading
+            DispatchQueue.main.async {
+                self?.animationContainerView.isHidden = !isLoading
+                self?.tableView.isHidden = isLoading
+            }
             if isLoading { self?.animationView.play() }
         }.store(in: &subscriptions)
         
         viewModel.navigatorViewModel.sink { [weak self] navigatorViewModel in
-            self?.navigationView.bind(model: navigatorViewModel)
+            DispatchQueue.main.async {
+                self?.navigationView.bind(model: navigatorViewModel)
+            }
+        }.store(in: &subscriptions)
+        
+        viewModel.displayBannerPublisher.sink { [weak self] statusBannerModel in
+            DispatchQueue.main.async {
+                self?.displayBanner(with: statusBannerModel.description,
+                                    state: statusBannerModel.bannerType)
+            }
         }.store(in: &subscriptions)
     }
 }

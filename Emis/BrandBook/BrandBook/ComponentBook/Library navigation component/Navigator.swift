@@ -21,10 +21,10 @@ public class Navigator: UIView {
                 total == nil
             })
             .map { currPage, totalPage in
-                return LocalLabelModel.init(text: "\(currPage) ... \(totalPage ?? 0)",
+                return LocalLabelModel.init(text: "\(currPage) - \(totalPage ?? 0)",
                                             color: BrandBookManager.Color.Theme.Invert.tr300.uiColor,
-                                            font: .systemFont(ofSize: .M,
-                                                              weight: .light))
+                                            font: .systemFont(ofSize: .L,
+                                                              weight: .semibold))
             }.eraseToAnyPublisher()
     }
     
@@ -188,10 +188,12 @@ extension Navigator {
         
         model.isEnabledTap.sink { [weak self] isEnabled in
             guard let self else { return }
-            self.leftchevronItem.isUserInteractionEnabled = isEnabled
-            self.rightchevronItem.isUserInteractionEnabled = isEnabled
-            self.leftchevronItemContainer.alpha = isEnabled ? 1 : 0.5
-            self.rightchevronItemContainer.alpha = isEnabled ? 1 : 0.5
+            DispatchQueue.main.async {
+                self.leftchevronItem.isUserInteractionEnabled = isEnabled
+                self.rightchevronItem.isUserInteractionEnabled = isEnabled
+                self.leftchevronItemContainer.alpha = isEnabled ? 1 : 0.5
+                self.rightchevronItemContainer.alpha = isEnabled ? 1 : 0.5
+            }
         }.store(in: &subscriptions)
         
         $currPage.sink { [weak self] index in
