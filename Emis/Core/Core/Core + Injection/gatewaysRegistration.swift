@@ -18,5 +18,6 @@ extension Resolver {
         register(UpdatePhoneNumberGateway.self) { UpdatePhoneNumberGatewayImpl() }
         register(TeacherDashboardOptionsGateway.self) { TeacherDashboardOptionsGatewayImpl() }
         register(TeacherInfoGateway.self) { TeacherInfoGatewayImpl() }
+        register(LibraryGateway.self) { LibraryGatewayImpl() }
     }
 }

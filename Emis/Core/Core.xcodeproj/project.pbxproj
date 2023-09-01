@@ -49,6 +49,10 @@
 		24E3F1B92A98E985008A0430 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B82A98E985008A0430 /* UserDefaults.swift */; };
 		24E3F1BB2A98EA9D008A0430 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1BA2A98EA9D008A0430 /* UserDefaultKeys.swift */; };
 		24E764532A0CBDBE00E4FA74 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 24E764522A0CBDBE00E4FA74 /* SwifterSwift */; };
+		24F4ED472AA206E300882C19 /* ApiLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED462AA206E300882C19 /* ApiLibraryModel.swift */; };
+		24F4ED492AA2072D00882C19 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED482AA2072D00882C19 /* Library.swift */; };
+		24F4ED4B2AA2091500882C19 /* LibraryGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED4A2AA2091500882C19 /* LibraryGateway.swift */; };
+		24F4ED4D2AA20A6400882C19 /* LibraryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED4C2AA20A6400882C19 /* LibraryUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +97,10 @@
 		24E3F1B52A98E937008A0430 /* KeychainKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
 		24E3F1B82A98E985008A0430 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		24E3F1BA2A98EA9D008A0430 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
+		24F4ED462AA206E300882C19 /* ApiLibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLibraryModel.swift; sourceTree = "<group>"; };
+		24F4ED482AA2072D00882C19 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		24F4ED4A2AA2091500882C19 /* LibraryGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryGateway.swift; sourceTree = "<group>"; };
+		24F4ED4C2AA20A6400882C19 /* LibraryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,7 @@
 				2442EBA02A9BACF100B11CE3 /* Student */,
 				2442EB9F2A9BACE800B11CE3 /* Teacher */,
 				2442EB8F2A9A8B1600B11CE3 /* LoginModel.swift */,
+				24F4ED482AA2072D00882C19 /* Library.swift */,
 			);
 			path = "Domain Models";
 			sourceTree = "<group>";
@@ -125,6 +134,7 @@
 				2442EBA12A9BACF800B11CE3 /* Teacher */,
 				2442EB8D2A9A8AB200B11CE3 /* ApiLoginModel.swift */,
 				2442EBC32A9BD36B00B11CE3 /* Empty.swift */,
+				24F4ED462AA206E300882C19 /* ApiLibraryModel.swift */,
 			);
 			path = "Api Models";
 			sourceTree = "<group>";
@@ -136,6 +146,7 @@
 				2442EB9D2A9BACD400B11CE3 /* Teacher */,
 				2442EB852A9A86BA00B11CE3 /* LoginGateway.swift */,
 				2442EBC52A9BD3D300B11CE3 /* UpdatePhoneNumberGateway.swift */,
+				24F4ED4A2AA2091500882C19 /* LibraryGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -147,6 +158,7 @@
 				2442EB992A9BACB000B11CE3 /* Teacher */,
 				2442EB872A9A86CF00B11CE3 /* LoginUseCase.swift */,
 				2442EBC72A9BD50600B11CE3 /* UpdateStudentPhoneNumberUseCase.swift */,
+				24F4ED4C2AA20A6400882C19 /* LibraryUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -390,10 +402,12 @@
 				2442EC262A9E2C6700B11CE3 /* ApiTeacherInfo.swift in Sources */,
 				2442EBCA2A9BD72300B11CE3 /* TeacherDashboardOptionsGateway.swift in Sources */,
 				2442EBA82A9BB12A00B11CE3 /* StudentInfoGateway.swift in Sources */,
+				24F4ED4B2AA2091500882C19 /* LibraryGateway.swift in Sources */,
 				2442EB902A9A8B1600B11CE3 /* LoginModel.swift in Sources */,
 				2442EBB02A9BB38700B11CE3 /* StudentFinancialGateway.swift in Sources */,
 				24C93E692A419F700008AD90 /* Formatter.swift in Sources */,
 				24E3F1B92A98E985008A0430 /* UserDefaults.swift in Sources */,
+				24F4ED472AA206E300882C19 /* ApiLibraryModel.swift in Sources */,
 				24E3F1BB2A98EA9D008A0430 /* UserDefaultKeys.swift in Sources */,
 				2442EB7D2A9A625D00B11CE3 /* gatewaysRegistration.swift in Sources */,
 				2442EBCC2A9BD7B600B11CE3 /* TeacherDashboardUseCase.swift in Sources */,
@@ -405,7 +419,9 @@
 				2442EBB82A9BC8E800B11CE3 /* StudentDashboardOptionsGateway.swift in Sources */,
 				2442EB7F2A9A628500B11CE3 /* useCasesRegistration.swift in Sources */,
 				2442EBC02A9BD0E500B11CE3 /* StudentSubjectCardGateway.swift in Sources */,
+				24F4ED492AA2072D00882C19 /* Library.swift in Sources */,
 				24E3F1B72A98E937008A0430 /* KeychainKeys.swift in Sources */,
+				24F4ED4D2AA20A6400882C19 /* LibraryUseCase.swift in Sources */,
 				2442EC312A9F5CAB00B11CE3 /* TeacherInfoUseCase.swift in Sources */,
 				2442EBBA2A9BC99A00B11CE3 /* StudentDashboardUseCase.swift in Sources */,
 				2442EBC82A9BD50600B11CE3 /* UpdateStudentPhoneNumberUseCase.swift in Sources */,
