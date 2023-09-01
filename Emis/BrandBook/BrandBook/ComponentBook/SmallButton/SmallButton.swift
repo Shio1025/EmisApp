@@ -61,7 +61,7 @@ extension SmallButton {
         configureAction(action: model.action)
     }
     
-    private func configureAction(action: @escaping () -> Void) {
+    public func configureAction(action: @escaping () -> Void) {
         resourceView.isUserInteractionEnabled = true
         self.tapAction = action
         resourceView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))

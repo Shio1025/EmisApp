@@ -28,6 +28,13 @@ public class InfoCell: TableCell {
         return view
     }()
     
+    private lazy var middleLabel: LocalLabel = {
+        let label = LocalLabel()
+        label.backgroundColor = .clear
+        label.setAlignment(with: .left)
+        return label
+    }()
+    
     private lazy var bottomLabel: LocalLabel = {
         let label = LocalLabel()
         label.backgroundColor = .clear
@@ -45,6 +52,7 @@ public class InfoCell: TableCell {
     
     private lazy var labelContainer: UIStackView = {
         let stackView = UIStackView.init(arrangedSubviews: [topLabel,
+                                                            middleLabel,
                                                             bottomLabel])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
@@ -106,6 +114,7 @@ extension InfoCell {
     public func bind(with data: any CellModel) {
         if let model = data as? InfoCellModel {
             button.isHidden = true
+            middleLabel.isHidden = true
             separator.isHidden = !model.isSeparatorNeeded
             self.backgroundColor = model.backgroundColor
             topLabel.bind(with: model.topLabelModel)
@@ -113,6 +122,11 @@ extension InfoCell {
             if let buttonModel = model.buttonModel {
                 button.isHidden = false
                 button.bind(with: buttonModel)
+            }
+            
+            if let model = model.middleLabelModel {
+                middleLabel.bind(with: model)
+                middleLabel.isHidden = false
             }
         }
     }
@@ -122,16 +136,19 @@ public class InfoCellModel: CellModel {
     public typealias T = InfoCell
     var topLabelModel: LocalLabelModel
     var bottomLabelModel: LocalLabelModel
+    var middleLabelModel: LocalLabelModel?
     var buttonModel: SecondaryButtonModel?
     var isSeparatorNeeded: Bool
     var backgroundColor: UIColor
     
     public init(topLabelModel: LocalLabelModel,
+                middleLabelModel: LocalLabelModel? = nil,
                 bottomLabelModel: LocalLabelModel,
                 buttonModel: SecondaryButtonModel? = nil,
                 isSeparatorNeeded: Bool = false,
                 backgroundColor: UIColor = BrandBookManager.Color.Theme.Background.layer.uiColor) {
         self.topLabelModel = topLabelModel
+        self.middleLabelModel = middleLabelModel
         self.bottomLabelModel = bottomLabelModel
         self.buttonModel = buttonModel
         self.isSeparatorNeeded = isSeparatorNeeded

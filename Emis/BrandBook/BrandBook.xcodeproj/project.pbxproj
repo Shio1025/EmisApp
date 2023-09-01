@@ -69,6 +69,7 @@
 		24E3F1C22A98F1A3008A0430 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1C12A98F1A3008A0430 /* BannerCell.swift */; };
 		24E764502A0CBD9F00E4FA74 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 24E7644F2A0CBD9F00E4FA74 /* IQKeyboardManagerSwift */; };
 		24E764562A0CBDE300E4FA74 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 24E764552A0CBDE300E4FA74 /* SDWebImage */; };
+		24F4ED452AA0ED1E00882C19 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED442AA0ED1E00882C19 /* Navigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +134,7 @@
 		24E3F1BD2A98ED0B008A0430 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		24E3F1BF2A98ED18008A0430 /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
 		24E3F1C12A98F1A3008A0430 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		24F4ED442AA0ED1E00882C19 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 			children = (
 				243CBC112A3E097E00EEE080 /* TableCells */,
 				2442EB912A9B4EB100B11CE3 /* Loader */,
+				24F4ED432AA0ECF800882C19 /* Library navigation component */,
 				2442EB802A9A7E2C00B11CE3 /* Status Banner */,
 				243CBC422A403E0500EEE080 /* RowItem */,
 				243CBC3D2A403BC700EEE080 /* SmallButton */,
@@ -414,6 +417,14 @@
 				24E3F1BF2A98ED18008A0430 /* BannerViewModel.swift */,
 			);
 			path = Banner;
+			sourceTree = "<group>";
+		};
+		24F4ED432AA0ECF800882C19 /* Library navigation component */ = {
+			isa = PBXGroup;
+			children = (
+				24F4ED442AA0ED1E00882C19 /* Navigator.swift */,
+			);
+			path = "Library navigation component";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,6 +557,7 @@
 				243CBC412A403C0400EEE080 /* SmallButtonViewModel.swift in Sources */,
 				243CBC442A403E3500EEE080 /* RowItem.swift in Sources */,
 				24E3F1C22A98F1A3008A0430 /* BannerCell.swift in Sources */,
+				24F4ED452AA0ED1E00882C19 /* Navigator.swift in Sources */,
 				243CBC172A3F166B00EEE080 /* RoundedFooter.swift in Sources */,
 				243CBC2A2A3F185800EEE080 /* RoundCorners.swift in Sources */,
 				2442EC1A2A9DCBDD00B11CE3 /* InlineFeedbackCell.swift in Sources */,

@@ -20,6 +20,8 @@
 		2442EC1D2A9DE6DA00B11CE3 /* MoreMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EC1C2A9DE6DA00B11CE3 /* MoreMenuItem.swift */; };
 		2442EC202A9E0FAA00B11CE3 /* StudentFinancesInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EC1F2A9E0FAA00B11CE3 /* StudentFinancesInfoController.swift */; };
 		2442EC222A9E101C00B11CE3 /* StudentFinancesInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EC212A9E101C00B11CE3 /* StudentFinancesInfoViewModel.swift */; };
+		2442EC342A9F6B1900B11CE3 /* LibraryPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EC332A9F6B1900B11CE3 /* LibraryPageController.swift */; };
+		2442EC362A9F6B2A00B11CE3 /* LibraryPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442EC352A9F6B2A00B11CE3 /* LibraryPageViewModel.swift */; };
 		2490E2F32A02EB600073DBDE /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2F22A02EB600073DBDE /* LoginPageController.swift */; };
 		2490E2F52A02EB980073DBDE /* MoreMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2F42A02EB980073DBDE /* MoreMenuController.swift */; };
 		2490E2F72A02EC120073DBDE /* TimeTablePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490E2F62A02EC120073DBDE /* TimeTablePage.swift */; };
@@ -108,6 +110,8 @@
 		2442EC1C2A9DE6DA00B11CE3 /* MoreMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreMenuItem.swift; sourceTree = "<group>"; };
 		2442EC1F2A9E0FAA00B11CE3 /* StudentFinancesInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFinancesInfoController.swift; sourceTree = "<group>"; };
 		2442EC212A9E101C00B11CE3 /* StudentFinancesInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFinancesInfoViewModel.swift; sourceTree = "<group>"; };
+		2442EC332A9F6B1900B11CE3 /* LibraryPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPageController.swift; sourceTree = "<group>"; };
+		2442EC352A9F6B2A00B11CE3 /* LibraryPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPageViewModel.swift; sourceTree = "<group>"; };
 		2490E2EB2A02E38E0073DBDE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		2490E2F22A02EB600073DBDE /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
 		2490E2F42A02EB980073DBDE /* MoreMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreMenuController.swift; sourceTree = "<group>"; };
@@ -184,6 +188,15 @@
 			path = "Student Finances ";
 			sourceTree = "<group>";
 		};
+		2442EC322A9F6AED00B11CE3 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				2442EC332A9F6B1900B11CE3 /* LibraryPageController.swift */,
+				2442EC352A9F6B2A00B11CE3 /* LibraryPageViewModel.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		2490E2E52A02E3670073DBDE /* EntryPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,14 +243,14 @@
 			path = TimeTable;
 			sourceTree = "<group>";
 		};
-		2490E2F12A02EABE0073DBDE /* Information */ = {
+		2490E2F12A02EABE0073DBDE /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				2490E2F82A02EC3C0073DBDE /* MainPageController.swift */,
 				2442EBD62A9DB4A600B11CE3 /* MainPageViewModel.swift */,
 				2442EBD82A9DB4B600B11CE3 /* MainPageRouter.swift */,
 			);
-			path = Information;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		24A925032A42FB8D00FEF291 /* PasswordReset */ = {
@@ -337,10 +350,11 @@
 		24C7129929E5B4EB00E5DE0B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2442EC322A9F6AED00B11CE3 /* Library */,
 				2442EC1E2A9E0F6700B11CE3 /* Student Finances  */,
 				24A925032A42FB8D00FEF291 /* PasswordReset */,
 				243CBC0A2A3DFFAB00EEE080 /* ProfilePage */,
-				2490E2F12A02EABE0073DBDE /* Information */,
+				2490E2F12A02EABE0073DBDE /* Main */,
 				2490E2F02A02EAA20073DBDE /* TimeTable */,
 				2490E2EF2A02EA8C0073DBDE /* MoreMenu */,
 				2490E2EE2A02EA720073DBDE /* LoginPage */,
@@ -484,6 +498,7 @@
 				2490E2F52A02EB980073DBDE /* MoreMenuController.swift in Sources */,
 				2490E2F92A02EC3C0073DBDE /* MainPageController.swift in Sources */,
 				242568802A0D4DD30022A132 /* LoginPageViewModel.swift in Sources */,
+				2442EC342A9F6B1900B11CE3 /* LibraryPageController.swift in Sources */,
 				2490E3012A02F7D30073DBDE /* TabBarController.swift in Sources */,
 				2490E2F72A02EC120073DBDE /* TimeTablePage.swift in Sources */,
 				2442EBD92A9DB4B600B11CE3 /* MainPageRouter.swift in Sources */,
@@ -497,6 +512,7 @@
 				2442EC202A9E0FAA00B11CE3 /* StudentFinancesInfoController.swift in Sources */,
 				2490E2F32A02EB600073DBDE /* LoginPageController.swift in Sources */,
 				24C7117229E5ADC200E5DE0B /* SceneDelegate.swift in Sources */,
+				2442EC362A9F6B2A00B11CE3 /* LibraryPageViewModel.swift in Sources */,
 				24A924F62A423C0400FEF291 /* MoreMenuViewModel.swift in Sources */,
 				2442EC1D2A9DE6DA00B11CE3 /* MoreMenuItem.swift in Sources */,
 				24A924F82A423C0D00FEF291 /* MoreMenuRouter.swift in Sources */,

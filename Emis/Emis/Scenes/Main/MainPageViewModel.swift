@@ -224,7 +224,7 @@ extension MainPageViewModel {
         case .subjectRegistration:
             break
         case .library:
-            break
+            router = .library
         case .none:
             break
         }
@@ -266,7 +266,7 @@ extension MainPageViewModel {
         case .subjectHistory:
             break
         case .library:
-            break
+            router = .library
         case .none:
             break
         }
