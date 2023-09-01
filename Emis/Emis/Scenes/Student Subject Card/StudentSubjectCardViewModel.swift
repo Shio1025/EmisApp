@@ -230,7 +230,7 @@ extension StudentSubjectCardViewModel {
                                subjects: [SubjectInfo]) -> [any CellModel] {
         var rows: [any CellModel] = []
         
-        let subjectsRows: [any CellModel] = subjects.map { subject in
+        let subjectsRows: [any CellModel] = subjects.enumerated().map { index, subject in
             let row = RowItemCellModel(model: .init(leftItem: .icon(icon: UIImage(systemName: "chevron.left")!,
                                                                     tintColor: BrandBookManager.Color.Theme.Component.solid500.uiColor.withAlphaComponent(0.8)),
                                                     labels: .two(top: .init(text: "\(subject.subjectCode) - \(subject.courseName)",
@@ -241,7 +241,8 @@ extension StudentSubjectCardViewModel {
                                                     rightItem: .label(model: .init(text: "\(Formatter.formatNumber(number: subject.markInSubject)) - \(subject.grade)")),
                                                     tapAction: {
                 
-            }))
+            },
+                                                    isSeparatorNeeded: index != (subjects.count - 1)))
             return row
         }
         

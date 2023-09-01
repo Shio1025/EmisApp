@@ -159,8 +159,10 @@ extension MainPageViewModel {
         studentDashboardOptions.userDashboardOptions.forEach { [weak self] type in
             guard let self else { return }
             rows.append(BannerCellModel(model:
-                    .init(resourceType: .image(image: self.getStudentBannerImage(type: type)),
-                          topLabelModel: .init(text: self.getStudentBannerTitle(type: type)),
+                    .init(resourceType: .icon(icon: self.getStudentBannerImage(type: type),
+                                              tintColor: BrandBookManager.Color.Theme.Component.solid500.uiColor),
+                          topLabelModel: .init(text: self.getStudentBannerTitle(type: type),
+                                               font: .systemFont(ofSize: .XL)),
                           isChevronNeeded: true,
                           action: { [weak self] in
                 self?.handleStudentBannerNavigation(type: type)
@@ -176,7 +178,8 @@ extension MainPageViewModel {
         teacherDashboardOptions.userDashboardOptions.forEach { [weak self] type in
             guard let self else { return }
             rows.append(BannerCellModel(model:
-                    .init(resourceType: .image(image: self.getTeacherBannerImage(type: type)),
+                    .init(resourceType: .icon(icon: self.getTeacherBannerImage(type: type),
+                                              tintColor: BrandBookManager.Color.Theme.Component.solid500.uiColor),
                           topLabelModel: .init(text: self.getTeacherBannerTitle(type: type)),
                           isChevronNeeded: true,
                           action: { [weak self] in
@@ -211,7 +214,7 @@ extension MainPageViewModel {
         case .subjectRegistration:
             return BrandBookManager.Images.tmp.image
         case .library:
-            return BrandBookManager.Images.tmp.image
+            return BrandBookManager.Icon.books.template
         case .none:
             return BrandBookManager.Images.tmp.image
         }
@@ -253,7 +256,7 @@ extension MainPageViewModel {
         case .subjectHistory:
             return BrandBookManager.Images.tmp.image
         case .library:
-            return BrandBookManager.Images.tmp.image
+            return BrandBookManager.Icon.books.template
         case .none:
             return BrandBookManager.Images.tmp.image
         }
