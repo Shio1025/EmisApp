@@ -82,6 +82,27 @@ extension StudentGradesEditorViewModel {
             self.draw()
             self.isLoading = false
         }
+        
+//        @Injected var getStudentMarksUseCase: getStudentGradesUseCase
+//
+//        getStudentMarksUseCase.getStudentGrades(courseId: courseId.description,
+//                                                studentId: studentId.description)
+//        .sink { [weak self] completion in
+//            self?.isLoading = false
+//            switch completion {
+//            case .finished:
+//                DispatchQueue.main.async {
+//                    self?.loadInfo()
+//                }
+//            case .failure(_):
+//                DispatchQueue.main.async {
+//                    self?.statusBanner = .init(bannerType: .failure,
+//                                               description: "ბოდიშის გიხდით შეფერხებისთვის")
+//                }
+//            }
+//        } receiveValue: { [weak self] model in
+//            self?.grades = model
+//        }.store(in: &subscriptions)
     }
 }
 
@@ -129,7 +150,7 @@ extension StudentGradesEditorViewModel {
         })))
         
         let editButton = SecondaryButtonModel(titleModel: .init(text: "დამახსოვრება")) { [weak self] in
-            self?.handleUpdateGrade()
+            self?.handleUpdateGrade(studentGradeId: studentGradeId)
         }
         
         let cancelButton = SecondaryButtonModel(titleModel: .init(text: "გაუქმება"),
@@ -146,9 +167,29 @@ extension StudentGradesEditorViewModel {
         return rows
     }
     
-    private func handleUpdateGrade() {
+    private func handleUpdateGrade(studentGradeId: Int64) {
         editModeIndex = nil
         grade = nil
+        
+//        @Injected var updateGradeUseCase: updateGradeUseCase
+//        isLoading = true
+//        updateGradeUseCase.updateGrade(studentGradeId: studentGradeId.description, mark: grade?.description ?? "")
+//            .sink { [weak self] completion in
+//                self?.grade = nil
+//                self?.isLoading = false
+//                switch completion {
+//                case .finished:
+//                    DispatchQueue.main.async {
+//                        self?.loadInfo()
+//                    }
+//                case .failure(_):
+//                    DispatchQueue.main.async {
+//                        self?.statusBanner = .init(bannerType: .failure,
+//                                                   description: "ბოდიშის გიხდით შეფერხებისთვის")
+//                    }
+//                }
+//            } receiveValue: { _ in
+//
+//            }.store(in: &subscriptions)
     }
-    
 }
