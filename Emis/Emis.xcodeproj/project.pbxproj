@@ -46,6 +46,9 @@
 		24C7128329E5B1FA00E5DE0B /* SSO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C7125829E5B1AE00E5DE0B /* SSO.framework */; };
 		24C7128429E5B1FA00E5DE0B /* SSO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24C7125829E5B1AE00E5DE0B /* SSO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24C7129F29E5B55700E5DE0B /* EmisMainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7129E29E5B55700E5DE0B /* EmisMainManager.swift */; };
+		24DCCAA42AA3481500D46C29 /* TeacherSubjectCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAA32AA3481500D46C29 /* TeacherSubjectCardController.swift */; };
+		24DCCAA62AA3482400D46C29 /* TeacherSubjectCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAA52AA3482400D46C29 /* TeacherSubjectCardViewModel.swift */; };
+		24DCCAA82AA3483200D46C29 /* TeacherSubjectCardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAA72AA3483200D46C29 /* TeacherSubjectCardRouter.swift */; };
 		24F4ED742AA24AAB00882C19 /* StudentSubjectCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED732AA24AAB00882C19 /* StudentSubjectCardController.swift */; };
 		24F4ED762AA24ABC00882C19 /* StudentSubjectCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED752AA24ABC00882C19 /* StudentSubjectCardViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -136,6 +139,9 @@
 		24C7125329E5B1AE00E5DE0B /* SSO.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSO.xcodeproj; path = SSO/SSO.xcodeproj; sourceTree = SOURCE_ROOT; };
 		24C7126F29E5B1CC00E5DE0B /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = Core/Core.xcodeproj; sourceTree = SOURCE_ROOT; };
 		24C7129E29E5B55700E5DE0B /* EmisMainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmisMainManager.swift; sourceTree = "<group>"; };
+		24DCCAA32AA3481500D46C29 /* TeacherSubjectCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSubjectCardController.swift; sourceTree = "<group>"; };
+		24DCCAA52AA3482400D46C29 /* TeacherSubjectCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSubjectCardViewModel.swift; sourceTree = "<group>"; };
+		24DCCAA72AA3483200D46C29 /* TeacherSubjectCardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSubjectCardRouter.swift; sourceTree = "<group>"; };
 		24F4ED732AA24AAB00882C19 /* StudentSubjectCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectCardController.swift; sourceTree = "<group>"; };
 		24F4ED752AA24ABC00882C19 /* StudentSubjectCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -354,6 +360,7 @@
 		24C7129929E5B4EB00E5DE0B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				24DCCA9E2AA347ED00D46C29 /* Teacher Subject Card */,
 				24F4ED722AA24A8500882C19 /* Student Subject Card */,
 				2442EC322A9F6AED00B11CE3 /* Library */,
 				2442EC1E2A9E0F6700B11CE3 /* Student Finances  */,
@@ -373,6 +380,16 @@
 				24C7117829E5ADC300E5DE0B /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		24DCCA9E2AA347ED00D46C29 /* Teacher Subject Card */ = {
+			isa = PBXGroup;
+			children = (
+				24DCCAA32AA3481500D46C29 /* TeacherSubjectCardController.swift */,
+				24DCCAA52AA3482400D46C29 /* TeacherSubjectCardViewModel.swift */,
+				24DCCAA72AA3483200D46C29 /* TeacherSubjectCardRouter.swift */,
+			);
+			path = "Teacher Subject Card";
 			sourceTree = "<group>";
 		};
 		24F4ED722AA24A8500882C19 /* Student Subject Card */ = {
@@ -508,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2442EBD72A9DB4A600B11CE3 /* MainPageViewModel.swift in Sources */,
+				24DCCAA82AA3483200D46C29 /* TeacherSubjectCardRouter.swift in Sources */,
 				24C7117429E5ADC200E5DE0B /* EntryPage.swift in Sources */,
 				2490E2F52A02EB980073DBDE /* MoreMenuController.swift in Sources */,
 				2490E2F92A02EC3C0073DBDE /* MainPageController.swift in Sources */,
@@ -522,8 +540,10 @@
 				242568872A0D52F70022A132 /* ResolverRegistration + Routers.swift in Sources */,
 				2442EB722A9A5F3500B11CE3 /* ResolverRegistration + NetworkLayer.swift in Sources */,
 				2490E32A2A0386E80073DBDE /* TabBarItem.swift in Sources */,
+				24DCCAA42AA3481500D46C29 /* TeacherSubjectCardController.swift in Sources */,
 				243CBC0C2A3DFFC900EEE080 /* ProfilePageController.swift in Sources */,
 				24C7117029E5ADC200E5DE0B /* AppDelegate.swift in Sources */,
+				24DCCAA62AA3482400D46C29 /* TeacherSubjectCardViewModel.swift in Sources */,
 				24C7129F29E5B55700E5DE0B /* EmisMainManager.swift in Sources */,
 				2442EC202A9E0FAA00B11CE3 /* StudentFinancesInfoController.swift in Sources */,
 				2490E2F32A02EB600073DBDE /* LoginPageController.swift in Sources */,
