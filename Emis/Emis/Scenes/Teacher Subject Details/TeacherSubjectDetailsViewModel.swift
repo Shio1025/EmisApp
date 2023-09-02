@@ -8,12 +8,13 @@
 import BrandBook
 import Combine
 import Resolver
-import SSO
 import Core
 import UIKit
 
 enum TeacherSubjectDetailsRoute {
-    
+    case studentGrades(courseId: Int64,
+                       studentId: Int64,
+                       studentNameAndSurname: String)
 }
 
 final class TeacherSubjectDetailsViewModel {
@@ -223,9 +224,18 @@ extension TeacherSubjectDetailsViewModel {
             RowItemCellModel(model: .init(labels: .one(model: .init(text: "\(model.firstName) \(model.lastName) - \(model.email)")),
                                           rightItem: .button(model: .init(resourceType: .icon(icon: BrandBookManager.Icon.reminders.template,
                                                                                               tintColor: BrandBookManager.Color.Theme.Component.solid500.uiColor.withAlphaComponent(0.95)),
-                                                                          action: {
-                
+                                                                          action: { [weak self] in
+                guard let self else { return }
+                self.router = .studentGrades(courseId: self.courseId,
+                                             studentId: model.id,
+                                             studentNameAndSurname: "\(model.firstName) \(model.lastName)")
             })),
+                                          tapAction: { [weak self] in
+                guard let self else { return }
+                self.router = .studentGrades(courseId: self.courseId,
+                                             studentId: model.id,
+                                             studentNameAndSurname: "\(model.firstName) \(model.lastName)")
+            },
                                           isSeparatorNeeded: index != (students.count - 1)))
         }
     }

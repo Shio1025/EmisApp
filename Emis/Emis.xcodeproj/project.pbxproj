@@ -52,6 +52,8 @@
 		24DCCAB32AA360A600D46C29 /* TeacherSubjectDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAB22AA360A600D46C29 /* TeacherSubjectDetailsController.swift */; };
 		24DCCAB52AA360C200D46C29 /* TeacherSubjectDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAB42AA360C200D46C29 /* TeacherSubjectDetailsViewModel.swift */; };
 		24DCCAB72AA360D400D46C29 /* TeacherSubjectDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAB62AA360D400D46C29 /* TeacherSubjectDetailsRouter.swift */; };
+		24DCCAC62AA37B9D00D46C29 /* StudentGradesEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAC52AA37B9D00D46C29 /* StudentGradesEditorController.swift */; };
+		24DCCAC82AA37BAA00D46C29 /* StudentGradesEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAC72AA37BAA00D46C29 /* StudentGradesEditorViewModel.swift */; };
 		24F4ED742AA24AAB00882C19 /* StudentSubjectCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED732AA24AAB00882C19 /* StudentSubjectCardController.swift */; };
 		24F4ED762AA24ABC00882C19 /* StudentSubjectCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED752AA24ABC00882C19 /* StudentSubjectCardViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -148,6 +150,8 @@
 		24DCCAB22AA360A600D46C29 /* TeacherSubjectDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSubjectDetailsController.swift; sourceTree = "<group>"; };
 		24DCCAB42AA360C200D46C29 /* TeacherSubjectDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSubjectDetailsViewModel.swift; sourceTree = "<group>"; };
 		24DCCAB62AA360D400D46C29 /* TeacherSubjectDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSubjectDetailsRouter.swift; sourceTree = "<group>"; };
+		24DCCAC52AA37B9D00D46C29 /* StudentGradesEditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGradesEditorController.swift; sourceTree = "<group>"; };
+		24DCCAC72AA37BAA00D46C29 /* StudentGradesEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGradesEditorViewModel.swift; sourceTree = "<group>"; };
 		24F4ED732AA24AAB00882C19 /* StudentSubjectCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectCardController.swift; sourceTree = "<group>"; };
 		24F4ED752AA24ABC00882C19 /* StudentSubjectCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,6 +370,7 @@
 		24C7129929E5B4EB00E5DE0B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				24DCCAC42AA37B8100D46C29 /* Student Grades Editor */,
 				24DCCAB12AA3608000D46C29 /* Teacher Subject Details */,
 				24DCCA9E2AA347ED00D46C29 /* Teacher Subject Card */,
 				24F4ED722AA24A8500882C19 /* Student Subject Card */,
@@ -407,6 +412,15 @@
 				24DCCAB62AA360D400D46C29 /* TeacherSubjectDetailsRouter.swift */,
 			);
 			path = "Teacher Subject Details";
+			sourceTree = "<group>";
+		};
+		24DCCAC42AA37B8100D46C29 /* Student Grades Editor */ = {
+			isa = PBXGroup;
+			children = (
+				24DCCAC52AA37B9D00D46C29 /* StudentGradesEditorController.swift */,
+				24DCCAC72AA37BAA00D46C29 /* StudentGradesEditorViewModel.swift */,
+			);
+			path = "Student Grades Editor";
 			sourceTree = "<group>";
 		};
 		24F4ED722AA24A8500882C19 /* Student Subject Card */ = {
@@ -558,7 +572,9 @@
 				2442EB722A9A5F3500B11CE3 /* ResolverRegistration + NetworkLayer.swift in Sources */,
 				2490E32A2A0386E80073DBDE /* TabBarItem.swift in Sources */,
 				24DCCAA42AA3481500D46C29 /* TeacherSubjectCardController.swift in Sources */,
+				24DCCAC82AA37BAA00D46C29 /* StudentGradesEditorViewModel.swift in Sources */,
 				24DCCAB72AA360D400D46C29 /* TeacherSubjectDetailsRouter.swift in Sources */,
+				24DCCAC62AA37B9D00D46C29 /* StudentGradesEditorController.swift in Sources */,
 				243CBC0C2A3DFFC900EEE080 /* ProfilePageController.swift in Sources */,
 				24DCCAB32AA360A600D46C29 /* TeacherSubjectDetailsController.swift in Sources */,
 				24C7117029E5ADC200E5DE0B /* AppDelegate.swift in Sources */,
