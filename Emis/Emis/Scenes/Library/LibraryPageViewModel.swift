@@ -22,9 +22,10 @@ final class LibraryPageViewModel {
     @Published private var name: String?
     @Published private var author: String?
     @Published private var statusBanner: StatusBannerViewModel?
-    @Published private var tappedBookURL : URL?
+    @Published private var tappedBookURL : (URL,String)?
     
     @Injected private var libraryUseCase: LibraryUseCase
+    @Injected var urlProvider: ApiURLProvider
     
     var listCellModels: AnyPublisher<[any CellModel], Never> {
         $listCells.eraseToAnyPublisher()
@@ -53,13 +54,13 @@ final class LibraryPageViewModel {
             }.eraseToAnyPublisher()
     }
     
-    var pdfURL: AnyPublisher <URL, Never> {
+    var pdfURL: AnyPublisher <(URL, String), Never> {
         return $tappedBookURL
-            .drop(while: { url in
-                url == nil
+            .drop(while: { elems in
+                elems == nil
             })
-            .map { url in
-                url!
+            .map { elems in
+                return (elems!.0, elems!.1)
             }.eraseToAnyPublisher()
     }
     
@@ -150,11 +151,13 @@ extension LibraryPageViewModel {
                                                                                      weight: .thin)),
                           buttonModel: .init(titleModel: .init(text: "გადმოწერა"),
                                              action: { [weak self] in
-                @Injected var urlProvider: ApiURLProvider
+                guard let self else { return }
                 
-                self?.tappedBookURL = urlProvider.getURL(path: "/emis/api/library/download",
-                                                         params: ["id": book.id.description])
-                
+                let url = self.urlProvider.getURL(path: "/emis/api/library/download",
+                                                  params: ["id": book.id.description])
+                if let url {
+                    self.tappedBookURL = (url, book.title + " - " + book.author)
+                }
             }),
                           isSeparatorNeeded: index != (libriryInfo.content.count - 1))
         }

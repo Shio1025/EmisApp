@@ -220,59 +220,82 @@ extension LibraryPageController {
             }
         }.store(in: &subscriptions)
         
-        viewModel.pdfURL.sink { [weak self] url in
+        viewModel.pdfURL.sink { [weak self] data in
             guard let self else { return }
             DispatchQueue.main.async {
-//                let documentInteractionController = UIDocumentInteractionController(url: url)
-//                documentInteractionController.delegate = self
-//                documentInteractionController.presentOptionsMenu(from: self.view.bounds, in: self.view, animated: true)
-                let alertController = UIAlertController(title: "Download PDF", message: "Do you want to download the PDF?", preferredStyle: .alert)
-
-                alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-                alertController.addAction(UIAlertAction(title: "Download", style: .default) { _ in
-//                    let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-//                    let destinationURL = documentsDirectory.appendingPathComponent("downloaded.pdf")
-//                    do {
-//                        try FileManager.default.moveItem(at: url, to: destinationURL)
-//                        print("Downloaded PDF saved at: \(destinationURL)")
-//                    } catch {
-//                        print("Failed to save downloaded PDF: \(error.localizedDescription)")
-                    //                    }
-                    let documentInteractionController = UIDocumentInteractionController(url: url)
-                    documentInteractionController.delegate = self
-                    documentInteractionController.presentOptionsMenu(from: self.view.bounds, in: self.view, animated: true)
-//                    self.savePdf(url: url, fileName: "petre")
-                })
-                
-                self.present(alertController, animated: true, completion: nil)
-
+                self.present(self.createDownloadPDFAlertController(url: data.0,
+                                                                   fileName: data.1),
+                             animated: true,
+                             completion: nil)
             }
         }.store(in: &subscriptions)
     }
     
-    func savePdf(url: URL, fileName:String) {
+    private func createDownloadPDFAlertController(url: URL,
+                                                  fileName: String) -> UIAlertController {
+        let alertController = UIAlertController(title: "Download PDF",
+                                                message: "Do you want to download the PDF?", preferredStyle: .alert)
+
+        alertController.addAction(UIAlertAction(title: "Cancel",
+                                                style: .cancel,
+                                                handler: nil))
+
+        alertController.addAction(UIAlertAction(title: "Download", style: .default) { [weak self] _ in
+            guard let self else { return }
+            self.showLoader()
+                DispatchQueue.global().async {
+                    if  let data = try? Data(contentsOf: url) {
+                        self.sharePdf(data,
+                                      fileName: fileName)
+                    } else {
+                        DispatchQueue.main.async {
+                            self.hideLoader()
+                            self.displayBanner(with: "წიგნის გადმოწერა ვერ მოხერხდა",
+                                               state: .failure)
+                        }
+                    }
+                }
+        })
+        
+        return alertController
+    }
+    
+    private func sharePdf(_ data: Data,
+                          fileName: String) {
         DispatchQueue.main.async {
-            let pdfData = try? Data.init(contentsOf: url)
-            let resourceDocPath = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last! as URL
-            let pdfNameFromUrl = "EmisApp-\(fileName).pdf"
-            let actualPath = resourceDocPath.appendingPathComponent(pdfNameFromUrl)
-            do {
-                try pdfData?.write(to: actualPath, options: .atomic)
-                print("pdf successfully saved!")
-                //file is downloaded in app data container, I can find file from x code > devices > MyApp > download Container >This container has the file
-            } catch {
-                print("Pdf could not be saved")
-            }
+            self.hideLoader()
+            let sharer = self.sharer(data: data,
+                                     name: fileName)
+            self.present(sharer, animated: true)
         }
     }
-}
-
-extension LibraryPageController: UIDocumentInteractionControllerDelegate {
     
-    func documentInteractionControllerDidDismissOpenInMenu(_ controller: UIDocumentInteractionController) {
-        // Update the isLoading property to false when the Open In menu is dismissed.
-//        isLoading = false
+    func sharer(data: Data,
+                name: String) -> UIActivityViewController {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentDirectorPath: String = paths[0]
+
+        var fileName = "/EmisApp-"
+        fileName += name
+        fileName += ".pdf"
+        
+        let path = documentDirectorPath.appending(fileName)
+
+        FileManager.default.createFile(atPath: path, contents: data, attributes: nil)
+
+        let activity = UIActivityViewController(activityItems: [URL(fileURLWithPath: path)], applicationActivities: nil)
+        activity.completionWithItemsHandler = { (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
+          
+        }
+        
+        return activity
+    }
+    
+    private func formattedCurrentDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale(identifier: "ka_GE")
+        return dateFormatter.string(from: Date())
     }
 }
 
