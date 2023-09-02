@@ -20,11 +20,11 @@ public class StudentSubjectCardGatewayImpl: StudentSubjectCardGateway {
     
     public func getStudentSubjectCardInfo(userId: String) -> AnyPublisher<StudentSubjectCard, Error> {
         
-        let url = apiURLProvider.getURL(path: "/emis/api/student/subjectCard",
+        let url = apiURLProvider.getURL(path: "/emis/api/student/courses",
                                         params: ["id": userId])
         
-        let endpoint = EndPoint<ApiStudentSubjectCard>(url: url,
-                                                       method: .get)
+        let endpoint = EndPoint<[[ApiSubjectInfo]]>(url: url,
+                                                  method: .get)
         
         let publisher: AnyPublisher<StudentSubjectCard, Error> = dataTransport.makeRequest(endpoint)
             .map { model in

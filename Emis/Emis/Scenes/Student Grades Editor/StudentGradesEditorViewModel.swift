@@ -17,10 +17,9 @@ final class StudentGradesEditorViewModel {
     @Published private var isLoading: Bool = false
     @Published private var statusBanner: StatusBannerViewModel?
     @Published private var isStudentsVisible: Bool = false
-    @Published private var isEditMode: Bool = false
-    @Published private var editModeIndex: Int = .zero
+    @Published private var editModeIndex: Int?
     
-    private var teacherCourseInfo: TeacherCourseInfo?
+    private var grades: [StudentGrade]?
     
     var listCellModels: AnyPublisher<[any CellModel], Never> {
         $listCells.eraseToAnyPublisher()
@@ -87,9 +86,8 @@ extension StudentGradesEditorViewModel {
 extension StudentGradesEditorViewModel {
     
     private func draw() {
+        guard let grades else { return }
         var rows: [any CellModel] = []
-        
-        
         
         listCells = rows
     }
