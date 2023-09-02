@@ -56,6 +56,8 @@
 		24DCCACC2AA382E700D46C29 /* StudentGrades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCACB2AA382E700D46C29 /* StudentGrades.swift */; };
 		24DCCACE2AA3833D00D46C29 /* getStudentGradesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCACD2AA3833D00D46C29 /* getStudentGradesGateway.swift */; };
 		24DCCAD02AA3880E00D46C29 /* getStudentGradesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCACF2AA3880E00D46C29 /* getStudentGradesUseCase.swift */; };
+		24DCCAD22AA3963400D46C29 /* UpdateMarkGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAD12AA3963400D46C29 /* UpdateMarkGateway.swift */; };
+		24DCCAD42AA396D200D46C29 /* updateGradeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAD32AA396D200D46C29 /* updateGradeUseCase.swift */; };
 		24E3F1B62A98E937008A0430 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B42A98E937008A0430 /* KeyChain.swift */; };
 		24E3F1B72A98E937008A0430 /* KeychainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B52A98E937008A0430 /* KeychainKeys.swift */; };
 		24E3F1B92A98E985008A0430 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B82A98E985008A0430 /* UserDefaults.swift */; };
@@ -117,6 +119,8 @@
 		24DCCACB2AA382E700D46C29 /* StudentGrades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGrades.swift; sourceTree = "<group>"; };
 		24DCCACD2AA3833D00D46C29 /* getStudentGradesGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getStudentGradesGateway.swift; sourceTree = "<group>"; };
 		24DCCACF2AA3880E00D46C29 /* getStudentGradesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getStudentGradesUseCase.swift; sourceTree = "<group>"; };
+		24DCCAD12AA3963400D46C29 /* UpdateMarkGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMarkGateway.swift; sourceTree = "<group>"; };
+		24DCCAD32AA396D200D46C29 /* updateGradeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateGradeUseCase.swift; sourceTree = "<group>"; };
 		24E3F1B42A98E937008A0430 /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		24E3F1B52A98E937008A0430 /* KeychainKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
 		24E3F1B82A98E985008A0430 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 				2442EBB92A9BC99A00B11CE3 /* StudentDashboardUseCase.swift */,
 				2442EBC12A9BD18B00B11CE3 /* StudentSubjectCardUseCase.swift */,
 				24DCCACF2AA3880E00D46C29 /* getStudentGradesUseCase.swift */,
+				24DCCAD32AA396D200D46C29 /* updateGradeUseCase.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 				2442EBB72A9BC8E800B11CE3 /* StudentDashboardOptionsGateway.swift */,
 				2442EBBF2A9BD0E500B11CE3 /* StudentSubjectCardGateway.swift */,
 				24DCCACD2AA3833D00D46C29 /* getStudentGradesGateway.swift */,
+				24DCCAD12AA3963400D46C29 /* UpdateMarkGateway.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -467,7 +473,9 @@
 				2442EBC02A9BD0E500B11CE3 /* StudentSubjectCardGateway.swift in Sources */,
 				24F4ED492AA2072D00882C19 /* Library.swift in Sources */,
 				24E3F1B72A98E937008A0430 /* KeychainKeys.swift in Sources */,
+				24DCCAD42AA396D200D46C29 /* updateGradeUseCase.swift in Sources */,
 				24F4ED4D2AA20A6400882C19 /* LibraryUseCase.swift in Sources */,
+				24DCCAD22AA3963400D46C29 /* UpdateMarkGateway.swift in Sources */,
 				2442EC312A9F5CAB00B11CE3 /* TeacherInfoUseCase.swift in Sources */,
 				2442EBBA2A9BC99A00B11CE3 /* StudentDashboardUseCase.swift in Sources */,
 				24DCCACE2AA3833D00D46C29 /* getStudentGradesGateway.swift in Sources */,
