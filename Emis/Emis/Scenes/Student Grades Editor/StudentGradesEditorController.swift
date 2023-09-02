@@ -75,11 +75,12 @@ extension StudentGradesEditorController {
     }
     
     private func registerTableCells() {
-        tableView.register(SpacerCell.self)
         tableView.register(RowItemCell.self)
         tableView.register(SecondaryButtonsCell.self)
         tableView.register(RoundedHeader.self)
-        tableView.register(RoundedHeaderWithTitle.self)
+        tableView.register(RoundedFooter.self)
+        tableView.register(TextFieldCell.self)
+        tableView.register(SeparatorCell.self)
     }
 }
 

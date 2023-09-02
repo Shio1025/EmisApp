@@ -20,7 +20,7 @@ public class TeacherCourseInfoGatewayImpl: TeacherCourseInfoGateway {
     
     public func getTeacherCourseInfo(courseId: String) -> AnyPublisher<TeacherCourseInfo, Error> {
         
-        let url = apiURLProvider.getURL(path: "/emis/api/teacher/courses",
+        let url = apiURLProvider.getURL(path: "/emis/api/course/detailsForTeacher",
                                         params: ["courseId": courseId])
         
         let endpoint = EndPoint<ApiTeacherCourseInfo>(url: url,

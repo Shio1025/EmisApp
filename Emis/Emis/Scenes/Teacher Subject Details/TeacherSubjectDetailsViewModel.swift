@@ -195,7 +195,8 @@ extension TeacherSubjectDetailsViewModel {
             : UIImage(systemName: "chevron.down")!
         
         rows.append(RowItemCellModel(model:
-                .init(labels: .one(model: .init(text: "სტუდენტები")),
+                .init(labels: .one(model: .init(text: "სტუდენტები",
+                                                font: .systemFont(ofSize: .XL))),
                       rightItem: .button(model:
                             .init(resourceType: .icon(icon: icon,
                                                       tintColor: BrandBookManager.Color.Theme.Invert.tr500.uiColor.withAlphaComponent(0.95)),

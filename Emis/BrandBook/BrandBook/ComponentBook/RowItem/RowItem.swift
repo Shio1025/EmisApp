@@ -85,7 +85,7 @@ public class RowItem: UIView {
                                                             smallButton])
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = .XS
+        stackView.spacing = .S
         stackView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .L)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.setContentCompressionResistancePriority(.init(1000), for: .horizontal)
