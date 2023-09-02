@@ -13,7 +13,7 @@ final class MainPageRouter {
         case .studentSubjectCard:
             view.navigationController?.pushViewController(StudentSubjectCardController(), animated: true)
         case .teacherSubjectCard:
-            break
+            view.navigationController?.pushViewController(TeacherSubjectCardController(), animated: true)
         case .studentSubjectRegistration:
             break
         case .teacherSubjectsHistory:

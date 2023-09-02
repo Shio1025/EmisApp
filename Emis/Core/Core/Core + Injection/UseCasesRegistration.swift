@@ -1,5 +1,5 @@
 //
-//  useCasesRegistration.swift
+//  UseCasesRegistration.swift
 //  Core
 //
 //  Created by Shio Birbichadze on 26.08.23.
@@ -19,5 +19,6 @@ extension Resolver {
         register(TeacherDashboardUseCase.self) { TeacherDashboardUseCaseImpl() }
         register(TeacherInfoUseCase.self) { TeacherInfoUseCaseImpl() }
         register(LibraryUseCase.self) { LibraryUseCaseImpl() }
+        register(TeacherSubjectCardUseCase.self) { TeacherSubjectCardUseCaseImpl() }
     }
 }

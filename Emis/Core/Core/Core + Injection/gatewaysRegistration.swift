@@ -19,5 +19,6 @@ extension Resolver {
         register(TeacherDashboardOptionsGateway.self) { TeacherDashboardOptionsGatewayImpl() }
         register(TeacherInfoGateway.self) { TeacherInfoGatewayImpl() }
         register(LibraryGateway.self) { LibraryGatewayImpl() }
+        register(TeacherSubjectCardGateway.self) { TeacherSubjectCardGatewayImpl() }
     }
 }

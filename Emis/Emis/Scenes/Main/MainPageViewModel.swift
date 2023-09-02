@@ -265,7 +265,7 @@ extension MainPageViewModel {
     private func handleTeacherBannerNavigation(type: TeacherDashboardOption) {
         switch type {
         case .subjectCard:
-            break
+            router = .teacherSubjectCard
         case .subjectHistory:
             break
         case .library:
