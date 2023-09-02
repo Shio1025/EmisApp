@@ -231,20 +231,40 @@ extension LibraryPageController {
                 alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
                 alertController.addAction(UIAlertAction(title: "Download", style: .default) { _ in
-                    let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-                    let destinationURL = documentsDirectory.appendingPathComponent("downloaded.pdf")
-                    do {
-                        try FileManager.default.moveItem(at: url, to: destinationURL)
-                        print("Downloaded PDF saved at: \(destinationURL)")
-                    } catch {
-                        print("Failed to save downloaded PDF: \(error.localizedDescription)")
-                    }
+//                    let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+//                    let destinationURL = documentsDirectory.appendingPathComponent("downloaded.pdf")
+//                    do {
+//                        try FileManager.default.moveItem(at: url, to: destinationURL)
+//                        print("Downloaded PDF saved at: \(destinationURL)")
+//                    } catch {
+//                        print("Failed to save downloaded PDF: \(error.localizedDescription)")
+                    //                    }
+                    let documentInteractionController = UIDocumentInteractionController(url: url)
+                    documentInteractionController.delegate = self
+                    documentInteractionController.presentOptionsMenu(from: self.view.bounds, in: self.view, animated: true)
+//                    self.savePdf(url: url, fileName: "petre")
                 })
-
+                
                 self.present(alertController, animated: true, completion: nil)
 
             }
         }.store(in: &subscriptions)
+    }
+    
+    func savePdf(url: URL, fileName:String) {
+        DispatchQueue.main.async {
+            let pdfData = try? Data.init(contentsOf: url)
+            let resourceDocPath = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last! as URL
+            let pdfNameFromUrl = "EmisApp-\(fileName).pdf"
+            let actualPath = resourceDocPath.appendingPathComponent(pdfNameFromUrl)
+            do {
+                try pdfData?.write(to: actualPath, options: .atomic)
+                print("pdf successfully saved!")
+                //file is downloaded in app data container, I can find file from x code > devices > MyApp > download Container >This container has the file
+            } catch {
+                print("Pdf could not be saved")
+            }
+        }
     }
 }
 

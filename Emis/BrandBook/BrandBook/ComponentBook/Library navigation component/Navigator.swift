@@ -10,7 +10,7 @@ import Combine
 
 public class Navigator: UIView {
     
-    @Published private var currPage: Int = 0
+    @Published private var currPage: Int = 1
     @Published private var totalPages: Int?
     
     private var subscriptions = Set<AnyCancellable>()
@@ -161,7 +161,7 @@ public class Navigator: UIView {
 extension Navigator {
     
     public func bind(model: NavigatorViewModel) {
-        currPage = .zero
+        currPage = 1
         totalPages = model.totalPages
         
         textPublisher.sink { [weak self] model in
@@ -172,7 +172,7 @@ extension Navigator {
                                                               tintColor: BrandBookManager.Color.Theme.Invert.tr500.uiColor.withAlphaComponent(0.8)),
                                           action: { [weak self] in
             guard let self,
-                  self.currPage != .zero else { return }
+                  self.currPage != 1 else { return }
             self.currPage -= 1
             model.ItemTapAction(self.currPage)
         }))

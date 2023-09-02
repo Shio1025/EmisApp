@@ -87,53 +87,53 @@ extension LibraryPageViewModel {
 extension LibraryPageViewModel {
     
     private func getBooks(by index: Int) {
-        tableLoading = true
-    
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.libriryInfo = .init(content: [.init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
-                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
-                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
-                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
-                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
-                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
-                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
-                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
-                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
-                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"])], totalElements: 120,
-                                     totalPages: 20)
-            if index == .zero {
-                self.totalPages = 20
-                self.totalFoundBooks = 120
-            }
-            self.draw()
-            self.tableLoading = false
-            self.isLoading = false
-        }
-//        if index == .zero { isLoading = true }
-        //        tableLoading = true
-//        libraryUseCase.getBooks(title: name ?? "",
-//                                author: author ?? "",
-//                                page: index,
-//                                size: 10)
-//        .sink { [weak self] completion in
-//            self?.isLoading = false
-//            switch completion {
-//            case .finished:
-//                self?.tableLoading = false
-//                self?.draw()
-//            case .failure(let error):
+//        tableLoading = true
 //
-//                self?.statusBanner = .init(bannerType: .failure,
-//                                           description: error.localizedDescription)
-//            }
-//
-//        } receiveValue: { [weak self] model in
-//            self?.libriryInfo = model
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            self.libriryInfo = .init(content: [.init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
+//                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
+//                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
+//                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
+//                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
+//                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
+//                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
+//                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
+//                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"]),
+//                                               .init(id: 1, title: "12", author: "shio", genres: ["scsd", "sdcd"])], totalElements: 120,
+//                                     totalPages: 20)
 //            if index == .zero {
-//                self?.totalPages = model.totalPages
-//                self?.totalFoundBooks = model.totalElements
+//                self.totalPages = 20
+//                self.totalFoundBooks = 120
 //            }
-//        }.store(in: &subscriptions)
+//            self.draw()
+//            self.tableLoading = false
+//            self.isLoading = false
+//        }
+        if index == .zero { isLoading = true }
+                tableLoading = true
+        libraryUseCase.getBooks(title: name ?? "",
+                                author: author ?? "",
+                                page: index,
+                                size: 10)
+        .sink { [weak self] completion in
+            self?.isLoading = false
+            switch completion {
+            case .finished:
+                self?.tableLoading = false
+                self?.draw()
+            case .failure(let error):
+
+                self?.statusBanner = .init(bannerType: .failure,
+                                           description: error.localizedDescription)
+            }
+
+        } receiveValue: { [weak self] model in
+            self?.libriryInfo = model
+            if index == .zero {
+                self?.totalPages = model.totalPages
+                self?.totalFoundBooks = model.totalElements
+            }
+        }.store(in: &subscriptions)
     }
 }
 
