@@ -23,6 +23,7 @@ final class TeacherSubjectDetailsViewModel {
     @Published private var isLoading: Bool = false
     @Published private var statusBanner: StatusBannerViewModel?
     @Published private var buttonState: ButtonState = .enabled
+    @Published private var isStudentsVisible: Bool = false
     
     private var teacherCourseInfo: TeacherCourseInfo?
     
@@ -97,7 +98,13 @@ extension TeacherSubjectDetailsViewModel {
                                                          credits: 23,
                                                          studentsLimit: 23,
                                                          studentsRegistered: 19),
-                                           students: [])
+                                           students: [.init(id: 8, firstName: "qfd", lastName: "asd", email: "asd"),
+                                                      .init(id: 8, firstName: "qfd", lastName: "asd", email: "asd"),
+                                                      .init(id: 8, firstName: "qfd", lastName: "asd", email: "asd"),
+                                                      .init(id: 8, firstName: "qfd", lastName: "asd", email: "asd"),
+                                                      .init(id: 8, firstName: "qfd", lastName: "asd", email: "asd"),
+                                                      .init(id: 8, firstName: "qfd", lastName: "asd", email: "asd"),
+                                                      .init(id: 8, firstName: "qfd", lastName: "asd", email: "asd")])
             self.draw()
             self.isLoading = false
         }
@@ -164,6 +171,7 @@ extension TeacherSubjectDetailsViewModel {
         rows.append(getSpacerCell())
         
         //Students
+        rows.append(contentsOf: getStudentsSection(students: teacherCourseInfo.students))
         
         
         listCells = rows
@@ -175,5 +183,50 @@ extension TeacherSubjectDetailsViewModel {
                                                                action: {
             
         }))
+    }
+    
+    func getStudentsSection(students: [Student]) -> [any CellModel] {
+        var rows: [any CellModel] = []
+        
+        rows.append(getRoundedHeaderModel())
+        let icon = isStudentsVisible
+            ? UIImage(systemName: "chevron.up")!
+            : UIImage(systemName: "chevron.down")!
+        
+        rows.append(RowItemCellModel(model:
+                .init(labels: .one(model: .init(text: "სტუდენტები")),
+                      rightItem: .button(model:
+                            .init(resourceType: .icon(icon: icon,
+                                                      tintColor: BrandBookManager.Color.Theme.Invert.tr500.uiColor.withAlphaComponent(0.95)),
+                                  action: { [weak self] in
+            
+            self?.isStudentsVisible.toggle()
+            self?.draw()
+        })),
+                                                  tapAction: { [weak self] in
+            self?.isStudentsVisible.toggle()
+            self?.draw()
+        })))
+        
+        if isStudentsVisible {
+            rows.append(contentsOf: getStudentRows(students: students))
+        }
+        
+        rows.append(getRoundedFooterModel())
+        rows.append(getSpacerCell())
+        
+        return rows
+    }
+    
+    func getStudentRows(students: [Student]) ->  [any CellModel] {
+        students.enumerated().map { index, model in
+            RowItemCellModel(model: .init(labels: .one(model: .init(text: "\(model.firstName) \(model.lastName) - \(model.email)")),
+                                          rightItem: .button(model: .init(resourceType: .icon(icon: BrandBookManager.Icon.reminders.template,
+                                                                                              tintColor: BrandBookManager.Color.Theme.Component.solid500.uiColor.withAlphaComponent(0.95)),
+                                                                          action: {
+                
+            })),
+                                          isSeparatorNeeded: index != (students.count - 1)))
+        }
     }
 }

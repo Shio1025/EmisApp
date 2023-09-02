@@ -15,8 +15,8 @@ public class RowItem: UIView {
         let view = ResourceView()
         view.backgroundColor = .clear
         view.isHidden = true
-        view.height(equalTo: .XL3)
-        view.width(equalTo: .XL3)
+        view.height(equalTo: .XL2)
+        view.width(equalTo: .XL2)
         return view
     }()
     
@@ -39,6 +39,8 @@ public class RowItem: UIView {
                                                             bottomLabel])
         stackView.axis = .vertical
         stackView.alignment = .leading
+        stackView.spacing = .XS
+        stackView.distribution = .fillProportionally
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()

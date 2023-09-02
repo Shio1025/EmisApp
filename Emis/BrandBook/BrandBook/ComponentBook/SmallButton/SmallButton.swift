@@ -16,8 +16,8 @@ public class SmallButton: UIView {
         let view = ResourceView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.height(equalTo: .L)
-        view.width(equalTo: .L)
+        view.height(equalTo: .XL3)
+        view.width(equalTo: .XL3)
         return view
     }()
 
