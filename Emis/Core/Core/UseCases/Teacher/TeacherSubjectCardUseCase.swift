@@ -9,14 +9,14 @@ import Combine
 import Resolver
 
 public protocol TeacherSubjectCardUseCase {
-    func getTeacherSubjectCardInfo(userId: String) -> AnyPublisher<TeacherSubjectCard, Error>
+    func getTeacherSubjectCardInfo(userId: String) -> AnyPublisher<[TeacherSubjectCard], Error>
 }
 
 public class TeacherSubjectCardUseCaseImpl: TeacherSubjectCardUseCase {
     
     @Injected var teacherSubjectCardGateway: TeacherSubjectCardGateway
     
-    public func getTeacherSubjectCardInfo(userId: String) -> AnyPublisher<TeacherSubjectCard, Error> {
+    public func getTeacherSubjectCardInfo(userId: String) -> AnyPublisher<[TeacherSubjectCard], Error> {
         teacherSubjectCardGateway.getTeacherSubjectCardInfo(userId: userId)
     }
 }

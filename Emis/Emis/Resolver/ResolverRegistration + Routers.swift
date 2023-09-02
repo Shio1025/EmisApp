@@ -24,5 +24,8 @@ extension Resolver {
         register {
             MainPageRouter()
         }
+        register {
+            TeacherSubjectCardRouter()
+        }
     }
 }

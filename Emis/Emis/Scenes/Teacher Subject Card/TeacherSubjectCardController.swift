@@ -67,8 +67,9 @@ extension TeacherSubjectCardController {
     
     private func registerTableCells() {
         tableView.register(SpacerCell.self)
-        tableView.register(BannerCell.self)
-        tableView.register(InlineFeedbackCell.self)
+        tableView.register(RowItemCell.self)
+        tableView.register(RoundedFooter.self)
+        tableView.register(RoundedHeader.self)
     }
 }
 
@@ -92,15 +93,19 @@ extension TeacherSubjectCardController {
         viewModel.pageIsLoading.sink { [weak self] isLoading in
             isLoading ? self?.showLoader() : self?.hideLoader()
         }.store(in: &subscriptions)
+        viewModel.displayBannerPublisher.sink { [weak self] statusBannerModel in
+            DispatchQueue.main.async {
+                self?.displayBanner(with: statusBannerModel.description,
+                                    state: statusBannerModel.bannerType)
+            }
+        }.store(in: &subscriptions)
     }
 }
 
 
 extension TeacherSubjectCardController: CustomNavigatable {
     var navTitle: NavigationTitle {
-        .init(text: "მთავარი")
+        .init(text: "საგნები")
     }
-    
-    var leftBarItems: [UIBarButtonItem]? { nil }
 }
 
