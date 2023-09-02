@@ -104,6 +104,76 @@ extension TeacherSubjectDetailsController {
                                     state: statusBannerModel.bannerType)
             }
         }.store(in: &subscriptions)
+        
+        viewModel.pdfURL.sink { [weak self] data in
+            guard let self else { return }
+            DispatchQueue.main.async {
+                self.present(self.createDownloadPDFAlertController(url: data.0,
+                                                                   fileName: data.1),
+                             animated: true,
+                             completion: nil)
+            }
+        }.store(in: &subscriptions)
+    }
+    
+    private func createDownloadPDFAlertController(url: URL,
+                                                  fileName: String) -> UIAlertController {
+        let alertController = UIAlertController(title: "Download PDF",
+                                                message: "Do you want to download the PDF?", preferredStyle: .alert)
+
+        alertController.addAction(UIAlertAction(title: "Cancel",
+                                                style: .cancel,
+                                                handler: nil))
+
+        alertController.addAction(UIAlertAction(title: "Download", style: .default) { [weak self] _ in
+            guard let self else { return }
+            self.showLoader()
+                DispatchQueue.global().async {
+                    if  let data = try? Data(contentsOf: url) {
+                        self.sharePdf(data,
+                                      fileName: fileName)
+                    } else {
+                        DispatchQueue.main.async {
+                            self.hideLoader()
+                            self.displayBanner(with: "წიგნის გადმოწერა ვერ მოხერხდა",
+                                               state: .failure)
+                        }
+                    }
+                }
+        })
+        
+        return alertController
+    }
+    
+    private func sharePdf(_ data: Data,
+                          fileName: String) {
+        DispatchQueue.main.async {
+            self.hideLoader()
+            let sharer = self.sharer(data: data,
+                                     name: fileName)
+            self.present(sharer, animated: true)
+        }
+    }
+    
+    func sharer(data: Data,
+                name: String) -> UIActivityViewController {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentDirectorPath: String = paths[0]
+
+        var fileName = "/EmisApp-"
+        fileName += name
+        fileName += ".pdf"
+        
+        let path = documentDirectorPath.appending(fileName)
+
+        FileManager.default.createFile(atPath: path, contents: data, attributes: nil)
+
+        let activity = UIActivityViewController(activityItems: [URL(fileURLWithPath: path)], applicationActivities: nil)
+        activity.completionWithItemsHandler = { (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
+          
+        }
+        
+        return activity
     }
 }
 

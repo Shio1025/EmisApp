@@ -25,8 +25,11 @@ final class TeacherSubjectDetailsViewModel {
     @Published private var statusBanner: StatusBannerViewModel?
     @Published private var buttonState: ButtonState = .enabled
     @Published private var isStudentsVisible: Bool = false
+    @Published private var courseInfo : (URL,String)?
     
     private var teacherCourseInfo: TeacherCourseInfo?
+    
+    @Injected var urlProvider: ApiURLProvider
     
     var listCellModels: AnyPublisher<[any CellModel], Never> {
         $listCells.eraseToAnyPublisher()
@@ -45,6 +48,16 @@ final class TeacherSubjectDetailsViewModel {
          $statusBanner
             .compactMap { $0 }
             .eraseToAnyPublisher()
+    }
+    
+    var pdfURL: AnyPublisher <(URL, String), Never> {
+        return $courseInfo
+            .drop(while: { elems in
+                elems == nil
+            })
+            .map { elems in
+                return (elems!.0, elems!.1)
+            }.eraseToAnyPublisher()
     }
     
     private var subscriptions = Set<AnyCancellable>()
@@ -181,7 +194,15 @@ extension TeacherSubjectDetailsViewModel {
     private var button: PrimaryButtonCellModel {
         PrimaryButtonCellModel(buttonModels: .init(titleModel: .init(text: "სილაბუსის გადმოწერა  ↓"),
                                                                state: state,
-                                                               action: {
+                                                               action: { [weak self] in
+            guard let self,
+                  let teacherCourseInfo = self.teacherCourseInfo else { return }
+            
+            let url = self.urlProvider.getURL(path: "/emis/api/course/syllabus",
+                                              params: ["courseId": self.courseId.description])
+            if let url {
+                self.courseInfo = (url, teacherCourseInfo.course.subjectDescription )
+            }
             
         }))
     }

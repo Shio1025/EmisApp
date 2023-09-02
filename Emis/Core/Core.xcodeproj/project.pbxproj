@@ -256,7 +256,6 @@
 				2442EC2C2A9F54E300B11CE3 /* TeacherInfo.swift */,
 				24DCCAA92AA355E100D46C29 /* TeacherSubjectCard.swift */,
 				24DCCABE2AA36CC000D46C29 /* TeacherCourseName.swift */,
-				24DCCACB2AA382E700D46C29 /* StudentGrades.swift */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -268,6 +267,7 @@
 				2442EBAD2A9BB32E00B11CE3 /* StudentFinancials.swift */,
 				2442EBB32A9BB5B600B11CE3 /* StudentDashboardOptions.swift */,
 				2442EBBD2A9BCD8100B11CE3 /* StudentSubjectCard.swift */,
+				24DCCACB2AA382E700D46C29 /* StudentGrades.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -278,7 +278,6 @@
 				2442EC252A9E2C6700B11CE3 /* ApiTeacherInfo.swift */,
 				24DCCAAB2AA355FA00D46C29 /* ApiTeacherSubjectCard.swift */,
 				24DCCABC2AA36B7A00D46C29 /* ApiTeacherCourseInfo.swift */,
-				24DCCAC92AA3821700D46C29 /* ApiStudentGrades.swift */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -289,6 +288,7 @@
 				2442EBA32A9BAF5A00B11CE3 /* ApiStudentInfo.swift */,
 				2442EBAB2A9BB30600B11CE3 /* ApiStudentFinancials.swift */,
 				2442EBBB2A9BCD4800B11CE3 /* ApiStudentSubjectCard.swift */,
+				24DCCAC92AA3821700D46C29 /* ApiStudentGrades.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";

@@ -290,13 +290,6 @@ extension LibraryPageController {
         
         return activity
     }
-    
-    private func formattedCurrentDate() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        dateFormatter.locale = Locale(identifier: "ka_GE")
-        return dateFormatter.string(from: Date())
-    }
 }
 
 
