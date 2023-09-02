@@ -13,7 +13,7 @@ public class LocalLabelCell: TableCell {
     private lazy var label: LocalLabel = {
         let label = LocalLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.setAlignment(with: .center)
+        label.setAlignment(with: .left)
         return label
     }()
     

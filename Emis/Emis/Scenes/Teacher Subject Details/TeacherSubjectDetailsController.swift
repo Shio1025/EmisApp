@@ -74,6 +74,7 @@ extension TeacherSubjectDetailsController {
         tableView.register(RoundedHeader.self)
         tableView.register(PrimaryButtonCell.self)
         tableView.register(RoundedHeaderWithTitle.self)
+        tableView.register(LocalLabelCell.self)
     }
 }
 
