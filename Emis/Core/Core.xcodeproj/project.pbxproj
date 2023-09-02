@@ -48,6 +48,10 @@
 		24DCCAAC2AA355FA00D46C29 /* ApiTeacherSubjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAAB2AA355FA00D46C29 /* ApiTeacherSubjectCard.swift */; };
 		24DCCAAE2AA3571200D46C29 /* TeacherSubjectCardGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAAD2AA3571200D46C29 /* TeacherSubjectCardGateway.swift */; };
 		24DCCAB02AA3582600D46C29 /* TeacherSubjectCardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAAF2AA3582600D46C29 /* TeacherSubjectCardUseCase.swift */; };
+		24DCCABD2AA36B7A00D46C29 /* ApiTeacherCourseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCABC2AA36B7A00D46C29 /* ApiTeacherCourseInfo.swift */; };
+		24DCCABF2AA36CC000D46C29 /* TeacherCourseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCABE2AA36CC000D46C29 /* TeacherCourseName.swift */; };
+		24DCCAC12AA36DE900D46C29 /* TeacherCourseInfoGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAC02AA36DE900D46C29 /* TeacherCourseInfoGateway.swift */; };
+		24DCCAC32AA36E6600D46C29 /* TeacherCourseInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAC22AA36E6600D46C29 /* TeacherCourseInfoUseCase.swift */; };
 		24E3F1B62A98E937008A0430 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B42A98E937008A0430 /* KeyChain.swift */; };
 		24E3F1B72A98E937008A0430 /* KeychainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B52A98E937008A0430 /* KeychainKeys.swift */; };
 		24E3F1B92A98E985008A0430 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B82A98E985008A0430 /* UserDefaults.swift */; };
@@ -101,6 +105,10 @@
 		24DCCAAB2AA355FA00D46C29 /* ApiTeacherSubjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTeacherSubjectCard.swift; sourceTree = "<group>"; };
 		24DCCAAD2AA3571200D46C29 /* TeacherSubjectCardGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSubjectCardGateway.swift; sourceTree = "<group>"; };
 		24DCCAAF2AA3582600D46C29 /* TeacherSubjectCardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSubjectCardUseCase.swift; sourceTree = "<group>"; };
+		24DCCABC2AA36B7A00D46C29 /* ApiTeacherCourseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTeacherCourseInfo.swift; sourceTree = "<group>"; };
+		24DCCABE2AA36CC000D46C29 /* TeacherCourseName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseName.swift; sourceTree = "<group>"; };
+		24DCCAC02AA36DE900D46C29 /* TeacherCourseInfoGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseInfoGateway.swift; sourceTree = "<group>"; };
+		24DCCAC22AA36E6600D46C29 /* TeacherCourseInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseInfoUseCase.swift; sourceTree = "<group>"; };
 		24E3F1B42A98E937008A0430 /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		24E3F1B52A98E937008A0430 /* KeychainKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
 		24E3F1B82A98E985008A0430 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 				2442EBCB2A9BD7B600B11CE3 /* TeacherDashboardUseCase.swift */,
 				2442EC302A9F5CAB00B11CE3 /* TeacherInfoUseCase.swift */,
 				24DCCAAF2AA3582600D46C29 /* TeacherSubjectCardUseCase.swift */,
+				24DCCAC22AA36E6600D46C29 /* TeacherCourseInfoUseCase.swift */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -208,6 +217,7 @@
 				2442EBC92A9BD72300B11CE3 /* TeacherDashboardOptionsGateway.swift */,
 				2442EC2E2A9F5C9900B11CE3 /* TeacherInfoGateway.swift */,
 				24DCCAAD2AA3571200D46C29 /* TeacherSubjectCardGateway.swift */,
+				24DCCAC02AA36DE900D46C29 /* TeacherCourseInfoGateway.swift */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -229,6 +239,7 @@
 				2442EBB52A9BC87500B11CE3 /* TeacherDashboardOptions.swift */,
 				2442EC2C2A9F54E300B11CE3 /* TeacherInfo.swift */,
 				24DCCAA92AA355E100D46C29 /* TeacherSubjectCard.swift */,
+				24DCCABE2AA36CC000D46C29 /* TeacherCourseName.swift */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -249,6 +260,7 @@
 			children = (
 				2442EC252A9E2C6700B11CE3 /* ApiTeacherInfo.swift */,
 				24DCCAAB2AA355FA00D46C29 /* ApiTeacherSubjectCard.swift */,
+				24DCCABC2AA36B7A00D46C29 /* ApiTeacherCourseInfo.swift */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -420,10 +432,14 @@
 				24C93E692A419F700008AD90 /* Formatter.swift in Sources */,
 				24DCCAAE2AA3571200D46C29 /* TeacherSubjectCardGateway.swift in Sources */,
 				24E3F1B92A98E985008A0430 /* UserDefaults.swift in Sources */,
+				24DCCABF2AA36CC000D46C29 /* TeacherCourseName.swift in Sources */,
 				24F4ED472AA206E300882C19 /* ApiLibraryModel.swift in Sources */,
+				24DCCABD2AA36B7A00D46C29 /* ApiTeacherCourseInfo.swift in Sources */,
 				24E3F1BB2A98EA9D008A0430 /* UserDefaultKeys.swift in Sources */,
+				24DCCAC12AA36DE900D46C29 /* TeacherCourseInfoGateway.swift in Sources */,
 				24DCCAAC2AA355FA00D46C29 /* ApiTeacherSubjectCard.swift in Sources */,
 				2442EB7D2A9A625D00B11CE3 /* gatewaysRegistration.swift in Sources */,
+				24DCCAC32AA36E6600D46C29 /* TeacherCourseInfoUseCase.swift in Sources */,
 				2442EBCC2A9BD7B600B11CE3 /* TeacherDashboardUseCase.swift in Sources */,
 				24DCCAAA2AA355E100D46C29 /* TeacherSubjectCard.swift in Sources */,
 				2442EC2F2A9F5C9900B11CE3 /* TeacherInfoGateway.swift in Sources */,

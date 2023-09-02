@@ -81,6 +81,10 @@ extension TeacherSubjectDetailsViewModel {
     private func getRoundedHeaderModel() -> RoundedHeaderModel {
         .init()
     }
+    
+    private func getRoundedHeaderWithTitle(title: String) -> RoundedHeaderWithTitleModel {
+        .init(headerTitle: title)
+    }
 }
 
 extension TeacherSubjectDetailsViewModel {

@@ -20,5 +20,6 @@ extension Resolver {
         register(TeacherInfoGateway.self) { TeacherInfoGatewayImpl() }
         register(LibraryGateway.self) { LibraryGatewayImpl() }
         register(TeacherSubjectCardGateway.self) { TeacherSubjectCardGatewayImpl() }
+        register(TeacherCourseInfoGateway.self) { TeacherCourseInfoGatewayImpl() }
     }
 }

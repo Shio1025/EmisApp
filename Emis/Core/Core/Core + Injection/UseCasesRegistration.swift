@@ -20,5 +20,6 @@ extension Resolver {
         register(TeacherInfoUseCase.self) { TeacherInfoUseCaseImpl() }
         register(LibraryUseCase.self) { LibraryUseCaseImpl() }
         register(TeacherSubjectCardUseCase.self) { TeacherSubjectCardUseCaseImpl() }
+        register(TeacherCourseInfoUseCase.self) { TeacherCourseInfoUseCaseImpl() }
     }
 }
