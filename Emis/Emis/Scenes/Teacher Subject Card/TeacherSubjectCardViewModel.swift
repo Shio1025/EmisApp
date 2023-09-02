@@ -13,7 +13,8 @@ import Core
 import UIKit
 
 enum TeacherSubjectCardRoute {
-    case courseInfo(courseId: Int64)
+    case courseInfo(courseId: Int64,
+                    name: String)
 }
 
 final class TeacherSubjectCardViewModel {
@@ -126,10 +127,12 @@ extension TeacherSubjectCardViewModel {
                                 .init(resourceType: .icon(icon: UIImage(systemName: "chevron.right")!,
                                                           tintColor: BrandBookManager.Color.Theme.Invert.tr500.uiColor.withAlphaComponent(0.9)),
                                       action: { [weak self] in
-                self?.router = .courseInfo(courseId: elem.courseId)
+                self?.router = .courseInfo(courseId: elem.courseId,
+                                           name: elem.subjectName)
             })),
                           tapAction: { [weak self] in
-                self?.router = .courseInfo(courseId: elem.courseId)
+                self?.router = .courseInfo(courseId: elem.courseId,
+                                           name: elem.subjectName)
             })))
             rows.append(getRoundedFooterModel())
             rows.append(getSpacerCell())
