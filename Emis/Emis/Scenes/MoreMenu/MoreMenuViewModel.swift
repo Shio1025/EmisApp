@@ -74,6 +74,8 @@ extension MoreMenuViewModel {
     
     private func MoreMenuItemsSection(items: [MoreMenuItem]) -> [any CellModel] {
         var rows: [any CellModel] = []
+        
+        rows.append(getSpacerCell())
         rows.append(getRoundedHeaderModel())
         
         items.enumerated().forEach { index, item in

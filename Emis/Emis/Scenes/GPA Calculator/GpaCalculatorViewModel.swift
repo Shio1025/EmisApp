@@ -44,7 +44,8 @@ final class GpaCalculatorViewModel {
     }
     
     private func draw() {
-        var rows: [any CellModel] = [getRoundedHeaderModel(),
+        var rows: [any CellModel] = [SpacerCellModel(),
+                                     getRoundedHeaderModel(),
                                      aCellModel,
                                      SeparatorCellModel(),
                                      bCellModel,
