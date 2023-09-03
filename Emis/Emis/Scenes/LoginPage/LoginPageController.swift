@@ -9,6 +9,7 @@ import UIKit
 import BrandBook
 import Combine
 import Resolver
+import Lottie
 
 class LoginPageController: UIViewController {
     
@@ -16,6 +17,19 @@ class LoginPageController: UIViewController {
     @Injected private var router: LoginPageRouter
     
     private var subscriptions = Set<AnyCancellable>()
+    
+    let animationView: AnimationView = {
+        let animation = AnimationView()
+        animation.translatesAutoresizingMaskIntoConstraints = false
+        animation.backgroundBehavior = .pauseAndRestore
+        animation.contentMode = .scaleAspectFit
+        animation.loopMode = .loop
+        animation.animation = .named(BrandBookManager.Lottie.login,
+                                     bundle: Bundle(identifier: "Shio.BrandBook")!)
+        animation.width(equalTo: UIScreen.main.bounds.size.width)
+        animation.height(equalTo: UIScreen.main.bounds.size.width)
+        return animation
+    }()
     
     private lazy var mainStackView: UIStackView = {
         let stack = UIStackView()
@@ -102,6 +116,11 @@ class LoginPageController: UIViewController {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        animationView.roundCorners(by: .M)
+    }
 }
 
 extension LoginPageController {
@@ -110,10 +129,12 @@ extension LoginPageController {
         addSubviews()
         addConstraints()
         configureUI()
+        
     }
     
     func setUpUI() {
         view.backgroundColor = BrandBookManager.Color.Theme.Component.tr100.uiColor
+        animationView.play()
     }
     
     func addSubviews() {
@@ -123,10 +144,14 @@ extension LoginPageController {
         containerView.addSubview(button)
         containerView.addSubview(registrationLabel)
         mainStackView.addArrangedSubview(containerView)
+        view.addSubview(animationView)
         view.addSubview(mainStackView)
     }
     
     func addConstraints() {
+        animationView.relativeBottom(toView: mainStackView)
+        animationView.centerHorizontally(to: view)
+        
         label.top(toView: containerView, constant: .XL)
         label.left(toView: containerView, constant: .L)
         

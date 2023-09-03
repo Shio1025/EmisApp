@@ -193,7 +193,7 @@ extension StudentSubjectCardViewModel {
         var rows: [any CellModel] = []
         
         let subjectsRows: [any CellModel] = subjects.enumerated().map { index, subject in
-            let row = RowItemCellModel(model: .init(leftItem: .icon(icon: UIImage(systemName: "chevron.left")!,
+            let row = RowItemCellModel(model: .init(leftItem: .icon(icon: BrandBookManager.Icon.news.template,
                                                                     tintColor: BrandBookManager.Color.Theme.Component.solid500.uiColor.withAlphaComponent(0.8)),
                                                     labels: .two(top: .init(text: "\(subject.subjectCode) - \(subject.courseName)",
                                                                             font: .systemFont(ofSize: .L)),

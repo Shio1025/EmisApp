@@ -45,8 +45,8 @@ public class LocalLabelCell: TableCell {
     private func addConstraints() {
         label.top(toView: contentView, constant: .XS)
         label.bottom(toView: contentView, constant: .XS)
-        label.left(toView: contentView, constant: .M)
-        label.right(toView: contentView)
+        label.left(toView: contentView, constant: .L)
+        label.right(toView: contentView, constant: .L)
     }
     
     public override func prepareForReuse() {
