@@ -156,6 +156,7 @@ extension MainPageViewModel {
     private var studentBanners: [any CellModel]? {
         guard let studentDashboardOptions else { return nil }
         var rows: [any CellModel] = []
+        rows.append(getSpacerCell())
         studentDashboardOptions.userDashboardOptions.forEach { [weak self] type in
             guard let self else { return }
             rows.append(BannerCellModel(model:
@@ -174,6 +175,7 @@ extension MainPageViewModel {
     private var teacherBanners: [any CellModel]? {
         guard let teacherDashboardOptions else { return nil }
         var rows: [any CellModel] = []
+        rows.append(getSpacerCell())
         teacherDashboardOptions.userDashboardOptions.forEach { [weak self] type in
             guard let self else { return }
             rows.append(BannerCellModel(model:

@@ -82,7 +82,7 @@ extension StudentSubjectCardController {
     }
     
     private func addConstraints() {
-        tableView.topNotSafe(toView: view)
+        tableView.top(toView: view)
         tableView.left(toView: view, constant: .S)
         tableView.right(toView: view, constant: .S)
         tableView.bottomNotSafe(toView: view)
