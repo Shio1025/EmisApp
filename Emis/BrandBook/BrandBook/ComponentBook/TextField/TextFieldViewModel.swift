@@ -14,12 +14,14 @@ public class TextFieldViewModel: ObservableObject {
     let onEditingDidEnd: ((String) -> Void)
     let isSecureEntry: Bool
     let keyboardType: UIKeyboardType?
+    let currText: String?
     
     public init(placeholder: String? = nil,
                 trailingLabelModel: LocalLabelModel? = nil,
                 leadingLabelModel: LocalLabelModel? = nil,
                 isSecureEntry: Bool = false,
                 keyboardType: UIKeyboardType? = nil,
+                currText: String? = nil,
                 onEditingDidEnd: @escaping ((String) -> Void)) {
         self.placeholder = placeholder
         self.leadingLabelModel = leadingLabelModel
@@ -27,6 +29,7 @@ public class TextFieldViewModel: ObservableObject {
         self.isSecureEntry = isSecureEntry
         self.keyboardType = keyboardType
         self.onEditingDidEnd = onEditingDidEnd
+        self.currText = currText
     }
 }
 

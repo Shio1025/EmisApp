@@ -19,12 +19,12 @@ final class GpaCalculatorViewModel {
     @Published private var statusBanner: StatusBannerViewModel?
     
     private var gpa: Double?
-    private var A: Double?
-    private var B: Double?
-    private var C: Double?
-    private var D: Double?
-    private var E: Double?
-    private var F: Double?
+    private var A: Int?
+    private var B: Int?
+    private var C: Int?
+    private var D: Int?
+    private var E: Int?
+    private var F: Int?
     
     
     var listCellModels: AnyPublisher<[any CellModel], Never> {
@@ -58,9 +58,13 @@ final class GpaCalculatorViewModel {
                                      fCellModel,
                                      getRoundedFooterModel()]
         if let gpa {
-            let gpaRow = LocalLabelCellModel(model: .init(text: Formatter.formatNumber(number: gpa),
-                                                          font: .boldSystemFont(ofSize: .XL)))
-            rows.insert(gpaRow, at: 1)
+            
+            let gpaBanner = GpaBannerCellModel(text: .init(text: Formatter.formatNumber(number: gpa),
+                                                           font: .boldSystemFont(ofSize: .XL)),
+                                               lottie: .init(animationName: BrandBookManager.Lottie.lazy,
+                                                             bundle: Bundle(identifier: "Shio.BrandBook")!))
+            rows.append(SpacerCellModel())
+            rows.append(gpaBanner)
         }
         
         listCells = rows
@@ -77,10 +81,6 @@ extension GpaCalculatorViewModel {
         .init()
     }
     
-    private func getRoundedHeaderWithTitle(title: String) -> RoundedHeaderWithTitleModel {
-        .init(headerTitle: title)
-    }
-    
     private func getSpacerCell() -> SpacerCellModel {
         .init()
     }
@@ -92,8 +92,11 @@ extension GpaCalculatorViewModel {
     var aCellModel: TextFieldCellModel {
         .init(model: .init(placeholder: "შეიყვანეთ A-ის კრედიტების ჯამური რაოდენობა",
                            keyboardType: .phonePad,
+                           currText: A?.description ?? "",
                            onEditingDidEnd: { [weak self] text in
-            guard let credits = Double(text.trimmingCharacters(in: .whitespaces)) else {
+            guard let credits = Int(text.trimmingCharacters(in: .whitespaces)) else {
+                self?.A = nil
+                self?.draw()
                 self?.statusBanner = .init(bannerType: .failure,
                                            description: "შეიყვანეთ სწორი ფორმატით")
                 return
@@ -105,8 +108,11 @@ extension GpaCalculatorViewModel {
     var bCellModel: TextFieldCellModel {
         .init(model: .init(placeholder: "შეიყვანეთ B-ის კრედიტების ჯამური რაოდენობა",
                            keyboardType: .phonePad,
+                           currText: B?.description ?? "",
                            onEditingDidEnd: { [weak self] text in
-            guard let credits = Double(text.trimmingCharacters(in: .whitespaces)) else {
+            guard let credits = Int(text.trimmingCharacters(in: .whitespaces)) else {
+                self?.B = nil
+                self?.draw()
                 self?.statusBanner = .init(bannerType: .failure,
                                            description: "შეიყვანეთ სწორი ფორმატით")
                 return
@@ -118,8 +124,11 @@ extension GpaCalculatorViewModel {
     var cCellModel: TextFieldCellModel {
         .init(model: .init(placeholder: "შეიყვანეთ C-ის კრედიტების ჯამური რაოდენობა",
                            keyboardType: .phonePad,
+                           currText: C?.description ?? "",
                            onEditingDidEnd: { [weak self] text in
-            guard let credits = Double(text.trimmingCharacters(in: .whitespaces)) else {
+            guard let credits = Int(text.trimmingCharacters(in: .whitespaces)) else {
+                self?.C = nil
+                self?.draw()
                 self?.statusBanner = .init(bannerType: .failure,
                                            description: "შეიყვანეთ სწორი ფორმატით")
                 return
@@ -131,8 +140,11 @@ extension GpaCalculatorViewModel {
     var dCellModel: TextFieldCellModel {
         .init(model: .init(placeholder: "შეიყვანეთ D-ის კრედიტების ჯამური რაოდენობა",
                            keyboardType: .phonePad,
+                           currText: D?.description ?? "",
                            onEditingDidEnd: { [weak self] text in
-            guard let credits = Double(text.trimmingCharacters(in: .whitespaces)) else {
+            guard let credits = Int(text.trimmingCharacters(in: .whitespaces)) else {
+                self?.D = nil
+                self?.draw()
                 self?.statusBanner = .init(bannerType: .failure,
                                            description: "შეიყვანეთ სწორი ფორმატით")
                 return
@@ -144,8 +156,11 @@ extension GpaCalculatorViewModel {
     var eCellModel: TextFieldCellModel {
         .init(model: .init(placeholder: "შეიყვანეთ E-ის კრედიტების ჯამური რაოდენობა",
                            keyboardType: .phonePad,
+                           currText: E?.description ?? "",
                            onEditingDidEnd: { [weak self] text in
-            guard let credits = Double(text.trimmingCharacters(in: .whitespaces)) else {
+            guard let credits = Int(text.trimmingCharacters(in: .whitespaces)) else {
+                self?.E = nil
+                self?.draw()
                 self?.statusBanner = .init(bannerType: .failure,
                                            description: "შეიყვანეთ სწორი ფორმატით")
                 return
@@ -157,8 +172,11 @@ extension GpaCalculatorViewModel {
     var fCellModel: TextFieldCellModel {
         .init(model: .init(placeholder: "შეიყვანეთ F-ის კრედიტების ჯამური რაოდენობა",
                            keyboardType: .phonePad,
+                           currText: F?.description ?? "",
                            onEditingDidEnd: { [weak self] text in
-            guard let credits = Double(text.trimmingCharacters(in: .whitespaces)) else {
+            guard let credits = Int(text.trimmingCharacters(in: .whitespaces)) else {
+                self?.F = nil
+                self?.draw()
                 self?.statusBanner = .init(bannerType: .failure,
                                            description: "შეიყვანეთ სწორი ფორმატით")
                 return
@@ -189,17 +207,17 @@ extension GpaCalculatorViewModel {
             return
         }
         
-        let scoringModel: [(Double?, Double)] = [(A, 4), (B, 3.38), (C, 2.77), (D, 2.16), (E, 1.55), (F, 0)]
+        let scoringModel: [(Int?, Double)] = [(A, 4), (B, 3.38), (C, 2.77), (D, 2.16), (E, 1.55), (F, 0)]
         
         let totalScore = scoringModel.reduce(0.0) { (partialResult, pair) -> Double in
             if let value = pair.0 {
-                return partialResult + (value * pair.1)
+                return partialResult + (Double(value) * pair.1)
             } else {
                 return partialResult
             }
         }
         
-        gpa = totalScore/sum
+        gpa = totalScore/Double(sum)
         draw()
     }
 }

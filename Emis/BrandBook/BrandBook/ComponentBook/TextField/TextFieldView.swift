@@ -172,6 +172,11 @@ extension TextFieldView {
         if let keyBoardType = model.keyboardType {
             textField.keyboardType = keyBoardType
         }
+        
+        if let text = model.currText,
+           !text.isEmpty {
+            textField.text = text
+        }
     }
     
     private func reset() {

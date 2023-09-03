@@ -90,6 +90,8 @@ extension GpaCalculatorController {
         tableView.register(TextFieldCell.self)
         tableView.register(SeparatorCell.self)
         tableView.register(LocalLabelCell.self)
+        tableView.register(GpaBannerCell.self)
+        tableView.register(SpacerCell.self)
     }
 }
 
