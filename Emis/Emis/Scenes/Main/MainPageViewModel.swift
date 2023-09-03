@@ -81,7 +81,7 @@ extension MainPageViewModel {
 extension MainPageViewModel {
     
     private func getStudentOptions() {
-        studentDashboardOptions = .init(options: [ .library, .subjectCard])
+        studentDashboardOptions = .init(options: [ .library, .subjectCard, .subjectRegistration])
         draw()
         isLoading = false
 //        @Injected var studentOptionsUseCase: StudentDashboardUseCase
@@ -225,7 +225,7 @@ extension MainPageViewModel {
         case .subjectCard:
             router = .studentSubjectCard
         case .subjectRegistration:
-            break
+            router = .studentSubjectRegistration
         case .library:
             router = .library
         case .none:

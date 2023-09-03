@@ -200,7 +200,7 @@ extension StudentCourseDetailsViewModel {
             let url = self.urlProvider.getURL(path: "/emis/api/course/syllabus",
                                               params: ["courseId": self.courseId.description])
             if let url {
-                self.courseInfo = (url, "")
+                self.courseInfo = (url, "syllabus")
             }
             
         }))

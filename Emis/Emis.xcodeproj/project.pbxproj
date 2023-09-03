@@ -56,6 +56,9 @@
 		24DCCAD62AA3DC3500D46C29 /* StudentSubjectCardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAD52AA3DC3500D46C29 /* StudentSubjectCardRouter.swift */; };
 		24DCCAD92AA3DD3100D46C29 /* StudentCourseDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAD82AA3DD3100D46C29 /* StudentCourseDetailsController.swift */; };
 		24DCCADB2AA3DD3F00D46C29 /* StudentCourseDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCADA2AA3DD3F00D46C29 /* StudentCourseDetailsViewModel.swift */; };
+		24DCCAE82AA4822D00D46C29 /* StudentSubjectRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAE72AA4822D00D46C29 /* StudentSubjectRegistrationController.swift */; };
+		24DCCAEA2AA4823C00D46C29 /* StudentSubjectRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAE92AA4823C00D46C29 /* StudentSubjectRegistrationViewModel.swift */; };
+		24DCCAEC2AA4825400D46C29 /* StudentSubjectRegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAEB2AA4825400D46C29 /* StudentSubjectRegistrationRouter.swift */; };
 		24F4ED742AA24AAB00882C19 /* StudentSubjectCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED732AA24AAB00882C19 /* StudentSubjectCardController.swift */; };
 		24F4ED762AA24ABC00882C19 /* StudentSubjectCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED752AA24ABC00882C19 /* StudentSubjectCardViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -156,6 +159,9 @@
 		24DCCAD52AA3DC3500D46C29 /* StudentSubjectCardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectCardRouter.swift; sourceTree = "<group>"; };
 		24DCCAD82AA3DD3100D46C29 /* StudentCourseDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCourseDetailsController.swift; sourceTree = "<group>"; };
 		24DCCADA2AA3DD3F00D46C29 /* StudentCourseDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCourseDetailsViewModel.swift; sourceTree = "<group>"; };
+		24DCCAE72AA4822D00D46C29 /* StudentSubjectRegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectRegistrationController.swift; sourceTree = "<group>"; };
+		24DCCAE92AA4823C00D46C29 /* StudentSubjectRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectRegistrationViewModel.swift; sourceTree = "<group>"; };
+		24DCCAEB2AA4825400D46C29 /* StudentSubjectRegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectRegistrationRouter.swift; sourceTree = "<group>"; };
 		24F4ED732AA24AAB00882C19 /* StudentSubjectCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectCardController.swift; sourceTree = "<group>"; };
 		24F4ED752AA24ABC00882C19 /* StudentSubjectCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,6 +372,7 @@
 		24C7129929E5B4EB00E5DE0B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				24DCCAE62AA4820100D46C29 /* Student Subject Registration */,
 				24DCCAD72AA3DD1300D46C29 /* Student Course Details */,
 				24DCCAC42AA37B8100D46C29 /* Student Grades Editor */,
 				24DCCAB12AA3608000D46C29 /* Teacher Subject Details */,
@@ -426,6 +433,16 @@
 				24DCCADA2AA3DD3F00D46C29 /* StudentCourseDetailsViewModel.swift */,
 			);
 			path = "Student Course Details";
+			sourceTree = "<group>";
+		};
+		24DCCAE62AA4820100D46C29 /* Student Subject Registration */ = {
+			isa = PBXGroup;
+			children = (
+				24DCCAE72AA4822D00D46C29 /* StudentSubjectRegistrationController.swift */,
+				24DCCAE92AA4823C00D46C29 /* StudentSubjectRegistrationViewModel.swift */,
+				24DCCAEB2AA4825400D46C29 /* StudentSubjectRegistrationRouter.swift */,
+			);
+			path = "Student Subject Registration";
 			sourceTree = "<group>";
 		};
 		24F4ED722AA24A8500882C19 /* Student Subject Card */ = {
@@ -567,12 +584,14 @@
 				2490E2F52A02EB980073DBDE /* MoreMenuController.swift in Sources */,
 				2490E2F92A02EC3C0073DBDE /* MainPageController.swift in Sources */,
 				24F4ED742AA24AAB00882C19 /* StudentSubjectCardController.swift in Sources */,
+				24DCCAEA2AA4823C00D46C29 /* StudentSubjectRegistrationViewModel.swift in Sources */,
 				242568802A0D4DD30022A132 /* LoginPageViewModel.swift in Sources */,
 				2442EC342A9F6B1900B11CE3 /* LibraryPageController.swift in Sources */,
 				24DCCAD62AA3DC3500D46C29 /* StudentSubjectCardRouter.swift in Sources */,
 				2490E3012A02F7D30073DBDE /* TabBarController.swift in Sources */,
 				2442EBD92A9DB4B600B11CE3 /* MainPageRouter.swift in Sources */,
 				242568852A0D52360022A132 /* ResolverRegistration.swift in Sources */,
+				24DCCAEC2AA4825400D46C29 /* StudentSubjectRegistrationRouter.swift in Sources */,
 				24F4ED762AA24ABC00882C19 /* StudentSubjectCardViewModel.swift in Sources */,
 				242568872A0D52F70022A132 /* ResolverRegistration + Routers.swift in Sources */,
 				2442EB722A9A5F3500B11CE3 /* ResolverRegistration + NetworkLayer.swift in Sources */,
@@ -600,6 +619,7 @@
 				2442EC222A9E101C00B11CE3 /* StudentFinancesInfoViewModel.swift in Sources */,
 				24A925052A42FBAB00FEF291 /* PasswordResetController.swift in Sources */,
 				243CBC0E2A3DFFE100EEE080 /* ProfilePageViewModel.swift in Sources */,
+				24DCCAE82AA4822D00D46C29 /* StudentSubjectRegistrationController.swift in Sources */,
 				24DCCAD92AA3DD3100D46C29 /* StudentCourseDetailsController.swift in Sources */,
 				24A925072A42FC0700FEF291 /* PasswordResetViewModel.swift in Sources */,
 				24A925092A42FC7B00FEF291 /* PasswordResetRouter.swift in Sources */,
