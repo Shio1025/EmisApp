@@ -13,6 +13,7 @@ import Resolver
 class StudentSubjectCardController: UIViewController {
     
     private var viewModel: StudentSubjectCardViewModel = StudentSubjectCardViewModel()
+    @Injected private var router: StudentSubjectCardRouter
     
     private var subscriptions = Set<AnyCancellable>()
     
@@ -36,6 +37,7 @@ class StudentSubjectCardController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         setUp()
+        bindRouter()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +48,18 @@ class StudentSubjectCardController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         tabBarController?.tabBar.isHidden = false
+    }
+}
+
+extension StudentSubjectCardController {
+    
+    private func bindRouter() {
+        viewModel.getRouter()
+            .compactMap { $0 }
+            .sink { [weak self] route in
+                guard let self else { return }
+                self.router.route(to: route, from: self)
+            }.store(in: &subscriptions)
     }
 }
 

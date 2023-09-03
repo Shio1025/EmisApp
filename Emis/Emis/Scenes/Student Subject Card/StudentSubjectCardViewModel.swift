@@ -12,8 +12,15 @@ import Resolver
 import SSO
 import Core
 
+enum StudentSubjectCardRoute {
+    case courseInfo(courseId: Int64,
+                    studentId: Int64,
+                    name: String)
+}
+
 final class StudentSubjectCardViewModel {
     
+    @Published private var router: StudentSubjectCardRoute?
     @Published private var listCells: [any CellModel] = []
     @Published private var isLoading: Bool = true
     @Published private var statusBanner: StatusBannerViewModel?
@@ -39,6 +46,13 @@ final class StudentSubjectCardViewModel {
     
     init() {
         loadSubjects()
+    }
+}
+
+extension StudentSubjectCardViewModel {
+    
+    func getRouter() -> AnyPublisher<StudentSubjectCardRoute?, Never> {
+        $router.eraseToAnyPublisher()
     }
 }
 
@@ -187,8 +201,11 @@ extension StudentSubjectCardViewModel {
                                                                                font: .systemFont(ofSize: .M,
                                                                                                  weight: .light))),
                                                     rightItem: .label(model: .init(text: "\(Formatter.formatNumber(number: subject.markInSubject)) - \(subject.grade)")),
-                                                    tapAction: {
-                
+                                                    tapAction: { [weak self] in
+                guard let self else { return }
+                self.router = .courseInfo(courseId: subject.courseId,
+                                          studentId: subject.studentId,
+                                          name: subject.courseName)
             },
                                                     isSeparatorNeeded: index != (subjects.count - 1)))
             return row

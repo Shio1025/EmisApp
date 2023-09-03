@@ -30,5 +30,8 @@ extension Resolver {
         register {
             TeacherSubjectDetailsRouter()
         }
+        register {
+            StudentSubjectCardRouter()
+        }
     }
 }
