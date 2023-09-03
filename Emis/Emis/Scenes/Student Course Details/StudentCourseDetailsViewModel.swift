@@ -97,27 +97,27 @@ extension StudentCourseDetailsViewModel {
     
     private func getCourseDetails() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.studentCourseInfo = .init(course: .init(id: 123, subjectDescription: "fee", credits: 12, studentsLimit: 23, studentsRegistered: 11),
+            self.studentCourseInfo = .init(course: .init(id: 123, subjectDescription: "მეცნიერება ადამიანის წარმოშობისა და ევოლუციის, ადამიანთა რასებისა და ადამიანის ფიზიკური აღნაგობის ნორმალური ვარიაციების შესახებ, შეისწავლის პირველყოფილი, ტრადიციული და თანამედროვე საზოგადოებების კულტურას და ადამიანის მოღვაწეობის მრავალგვარ ფორმებს", credits: 4, studentsLimit: 300, studentsRegistered: 289),
                                            studentGradeInfo: [.init(id: 11,
-                                                                    gradeComponentName: "12",
-                                                                    totalPoints: 23,
+                                                                    gradeComponentName: "I ქვიზი",
+                                                                    totalPoints: 15,
                                                                     currentPoints: 12),
                                                               .init(id: 11,
-                                                                                       gradeComponentName: "12",
-                                                                                       totalPoints: 23,
-                                                                                       currentPoints: 12),
+                                                                                       gradeComponentName: "II ქვიზი",
+                                                                                       totalPoints: 15,
+                                                                                       currentPoints: 9),
                                                               .init(id: 11,
-                                                                                       gradeComponentName: "12",
-                                                                                       totalPoints: 23,
-                                                                                       currentPoints: 12),
+                                                                                       gradeComponentName: "შუალედური",
+                                                                                       totalPoints: 20,
+                                                                                       currentPoints: 10),
                                                               .init(id: 11,
-                                                                                       gradeComponentName: "12",
-                                                                                       totalPoints: 23,
-                                                                                       currentPoints: 12),
+                                                                                       gradeComponentName: "დავალებები",
+                                                                                       totalPoints: 20,
+                                                                                       currentPoints: 18),
                                                               .init(id: 11,
-                                                                                       gradeComponentName: "12",
-                                                                                       totalPoints: 23,
-                                                                                       currentPoints: 12)])
+                                                                                       gradeComponentName: "ფინალური",
+                                                                                       totalPoints: 30,
+                                                                                       currentPoints: 0)])
             self.draw()
             self.isLoading = false
         }
@@ -151,6 +151,8 @@ extension StudentCourseDetailsViewModel {
     private func draw() {
         guard let studentCourseInfo else { return }
         var rows: [any CellModel] = []
+        
+        rows.append(getSpacerCell())
         
         //description
         rows.append(getRoundedHeaderWithTitle(title: "აღწერა"))
