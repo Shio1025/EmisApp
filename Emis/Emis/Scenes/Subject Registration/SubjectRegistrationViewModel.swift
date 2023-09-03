@@ -17,6 +17,7 @@ final class SubjectRegistrationViewModel {
     @Published private var listCells: [any CellModel] = []
     @Published private var isLoading: Bool = false
     @Published private var tableLoading: Bool = true
+    @Published var pageIsLoading: Bool = false
     @Published private var totalPages: Int?
     @Published private var totalFoundSubjects: Int?
     @Published private var subjectName: String?
@@ -225,6 +226,23 @@ extension SubjectRegistrationViewModel {
 extension SubjectRegistrationViewModel {
     
     private func registerSubject(courseId: Int64) {
+        @Injected var registerSubjectUseCase: RegisterSubjectUseCase
         
+        pageIsLoading = true
+        registerSubjectUseCase.registerSubject(studentId: SSO.userInfo?.userId?.description ?? "",
+                                               courseId: courseId.description)
+        .sink { [weak self] completion in
+            self?.pageIsLoading = false
+            switch completion {
+            case .finished:
+                self?.statusBanner = .init(bannerType: .success,
+                                           description: "საგანზე წარმატებით დარეგისტრირდი")
+            case .failure:
+                self?.statusBanner = .init(bannerType: .failure,
+                                           description: "საგანზე ვერ დარეგისტრირდი")
+            }
+        } receiveValue: { _ in
+            
+        }.store(in: &subscriptions)
     }
 }

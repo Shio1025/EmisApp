@@ -212,6 +212,11 @@ extension SubjectRegistrationController {
                                     state: statusBannerModel.bannerType)
             }
         }.store(in: &subscriptions)
+        viewModel.$pageIsLoading.sink { [weak self] isLoading in
+            DispatchQueue.main.async {
+                isLoading ? self?.showLoader() : self?.hideLoader()
+            }
+        }.store(in: &subscriptions)
     }
 }
 
