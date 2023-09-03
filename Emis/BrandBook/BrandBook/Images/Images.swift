@@ -21,6 +21,7 @@ extension BrandBookManager {
         public static let cv = ImageWrapper(name: "cv")
         public static let graduate = ImageWrapper(name: "graduate")
         public static let profile = ImageWrapper(name: "profile")
+        public static let subjectCard = ImageWrapper(name: "subjectCard")
     }
     
     public struct Images {
