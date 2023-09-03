@@ -62,6 +62,10 @@
 		24DCCAE12AA476FB00D46C29 /* StudentCourseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAE02AA476FB00D46C29 /* StudentCourseInfo.swift */; };
 		24DCCAE32AA478B900D46C29 /* StudentCourseInfoGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAE22AA478B900D46C29 /* StudentCourseInfoGateway.swift */; };
 		24DCCAE52AA47A7900D46C29 /* StudentCourseInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAE42AA47A7900D46C29 /* StudentCourseInfoUseCase.swift */; };
+		24DCCAF32AA48FCA00D46C29 /* ApiSubjectRegistrationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAF22AA48FCA00D46C29 /* ApiSubjectRegistrationFilter.swift */; };
+		24DCCAF52AA490FA00D46C29 /* SubjectRegistrationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAF42AA490FA00D46C29 /* SubjectRegistrationFilter.swift */; };
+		24DCCAF72AA4932900D46C29 /* SubjectRegistrationFilterGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAF62AA4932900D46C29 /* SubjectRegistrationFilterGateway.swift */; };
+		24DCCAF92AA493BE00D46C29 /* SubjectRegistrationFilterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAF82AA493BE00D46C29 /* SubjectRegistrationFilterUseCase.swift */; };
 		24E3F1B62A98E937008A0430 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B42A98E937008A0430 /* KeyChain.swift */; };
 		24E3F1B72A98E937008A0430 /* KeychainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B52A98E937008A0430 /* KeychainKeys.swift */; };
 		24E3F1B92A98E985008A0430 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B82A98E985008A0430 /* UserDefaults.swift */; };
@@ -129,6 +133,10 @@
 		24DCCAE02AA476FB00D46C29 /* StudentCourseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCourseInfo.swift; sourceTree = "<group>"; };
 		24DCCAE22AA478B900D46C29 /* StudentCourseInfoGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCourseInfoGateway.swift; sourceTree = "<group>"; };
 		24DCCAE42AA47A7900D46C29 /* StudentCourseInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCourseInfoUseCase.swift; sourceTree = "<group>"; };
+		24DCCAF22AA48FCA00D46C29 /* ApiSubjectRegistrationFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSubjectRegistrationFilter.swift; sourceTree = "<group>"; };
+		24DCCAF42AA490FA00D46C29 /* SubjectRegistrationFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectRegistrationFilter.swift; sourceTree = "<group>"; };
+		24DCCAF62AA4932900D46C29 /* SubjectRegistrationFilterGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectRegistrationFilterGateway.swift; sourceTree = "<group>"; };
+		24DCCAF82AA493BE00D46C29 /* SubjectRegistrationFilterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectRegistrationFilterUseCase.swift; sourceTree = "<group>"; };
 		24E3F1B42A98E937008A0430 /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		24E3F1B52A98E937008A0430 /* KeychainKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
 		24E3F1B82A98E985008A0430 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -230,6 +238,7 @@
 				24DCCACF2AA3880E00D46C29 /* getStudentGradesUseCase.swift */,
 				24DCCAD32AA396D200D46C29 /* updateGradeUseCase.swift */,
 				24DCCAE42AA47A7900D46C29 /* StudentCourseInfoUseCase.swift */,
+				24DCCAF82AA493BE00D46C29 /* SubjectRegistrationFilterUseCase.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -255,6 +264,7 @@
 				24DCCACD2AA3833D00D46C29 /* getStudentGradesGateway.swift */,
 				24DCCAD12AA3963400D46C29 /* UpdateMarkGateway.swift */,
 				24DCCAE22AA478B900D46C29 /* StudentCourseInfoGateway.swift */,
+				24DCCAF62AA4932900D46C29 /* SubjectRegistrationFilterGateway.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -279,6 +289,7 @@
 				2442EBBD2A9BCD8100B11CE3 /* StudentSubjectCard.swift */,
 				24DCCACB2AA382E700D46C29 /* StudentGrades.swift */,
 				24DCCAE02AA476FB00D46C29 /* StudentCourseInfo.swift */,
+				24DCCAF42AA490FA00D46C29 /* SubjectRegistrationFilter.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -301,6 +312,7 @@
 				2442EBBB2A9BCD4800B11CE3 /* ApiStudentSubjectCard.swift */,
 				24DCCAC92AA3821700D46C29 /* ApiStudentGrades.swift */,
 				24DCCADE2AA4766B00D46C29 /* ApiStudentCourseInfo.swift */,
+				24DCCAF22AA48FCA00D46C29 /* ApiSubjectRegistrationFilter.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -456,6 +468,7 @@
 				2442EC262A9E2C6700B11CE3 /* ApiTeacherInfo.swift in Sources */,
 				2442EBCA2A9BD72300B11CE3 /* TeacherDashboardOptionsGateway.swift in Sources */,
 				24DCCAD02AA3880E00D46C29 /* getStudentGradesUseCase.swift in Sources */,
+				24DCCAF72AA4932900D46C29 /* SubjectRegistrationFilterGateway.swift in Sources */,
 				2442EBA82A9BB12A00B11CE3 /* StudentInfoGateway.swift in Sources */,
 				24F4ED4B2AA2091500882C19 /* LibraryGateway.swift in Sources */,
 				2442EB902A9A8B1600B11CE3 /* LoginModel.swift in Sources */,
@@ -482,6 +495,7 @@
 				24DCCACA2AA3821700D46C29 /* ApiStudentGrades.swift in Sources */,
 				2442EC2D2A9F54E300B11CE3 /* TeacherInfo.swift in Sources */,
 				2442EBB82A9BC8E800B11CE3 /* StudentDashboardOptionsGateway.swift in Sources */,
+				24DCCAF52AA490FA00D46C29 /* SubjectRegistrationFilter.swift in Sources */,
 				24DCCAE52AA47A7900D46C29 /* StudentCourseInfoUseCase.swift in Sources */,
 				2442EB7F2A9A628500B11CE3 /* UseCasesRegistration.swift in Sources */,
 				2442EBC02A9BD0E500B11CE3 /* StudentSubjectCardGateway.swift in Sources */,
@@ -491,6 +505,7 @@
 				24F4ED4D2AA20A6400882C19 /* LibraryUseCase.swift in Sources */,
 				24DCCAD22AA3963400D46C29 /* UpdateMarkGateway.swift in Sources */,
 				2442EC312A9F5CAB00B11CE3 /* TeacherInfoUseCase.swift in Sources */,
+				24DCCAF92AA493BE00D46C29 /* SubjectRegistrationFilterUseCase.swift in Sources */,
 				2442EBBA2A9BC99A00B11CE3 /* StudentDashboardUseCase.swift in Sources */,
 				24DCCACE2AA3833D00D46C29 /* getStudentGradesGateway.swift in Sources */,
 				2442EBC82A9BD50600B11CE3 /* UpdateStudentPhoneNumberUseCase.swift in Sources */,
@@ -504,6 +519,7 @@
 				2442EBB62A9BC87500B11CE3 /* TeacherDashboardOptions.swift in Sources */,
 				2442EBAC2A9BB30600B11CE3 /* ApiStudentFinancials.swift in Sources */,
 				2442EB862A9A86BA00B11CE3 /* LoginGateway.swift in Sources */,
+				24DCCAF32AA48FCA00D46C29 /* ApiSubjectRegistrationFilter.swift in Sources */,
 				24E3F1B62A98E937008A0430 /* KeyChain.swift in Sources */,
 				24C7126829E5B1CC00E5DE0B /* Core.docc in Sources */,
 				2442EBB22A9BB4A900B11CE3 /* StudentFinancialUseCase.swift in Sources */,
