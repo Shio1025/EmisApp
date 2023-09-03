@@ -11,9 +11,9 @@ import Resolver
 
 public protocol SubjectRegistrationFilterGateway {
     func getSubjects(studentId: String,
-                  subjectName: String,
-                  page: Int,
-                  size: Int) -> AnyPublisher<SubjectRegistrationFilter, Error>
+                     subjectName: String,
+                     page: Int,
+                     size: Int) -> AnyPublisher<SubjectRegistrationFilter, Error>
 }
 
 public class SubjectRegistrationFilterGatewayImpl: SubjectRegistrationFilterGateway {

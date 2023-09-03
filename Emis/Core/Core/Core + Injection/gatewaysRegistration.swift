@@ -25,5 +25,6 @@ extension Resolver {
         register(UpdateMarkGateway.self) { UpdateMarkGatewayImpl() }
         register(StudentCourseInfoGateway.self) { StudentCourseInfoGatewayImpl() }
         register(SubjectRegistrationFilterGateway.self) { SubjectRegistrationFilterGatewayImpl() }
+        register(RegisterSubjectGateway.self) { RegisterSubjectGatewayImpl() }
     }
 }
