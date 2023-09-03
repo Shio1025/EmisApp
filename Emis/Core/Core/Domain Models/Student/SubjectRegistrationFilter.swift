@@ -39,7 +39,7 @@ public struct SubjectRegistrationModel {
     public let subjectCode: String
     public let subjectName: String
     public let available: Bool
-    public let prerequisites: [String]
+    let prerequisites: [String]
     
     init(with model: ApiSubjectRegistrationModel) {
         self.courseId = model.courseId
@@ -47,5 +47,9 @@ public struct SubjectRegistrationModel {
         self.subjectName = model.subjectName
         self.available = model.available
         self.prerequisites = model.prerequisites
+    }
+    
+    public var prerequisitesDesc: String {
+        prerequisites.joined(separator: ", ")
     }
 }

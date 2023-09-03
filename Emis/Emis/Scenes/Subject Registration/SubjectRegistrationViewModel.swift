@@ -22,10 +22,11 @@ final class SubjectRegistrationViewModel {
     @Published private var subjectName: String?
     @Published private var author: String?
     @Published private var statusBanner: StatusBannerViewModel?
-    @Published private var tappedBookURL : (URL,String)?
+    private var indexOfprerequisites: Int? = nil
     
-    @Injected private var libraryUseCase: LibraryUseCase
+    @Injected private var getFilteredSubjects: SubjectRegistrationFilterUseCase
     @Injected var urlProvider: ApiURLProvider
+    @Injected var SSO: SSOManager
     
     var listCellModels: AnyPublisher<[any CellModel], Never> {
         $listCells.eraseToAnyPublisher()
@@ -54,18 +55,8 @@ final class SubjectRegistrationViewModel {
             }.eraseToAnyPublisher()
     }
     
-    var pdfURL: AnyPublisher <(URL, String), Never> {
-        return $tappedBookURL
-            .drop(while: { elems in
-                elems == nil
-            })
-            .map { elems in
-                return (elems!.0, elems!.1)
-            }.eraseToAnyPublisher()
-    }
-    
     private var subscriptions = Set<AnyCancellable>()
-    private var libriryInfo: Library?
+    private var subjectRegistrationFilterModel: SubjectRegistrationFilter?
     
     init() { }
 }
@@ -89,22 +80,38 @@ extension SubjectRegistrationViewModel {
     
     private func getSubjects(by index: Int) {
         tableLoading = true
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             if index == .zero {
                 self.totalPages = 20
                 self.totalFoundSubjects = 120
             }
+            self.subjectRegistrationFilterModel = .init(content: [.init(courseId: 99,
+                                                                        subjectCode: "lkm", subjectName: "lkl", available: true, prerequisites: ["sdvcsdc","dsasdx"]),
+                                                                  .init(courseId: 99,
+                                                                        subjectCode: "lkm", subjectName: "lkl", available: true, prerequisites: ["sdvcsdc","dsasdx"]),
+                                                                  .init(courseId: 99,
+                                                                        subjectCode: "lkm", subjectName: "lkl", available: false, prerequisites: ["sdvcsdc","dsasdx"]),
+                                                                  .init(courseId: 99,
+                                                                        subjectCode: "lkm", subjectName: "lkl", available: true, prerequisites: ["sdvcsdc","dsasdx"]),
+                                                                  .init(courseId: 99,
+                                                                        subjectCode: "lkm", subjectName: "lkl", available: true, prerequisites: ["sdvcsdc","dsasdx"]),
+                                                                  .init(courseId: 99,
+                                                                        subjectCode: "lkm", subjectName: "lkl", available: false, prerequisites: ["sdvcsdc","dsasdx"]),
+                                                                  .init(courseId: 99,
+                                                                        subjectCode: "lkm", subjectName: "lkl", available: true, prerequisites: ["sdvcsdc","dsasdx"])],
+                                                        totalElements: 6,
+                                                        totalPages: 1)
             self.draw()
             self.tableLoading = false
             self.isLoading = false
         }
-//        if index == .zero { isLoading = true }
-//                tableLoading = true
-//        libraryUseCase.getBooks(title: name ?? "",
-//                                author: author ?? "",
-//                                page: index,
-//                                size: 10)
+        
+//        tableLoading = true
+//        getFilteredSubjects.getSubjects(studentId: SSO.userInfo?.userId?.description ?? "",
+//                                        subjectName: subjectName ?? "",
+//                                        page: index,
+//                                        size: 10)
 //        .sink { [weak self] completion in
 //            self?.isLoading = false
 //            switch completion {
@@ -112,16 +119,15 @@ extension SubjectRegistrationViewModel {
 //                self?.tableLoading = false
 //                self?.draw()
 //            case .failure(let error):
-//
 //                self?.statusBanner = .init(bannerType: .failure,
 //                                           description: error.localizedDescription)
 //            }
 //
 //        } receiveValue: { [weak self] model in
-//            self?.libriryInfo = model
+//            self?.subjectRegistrationFilterModel = model
 //            if index == .zero {
 //                self?.totalPages = model.totalPages
-//                self?.totalFoundBooks = model.totalElements
+//                self?.totalFoundSubjects = model.totalElements
 //            }
 //        }.store(in: &subscriptions)
     }
@@ -130,28 +136,42 @@ extension SubjectRegistrationViewModel {
 extension SubjectRegistrationViewModel {
     
     private func draw() {
-//        guard let libriryInfo else { return }
+        guard let subjectRegistrationFilterModel else { return }
         
-//        let rows: [any CellModel] = libriryInfo.content.enumerated().map { index, book in
-//            InfoCellModel(topLabelModel: .init(text: book.title, font: .systemFont(ofSize: .XL)),
-//                          middleLabelModel: .init(text: book.author, font: .systemFont(ofSize: .L,
-//                                                                                       weight: .light)),
-//                          bottomLabelModel: .init(text: book.genre,font: .systemFont(ofSize: .L,
-//                                                                                     weight: .thin)),
-//                          buttonModel: .init(titleModel: .init(text: "რეგისტრაცია"),
-//                                             action: { [weak self] in
-//                guard let self else { return }
-//
-//                let url = self.urlProvider.getURL(path: "/emis/api/library/download",
-//                                                  params: ["id": book.id.description])
-//                if let url {
-//                    self.tappedBookURL = (url, book.title + " - " + book.author)
-//                }
-//            }),
-//                          isSeparatorNeeded: index != (libriryInfo.content.count - 1))
-//        }
+        var rows: [any CellModel] = subjectRegistrationFilterModel.content.enumerated().map { index, subject in
+            let buttonModel: SecondaryButtonModel = subject.available
+            ? .init(titleModel: .init(text: "რეგისტრაცია"), action: { [weak self] in
+                self?.registerSubject(courseId: subject.courseId)
+            })
+            : .init(titleModel: .init(text: "?     "),
+                    backgroundColor: .clear,
+                    textColor: BrandBookManager.Color.Theme.Component.solid500.uiColor, action: { [weak self] in
+                self?.indexOfprerequisites = index == self?.indexOfprerequisites ? nil : index
+                self?.draw()
+            })
+            let row = InfoCellModel(topLabelModel: .init(text: subject.subjectName, font: .systemFont(ofSize: .XL)),
+                                    bottomLabelModel: .init(text: subject.subjectCode,font: .systemFont(ofSize: .L,
+                                                                                                        weight: .thin)),
+                                    buttonModel: buttonModel,
+                                    isSeparatorNeeded: index != indexOfprerequisites && index != (subjectRegistrationFilterModel.content.count - 1))
+            return row
+        }
         
-        listCells = []
+        if let indexOfprerequisites {
+            rows.insert(contentsOf: getPrerequisitesDesc(text: subjectRegistrationFilterModel.content[indexOfprerequisites].prerequisitesDesc), at: indexOfprerequisites + 1)
+        }
+        
+        listCells = rows
+    }
+    
+    private func getPrerequisitesDesc(text: String) -> [any CellModel] {
+        var rows: [any CellModel] = []
+        
+        rows.append(LocalLabelCellModel(model: .init(text: "პრერეკვიზიტები: \(text)",
+                                                     font: .italicSystemFont(ofSize: .L))))
+        rows.append(SeparatorCellModel())
+        
+        return rows
     }
 }
 
@@ -165,8 +185,8 @@ extension SubjectRegistrationViewModel {
                            state: validToSearch,
                            action: { [weak self] in
             self?.isLoading = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-//                self?.getBooks(by: 0)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self?.getSubjects(by: 0)
             }
         })
     }
@@ -196,9 +216,15 @@ extension SubjectRegistrationViewModel {
             .map { [unowned self] totalPages in
                     .init(totalPages: totalPages,
                           isEnabledTap: self.isEnabledTap) { [weak self] index in
-//                        self?.getBooks(by: index)
+                        self?.getSubjects(by: index)
                     }
             }.eraseToAnyPublisher()
     }
 }
 
+extension SubjectRegistrationViewModel {
+    
+    private func registerSubject(courseId: Int64) {
+        
+    }
+}

@@ -58,7 +58,7 @@ public class GenericTableView: UITableView, UITableViewDataSource {
     
     private func reloadWithAnimation() {
         UIView.transition(with: self,
-                          duration: 0.3,
+                          duration: 0.25,
                           options: .transitionCrossDissolve,
                           animations: { [weak self] in
             self?.reloadData()

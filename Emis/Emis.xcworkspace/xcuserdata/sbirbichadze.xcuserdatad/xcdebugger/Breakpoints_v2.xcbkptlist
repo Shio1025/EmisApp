@@ -242,6 +242,38 @@
             endingLineNumber = "186"
             landmarkName = "handleItemTap()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "26CA3617-1236-4C95-B8EE-C90B435D9F26 - 30169c2afa487201"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BrandBook.RowItem.handleItemTap() -&gt; ()"
+                  moduleName = "BrandBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/RowItem/RowItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "26CA3617-1236-4C95-B8EE-C90B435D9F26 - 30169c2afa487185"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BrandBook.RowItem.handleItemTap() -&gt; ()"
+                  moduleName = "BrandBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/RowItem/RowItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

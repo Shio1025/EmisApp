@@ -175,6 +175,8 @@ extension SubjectRegistrationController {
         tableView.register(InfoCell.self)
         tableView.register(RoundedHeader.self)
         tableView.register(RoundedFooter.self)
+        tableView.register(SeparatorCell.self)
+        tableView.register(LocalLabelCell.self)
     }
 }
 
