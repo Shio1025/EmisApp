@@ -242,8 +242,10 @@ extension TeacherSubjectDetailsViewModel {
     }
     
     func getStudentRows(students: [Student]) ->  [any CellModel] {
-        students.enumerated().map { index, model in
-            RowItemCellModel(model: .init(labels: .one(model: .init(text: "\(model.firstName) \(model.lastName) - \(model.email)")),
+        students.enumerated().map { index, model in            RowItemCellModel(model: .init(labels: .two(top: .init(text: "\(model.firstName) \(model.lastName)"),
+                                                       bottom: .init(text: "\(model.email)",
+                                                                     font: .systemFont(ofSize: .M,
+                                                                                       weight: .thin))),
                                           rightItem: .button(model: .init(resourceType: .icon(icon: BrandBookManager.Icon.reminders.template,
                                                                                               tintColor: BrandBookManager.Color.Theme.Component.solid500.uiColor.withAlphaComponent(0.95)),
                                                                           action: { [weak self] in
