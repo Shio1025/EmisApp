@@ -20,7 +20,10 @@ final class StudentCourseDetailsViewModel {
     @Published private var isStudentsVisible: Bool = false
     @Published private var courseInfo : (URL,String)?
     
+    private var studentCourseInfo: StudentCourseInfo?
+    
     @Injected var urlProvider: ApiURLProvider
+    @Injected var studentCourseInfoUseCase: StudentCourseInfoUseCase
     
     var listCellModels: AnyPublisher<[any CellModel], Never> {
         $listCells.eraseToAnyPublisher()
@@ -52,6 +55,7 @@ final class StudentCourseDetailsViewModel {
     }
     
     private var subscriptions = Set<AnyCancellable>()
+    private let studentId: Int64
     private let courseId: Int64
     let name: String
     
@@ -59,6 +63,7 @@ final class StudentCourseDetailsViewModel {
          studentId: Int64,
          name: String) {
         self.courseId = courseId
+        self.studentId = studentId
         self.name = name
         loadInfo()
     }
@@ -92,13 +97,35 @@ extension StudentCourseDetailsViewModel {
     
     private func getCourseDetails() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.studentCourseInfo = .init(course: .init(id: 123, subjectDescription: "fee", credits: 12, studentsLimit: 23, studentsRegistered: 11),
+                                           studentGradeInfo: [.init(id: 11,
+                                                                    gradeComponentName: "12",
+                                                                    totalPoints: 23,
+                                                                    currentPoints: 12),
+                                                              .init(id: 11,
+                                                                                       gradeComponentName: "12",
+                                                                                       totalPoints: 23,
+                                                                                       currentPoints: 12),
+                                                              .init(id: 11,
+                                                                                       gradeComponentName: "12",
+                                                                                       totalPoints: 23,
+                                                                                       currentPoints: 12),
+                                                              .init(id: 11,
+                                                                                       gradeComponentName: "12",
+                                                                                       totalPoints: 23,
+                                                                                       currentPoints: 12),
+                                                              .init(id: 11,
+                                                                                       gradeComponentName: "12",
+                                                                                       totalPoints: 23,
+                                                                                       currentPoints: 12)])
             self.draw()
             self.isLoading = false
         }
         
-//        @Injected var teacherCourseInfoUseCase: TeacherCourseInfoUseCase
-//
-//        teacherCourseInfoUseCase.getTeacherCourseInfo(courseId: courseId.description)
+//        isLoading = true
+
+//        studentCourseInfoUseCase.getStudentCourseInfo(courseId: courseId.description,
+//                                                      studentId: studentId.description)
 //            .sink { [weak self] completion in
 //                switch completion {
 //                case .finished:
@@ -114,7 +141,7 @@ extension StudentCourseDetailsViewModel {
 //                    }
 //                }
 //            } receiveValue: { [weak self] model in
-//                self?.teacherCourseInfo = model
+//                self?.studentCourseInfo = model
 //            }.store(in: &subscriptions)
     }
 }
@@ -122,42 +149,43 @@ extension StudentCourseDetailsViewModel {
 extension StudentCourseDetailsViewModel {
     
     private func draw() {
+        guard let studentCourseInfo else { return }
         var rows: [any CellModel] = []
         
-//        //description
-//        rows.append(getRoundedHeaderWithTitle(title: "აღწერა"))
-//        rows.append(LocalLabelCellModel(model: .init(text: teacherCourseInfo.course.subjectDescription)))
-//        rows.append(getRoundedFooterModel())
-//        rows.append(getSpacerCell())
-//
-//        //registered/limited students and credits
-//        rows.append(getRoundedHeaderModel())
-//        rows.append(RowItemCellModel(model:
-//                .init(labels: .one(model:
-//                        .init(text: "კრედიტები")),
-//                      rightItem: .label(model:
-//                            .init(text: teacherCourseInfo.course.credits.description)),
-//                      isSeparatorNeeded: true)))
-//        rows.append(RowItemCellModel(model:
-//                .init(labels: .one(model:
-//                        .init(text: "დარეგისტრირებული სტუდენტები")),
-//                      rightItem: .label(model:
-//                            .init(text: teacherCourseInfo.course.studentsRegistered.description)),
-//                      isSeparatorNeeded: true)))
-//        rows.append(RowItemCellModel(model:
-//                .init(labels: .one(model:
-//                        .init(text: "სტუდენტების ლიმიტი")),
-//                      rightItem: .label(model:
-//                            .init(text: teacherCourseInfo.course.studentsLimit.description)))))
-//        rows.append(getRoundedFooterModel())
-//        rows.append(getSpacerCell())
-//
-//        //button
-//        rows.append(button)
-//        rows.append(getSpacerCell())
+        //description
+        rows.append(getRoundedHeaderWithTitle(title: "აღწერა"))
+        rows.append(LocalLabelCellModel(model: .init(text: studentCourseInfo.course.subjectDescription)))
+        rows.append(getRoundedFooterModel())
+        rows.append(getSpacerCell())
+
+        //registered/limited students and credits
+        rows.append(getRoundedHeaderModel())
+        rows.append(RowItemCellModel(model:
+                .init(labels: .one(model:
+                        .init(text: "კრედიტები")),
+                      rightItem: .label(model:
+                            .init(text: studentCourseInfo.course.credits.description)),
+                      isSeparatorNeeded: true)))
+        rows.append(RowItemCellModel(model:
+                .init(labels: .one(model:
+                        .init(text: "დარეგისტრირებული სტუდენტები")),
+                      rightItem: .label(model:
+                            .init(text: studentCourseInfo.course.studentsRegistered.description)),
+                      isSeparatorNeeded: true)))
+        rows.append(RowItemCellModel(model:
+                .init(labels: .one(model:
+                        .init(text: "სტუდენტების ლიმიტი")),
+                      rightItem: .label(model:
+                            .init(text: studentCourseInfo.course.studentsLimit.description)))))
+        rows.append(getRoundedFooterModel())
+        rows.append(getSpacerCell())
+
+        //button
+        rows.append(button)
+        rows.append(getSpacerCell())
         
         //Grades
-//        rows.append(contentsOf: getGradesSection(students: teacherCourseInfo.students))
+        rows.append(contentsOf: getGradesSection(grades: studentCourseInfo.studentGradeInfo))
         
         
         listCells = rows
@@ -181,7 +209,7 @@ extension StudentCourseDetailsViewModel {
     func getGradesSection(grades: [StudentGrade]) -> [any CellModel] {
         var rows: [any CellModel] = []
         
-        rows.append(getRoundedHeaderModel())
+        rows.append(getRoundedHeaderWithTitle(title: "შეფასება"))
         rows.append(contentsOf: getGradesRows(grades: grades))
         rows.append(getRoundedFooterModel())
         rows.append(getSpacerCell())
