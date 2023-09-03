@@ -27,7 +27,7 @@ public class UpdateMarkGatewayImpl: UpdateMarkGateway {
                                                  "mark": mark])
         
         let endpoint = EndPoint<Empty>(url: url,
-                                                   method: .get)
+                                       method: .put)
         
         let publisher: AnyPublisher<Void, Error> = dataTransport.makeRequest(endpoint)
             .map { model in

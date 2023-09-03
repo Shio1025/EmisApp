@@ -5,7 +5,7 @@
 //  Created by Shio Birbichadze on 02.09.23.
 //
 
-public struct StudentGrade: Codable {
+public struct StudentGrade {
     public init(id: Int64, gradeComponentName: String, totalPoints: Double, currentPoints: Double) {
         self.id = id
         self.gradeComponentName = gradeComponentName

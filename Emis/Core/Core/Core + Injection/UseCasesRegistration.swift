@@ -23,5 +23,6 @@ extension Resolver {
         register(TeacherCourseInfoUseCase.self) { TeacherCourseInfoUseCaseImpl() }
         register(getStudentGradesUseCase.self) { getStudentGradesUseCaseImpl() }
         register(updateGradeUseCase.self) { updateGradeUseCaseImpl() }
+        register(StudentCourseInfoUseCase.self) { StudentCourseInfoUseCaseImpl() }
     }
 }
