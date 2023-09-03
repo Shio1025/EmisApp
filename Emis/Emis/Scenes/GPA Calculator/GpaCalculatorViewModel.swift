@@ -61,7 +61,7 @@ final class GpaCalculatorViewModel {
             
             let gpaBanner = GpaBannerCellModel(text: .init(text: Formatter.formatNumber(number: gpa),
                                                            font: .boldSystemFont(ofSize: .XL)),
-                                               lottie: .init(animationName: BrandBookManager.Lottie.lazy,
+                                               lottie: .init(animationName: getLottieAnimationName(with: gpa),
                                                              bundle: Bundle(identifier: "Shio.BrandBook")!))
             rows.append(SpacerCellModel())
             rows.append(gpaBanner)
@@ -94,6 +94,12 @@ extension GpaCalculatorViewModel {
                            keyboardType: .phonePad,
                            currText: A?.description ?? "",
                            onEditingDidEnd: { [weak self] text in
+            guard !text.isEmpty else {
+                self?.A = nil
+                self?.draw()
+                return
+            }
+            
             guard let credits = Int(text.trimmingCharacters(in: .whitespaces)) else {
                 self?.A = nil
                 self?.draw()
@@ -110,6 +116,12 @@ extension GpaCalculatorViewModel {
                            keyboardType: .phonePad,
                            currText: B?.description ?? "",
                            onEditingDidEnd: { [weak self] text in
+            guard !text.isEmpty else {
+                self?.B = nil
+                self?.draw()
+                return
+            }
+            
             guard let credits = Int(text.trimmingCharacters(in: .whitespaces)) else {
                 self?.B = nil
                 self?.draw()
@@ -126,6 +138,12 @@ extension GpaCalculatorViewModel {
                            keyboardType: .phonePad,
                            currText: C?.description ?? "",
                            onEditingDidEnd: { [weak self] text in
+            guard !text.isEmpty else {
+                self?.C = nil
+                self?.draw()
+                return
+            }
+            
             guard let credits = Int(text.trimmingCharacters(in: .whitespaces)) else {
                 self?.C = nil
                 self?.draw()
@@ -142,6 +160,12 @@ extension GpaCalculatorViewModel {
                            keyboardType: .phonePad,
                            currText: D?.description ?? "",
                            onEditingDidEnd: { [weak self] text in
+            guard !text.isEmpty else {
+                self?.D = nil
+                self?.draw()
+                return
+            }
+            
             guard let credits = Int(text.trimmingCharacters(in: .whitespaces)) else {
                 self?.D = nil
                 self?.draw()
@@ -158,6 +182,11 @@ extension GpaCalculatorViewModel {
                            keyboardType: .phonePad,
                            currText: E?.description ?? "",
                            onEditingDidEnd: { [weak self] text in
+            guard !text.isEmpty else {
+                self?.E = nil
+                self?.draw()
+                return
+            }
             guard let credits = Int(text.trimmingCharacters(in: .whitespaces)) else {
                 self?.E = nil
                 self?.draw()
@@ -174,6 +203,11 @@ extension GpaCalculatorViewModel {
                            keyboardType: .phonePad,
                            currText: F?.description ?? "",
                            onEditingDidEnd: { [weak self] text in
+            guard !text.isEmpty else {
+                self?.F = nil
+                self?.draw()
+                return
+            }
             guard let credits = Int(text.trimmingCharacters(in: .whitespaces)) else {
                 self?.F = nil
                 self?.draw()
@@ -219,5 +253,12 @@ extension GpaCalculatorViewModel {
         
         gpa = totalScore/Double(sum)
         draw()
+    }
+    
+    private func getLottieAnimationName(with gpa: Double) -> String {
+        if gpa > 3.38 {
+            return BrandBookManager.Lottie.boss
+        }
+        return BrandBookManager.Lottie.normal_gpa
     }
 }

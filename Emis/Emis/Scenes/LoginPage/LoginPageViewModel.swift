@@ -85,7 +85,7 @@ extension LoginPageViewModel {
     var passwordResetLabelModel: AnyPublisher<LocalLabelModel, Never> {
         return Just (LocalLabelModel.init(text: "დაგავიწყდა პაროლი?",
                                           color: BrandBookManager.Color.Theme.Component.solid500.uiColor,
-                                          font: .systemFont(ofSize: .M,
+                                          font: .systemFont(ofSize: .L,
                                                             weight: .semibold),
                                           action: {
             self.router = .resetPassword

@@ -67,8 +67,8 @@
 		24DCCABB2AA3682B00D46C29 /* PrimaryButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCABA2AA3682B00D46C29 /* PrimaryButtonCell.swift */; };
 		24DCCB042AA4BB7D00D46C29 /* GpaBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCB032AA4BB7D00D46C29 /* GpaBannerCell.swift */; };
 		24DCCB192AA4D2EF00D46C29 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 24DCCB182AA4D2EF00D46C29 /* login.json */; };
-		24DCCB1B2AA4D2F200D46C29 /* boss.json in Resources */ = {isa = PBXBuildFile; fileRef = 24DCCB1A2AA4D2F200D46C29 /* boss.json */; };
-		24DCCB1D2AA4D2F800D46C29 /* calculator.json in Resources */ = {isa = PBXBuildFile; fileRef = 24DCCB1C2AA4D2F800D46C29 /* calculator.json */; };
+		24DCCB1F2AA4D70D00D46C29 /* normal_gpa.json in Resources */ = {isa = PBXBuildFile; fileRef = 24DCCB1E2AA4D70D00D46C29 /* normal_gpa.json */; };
+		24DCCB212AA4D72500D46C29 /* boss.json in Resources */ = {isa = PBXBuildFile; fileRef = 24DCCB202AA4D72500D46C29 /* boss.json */; };
 		24E3F1BE2A98ED0B008A0430 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1BD2A98ED0B008A0430 /* BannerView.swift */; };
 		24E3F1C02A98ED18008A0430 /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1BF2A98ED18008A0430 /* BannerViewModel.swift */; };
 		24E3F1C22A98F1A3008A0430 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1C12A98F1A3008A0430 /* BannerCell.swift */; };
@@ -140,8 +140,8 @@
 		24DCCABA2AA3682B00D46C29 /* PrimaryButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonCell.swift; sourceTree = "<group>"; };
 		24DCCB032AA4BB7D00D46C29 /* GpaBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpaBannerCell.swift; sourceTree = "<group>"; };
 		24DCCB182AA4D2EF00D46C29 /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
-		24DCCB1A2AA4D2F200D46C29 /* boss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boss.json; sourceTree = "<group>"; };
-		24DCCB1C2AA4D2F800D46C29 /* calculator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = calculator.json; sourceTree = "<group>"; };
+		24DCCB1E2AA4D70D00D46C29 /* normal_gpa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = normal_gpa.json; sourceTree = "<group>"; };
+		24DCCB202AA4D72500D46C29 /* boss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boss.json; sourceTree = "<group>"; };
 		24E3F1BD2A98ED0B008A0430 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		24E3F1BF2A98ED18008A0430 /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
 		24E3F1C12A98F1A3008A0430 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
@@ -415,9 +415,9 @@
 		24C7133729E718BF00E5DE0B /* Lottie Animations */ = {
 			isa = PBXGroup;
 			children = (
-				24DCCB1C2AA4D2F800D46C29 /* calculator.json */,
-				24DCCB1A2AA4D2F200D46C29 /* boss.json */,
+				24DCCB202AA4D72500D46C29 /* boss.json */,
 				24DCCB182AA4D2EF00D46C29 /* login.json */,
+				24DCCB1E2AA4D70D00D46C29 /* normal_gpa.json */,
 				24F4ED772AA2653E00882C19 /* lazy.json */,
 				2442EBD42A9D2BDF00B11CE3 /* finances.json */,
 				2442EB962A9B53A200B11CE3 /* loader.json */,
@@ -529,10 +529,10 @@
 				24F4ED782AA2653E00882C19 /* lazy.json in Resources */,
 				2490E2FC2A02ED4F0073DBDE /* ImageResources.xcassets in Resources */,
 				2442EB972A9B53A200B11CE3 /* loader.json in Resources */,
-				24DCCB1B2AA4D2F200D46C29 /* boss.json in Resources */,
 				24C7133C29E718DC00E5DE0B /* student_2.json in Resources */,
 				24DCCB192AA4D2EF00D46C29 /* login.json in Resources */,
-				24DCCB1D2AA4D2F800D46C29 /* calculator.json in Resources */,
+				24DCCB1F2AA4D70D00D46C29 /* normal_gpa.json in Resources */,
+				24DCCB212AA4D72500D46C29 /* boss.json in Resources */,
 				2442EBD52A9D2BDF00B11CE3 /* finances.json in Resources */,
 				24C7133B29E718DC00E5DE0B /* student_1.json in Resources */,
 				24C7133D29E718DC00E5DE0B /* student_3.json in Resources */,

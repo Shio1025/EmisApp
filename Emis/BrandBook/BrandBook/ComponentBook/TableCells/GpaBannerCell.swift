@@ -60,7 +60,7 @@ public class GpaBannerCell: TableCell {
         topLabel.top(toView: contentView, constant: .S)
         topLabel.relativeBottom(toView: animationView)
         
-        animationView.bottom(toView: contentView)
+        animationView.bottom(toView: contentView, constant: .S)
         animationView.left(toView: contentView)
         animationView.right(toView: contentView)
     }

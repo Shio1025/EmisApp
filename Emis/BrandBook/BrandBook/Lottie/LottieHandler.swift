@@ -16,6 +16,6 @@ extension BrandBookManager {
         public static let lazy = "lazy"
         public static let boss = "boss"
         public static let login = "login"
-        public static let calculator = "calculator"
+        public static let normal_gpa = "normal_gpa"
     }
 }
