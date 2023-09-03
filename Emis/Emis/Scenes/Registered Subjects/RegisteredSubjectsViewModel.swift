@@ -121,7 +121,23 @@ extension RegisteredSubjectsViewModel {
     }
     
     private func deleteSubject(courseId: Int64) {
-       
+        isLoading = true
+        deleteRegisteredSubjectUseCase.deleteSubject(studentId: SSO.userInfo?.userId?.description ?? "",
+                                                     courseId: courseId.description)
+        .sink { [weak self] completion in
+            self?.isLoading = false
+            switch completion {
+            case .finished:
+                self?.statusBanner = .init(bannerType: .success,
+                                           description: "საგანი წარმატებით წაიშალა")
+                self?.loadSubjects()
+            case .failure(_):
+                self?.statusBanner = .init(bannerType: .failure,
+                                           description: "საგნის გაუქმება ვერ მოხერხდა")
+            }
+        } receiveValue: { [weak self] _ in
+            
+        }.store(in: &subscriptions)
 
     }
 }

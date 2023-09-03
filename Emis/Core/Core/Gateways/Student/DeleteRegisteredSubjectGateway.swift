@@ -11,7 +11,7 @@ import Resolver
 
 public protocol DeleteRegisteredSubjectGateway {
     func deleteSubject(studentId: String,
-                       courseId: String) -> AnyPublisher<[RegisteredSubject], Error>
+                       courseId: String) -> AnyPublisher<Void, Error>
 }
 
 public class DeleteRegisteredSubjectGatewayImpl: DeleteRegisteredSubjectGateway {
@@ -20,18 +20,18 @@ public class DeleteRegisteredSubjectGatewayImpl: DeleteRegisteredSubjectGateway 
     @Injected var apiURLProvider: ApiURLProvider
     
     public func deleteSubject(studentId: String,
-                              courseId: String) -> AnyPublisher<[RegisteredSubject], Error> {
+                              courseId: String) -> AnyPublisher<Void, Error> {
         
         let url = apiURLProvider.getURL(path: "/emis/api/courseRegistration/deleteRegisteredCourse",
                                         params: ["studentId": studentId,
                                                  "courseId": courseId])
         
-        let endpoint = EndPoint<[ApiRegisteredSubject]>(url: url,
+        let endpoint = EndPoint<Empty>(url: url,
                                                         method: .delete)
         
-        let publisher: AnyPublisher<[RegisteredSubject], Error> = dataTransport.makeRequest(endpoint)
+        let publisher: AnyPublisher<Void, Error> = dataTransport.makeRequest(endpoint)
             .map { model in
-                return model.map { RegisteredSubject(with: $0) }
+                return Void()
             }
             .eraseToAnyPublisher()
         
