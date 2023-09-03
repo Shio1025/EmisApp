@@ -15,7 +15,9 @@ final class StudentSubjectRegistrationRouter {
                 .pushViewController(SubjectRegistrationController(),
                                     animated: true)
         case .registeredSubjects:
-            break
+            view.navigationController?
+                .pushViewController(RegisteredSubjectsController(),
+                                    animated: true)
         }
     }
 }
