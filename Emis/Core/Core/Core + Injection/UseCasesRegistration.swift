@@ -27,5 +27,6 @@ extension Resolver {
         register(SubjectRegistrationFilterUseCase.self) { SubjectRegistrationFilterUseCaseImpl() }
         register(RegisterSubjectUseCase.self) { RegisterSubjectUseCaseImpl() }
         register(GetRegisteredSubjectsUseCase.self) { GetRegisteredSubjectsUseCaseImpl() }
+        register(DeleteRegisteredSubjectUseCase.self) { DeleteRegisteredSubjectUseCaseImpl() }
     }
 }

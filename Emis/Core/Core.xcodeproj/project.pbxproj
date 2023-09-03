@@ -72,6 +72,8 @@
 		24DCCB0F2AA4C72200D46C29 /* RegisteredSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCB0E2AA4C72200D46C29 /* RegisteredSubject.swift */; };
 		24DCCB112AA4C7DB00D46C29 /* GetRegisteredSubjectsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCB102AA4C7DB00D46C29 /* GetRegisteredSubjectsGateway.swift */; };
 		24DCCB132AA4C8D600D46C29 /* GetRegisteredSubjectsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCB122AA4C8D600D46C29 /* GetRegisteredSubjectsUseCase.swift */; };
+		24DCCB152AA4CA1800D46C29 /* DeleteRegisteredSubjectGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCB142AA4CA1800D46C29 /* DeleteRegisteredSubjectGateway.swift */; };
+		24DCCB172AA4CA4D00D46C29 /* DeleteRegisteredSubjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCB162AA4CA4D00D46C29 /* DeleteRegisteredSubjectUseCase.swift */; };
 		24E3F1B62A98E937008A0430 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B42A98E937008A0430 /* KeyChain.swift */; };
 		24E3F1B72A98E937008A0430 /* KeychainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B52A98E937008A0430 /* KeychainKeys.swift */; };
 		24E3F1B92A98E985008A0430 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F1B82A98E985008A0430 /* UserDefaults.swift */; };
@@ -149,6 +151,8 @@
 		24DCCB0E2AA4C72200D46C29 /* RegisteredSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredSubject.swift; sourceTree = "<group>"; };
 		24DCCB102AA4C7DB00D46C29 /* GetRegisteredSubjectsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRegisteredSubjectsGateway.swift; sourceTree = "<group>"; };
 		24DCCB122AA4C8D600D46C29 /* GetRegisteredSubjectsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRegisteredSubjectsUseCase.swift; sourceTree = "<group>"; };
+		24DCCB142AA4CA1800D46C29 /* DeleteRegisteredSubjectGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRegisteredSubjectGateway.swift; sourceTree = "<group>"; };
+		24DCCB162AA4CA4D00D46C29 /* DeleteRegisteredSubjectUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRegisteredSubjectUseCase.swift; sourceTree = "<group>"; };
 		24E3F1B42A98E937008A0430 /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		24E3F1B52A98E937008A0430 /* KeychainKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
 		24E3F1B82A98E985008A0430 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 				24DCCAF82AA493BE00D46C29 /* SubjectRegistrationFilterUseCase.swift */,
 				24DCCAFC2AA4A64A00D46C29 /* RegisterSubjectUseCase.swift */,
 				24DCCB122AA4C8D600D46C29 /* GetRegisteredSubjectsUseCase.swift */,
+				24DCCB162AA4CA4D00D46C29 /* DeleteRegisteredSubjectUseCase.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				24DCCAF62AA4932900D46C29 /* SubjectRegistrationFilterGateway.swift */,
 				24DCCAFA2AA4A5A100D46C29 /* RegisterSubjectGateway.swift */,
 				24DCCB102AA4C7DB00D46C29 /* GetRegisteredSubjectsGateway.swift */,
+				24DCCB142AA4CA1800D46C29 /* DeleteRegisteredSubjectGateway.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				2442EB7D2A9A625D00B11CE3 /* gatewaysRegistration.swift in Sources */,
 				24DCCAC32AA36E6600D46C29 /* TeacherCourseInfoUseCase.swift in Sources */,
 				24DCCAE12AA476FB00D46C29 /* StudentCourseInfo.swift in Sources */,
+				24DCCB172AA4CA4D00D46C29 /* DeleteRegisteredSubjectUseCase.swift in Sources */,
 				2442EBCC2A9BD7B600B11CE3 /* TeacherDashboardUseCase.swift in Sources */,
 				24DCCAAA2AA355E100D46C29 /* TeacherSubjectCard.swift in Sources */,
 				2442EC2F2A9F5C9900B11CE3 /* TeacherInfoGateway.swift in Sources */,
@@ -548,6 +555,7 @@
 				2442EBB22A9BB4A900B11CE3 /* StudentFinancialUseCase.swift in Sources */,
 				24DCCADF2AA4766B00D46C29 /* ApiStudentCourseInfo.swift in Sources */,
 				24DCCAB02AA3582600D46C29 /* TeacherSubjectCardUseCase.swift in Sources */,
+				24DCCB152AA4CA1800D46C29 /* DeleteRegisteredSubjectGateway.swift in Sources */,
 				2442EB882A9A86CF00B11CE3 /* LoginUseCase.swift in Sources */,
 				2442EBA62A9BAFC900B11CE3 /* StudentInfo.swift in Sources */,
 				2442EBC62A9BD3D300B11CE3 /* UpdatePhoneNumberGateway.swift in Sources */,

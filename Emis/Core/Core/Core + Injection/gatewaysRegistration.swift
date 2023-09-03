@@ -27,5 +27,6 @@ extension Resolver {
         register(SubjectRegistrationFilterGateway.self) { SubjectRegistrationFilterGatewayImpl() }
         register(RegisterSubjectGateway.self) { RegisterSubjectGatewayImpl() }
         register(GetRegisteredSubjectsGateway.self) { GetRegisteredSubjectsGatewayImpl() }
+        register(DeleteRegisteredSubjectGateway.self) { DeleteRegisteredSubjectGatewayImpl() }
     }
 }
