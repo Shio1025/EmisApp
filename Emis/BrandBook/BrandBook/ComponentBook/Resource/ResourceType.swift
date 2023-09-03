@@ -22,7 +22,7 @@ public struct LottieModel {
     var loopMode: LottieLoopMode
     
     public init(animationName: String,
-                bundle: Bundle,
+                bundle: Bundle =  Bundle(identifier: "Shio.BrandBook")!,
                 loopMode: LottieLoopMode = .loop) {
         self.animationName = animationName
         self.bundle = bundle

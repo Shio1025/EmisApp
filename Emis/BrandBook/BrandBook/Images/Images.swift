@@ -24,7 +24,7 @@ extension BrandBookManager {
         public static let subjectCard = ImageWrapper(name: "subjectCard")
     }
     
-    public struct Images {
-        public static let tmp = ImageWrapper(name: "tmp")
+    public struct Image {
+        public static let person = ImageWrapper(name: "person")
     }
 }

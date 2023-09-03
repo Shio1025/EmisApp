@@ -17,5 +17,9 @@ extension BrandBookManager {
         public static let boss = "boss"
         public static let login = "login"
         public static let normal_gpa = "normal_gpa"
+        public static let library = "library"
+        public static let subjects = "subjects"
+        public static let registration = "registration"
+        public static let cards = "cards"
     }
 }

@@ -159,8 +159,7 @@ extension MainPageViewModel {
         studentDashboardOptions.userDashboardOptions.forEach { [weak self] type in
             guard let self else { return }
             rows.append(BannerCellModel(model:
-                    .init(resourceType: .icon(icon: self.getStudentBannerImage(type: type),
-                                              tintColor: BrandBookManager.Color.Theme.Component.solid500.uiColor),
+                    .init(resourceType: self.getStudentBannerResourceModel(type: type),
                           topLabelModel: .init(text: self.getStudentBannerTitle(type: type),
                                                font: .systemFont(ofSize: .XL)),
                           isChevronNeeded: true,
@@ -178,8 +177,7 @@ extension MainPageViewModel {
         teacherDashboardOptions.userDashboardOptions.forEach { [weak self] type in
             guard let self else { return }
             rows.append(BannerCellModel(model:
-                    .init(resourceType: .icon(icon: self.getTeacherBannerImage(type: type),
-                                              tintColor: BrandBookManager.Color.Theme.Component.solid500.uiColor),
+                    .init(resourceType: self.getTeacherBannerResourceModel(type: type),
                           topLabelModel: .init(text: self.getTeacherBannerTitle(type: type)),
                           isChevronNeeded: true,
                           action: { [weak self] in
@@ -207,16 +205,16 @@ extension MainPageViewModel {
         }
     }
     
-    private func getStudentBannerImage(type: StudentDashboardOption) -> UIImage {
+    private func getStudentBannerResourceModel(type: StudentDashboardOption) -> ResourceType {
         switch type {
         case .subjectCard:
-            return BrandBookManager.Images.tmp.image
+            return .animation(model: .init(animationName: BrandBookManager.Lottie.cards))
         case .subjectRegistration:
-            return BrandBookManager.Images.tmp.image
+            return .animation(model: .init(animationName: BrandBookManager.Lottie.registration))
         case .library:
-            return BrandBookManager.Icon.books.template
+            return .animation(model: .init(animationName: BrandBookManager.Lottie.library))
         case .none:
-            return BrandBookManager.Images.tmp.image
+            return .animation(model: .init(animationName: BrandBookManager.Lottie.library))
         }
     }
     
@@ -249,16 +247,16 @@ extension MainPageViewModel {
         }
     }
     
-    private func getTeacherBannerImage(type: TeacherDashboardOption) -> UIImage {
+    private func getTeacherBannerResourceModel(type: TeacherDashboardOption) -> ResourceType {
         switch type {
         case .subjectCard:
-            return BrandBookManager.Images.tmp.image
+            return .animation(model: .init(animationName: BrandBookManager.Lottie.subjects))
         case .subjectHistory:
-            return BrandBookManager.Images.tmp.image
+            return .animation(model: .init(animationName: BrandBookManager.Lottie.library))
         case .library:
-            return BrandBookManager.Icon.books.template
+            return .animation(model: .init(animationName: BrandBookManager.Lottie.library))
         case .none:
-            return BrandBookManager.Images.tmp.image
+            return .animation(model: .init(animationName: BrandBookManager.Lottie.library))
         }
     }
     

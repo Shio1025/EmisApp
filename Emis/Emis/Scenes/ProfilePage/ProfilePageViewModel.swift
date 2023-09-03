@@ -185,7 +185,7 @@ extension ProfilePageViewModel {
         guard let name,
               let surname
         else { return nil }
-        let header = PageDescriptionCellModel(model: .init(resourceType: .image(image: BrandBookManager.Images.tmp.image),
+        let header = PageDescriptionCellModel(model: .init(resourceType: .image(image: BrandBookManager.Image.person.image),
                                                            description: .init(text: "\(name) \(surname)",
                                                                               font: .systemFont(ofSize: .XL2,
                                                                                                 weight: .light))))
