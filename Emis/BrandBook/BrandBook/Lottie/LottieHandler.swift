@@ -14,5 +14,8 @@ extension BrandBookManager {
         public static let loader = "loader"
         public static let finances = "finances"
         public static let lazy = "lazy"
+        public static let boss = "boss"
+        public static let login = "login"
+        public static let calculator = "calculator"
     }
 }
