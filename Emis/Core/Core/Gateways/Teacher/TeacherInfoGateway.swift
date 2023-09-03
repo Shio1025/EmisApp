@@ -18,7 +18,7 @@ public class TeacherInfoGatewayImpl: TeacherInfoGateway {
     @Injected var apiURLProvider: ApiURLProvider
     
     public func getTeacherInfo(userId: String) -> AnyPublisher<TeacherInfo, Error> {
-        let params = ["id": userId]
+        let params = ["teacherId": userId]
         
         let url = apiURLProvider.getURL(path: "/emis/api/teacher",
                                         params: params)
