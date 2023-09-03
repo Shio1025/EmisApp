@@ -10,7 +10,6 @@ import UIKit
 enum TabBarItem {
     case login
     case main
-    case timetable
     case more
     
     
@@ -20,8 +19,6 @@ enum TabBarItem {
             return "პროფილი"
         case .main:
             return "მთავარი"
-        case .timetable:
-            return "ცხრილები"
         case .more:
             return "მეტი"
         }
@@ -33,8 +30,6 @@ enum TabBarItem {
             return BrandBookManager.Icon.student.template
         case .main:
             return BrandBookManager.Icon.main_idea.template
-        case .timetable:
-            return BrandBookManager.Icon.calendar.template
         case .more:
             return BrandBookManager.Icon.settings.template
         }
@@ -46,8 +41,6 @@ enum TabBarItem {
             return LoginPageController()
         case .main:
             return MainPageController()
-        case .timetable:
-            return TimeTablePage()
         case .more:
             return MoreMenuController(viewModel: MoreMenuViewModel())
         }
