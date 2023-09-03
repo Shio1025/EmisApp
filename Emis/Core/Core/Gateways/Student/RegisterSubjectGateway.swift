@@ -22,7 +22,7 @@ public class RegisterSubjectGatewayImpl: RegisterSubjectGateway {
     public func registerSubject(studentId: String,
                                 courseId: String) -> AnyPublisher<Void, Error> {
         
-        let url = apiURLProvider.getURL(path: "/emis/api/student/registerCourse",
+        let url = apiURLProvider.getURL(path: "/emis/api/courseRegistration/register",
                                         params: ["studentId": studentId,
                                                  "courseId": courseId])
         

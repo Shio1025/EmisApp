@@ -19,7 +19,7 @@ public class StudentInfoGatewayImpl: StudentInfoGateway {
     @Injected var apiURLProvider: ApiURLProvider
     
     public func getStudentInfo(userId: String) -> AnyPublisher<StudentInfo, Error> {
-        let params = ["id": userId]
+        let params = ["studentId": userId]
         
         let url = apiURLProvider.getURL(path: "/emis/api/student",
                                         params: params)

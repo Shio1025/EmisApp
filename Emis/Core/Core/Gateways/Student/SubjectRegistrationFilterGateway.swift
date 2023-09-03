@@ -26,7 +26,7 @@ public class SubjectRegistrationFilterGatewayImpl: SubjectRegistrationFilterGate
                             page: Int,
                             size: Int) -> AnyPublisher<SubjectRegistrationFilter, Error> {
         
-        let url = apiURLProvider.getURL(path: "/emis/api/course/filter",
+        let url = apiURLProvider.getURL(path: "/emis/api/courseRegistration/filterCourses",
                                         params: ["studentId": studentId,
                                                  "subjectName": subjectName,
                                                  "page": page.description,

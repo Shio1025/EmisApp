@@ -26,5 +26,6 @@ extension Resolver {
         register(StudentCourseInfoUseCase.self) { StudentCourseInfoUseCaseImpl() }
         register(SubjectRegistrationFilterUseCase.self) { SubjectRegistrationFilterUseCaseImpl() }
         register(RegisterSubjectUseCase.self) { RegisterSubjectUseCaseImpl() }
+        register(GetRegisteredSubjectsUseCase.self) { GetRegisteredSubjectsUseCaseImpl() }
     }
 }
