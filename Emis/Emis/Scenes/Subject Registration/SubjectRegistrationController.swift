@@ -184,7 +184,9 @@ extension SubjectRegistrationController {
     
     private func bindUI() {
         tableView.bind(with: viewModel.listCellModels)
-        subjectNameTextField.bind(model: viewModel.subjectNameTextFieldModel)
+        viewModel.subjectNameTextFieldModel.sink { [weak self] model in
+            self?.subjectNameTextField.bind(model: model)
+        }.store(in: &subscriptions)
         button.bind(with: viewModel.continueButtonModel)
         viewModel.resultLabelModel.sink { [weak self] model in
             DispatchQueue.main.async {

@@ -84,23 +84,13 @@ extension SubjectRegistrationViewModel {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             if index == .zero {
-                self.totalPages = 20
-                self.totalFoundSubjects = 120
+                self.totalPages = 1
+                self.totalFoundSubjects = 2
             }
             self.subjectRegistrationFilterModel = .init(content: [.init(courseId: 99,
-                                                                        subjectCode: "lkm", subjectName: "lkl", available: true, prerequisites: ["sdvcsdc","dsasdx"]),
+                                                                        subjectCode: "KI192", subjectName: "კალკულუსი I", available: true, prerequisites: ["sdvcsdc","dsasdx"]),
                                                                   .init(courseId: 99,
-                                                                        subjectCode: "lkm", subjectName: "lkl", available: true, prerequisites: ["sdvcsdc","dsasdx"]),
-                                                                  .init(courseId: 99,
-                                                                        subjectCode: "lkm", subjectName: "lkl", available: false, prerequisites: ["sdvcsdc","dsasdx"]),
-                                                                  .init(courseId: 99,
-                                                                        subjectCode: "lkm", subjectName: "lkl", available: true, prerequisites: ["sdvcsdc","dsasdx"]),
-                                                                  .init(courseId: 99,
-                                                                        subjectCode: "lkm", subjectName: "lkl", available: true, prerequisites: ["sdvcsdc","dsasdx"]),
-                                                                  .init(courseId: 99,
-                                                                        subjectCode: "lkm", subjectName: "lkl", available: false, prerequisites: ["sdvcsdc","dsasdx"]),
-                                                                  .init(courseId: 99,
-                                                                        subjectCode: "lkm", subjectName: "lkl", available: true, prerequisites: ["sdvcsdc","dsasdx"])],
+                                                                                                                              subjectCode: "KS789", subjectName: "კალკულუსი II", available: false, prerequisites: ["კალკულუსი I"])],
                                                         totalElements: 6,
                                                         totalPages: 1)
             self.draw()
@@ -159,18 +149,24 @@ extension SubjectRegistrationViewModel {
         }
         
         if let indexOfprerequisites {
-            rows.insert(contentsOf: getPrerequisitesDesc(text: subjectRegistrationFilterModel.content[indexOfprerequisites].prerequisitesDesc), at: indexOfprerequisites + 1)
+            rows.insert(contentsOf: getPrerequisitesDesc(text: subjectRegistrationFilterModel.content[indexOfprerequisites].prerequisitesDesc,
+                                                         separatorIsNeeded: indexOfprerequisites != (subjectRegistrationFilterModel.content.count - 1)),
+                        at: indexOfprerequisites + 1)
         }
         
         listCells = rows
     }
     
-    private func getPrerequisitesDesc(text: String) -> [any CellModel] {
+    private func getPrerequisitesDesc(text: String,
+                                      separatorIsNeeded: Bool) -> [any CellModel] {
         var rows: [any CellModel] = []
         
         rows.append(LocalLabelCellModel(model: .init(text: "პრერეკვიზიტები: \(text)",
-                                                     font: .italicSystemFont(ofSize: .L))))
-        rows.append(SeparatorCellModel())
+                                                     font: .systemFont(ofSize: .M,
+                                                                       weight: .light))))
+        if separatorIsNeeded {
+            rows.append(SeparatorCellModel())
+        }
         
         return rows
     }
@@ -195,7 +191,7 @@ extension SubjectRegistrationViewModel {
     var resultLabelModel: AnyPublisher<LocalLabelModel, Never> {
         return $totalFoundSubjects
             .compactMap {
-                let text = $0 == nil ? "შენ ჯერ არ გაქვს დაწყებული ძიების პროცესი, ჩაწერე სასურველი საგნის დასახელება და დარეგისტრირდი შენთვის სასურველ საგანზე" : "მოიძებნა \($0 ?? 0) წიგნი"
+                let text = $0 == nil ? "შენ ჯერ არ გაქვს დაწყებული ძიების პროცესი, ჩაწერე სასურველი საგნის დასახელება და დარეგისტრირდი შენთვის სასურველ საგანზე" : "მოიძებნა \($0 ?? 0) საგანი"
                 return LocalLabelModel.init(text: text,
                                             color: BrandBookManager.Color.Theme.Invert.tr300.uiColor,
                                             font: .systemFont(ofSize: .M,
@@ -205,11 +201,15 @@ extension SubjectRegistrationViewModel {
             .eraseToAnyPublisher()
     }
     
-    var subjectNameTextFieldModel: TextFieldViewModel {
-        return TextFieldViewModel(placeholder: "საგნის არჩევა",
-                                  onEditingDidEnd: { [weak self] text in
-            self?.subjectName = text
-        })
+    var subjectNameTextFieldModel: AnyPublisher<TextFieldViewModel, Never> {
+        return $subjectName
+            .map { elem in
+                TextFieldViewModel(placeholder: "საგნის არჩევა",
+                                   currText: elem ?? "",
+                                   onEditingDidEnd: { [weak self] text in
+                    self?.subjectName = text
+                })
+            }.eraseToAnyPublisher()
     }
     
     var navigatorViewModel: AnyPublisher<NavigatorViewModel, Never> {

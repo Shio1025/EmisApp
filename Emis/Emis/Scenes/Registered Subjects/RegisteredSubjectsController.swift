@@ -78,6 +78,7 @@ extension RegisteredSubjectsController {
         tableView.register(RoundedHeaderWithTitle.self)
         tableView.register(RoundedFooter.self)
         tableView.register(InfoCell.self)
+        tableView.register(SpacerCell.self)
     }
 }
 

@@ -61,13 +61,10 @@ extension RegisteredSubjectsViewModel {
         isLoading = false
         
         
-        registeredSubjects = [.init(courseId: 1, subjectCode: "12", subjectName: "biology", necessary: true),
-                              .init(courseId: 1, subjectCode: "12", subjectName: "biology", necessary: false),
-                              .init(courseId: 1, subjectCode: "12", subjectName: "biology", necessary: true),
-                              .init(courseId: 1, subjectCode: "12", subjectName: "biology", necessary: true),
-                              .init(courseId: 1, subjectCode: "12", subjectName: "biology", necessary: false),
-                              .init(courseId: 1, subjectCode: "12", subjectName: "biology", necessary: true),
-                              .init(courseId: 1, subjectCode: "12", subjectName: "biology", necessary: false)]
+        registeredSubjects = [.init(courseId: 1, subjectCode: "JS661", subjectName: "ბიოლოგია", necessary: true),
+                              .init(courseId: 1, subjectCode: "SS631", subjectName: "ფიზიკა", necessary: true),
+                              .init(courseId: 1, subjectCode: "KS261", subjectName: "კალკულუსი I", necessary: false),
+                              .init(courseId: 1, subjectCode: "KT193", subjectName: "დისტრიბუციული სისტემები", necessary: true)]
         draw()
 //        isLoading = true
 //        getRegisteredSubjectsUseCase.getSubjects(studentId: SSO.userInfo?.userId?.description ?? "")
@@ -96,6 +93,7 @@ extension RegisteredSubjectsViewModel {
         guard let registeredSubjects else { return nil }
         var rows: [any CellModel] = []
         
+        rows.append(SpacerCellModel())
         rows.append(getRoundedHeaderWithTitle(title: "დარეგისტრირებული საგნები"))
         registeredSubjects.enumerated().forEach { index, model in
             let button: SecondaryButtonModel? = model.necessary

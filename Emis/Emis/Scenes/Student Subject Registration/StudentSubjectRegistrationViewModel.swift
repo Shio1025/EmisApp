@@ -90,6 +90,7 @@ extension StudentSubjectRegistrationViewModel {
         
         var rows: [any CellModel] = []
         
+        rows.append(getSpacerCell())
         
         rows.append(getRoundedHeaderModel())
         rows.append(RowItemCellModel(model:
