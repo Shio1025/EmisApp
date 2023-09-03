@@ -96,7 +96,7 @@ extension ProfilePageViewModel {
 extension ProfilePageViewModel {
     
     private func getStudentInfo() {
-        studentInfo = .init(firstName: "shi", lastName: "ddd", birthDate: "ddd", email: "sdfdsd", address: "sdcsdc", phoneNumber: "59959595", status: .active, degreeLevel: .bachelor, credits: 201, gpa: 3.99)
+        studentInfo = .init(firstName: "Dato", lastName: "Dvali", birthDate: "28-12-2000", email: "ddval19@freeuni.edu.ge", address: "თბილისი, ისანი, ბერი გაბრიელ სალოსის ქუჩა", phoneNumber: "591902952", status: .active, degreeLevel: .bachelor, credits: 210, gpa: 3.34)
         draw()
         isLoading = false
 //        @Injected var studentInfoUseCase: StudentInfoUseCase
@@ -118,7 +118,7 @@ extension ProfilePageViewModel {
     }
     
     private func getTeacherInfo() {
-        teacherInfo = .init(firstName: "Shota", lastName: "Shota", birthDate: "sdvs", email: "asdcasd", address: "sdcs", phoneNumber: "sdv", position: "sdcds", status: "Active")
+        teacherInfo = .init(firstName: "Dato", lastName: "Dvali", birthDate: "28-12-2000", email: "ddval19@freeuni.edu.ge", address: "თბილისი, ისანი, ბერი გაბრიელ სალოსის ქუჩა", phoneNumber: "591902952", position: "sdcds", status: "Active")
         draw()
         isLoading = false
 //        @Injected var teacherInfoUseCase: TeacherInfoUseCase
@@ -195,7 +195,7 @@ extension ProfilePageViewModel {
     private var studentPersonalInfoSection: [any CellModel]? {
         guard let userInfo = studentInfo else { return nil }
         var rows: [any CellModel] = []
-        rows.append(getRoundedHeaderWithTitle(title: "პერსონალური მონაცემები"))
+        rows.append(getRoundedHeaderWithTitle(title: "პირადი მონაცემები"))
         
         rows.append(contentsOf: getPhoneNumberSections(phoneNumber: userInfo.phoneNumber))
         

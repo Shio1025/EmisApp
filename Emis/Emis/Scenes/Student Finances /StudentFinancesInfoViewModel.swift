@@ -52,7 +52,7 @@ extension StudentFinancesInfoViewModel {
 extension StudentFinancesInfoViewModel {
     
     private func loadStudentFinancialInfo() {
-        financialInfo = .init(tuitionFee: 100, scholarship: 100, effectiveFee: 100, tuitionFeePaid: 100, debt: 100)
+        financialInfo = .init(tuitionFee: 6950, scholarship: 4500, effectiveFee: 2450, tuitionFeePaid: 1250, debt: 0)
         isLoading = false
         draw()
 //        @Injected var studentFinancialInfoUseCase: StudentFinancialUseCase
@@ -86,26 +86,27 @@ extension StudentFinancesInfoViewModel {
         
         rows.append(RowItemCellModel(model:
                 .init(labels: .one(model: .init(text: "საფასური")),
-                      rightItem: .label(model: .init(text: financialInfo.tuitionFee.description)),
+                      rightItem: .label(model: .init(text: financialInfo.tuitionFee.description + " ₾")),
                       isSeparatorNeeded: true)))
         rows.append(RowItemCellModel(model:
                 .init(labels: .one(model: .init(text: "გრანტი")),
-                      rightItem: .label(model: .init(text: financialInfo.scholarship.description)),
+                      rightItem: .label(model: .init(text: financialInfo.scholarship.description + " ₾")),
                       isSeparatorNeeded: true)))
         rows.append(RowItemCellModel(model:
                 .init(labels: .one(model: .init(text: "ეფ. გადასახადი")),
-                      rightItem: .label(model: .init(text: financialInfo.effectiveFee.description)),
+                      rightItem: .label(model: .init(text: financialInfo.effectiveFee.description + " ₾")),
                       isSeparatorNeeded: true)))
         rows.append(RowItemCellModel(model:
                 .init(labels: .one(model: .init(text: "გადახდილი თანხა")),
-                      rightItem: .label(model: .init(text: financialInfo.tuitionFeePaid.description)),
+                      rightItem: .label(model: .init(text: financialInfo.tuitionFeePaid.description
+                                                    + " ₾")),
                       isSeparatorNeeded: true)))
         let debtColor: UIColor = financialInfo.debt <= .zero
                 ? BrandBookManager.Color.General.green.uiColor
                 : BrandBookManager.Color.General.red.uiColor
         rows.append(RowItemCellModel(model:
                 .init(labels: .one(model: .init(text: "დავალიანება")),
-                      rightItem: .label(model: .init(text: financialInfo.debt.description,
+                      rightItem: .label(model: .init(text: financialInfo.debt.description + " ₾",
                                                     color: debtColor)))))
         rows.append(getRoundedFooterModel())
         

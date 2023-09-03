@@ -197,7 +197,7 @@ extension Navigator {
         }.store(in: &subscriptions)
         
         $currPage.sink { [weak self] index in
-            self?.leftchevronItemContainer.isHidden = index == .zero
+            self?.leftchevronItemContainer.isHidden = self?.totalPages != nil ? index == 1 : false
             self?.rightchevronItemContainer.isHidden = index == self?.totalPages
         }.store(in: &subscriptions)
     }

@@ -59,7 +59,7 @@ extension MainPageController {
     }
     
     private func addConstraints() {
-        tableView.topNotSafe(toView: view)
+        tableView.top(toView: view, constant: .L)
         tableView.left(toView: view, constant: .S)
         tableView.right(toView: view, constant: .S)
         tableView.bottom(toView: view)

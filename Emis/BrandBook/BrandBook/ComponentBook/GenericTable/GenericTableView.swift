@@ -37,6 +37,8 @@ public class GenericTableView: UITableView, UITableViewDataSource {
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         separatorStyle = .none
+        
+        self.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude))
     }
     
     @available(*, unavailable)

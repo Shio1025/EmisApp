@@ -78,8 +78,8 @@
             filePath = "BrandBook/BrandBook/ComponentBook/SecondaryButton/SecondaryButton.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "viewDidTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -226,38 +226,6 @@
             endingLineNumber = "186"
             landmarkName = "handleItemTap()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "26CA3617-1236-4C95-B8EE-C90B435D9F26 - 30169c2afa487201"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BrandBook.RowItem.handleItemTap() -&gt; ()"
-                  moduleName = "BrandBook"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/RowItem/RowItem.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  uuid = "26CA3617-1236-4C95-B8EE-C90B435D9F26 - 30169c2afa487185"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BrandBook.RowItem.handleItemTap() -&gt; ()"
-                  moduleName = "BrandBook"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/BrandBook/BrandBook/ComponentBook/RowItem/RowItem.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -334,8 +302,8 @@
             filePath = "Emis/Scenes/Library/LibraryPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "resultLabelModel"
             landmarkType = "24">
          </BreakpointContent>
@@ -350,8 +318,8 @@
             filePath = "Emis/Scenes/Library/LibraryPageController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "bindUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -478,8 +446,8 @@
             filePath = "Emis/Scenes/Library/LibraryPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "getBooks(by:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -606,8 +574,8 @@
             filePath = "Emis/Scenes/Library/LibraryPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "getBooks(by:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -622,8 +590,8 @@
             filePath = "Emis/Scenes/Library/LibraryPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "getBooks(by:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -638,8 +606,8 @@
             filePath = "Emis/Scenes/Library/LibraryPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "draw()"
             landmarkType = "7">
          </BreakpointContent>
@@ -654,8 +622,8 @@
             filePath = "Emis/Scenes/Library/LibraryPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "draw()"
             landmarkType = "7">
          </BreakpointContent>
@@ -670,8 +638,8 @@
             filePath = "Emis/Scenes/Library/LibraryPageController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "bindUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -734,8 +702,8 @@
             filePath = "Emis/Scenes/Library/LibraryPageController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "bindUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -750,8 +718,8 @@
             filePath = "Emis/Scenes/Library/LibraryPageController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "sharePdf(_:fileName:)"
             landmarkType = "7">
          </BreakpointContent>

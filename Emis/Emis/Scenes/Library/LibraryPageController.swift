@@ -190,8 +190,12 @@ extension LibraryPageController {
     
     private func bindUI() {
         tableView.bind(with: viewModel.listCellModels)
-        bookNameTextField.bind(model: viewModel.bookNameTextFieldModel)
-        bookAuthorTextField.bind(model: viewModel.authorTextFieldModel)
+        viewModel.bookNameTextFieldModel.sink { [weak self] model in
+            self?.bookNameTextField.bind(model: model)
+        }.store(in: &subscriptions)
+        viewModel.authorTextFieldModel.sink { [weak self] model in
+            self?.bookAuthorTextField.bind(model: model)
+        }.store(in: &subscriptions)
         button.bind(with: viewModel.continueButtonModel)
         viewModel.resultLabelModel.sink { [weak self] model in
             DispatchQueue.main.async {
