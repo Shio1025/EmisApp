@@ -10,9 +10,7 @@ import BrandBook
 
 enum MoreMenuItem {
     case changePassword
-    case easyAuthorization
     case GPACalculator
-    case changeTheme
     case logOut
     
     
@@ -20,12 +18,8 @@ enum MoreMenuItem {
         switch self {
         case .changePassword:
             return "პაროლის შეცვლა"
-        case .easyAuthorization:
-            return "მარტივი შესვლა"
         case .GPACalculator:
             return "GPA კალკულატორი"
-        case .changeTheme:
-            return "თემის შეცვლა"
         case .logOut:
             return "გასვლა"
         }

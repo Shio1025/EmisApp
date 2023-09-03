@@ -14,9 +14,7 @@ import UIKit
 
 enum MoreMenuRoute {
     case changePassword
-    case easyAuthorization
     case GPACalculator
-    case changeTheme
     case logOut
 }
 
@@ -106,12 +104,12 @@ extension MoreMenuViewModel {
 extension MoreMenuViewModel {
     
     private func handleMoreMenuItems(isLogged: Bool) -> [MoreMenuItem] {
-        guard isLogged else { return [.GPACalculator, .changeTheme] }
+        guard isLogged else { return [.GPACalculator] }
         switch SSO.userInfo?.userType {
         case .student:
-            return  [.changePassword, .easyAuthorization, .GPACalculator, .changeTheme, .logOut]
+            return  [.changePassword, .GPACalculator, .logOut]
         case .teacher:
-            return [.changePassword, .easyAuthorization, .changeTheme, .logOut]
+            return [.changePassword, .logOut]
         default:
             return []
         }
@@ -124,13 +122,9 @@ extension MoreMenuViewModel {
     private func handleMoreMenuItemsNavigation(with item: MoreMenuItem) {
         switch item {
         case .changePassword:
-            break
-        case .easyAuthorization:
-            break
+            router = .changePassword
         case .GPACalculator:
-            break
-        case .changeTheme:
-            break
+            router = .GPACalculator
         case .logOut:
             SSO.logOutUser()
             router = .logOut

@@ -14,12 +14,8 @@ final class MoreMenuRouter {
         switch route {
         case .changePassword:
             break
-        case .easyAuthorization:
-            break
         case .GPACalculator:
-            break
-        case .changeTheme:
-            break
+            view.navigationController?.pushViewController(GpaCalculatorController(), animated: true)
         case .logOut:
             handleLogOut(view: view)
         }

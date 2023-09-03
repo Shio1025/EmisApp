@@ -241,6 +241,7 @@ extension ProfilePageViewModel {
         
         if isPhoneNumberChanging {
             rows.append(TextFieldCellModel(model: .init(placeholder: "შეიყვანეთ ახალი ტელ. ნომერი",
+                                                        keyboardType: .phonePad,
                                                         onEditingDidEnd: { [weak self] phoneNumber in
                 self?.newPhoneNumber = phoneNumber
             })))

@@ -61,6 +61,8 @@
 		24DCCAEC2AA4825400D46C29 /* StudentSubjectRegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAEB2AA4825400D46C29 /* StudentSubjectRegistrationRouter.swift */; };
 		24DCCAEF2AA486F500D46C29 /* SubjectRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAEE2AA486F500D46C29 /* SubjectRegistrationController.swift */; };
 		24DCCAF12AA4879700D46C29 /* SubjectRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAF02AA4879700D46C29 /* SubjectRegistrationViewModel.swift */; };
+		24DCCB002AA4ABC600D46C29 /* GpaCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCAFF2AA4ABC600D46C29 /* GpaCalculatorController.swift */; };
+		24DCCB022AA4ABD500D46C29 /* GpaCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DCCB012AA4ABD500D46C29 /* GpaCalculatorViewModel.swift */; };
 		24F4ED742AA24AAB00882C19 /* StudentSubjectCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED732AA24AAB00882C19 /* StudentSubjectCardController.swift */; };
 		24F4ED762AA24ABC00882C19 /* StudentSubjectCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4ED752AA24ABC00882C19 /* StudentSubjectCardViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -166,6 +168,8 @@
 		24DCCAEB2AA4825400D46C29 /* StudentSubjectRegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectRegistrationRouter.swift; sourceTree = "<group>"; };
 		24DCCAEE2AA486F500D46C29 /* SubjectRegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectRegistrationController.swift; sourceTree = "<group>"; };
 		24DCCAF02AA4879700D46C29 /* SubjectRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectRegistrationViewModel.swift; sourceTree = "<group>"; };
+		24DCCAFF2AA4ABC600D46C29 /* GpaCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpaCalculatorController.swift; sourceTree = "<group>"; };
+		24DCCB012AA4ABD500D46C29 /* GpaCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpaCalculatorViewModel.swift; sourceTree = "<group>"; };
 		24F4ED732AA24AAB00882C19 /* StudentSubjectCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectCardController.swift; sourceTree = "<group>"; };
 		24F4ED752AA24ABC00882C19 /* StudentSubjectCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSubjectCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -376,6 +380,7 @@
 		24C7129929E5B4EB00E5DE0B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				24DCCAFE2AA4AB4F00D46C29 /* GPA Calculator */,
 				24DCCAED2AA486E400D46C29 /* Subject Registration */,
 				24DCCAE62AA4820100D46C29 /* Student Subject Registration */,
 				24DCCAD72AA3DD1300D46C29 /* Student Course Details */,
@@ -457,6 +462,15 @@
 				24DCCAF02AA4879700D46C29 /* SubjectRegistrationViewModel.swift */,
 			);
 			path = "Subject Registration";
+			sourceTree = "<group>";
+		};
+		24DCCAFE2AA4AB4F00D46C29 /* GPA Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				24DCCAFF2AA4ABC600D46C29 /* GpaCalculatorController.swift */,
+				24DCCB012AA4ABD500D46C29 /* GpaCalculatorViewModel.swift */,
+			);
+			path = "GPA Calculator";
 			sourceTree = "<group>";
 		};
 		24F4ED722AA24A8500882C19 /* Student Subject Card */ = {
@@ -592,6 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24DCCB022AA4ABD500D46C29 /* GpaCalculatorViewModel.swift in Sources */,
 				2442EBD72A9DB4A600B11CE3 /* MainPageViewModel.swift in Sources */,
 				24DCCAA82AA3483200D46C29 /* TeacherSubjectCardRouter.swift in Sources */,
 				24C7117429E5ADC200E5DE0B /* EntryPage.swift in Sources */,
@@ -638,6 +653,7 @@
 				24DCCAE82AA4822D00D46C29 /* StudentSubjectRegistrationController.swift in Sources */,
 				24DCCAD92AA3DD3100D46C29 /* StudentCourseDetailsController.swift in Sources */,
 				24A925072A42FC0700FEF291 /* PasswordResetViewModel.swift in Sources */,
+				24DCCB002AA4ABC600D46C29 /* GpaCalculatorController.swift in Sources */,
 				24A925092A42FC7B00FEF291 /* PasswordResetRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

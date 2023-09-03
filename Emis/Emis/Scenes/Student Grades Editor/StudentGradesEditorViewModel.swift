@@ -140,6 +140,7 @@ extension StudentGradesEditorViewModel {
     private func getUpdateGradeSection(studentGradeId: Int64) -> [any CellModel] {
         var rows: [any CellModel] = []
         rows.append(TextFieldCellModel(model: .init(placeholder: "შეიყვანეთ ახალი შეფასება",
+                                                    keyboardType: .phonePad,
                                                     onEditingDidEnd: { [weak self] grade in
             guard let grade = Double(grade.trimmingCharacters(in: .whitespaces)) else {
                 self?.statusBanner = .init(bannerType: .failure,

@@ -158,8 +158,8 @@
             filePath = "Emis/Scenes/MoreMenu/MoreMenuViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "MoreMenuItemsSection(items:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,25 +174,9 @@
             filePath = "Emis/Scenes/MoreMenu/MoreMenuViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "handleMoreMenuItemsNavigation(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3A712476-3AF2-4E8E-B144-5A6E80B6646E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Emis/Scenes/MoreMenu/MoreMenuViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -222,8 +206,8 @@
             filePath = "Emis/Scenes/MoreMenu/MoreMenuViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "MoreMenuItemsSection(items:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,8 +318,8 @@
             filePath = "Emis/Scenes/ProfilePage/ProfilePageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
+            startingLineNumber = "383"
+            endingLineNumber = "383"
             landmarkName = "handlePhoneNumberChangeAction()"
             landmarkType = "7">
          </BreakpointContent>
