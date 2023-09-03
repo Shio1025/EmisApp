@@ -40,7 +40,7 @@ public class InlineFeedback: UIView {
     }
     
     private func setUpUI() {
-        backgroundColor = BrandBookManager.Color.Theme.Invert.tr50.uiColor.withAlphaComponent(0.3)
+        backgroundColor = BrandBookManager.Color.Theme.Background.layer.uiColor
         
     }
     
@@ -48,13 +48,13 @@ public class InlineFeedback: UIView {
         titleLabel.centerHorizontally(to: self)
         titleLabel.width(equalTo: 300)
         
-        titleLabel.top(toView: self, constant: .S)
-        titleLabel.bottom(toView: self, constant: .S)
+        titleLabel.top(toView: self, constant: .M)
+        titleLabel.bottom(toView: self, constant: .M)
     }
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        roundCorners(by: .S, borderColor: BrandBookManager.Color.Theme.Invert.tr400.uiColor, borderWidth: 1)
+        roundCorners(by: .M, borderColor: BrandBookManager.Color.Theme.Invert.tr400.uiColor, borderWidth: 1)
     }
 }
 
