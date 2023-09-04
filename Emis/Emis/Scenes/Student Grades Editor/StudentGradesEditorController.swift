@@ -81,6 +81,7 @@ extension StudentGradesEditorController {
         tableView.register(RoundedFooter.self)
         tableView.register(TextFieldCell.self)
         tableView.register(SeparatorCell.self)
+        tableView.register(SpacerCell.self)
     }
 }
 

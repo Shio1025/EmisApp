@@ -74,18 +74,33 @@ extension StudentGradesEditorViewModel {
     
     private func getStudentGradesDetails() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.grades = [.init(id: 12, gradeComponentName: "qula", totalPoints: 42, currentPoints: 12),
-                           .init(id: 12, gradeComponentName: "qula", totalPoints: 32, currentPoints: 12),
-                           .init(id: 12, gradeComponentName: "qula", totalPoints: 52, currentPoints: 12),
-                           .init(id: 12, gradeComponentName: "qula", totalPoints: 12, currentPoints: 12),
-                           .init(id: 12, gradeComponentName: "qula", totalPoints: 32, currentPoints: 12)]
+            self.grades = [.init(id: 11,
+                                gradeComponentName: "I ქვიზი",
+                                totalPoints: 15,
+                                currentPoints: 12),
+                           .init(id: 11,
+                                 gradeComponentName: "II ქვიზი",
+                                 totalPoints: 15,
+                                 currentPoints: 9),
+                           .init(id: 11,
+                                 gradeComponentName: "შუალედური",
+                                 totalPoints: 20,
+                                 currentPoints: 10),
+                           .init(id: 11,
+                                 gradeComponentName: "დავალებები",
+                                 totalPoints: 20,
+                                 currentPoints: 18),
+                           .init(id: 11,
+                                 gradeComponentName: "ფინალური",
+                                 totalPoints: 30,
+                                 currentPoints: 0)]
             self.draw()
             self.isLoading = false
         }
         
-//        @Injected var getStudentMarksUseCase: getStudentGradesUseCase
-//
-//        getStudentMarksUseCase.getStudentGrades(courseId: courseId.description,
+        //        @Injected var getStudentMarksUseCase: getStudentGradesUseCase
+        //
+        //        getStudentMarksUseCase.getStudentGrades(courseId: courseId.description,
 //                                                studentId: studentId.description)
 //        .sink { [weak self] completion in
 //            self?.isLoading = false
@@ -112,6 +127,8 @@ extension StudentGradesEditorViewModel {
         guard let grades else { return }
         
         var rows: [any CellModel] = []
+        
+        rows.append(getSpacerCell())
         rows.append(getRoundedHeaderModel())
         grades.enumerated().forEach { index, elem in
             let row = RowItemCellModel(model:
@@ -122,7 +139,7 @@ extension StudentGradesEditorViewModel {
                                             buttonModel: .init(resourceType: .icon(icon: UIImage(systemName: "pencil")!,
                                                                                    tintColor: BrandBookManager.Color.Theme.Component.solid500.uiColor.withAlphaComponent(0.95)),
                                                                action: { [weak self] in
-                self?.editModeIndex = index
+                self?.editModeIndex = self?.editModeIndex == index ? nil : index
                 self?.draw()
             })),
                           isSeparatorNeeded: index != editModeIndex && index != (grades.count - 1)))
@@ -130,7 +147,7 @@ extension StudentGradesEditorViewModel {
         }
         
         if let editModeIndex {
-            rows.insert(contentsOf: getUpdateGradeSection(studentGradeId: grades[editModeIndex].id), at: editModeIndex + 2)
+            rows.insert(contentsOf: getUpdateGradeSection(studentGradeId: grades[editModeIndex].id), at: editModeIndex + 3)
         }
         rows.append(getRoundedFooterModel())
         

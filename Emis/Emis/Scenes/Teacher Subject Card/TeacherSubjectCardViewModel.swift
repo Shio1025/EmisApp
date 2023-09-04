@@ -78,10 +78,7 @@ extension TeacherSubjectCardViewModel {
     
     private func getCourses() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-            self.teacherSubjectCardInfo = [.init(courseId: 1, subjectCode: "23cd", subjectName: "Biology"),
-                                      .init(courseId: 1, subjectCode: "23cd", subjectName: "Biology"),
-                                      .init(courseId: 1, subjectCode: "23cd", subjectName: "Biology"),
-                                      .init(courseId: 1, subjectCode: "23cd", subjectName: "Biology")]
+            self.teacherSubjectCardInfo = [.init(courseId: 1, subjectCode: "AS129", subjectName: "ანთროპოლოგია")]
             self.draw()
             self.isLoading = false
         }
@@ -116,6 +113,7 @@ extension TeacherSubjectCardViewModel {
         
         var rows: [any CellModel] = []
         
+        rows.append(getSpacerCell())
         teacherSubjectCardInfo.forEach { elem in
             rows.append(getRoundedHeaderModel())
             rows.append(RowItemCellModel(model:

@@ -108,17 +108,12 @@ extension TeacherSubjectDetailsViewModel {
     private func getCourseDetails() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.teacherCourseInfo = .init(course: .init(id: 1,
-                                                         subjectDescription: "sdjbcvjsbcdjbsihdvsbdvbsidcijsjcbljnsxakjlc nkjasnkxjc sdfawdfasdasdvcsdvcsdvcsdv",
-                                                         credits: 23,
-                                                         studentsLimit: 23,
-                                                         studentsRegistered: 19),
-                                           students: [.init(id: 8, firstName: "qfd", lastName: "asd", email: "asd"),
-                                                      .init(id: 8, firstName: "qfd", lastName: "asd", email: "asd"),
-                                                      .init(id: 8, firstName: "qfd", lastName: "asd", email: "asd"),
-                                                      .init(id: 8, firstName: "qfd", lastName: "asd", email: "asd"),
-                                                      .init(id: 8, firstName: "qfd", lastName: "asd", email: "asd"),
-                                                      .init(id: 8, firstName: "qfd", lastName: "asd", email: "asd"),
-                                                      .init(id: 8, firstName: "qfd", lastName: "asd", email: "asd")])
+                                                         subjectDescription: "მეცნიერება ადამიანის წარმოშობისა და ევოლუციის, ადამიანთა რასებისა და ადამიანის ფიზიკური აღნაგობის ნორმალური ვარიაციების შესახებ, შეისწავლის პირველყოფილი, ტრადიციული და თანამედროვე საზოგადოებების კულტურას და ადამიანის მოღვაწეობის მრავალგვარ ფორმებს",
+                                                         credits: 4,
+                                                         studentsLimit: 300,
+                                                         studentsRegistered: 289),
+                                           students: [.init(id: 8, firstName: "დათო", lastName: "დვალი", email: "ddval19@freeuni.edu.ge"),
+                                                      .init(id: 8, firstName: "შიო", lastName: "ბირბიჩაძე", email: "sbirb19@freeuni.edu.ge")])
             self.draw()
             self.isLoading = false
         }
@@ -151,6 +146,8 @@ extension TeacherSubjectDetailsViewModel {
     private func draw() {
         guard let teacherCourseInfo else { return }
         var rows: [any CellModel] = []
+        
+        rows.append(getSpacerCell())
         
         //description
         rows.append(getRoundedHeaderWithTitle(title: "აღწერა"))
