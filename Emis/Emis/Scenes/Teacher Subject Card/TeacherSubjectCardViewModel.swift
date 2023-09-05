@@ -77,32 +77,32 @@ extension TeacherSubjectCardViewModel {
 extension TeacherSubjectCardViewModel {
     
     private func getCourses() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-            self.teacherSubjectCardInfo = [.init(courseId: 1, subjectCode: "AS129", subjectName: "ანთროპოლოგია")]
-            self.draw()
-            self.isLoading = false
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+//            self.teacherSubjectCardInfo = [.init(courseId: 1, subjectCode: "AS129", subjectName: "ანთროპოლოგია")]
+//            self.draw()
+//            self.isLoading = false
+//        }
         
-//        @Injected var getCoursesUseCase: TeacherSubjectCardUseCase
-//        
-//        getCoursesUseCase.getTeacherSubjectCardInfo(userId: SSO.userInfo?.userId?.description ?? "")
-//            .sink { [weak self] completion in
-//                switch completion {
-//                case .finished:
-//                    DispatchQueue.main.async {
-//                        self?.draw()
-//                        self?.isLoading = false
-//                    }
-//                case .failure(let error):
-//                    DispatchQueue.main.async {
-//                        self?.isLoading = false
-//                        self?.statusBanner = .init(bannerType: .failure,
-//                                                   description: "ბოდიშს გიხდით შეფერხებისთვის")
-//                    }
-//                }
-//            } receiveValue: { [weak self] model in
-//                self?.teacherSubjectCardInfo = model
-//            }.store(in: &subscriptions)
+        @Injected var getCoursesUseCase: TeacherSubjectCardUseCase
+
+        getCoursesUseCase.getTeacherSubjectCardInfo(userId: SSO.userInfo?.userId?.description ?? "")
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    DispatchQueue.main.async {
+                        self?.draw()
+                        self?.isLoading = false
+                    }
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.isLoading = false
+                        self?.statusBanner = .init(bannerType: .failure,
+                                                   description: "ბოდიშს გიხდით შეფერხებისთვის")
+                    }
+                }
+            } receiveValue: { [weak self] model in
+                self?.teacherSubjectCardInfo = model
+            }.store(in: &subscriptions)
     }
 }
 

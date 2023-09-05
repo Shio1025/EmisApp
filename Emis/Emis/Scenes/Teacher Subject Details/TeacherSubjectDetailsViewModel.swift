@@ -106,38 +106,38 @@ extension TeacherSubjectDetailsViewModel {
 extension TeacherSubjectDetailsViewModel {
     
     private func getCourseDetails() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.teacherCourseInfo = .init(course: .init(id: 1,
-                                                         subjectDescription: "მეცნიერება ადამიანის წარმოშობისა და ევოლუციის, ადამიანთა რასებისა და ადამიანის ფიზიკური აღნაგობის ნორმალური ვარიაციების შესახებ, შეისწავლის პირველყოფილი, ტრადიციული და თანამედროვე საზოგადოებების კულტურას და ადამიანის მოღვაწეობის მრავალგვარ ფორმებს",
-                                                         credits: 4,
-                                                         studentsLimit: 300,
-                                                         studentsRegistered: 289),
-                                           students: [.init(id: 8, firstName: "დათო", lastName: "დვალი", email: "ddval19@freeuni.edu.ge"),
-                                                      .init(id: 8, firstName: "შიო", lastName: "ბირბიჩაძე", email: "sbirb19@freeuni.edu.ge")])
-            self.draw()
-            self.isLoading = false
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            self.teacherCourseInfo = .init(course: .init(id: 1,
+//                                                         subjectDescription: "მეცნიერება ადამიანის წარმოშობისა და ევოლუციის, ადამიანთა რასებისა და ადამიანის ფიზიკური აღნაგობის ნორმალური ვარიაციების შესახებ, შეისწავლის პირველყოფილი, ტრადიციული და თანამედროვე საზოგადოებების კულტურას და ადამიანის მოღვაწეობის მრავალგვარ ფორმებს",
+//                                                         credits: 4,
+//                                                         studentsLimit: 300,
+//                                                         studentsRegistered: 289),
+//                                           students: [.init(id: 8, firstName: "დათო", lastName: "დვალი", email: "ddval19@freeuni.edu.ge"),
+//                                                      .init(id: 8, firstName: "შიო", lastName: "ბირბიჩაძე", email: "sbirb19@freeuni.edu.ge")])
+//            self.draw()
+//            self.isLoading = false
+//        }
         
-//        @Injected var teacherCourseInfoUseCase: TeacherCourseInfoUseCase
-//
-//        teacherCourseInfoUseCase.getTeacherCourseInfo(courseId: courseId.description)
-//            .sink { [weak self] completion in
-//                switch completion {
-//                case .finished:
-//                    DispatchQueue.main.async {
-//                        self?.isLoading = false
-//                        self?.draw()
-//                    }
-//                case .failure(_):
-//                    DispatchQueue.main.async {
-//                        self?.isLoading = false
-//                        self?.statusBanner = .init(bannerType: .failure,
-//                                                   description: "ბოდიშს გიხდით შეფერხებისთვის")
-//                    }
-//                }
-//            } receiveValue: { [weak self] model in
-//                self?.teacherCourseInfo = model
-//            }.store(in: &subscriptions)
+        @Injected var teacherCourseInfoUseCase: TeacherCourseInfoUseCase
+
+        teacherCourseInfoUseCase.getTeacherCourseInfo(courseId: courseId.description)
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    DispatchQueue.main.async {
+                        self?.isLoading = false
+                        self?.draw()
+                    }
+                case .failure(_):
+                    DispatchQueue.main.async {
+                        self?.isLoading = false
+                        self?.statusBanner = .init(bannerType: .failure,
+                                                   description: "ბოდიშს გიხდით შეფერხებისთვის")
+                    }
+                }
+            } receiveValue: { [weak self] model in
+                self?.teacherCourseInfo = model
+            }.store(in: &subscriptions)
     }
 }
 

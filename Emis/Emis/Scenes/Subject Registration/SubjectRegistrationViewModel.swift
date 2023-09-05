@@ -80,47 +80,47 @@ extension SubjectRegistrationViewModel {
 extension SubjectRegistrationViewModel {
     
     private func getSubjects(by index: Int) {
-        tableLoading = true
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            if index == .zero {
-                self.totalPages = 1
-                self.totalFoundSubjects = 2
-            }
-            self.subjectRegistrationFilterModel = .init(content: [.init(courseId: 99,
-                                                                        subjectCode: "KI192", subjectName: "კალკულუსი I", available: true, prerequisites: ["sdvcsdc","dsasdx"]),
-                                                                  .init(courseId: 99,
-                                                                                                                              subjectCode: "KS789", subjectName: "კალკულუსი II", available: false, prerequisites: ["კალკულუსი I"])],
-                                                        totalElements: 6,
-                                                        totalPages: 1)
-            self.draw()
-            self.tableLoading = false
-            self.isLoading = false
-        }
-        
 //        tableLoading = true
-//        getFilteredSubjects.getSubjects(studentId: SSO.userInfo?.userId?.description ?? "",
-//                                        subjectName: subjectName ?? "",
-//                                        page: index,
-//                                        size: 10)
-//        .sink { [weak self] completion in
-//            self?.isLoading = false
-//            switch completion {
-//            case .finished:
-//                self?.tableLoading = false
-//                self?.draw()
-//            case .failure(let error):
-//                self?.statusBanner = .init(bannerType: .failure,
-//                                           description: error.localizedDescription)
-//            }
 //
-//        } receiveValue: { [weak self] model in
-//            self?.subjectRegistrationFilterModel = model
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
 //            if index == .zero {
-//                self?.totalPages = model.totalPages
-//                self?.totalFoundSubjects = model.totalElements
+//                self.totalPages = 1
+//                self.totalFoundSubjects = 2
 //            }
-//        }.store(in: &subscriptions)
+//            self.subjectRegistrationFilterModel = .init(content: [.init(courseId: 99,
+//                                                                        subjectCode: "KI192", subjectName: "კალკულუსი I", available: true, prerequisites: ["sdvcsdc","dsasdx"]),
+//                                                                  .init(courseId: 99,
+//                                                                                                                              subjectCode: "KS789", subjectName: "კალკულუსი II", available: false, prerequisites: ["კალკულუსი I"])],
+//                                                        totalElements: 6,
+//                                                        totalPages: 1)
+//            self.draw()
+//            self.tableLoading = false
+//            self.isLoading = false
+//        }
+        
+        tableLoading = true
+        getFilteredSubjects.getSubjects(studentId: SSO.userInfo?.userId?.description ?? "",
+                                        subjectName: subjectName ?? "",
+                                        page: index,
+                                        size: 10)
+        .sink { [weak self] completion in
+            self?.isLoading = false
+            switch completion {
+            case .finished:
+                self?.tableLoading = false
+                self?.draw()
+            case .failure(let error):
+                self?.statusBanner = .init(bannerType: .failure,
+                                           description: error.localizedDescription)
+            }
+
+        } receiveValue: { [weak self] model in
+            self?.subjectRegistrationFilterModel = model
+            if index == .zero {
+                self?.totalPages = model.totalPages
+                self?.totalFoundSubjects = model.totalElements
+            }
+        }.store(in: &subscriptions)
     }
 }
 

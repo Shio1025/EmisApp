@@ -29,6 +29,14 @@ final class MainPageViewModel {
     var teacherDashboardOptions: TeacherDashboardOptions?
     @Injected private var SSO: SSOManager
     
+    @Published private var statusBanner: StatusBannerViewModel?
+    
+    var displayBannerPublisher: AnyPublisher<StatusBannerViewModel, Never> {
+         $statusBanner
+            .compactMap { $0 }
+            .eraseToAnyPublisher()
+    }
+    
     var listCellModels: AnyPublisher<[any CellModel], Never> {
         $listCells.eraseToAnyPublisher()
     }
@@ -44,7 +52,7 @@ final class MainPageViewModel {
             .sink { [weak self] isLogged in
                 guard let self else { return }
                 guard isLogged else {
-                    self.listCells = [self.getInlineFeedbackCell(text: "იმისთვის რომ შეძლო მოცემულ გვერდზე შენი ციფრული სერვისებით სარგებლობა, გაიარე ავტორიზაცია ან დარეგისტრირდი უმარტივესად")]
+                    self.listCells = [self.getInlineFeedbackCell(text: "იმისთვის რომ შეძლო მოცემულ გვერდზე შენი ციფრული სერვისებით სარგებლობა, გაიარე ავტორიზაცია")]
                     return
                 }
                 self.loadInfo()
@@ -53,6 +61,7 @@ final class MainPageViewModel {
     
     private func loadInfo() {
         isLoading = true
+        listCells = []
         switch SSO.userInfo?.userType {
         case .student:
             getStudentOptions()
@@ -81,43 +90,43 @@ extension MainPageViewModel {
 extension MainPageViewModel {
     
     private func getStudentOptions() {
-        studentDashboardOptions = .init(options: [ .library, .subjectCard, .subjectRegistration])
-        draw()
-        isLoading = false
-//        @Injected var studentOptionsUseCase: StudentDashboardUseCase
-//
-//        studentOptionsUseCase.getStudentDashboardOptionsInfo(userId: SSO.userId?.description ?? "")
-//            .sink { [weak self] completion in
-//                switch completion {
-//                case .failure(let error):
-//                    self?.isLoading = false
-//                case .finished:
-//                    self?.draw()
-//                    self?.isLoading = false
-//                }
-//            } receiveValue: { [weak self] model in
-//                self?.studentDashboardOptions = model
-//            }.store(in: &subscriptions)
+//        studentDashboardOptions = .init(options: [ .library, .subjectCard, .subjectRegistration])
+//        draw()
+//        isLoading = false
+        @Injected var studentOptionsUseCase: StudentDashboardUseCase
+
+        studentOptionsUseCase.getStudentDashboardOptionsInfo(userId: SSO.userInfo?.generalID?.description ?? "")
+            .sink { [weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    self?.isLoading = false
+                case .finished:
+                    self?.draw()
+                    self?.isLoading = false
+                }
+            } receiveValue: { [weak self] model in
+                self?.studentDashboardOptions = model
+            }.store(in: &subscriptions)
     }
     
     private func getTeacherOptions() {
-        teacherDashboardOptions = .init(options: [.library, .library, .subjectCard, .subjectCard, .none])
-        draw()
-        isLoading = false
-//        @Injected var teacherOptionsUseCase: TeacherDashboardUseCase
-//
-//        teacherOptionsUseCase.getTeacherDashboardOptionsInfo(userId: SSO.userId?.description ?? "")
-//            .sink { [weak self] completion in
-//                switch completion {
-//                case .failure(let error):
-//                    self?.isLoading = false
-//                case .finished:
-//                    self?.draw()
-//                    self?.isLoading = false
-//                }
-//            } receiveValue: { [weak self] model in
-//                self?.teacherDashboardOptions = model
-//            }.store(in: &subscriptions)
+//        teacherDashboardOptions = .init(options: [.library, .library, .subjectCard, .subjectCard, .none])
+//        draw()
+//        isLoading = false
+        @Injected var teacherOptionsUseCase: TeacherDashboardUseCase
+
+        teacherOptionsUseCase.getTeacherDashboardOptionsInfo(userId: SSO.userInfo?.generalID?.description ?? "")
+            .sink { [weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    self?.isLoading = false
+                case .finished:
+                    self?.draw()
+                    self?.isLoading = false
+                }
+            } receiveValue: { [weak self] model in
+                self?.teacherDashboardOptions = model
+            }.store(in: &subscriptions)
     }
 }
 
@@ -144,10 +153,6 @@ extension MainPageViewModel {
     
     private func handleTeacherOptions() {
         teacherBanners.map { listCells = $0 }
-        if let teacherDashboardOptions,
-           !teacherDashboardOptions.userDashboardOptions.contains(where: { $0 == .subjectHistory }) {
-            listCells.append(getInlineFeedbackCell(text: "შენ ჯერ არ გაქვს საგნების ისტორია, შემდეგ სემესტრში უკვე გამოგიჩნდებათ ბანერების სივრცეში საგნების ისტორია"))
-        }
     }
 }
 

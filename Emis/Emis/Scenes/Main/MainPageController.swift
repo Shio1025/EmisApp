@@ -90,7 +90,15 @@ extension MainPageController {
     private func bindUI() {
         tableView.bind(with: viewModel.listCellModels)
         viewModel.pageIsLoading.sink { [weak self] isLoading in
-            isLoading ? self?.showLoader() : self?.hideLoader()
+            DispatchQueue.main.async {
+                isLoading ? self?.showLoader() : self?.hideLoader()
+            }
+        }.store(in: &subscriptions)
+        viewModel.displayBannerPublisher.sink { [weak self] statusBannerModel in
+            DispatchQueue.main.async {
+                self?.displayBanner(with: statusBannerModel.description,
+                                    state: statusBannerModel.bannerType)
+            }
         }.store(in: &subscriptions)
     }
 }

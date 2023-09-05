@@ -90,42 +90,42 @@ extension LibraryPageViewModel {
     private func getBooks(by index: Int) {
         tableLoading = true
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.libriryInfo = .init(content: [.init(id: 1, title: "პატარა პრინცი", author: "ანტუან დე სენტ-ეგზიუპერი", genres: ["საბავშვო", "სათავგადასავლო"])], totalElements: 1,
-                                     totalPages: 1)
-            if index == .zero {
-                self.totalPages = 1
-                self.totalFoundBooks = 1
-            }
-            self.draw()
-            self.tableLoading = false
-            self.isLoading = false
-        }
-//        if index == .zero { isLoading = true }
-//                tableLoading = true
-//        libraryUseCase.getBooks(title: name ?? "",
-//                                author: author ?? "",
-//                                page: index,
-//                                size: 10)
-//        .sink { [weak self] completion in
-//            self?.isLoading = false
-//            switch completion {
-//            case .finished:
-//                self?.tableLoading = false
-//                self?.draw()
-//            case .failure(let error):
-//
-//                self?.statusBanner = .init(bannerType: .failure,
-//                                           description: error.localizedDescription)
-//            }
-//
-//        } receiveValue: { [weak self] model in
-//            self?.libriryInfo = model
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            self.libriryInfo = .init(content: [.init(id: 1, title: "პატარა პრინცი", author: "ანტუან დე სენტ-ეგზიუპერი", genres: ["საბავშვო", "სათავგადასავლო"])], totalElements: 1,
+//                                     totalPages: 1)
 //            if index == .zero {
-//                self?.totalPages = model.totalPages
-//                self?.totalFoundBooks = model.totalElements
+//                self.totalPages = 1
+//                self.totalFoundBooks = 1
 //            }
-//        }.store(in: &subscriptions)
+//            self.draw()
+//            self.tableLoading = false
+//            self.isLoading = false
+//        }
+        
+        tableLoading = true
+        libraryUseCase.getBooks(title: name ?? "",
+                                author: author ?? "",
+                                page: index,
+                                size: 10)
+        .sink { [weak self] completion in
+            self?.isLoading = false
+            switch completion {
+            case .finished:
+                self?.tableLoading = false
+                self?.draw()
+            case .failure(let error):
+
+                self?.statusBanner = .init(bannerType: .failure,
+                                           description: error.localizedDescription)
+            }
+
+        } receiveValue: { [weak self] model in
+            self?.libriryInfo = model
+            if index == .zero {
+                self?.totalPages = model.totalPages
+                self?.totalFoundBooks = model.totalElements
+            }
+        }.store(in: &subscriptions)
     }
 }
 

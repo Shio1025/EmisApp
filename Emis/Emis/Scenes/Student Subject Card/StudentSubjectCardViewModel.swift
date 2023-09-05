@@ -74,65 +74,65 @@ extension StudentSubjectCardViewModel {
 extension StudentSubjectCardViewModel {
     
     private func loadSubjects() {
-        subjectCard = .init(subjectsBySemester: [[
-            .init(studentId: 1,
-                  courseName: "პროგრამირების მეთოდოლოგიები", courseId: 3,
-                  subjectCode: "CS102A",
-                  grade: "A",
-                  markInSubject: 96.4,
-                  description: ""),
-            .init(studentId: 1,
-                  courseName: "ანთროპოლოგია", courseId: 3,
-                  subjectCode: "DS391",
-                  grade: "D",
-                  markInSubject: 62.1,
-                  description: ""),
-            .init(studentId: 1,
-                  courseName: "დისკრეტული მათემატიკა", courseId: 3,
-                  subjectCode: "CS290C",
-                  grade: "B",
-                  markInSubject: 88.3,
-                  description: ""),
-            .init(studentId: 1,
-                  courseName: "ლოგიკა", courseId: 3,
-                  subjectCode: "KD120A",
-                  grade: "A",
-                  markInSubject: 100,
-                  description: "")],
-                                                 [],
-                                                 [.init(studentId: 1,
-                                                        courseName: "პროგრამირების აბსტრაქციები", courseId: 43,
-                                                        subjectCode: "CS123S",
-                                                        grade: "B",
-                                                        markInSubject: 84.2,
-                                                        description: ""),
-                                                  .init(studentId: 1,
-                                                        courseName: "თეორიული ინფორმატიკა", courseId: 32,
-                                                        subjectCode: "CS231B",
-                                                        grade: "E",
-                                                        markInSubject: 57.4,
-                                                        description: "")]])
-        isLoading = false
-        draw()
+//        subjectCard = .init(subjectsBySemester: [[
+//            .init(studentId: 1,
+//                  courseName: "პროგრამირების მეთოდოლოგიები", courseId: 3,
+//                  subjectCode: "CS102A",
+//                  grade: "A",
+//                  markInSubject: 96.4,
+//                  description: ""),
+//            .init(studentId: 1,
+//                  courseName: "ანთროპოლოგია", courseId: 3,
+//                  subjectCode: "DS391",
+//                  grade: "D",
+//                  markInSubject: 62.1,
+//                  description: ""),
+//            .init(studentId: 1,
+//                  courseName: "დისკრეტული მათემატიკა", courseId: 3,
+//                  subjectCode: "CS290C",
+//                  grade: "B",
+//                  markInSubject: 88.3,
+//                  description: ""),
+//            .init(studentId: 1,
+//                  courseName: "ლოგიკა", courseId: 3,
+//                  subjectCode: "KD120A",
+//                  grade: "A",
+//                  markInSubject: 100,
+//                  description: "")],
+//                                                 [],
+//                                                 [.init(studentId: 1,
+//                                                        courseName: "პროგრამირების აბსტრაქციები", courseId: 43,
+//                                                        subjectCode: "CS123S",
+//                                                        grade: "B",
+//                                                        markInSubject: 84.2,
+//                                                        description: ""),
+//                                                  .init(studentId: 1,
+//                                                        courseName: "თეორიული ინფორმატიკა", courseId: 32,
+//                                                        subjectCode: "CS231B",
+//                                                        grade: "E",
+//                                                        markInSubject: 57.4,
+//                                                        description: "")]])
+//        isLoading = false
+//        draw()
         
         
-//        @Injected var studentSubjectCardUseCase: StudentSubjectCardUseCase
-//
-//        studentSubjectCardUseCase.getStudentSubjectCardInfo(userId: SSO.userInfo?.userId?.description ?? "")
-//            .sink { [weak self] completion in
-//                guard let self else { return }
-//                switch completion {
-//                case .finished:
-//                    self.draw()
-//                    self.isLoading = false
-//                case .failure(let error):
-//                    self.isLoading = false
-//                    self.statusBanner = .init(bannerType: .failure,
-//                                              description: error.localizedDescription)
-//                }
-//            } receiveValue: { [weak self] model in
-//                self?.subjectCard = model
-//            }.store(in: &subscriptions)
+        @Injected var studentSubjectCardUseCase: StudentSubjectCardUseCase
+
+        studentSubjectCardUseCase.getStudentSubjectCardInfo(userId: SSO.userInfo?.userId?.description ?? "")
+            .sink { [weak self] completion in
+                guard let self else { return }
+                switch completion {
+                case .finished:
+                    self.draw()
+                    self.isLoading = false
+                case .failure(let error):
+                    self.isLoading = false
+                    self.statusBanner = .init(bannerType: .failure,
+                                              description: error.localizedDescription)
+                }
+            } receiveValue: { [weak self] model in
+                self?.subjectCard = model
+            }.store(in: &subscriptions)
     }
 }
 

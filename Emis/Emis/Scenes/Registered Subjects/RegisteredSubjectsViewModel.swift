@@ -58,28 +58,28 @@ extension RegisteredSubjectsViewModel {
 extension RegisteredSubjectsViewModel {
     
     private func loadSubjects() {
-        isLoading = false
-        
-        
-        registeredSubjects = [.init(courseId: 1, subjectCode: "JS661", subjectName: "ბიოლოგია", necessary: true),
-                              .init(courseId: 1, subjectCode: "SS631", subjectName: "ფიზიკა", necessary: true),
-                              .init(courseId: 1, subjectCode: "KS261", subjectName: "კალკულუსი I", necessary: false),
-                              .init(courseId: 1, subjectCode: "KT193", subjectName: "დისტრიბუციული სისტემები", necessary: true)]
-        draw()
-//        isLoading = true
-//        getRegisteredSubjectsUseCase.getSubjects(studentId: SSO.userInfo?.userId?.description ?? "")
-//            .sink { [weak self] completion in
-//                self?.isLoading = false
-//                switch completion {
-//                case .finished:
-//                    self?.draw()
-//                case .failure(_):
-//                    self?.statusBanner = .init(bannerType: .failure,
-//                                               description: "ბოდიშს გიხდით შეფერხებისთის")
-//                }
-//            } receiveValue: { [weak self] model in
-//                self?.registeredSubjects = model
-//            }.store(in: &subscriptions)
+//        isLoading = false
+//        
+//        
+//        registeredSubjects = [.init(courseId: 1, subjectCode: "JS661", subjectName: "ბიოლოგია", necessary: true),
+//                              .init(courseId: 1, subjectCode: "SS631", subjectName: "ფიზიკა", necessary: true),
+//                              .init(courseId: 1, subjectCode: "KS261", subjectName: "კალკულუსი I", necessary: false),
+//                              .init(courseId: 1, subjectCode: "KT193", subjectName: "დისტრიბუციული სისტემები", necessary: true)]
+//        draw()
+        isLoading = true
+        getRegisteredSubjectsUseCase.getSubjects(studentId: SSO.userInfo?.userId?.description ?? "")
+            .sink { [weak self] completion in
+                self?.isLoading = false
+                switch completion {
+                case .finished:
+                    self?.draw()
+                case .failure(_):
+                    self?.statusBanner = .init(bannerType: .failure,
+                                               description: "ბოდიშს გიხდით შეფერხებისთის")
+                }
+            } receiveValue: { [weak self] model in
+                self?.registeredSubjects = model
+            }.store(in: &subscriptions)
     }
 }
 

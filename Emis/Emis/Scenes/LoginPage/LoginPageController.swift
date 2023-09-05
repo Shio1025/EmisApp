@@ -140,9 +140,7 @@ extension LoginPageController {
     func addSubviews() {
         containerView.addSubview(label)
         containerView.addSubview(textFieldsContainer)
-        containerView.addSubview(passwordResetLabel)
         containerView.addSubview(button)
-        containerView.addSubview(registrationLabel)
         mainStackView.addArrangedSubview(containerView)
         view.addSubview(animationView)
         view.addSubview(mainStackView)
@@ -159,18 +157,10 @@ extension LoginPageController {
         textFieldsContainer.right(toView: containerView, constant: .XL2)
         textFieldsContainer.relativeTop(toView: label, constant: .XL)
         
-        passwordResetLabel.relativeTop(toView: textFieldsContainer, constant: .S)
-        passwordResetLabel.left(toView: containerView, constant: .XL)
-        passwordResetLabel.right(toView: containerView, constant: .M)
-        
-        button.relativeTop(toView: passwordResetLabel, constant: .M)
+        button.relativeTop(toView: textFieldsContainer, constant: .M)
         button.left(toView: containerView)
         button.right(toView: containerView)
-        
-        registrationLabel.relativeTop(toView: button, constant: .S)
-        registrationLabel.left(toView: containerView, constant: .L)
-        registrationLabel.right(toView: containerView, constant: .L)
-        registrationLabel.bottom(toView: containerView, constant: .M)
+        button.bottom(toView: containerView)
         
         mainStackView.left(toView: view)
         mainStackView.right(toView: view)

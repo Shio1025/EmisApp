@@ -26,8 +26,8 @@ public class RegisterSubjectGatewayImpl: RegisterSubjectGateway {
                                         params: ["studentId": studentId,
                                                  "courseId": courseId])
         
-        let endpoint = EndPoint<Empty>(url: url,
-                                       method: .post)
+        let endpoint = EndPoint<Int>(url: url,
+                                    method: .post)
         
         let publisher: AnyPublisher<Void, Error> = dataTransport.makeRequest(endpoint)
             .map { model in
@@ -37,4 +37,8 @@ public class RegisterSubjectGatewayImpl: RegisterSubjectGateway {
         
         return publisher
     }
+}
+
+struct CoolResponse: Codable {
+    let message: String
 }

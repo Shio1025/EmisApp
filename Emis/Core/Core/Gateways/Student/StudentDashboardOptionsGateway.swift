@@ -21,7 +21,7 @@ public class StudentDashboardOptionsGatewayImpl: StudentDashboardOptionsGateway 
     public func getStudentDashboardOptionsInfo(userId: String) -> AnyPublisher<StudentDashboardOptions, Error> {
         
         let url = apiURLProvider.getURL(path: "/emis/api/dashboard/student/pages",
-                                        params: ["studentId": userId])
+                                        params: ["id": userId])
         
         let endpoint = EndPoint<[String]>(url: url,
                                           method: .get)

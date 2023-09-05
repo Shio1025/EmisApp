@@ -52,24 +52,24 @@ extension StudentFinancesInfoViewModel {
 extension StudentFinancesInfoViewModel {
     
     private func loadStudentFinancialInfo() {
-        financialInfo = .init(tuitionFee: 6950, scholarship: 4500, effectiveFee: 2450, tuitionFeePaid: 1250, debt: 0)
-        isLoading = false
-        draw()
-//        @Injected var studentFinancialInfoUseCase: StudentFinancialUseCase
-//
-//        studentFinancialInfoUseCase.getStudentFinancialInfo(userId: SSO.userId?.description ?? "")
-//            .sink { [weak self] completion in
-//                guard let self else { return }
-//                switch completion {
-//                case .finished:
-//                    self.draw()
-//                    self.isLoading = false
-//                case .failure(let error):
-//                    self.isLoading = false
-//                }
-//            } receiveValue: { [weak self] model in
-//                self?.financialInfo = model
-//            }.store(in: &subscriptions)
+//        financialInfo = .init(tuitionFee: 6950, scholarship: 4500, effectiveFee: 2450, tuitionFeePaid: 1250, debt: 0)
+//        isLoading = false
+//        draw()
+        @Injected var studentFinancialInfoUseCase: StudentFinancialUseCase
+
+        studentFinancialInfoUseCase.getStudentFinancialInfo(userId: SSO.userInfo?.userId?.description ?? "")
+            .sink { [weak self] completion in
+                guard let self else { return }
+                switch completion {
+                case .finished:
+                    self.draw()
+                    self.isLoading = false
+                case .failure(let error):
+                    self.isLoading = false
+                }
+            } receiveValue: { [weak self] model in
+                self?.financialInfo = model
+            }.store(in: &subscriptions)
     }
 }
 

@@ -9,5 +9,5 @@ struct ApiRegisteredSubject: Codable {
     let courseId: Int64
     let subjectCode: String
     let subjectName: String
-    let necessary: Bool
+    let necessary: Bool?
 }

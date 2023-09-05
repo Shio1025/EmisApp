@@ -7,4 +7,7 @@
 
 struct Empty: Codable {
     
+    init() {
+        
+    }
 }

@@ -96,53 +96,52 @@ extension StudentCourseDetailsViewModel {
 extension StudentCourseDetailsViewModel {
     
     private func getCourseDetails() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.studentCourseInfo = .init(course: .init(id: 123, subjectDescription: "მეცნიერება ადამიანის წარმოშობისა და ევოლუციის, ადამიანთა რასებისა და ადამიანის ფიზიკური აღნაგობის ნორმალური ვარიაციების შესახებ, შეისწავლის პირველყოფილი, ტრადიციული და თანამედროვე საზოგადოებების კულტურას და ადამიანის მოღვაწეობის მრავალგვარ ფორმებს", credits: 4, studentsLimit: 300, studentsRegistered: 289),
-                                           studentGradeInfo: [.init(id: 11,
-                                                                    gradeComponentName: "I ქვიზი",
-                                                                    totalPoints: 15,
-                                                                    currentPoints: 12),
-                                                              .init(id: 11,
-                                                                                       gradeComponentName: "II ქვიზი",
-                                                                                       totalPoints: 15,
-                                                                                       currentPoints: 9),
-                                                              .init(id: 11,
-                                                                                       gradeComponentName: "შუალედური",
-                                                                                       totalPoints: 20,
-                                                                                       currentPoints: 10),
-                                                              .init(id: 11,
-                                                                                       gradeComponentName: "დავალებები",
-                                                                                       totalPoints: 20,
-                                                                                       currentPoints: 18),
-                                                              .init(id: 11,
-                                                                                       gradeComponentName: "ფინალური",
-                                                                                       totalPoints: 30,
-                                                                                       currentPoints: 0)])
-            self.draw()
-            self.isLoading = false
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            self.studentCourseInfo = .init(course: .init(id: 123, subjectDescription: "მეცნიერება ადამიანის წარმოშობისა და ევოლუციის, ადამიანთა რასებისა და ადამიანის ფიზიკური აღნაგობის ნორმალური ვარიაციების შესახებ, შეისწავლის პირველყოფილი, ტრადიციული და თანამედროვე საზოგადოებების კულტურას და ადამიანის მოღვაწეობის მრავალგვარ ფორმებს", credits: 4, studentsLimit: 300, studentsRegistered: 289),
+//                                           studentGradeInfo: [.init(id: 11,
+//                                                                    gradeComponentName: "I ქვიზი",
+//                                                                    totalPoints: 15,
+//                                                                    currentPoints: 12),
+//                                                              .init(id: 11,
+//                                                                                       gradeComponentName: "II ქვიზი",
+//                                                                                       totalPoints: 15,
+//                                                                                       currentPoints: 9),
+//                                                              .init(id: 11,
+//                                                                                       gradeComponentName: "შუალედური",
+//                                                                                       totalPoints: 20,
+//                                                                                       currentPoints: 10),
+//                                                              .init(id: 11,
+//                                                                                       gradeComponentName: "დავალებები",
+//                                                                                       totalPoints: 20,
+//                                                                                       currentPoints: 18),
+//                                                              .init(id: 11,
+//                                                                                       gradeComponentName: "ფინალური",
+//                                                                                       totalPoints: 30,
+//                                                                                       currentPoints: 0)])
+//            self.draw()
+//            self.isLoading = false
+//        }
         
-//        isLoading = true
 
-//        studentCourseInfoUseCase.getStudentCourseInfo(courseId: courseId.description,
-//                                                      studentId: studentId.description)
-//            .sink { [weak self] completion in
-//                switch completion {
-//                case .finished:
-//                    DispatchQueue.main.async {
-//                        self?.isLoading = false
-//                        self?.draw()
-//                    }
-//                case .failure(_):
-//                    DispatchQueue.main.async {
-//                        self?.isLoading = false
-//                        self?.statusBanner = .init(bannerType: .failure,
-//                                                   description: "ბოდიშს გიხდით შეფერხებისთვის")
-//                    }
-//                }
-//            } receiveValue: { [weak self] model in
-//                self?.studentCourseInfo = model
-//            }.store(in: &subscriptions)
+        studentCourseInfoUseCase.getStudentCourseInfo(courseId: courseId.description,
+                                                      studentId: studentId.description)
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    DispatchQueue.main.async {
+                        self?.isLoading = false
+                        self?.draw()
+                    }
+                case .failure(_):
+                    DispatchQueue.main.async {
+                        self?.isLoading = false
+                        self?.statusBanner = .init(bannerType: .failure,
+                                                   description: "ბოდიშს გიხდით შეფერხებისთვის")
+                    }
+                }
+            } receiveValue: { [weak self] model in
+                self?.studentCourseInfo = model
+            }.store(in: &subscriptions)
     }
 }
 

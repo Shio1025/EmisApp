@@ -73,51 +73,51 @@ extension StudentGradesEditorViewModel {
 extension StudentGradesEditorViewModel {
     
     private func getStudentGradesDetails() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.grades = [.init(id: 11,
-                                gradeComponentName: "I ქვიზი",
-                                totalPoints: 15,
-                                currentPoints: 12),
-                           .init(id: 11,
-                                 gradeComponentName: "II ქვიზი",
-                                 totalPoints: 15,
-                                 currentPoints: 9),
-                           .init(id: 11,
-                                 gradeComponentName: "შუალედური",
-                                 totalPoints: 20,
-                                 currentPoints: 10),
-                           .init(id: 11,
-                                 gradeComponentName: "დავალებები",
-                                 totalPoints: 20,
-                                 currentPoints: 18),
-                           .init(id: 11,
-                                 gradeComponentName: "ფინალური",
-                                 totalPoints: 30,
-                                 currentPoints: 0)]
-            self.draw()
-            self.isLoading = false
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            self.grades = [.init(id: 11,
+//                                gradeComponentName: "I ქვიზი",
+//                                totalPoints: 15,
+//                                currentPoints: 12),
+//                           .init(id: 11,
+//                                 gradeComponentName: "II ქვიზი",
+//                                 totalPoints: 15,
+//                                 currentPoints: 9),
+//                           .init(id: 11,
+//                                 gradeComponentName: "შუალედური",
+//                                 totalPoints: 20,
+//                                 currentPoints: 10),
+//                           .init(id: 11,
+//                                 gradeComponentName: "დავალებები",
+//                                 totalPoints: 20,
+//                                 currentPoints: 18),
+//                           .init(id: 11,
+//                                 gradeComponentName: "ფინალური",
+//                                 totalPoints: 30,
+//                                 currentPoints: 0)]
+//            self.draw()
+//            self.isLoading = false
+//        }
         
-        //        @Injected var getStudentMarksUseCase: getStudentGradesUseCase
-        //
-        //        getStudentMarksUseCase.getStudentGrades(courseId: courseId.description,
-//                                                studentId: studentId.description)
-//        .sink { [weak self] completion in
-//            self?.isLoading = false
-//            switch completion {
-//            case .finished:
-//                DispatchQueue.main.async {
-//                    self?.loadInfo()
-//                }
-//            case .failure(_):
-//                DispatchQueue.main.async {
-//                    self?.statusBanner = .init(bannerType: .failure,
-//                                               description: "ბოდიშის გიხდით შეფერხებისთვის")
-//                }
-//            }
-//        } receiveValue: { [weak self] model in
-//            self?.grades = model
-//        }.store(in: &subscriptions)
+        @Injected var getStudentMarksUseCase: getStudentGradesUseCase
+        
+        getStudentMarksUseCase.getStudentGrades(courseId: courseId.description,
+                                                studentId: studentId.description)
+        .sink { [weak self] completion in
+            self?.isLoading = false
+            switch completion {
+            case .finished:
+                DispatchQueue.main.async {
+                    self?.loadInfo()
+                }
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self?.statusBanner = .init(bannerType: .failure,
+                                               description: "ბოდიშის გიხდით შეფერხებისთვის")
+                }
+            }
+        } receiveValue: { [weak self] model in
+            self?.grades = model
+        }.store(in: &subscriptions)
     }
 }
 

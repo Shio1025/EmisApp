@@ -22,6 +22,6 @@ public struct RegisteredSubject {
         self.courseId = model.courseId
         self.subjectCode = model.subjectCode
         self.subjectName = model.subjectName
-        self.necessary = model.necessary
+        self.necessary = model.necessary ?? false
     }
 }

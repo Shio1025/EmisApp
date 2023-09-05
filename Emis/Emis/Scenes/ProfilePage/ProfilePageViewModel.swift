@@ -96,47 +96,47 @@ extension ProfilePageViewModel {
 extension ProfilePageViewModel {
     
     private func getStudentInfo() {
-        studentInfo = .init(firstName: "Dato", lastName: "Dvali", birthDate: "28-12-2000", email: "ddval19@freeuni.edu.ge", address: "თბილისი, ისანი, ბერი გაბრიელ სალოსის ქუჩა", phoneNumber: "591902952", status: .active, degreeLevel: .bachelor, credits: 210, gpa: 3.34)
-        draw()
-        isLoading = false
-//        @Injected var studentInfoUseCase: StudentInfoUseCase
-//
-//        studentInfoUseCase.getStudentInfo(userId: SSO.userInfo?.userId?.description ?? "")
-//            .sink { [weak self] completion in
-//                switch completion {
-//                case .failure(let error):
-//                    self?.isLoading = false
-//                    self?.statusBanner = .init(bannerType: .failure,
-//                                               description: error.localizedDescription)
-//                case .finished:
-//                    self?.isLoading = false
-//                    self?.draw()
-//                }
-//            } receiveValue: { [weak self] model in
-//                self?.studentInfo = model
-//            }.store(in: &subscriptions)
+//        studentInfo = .init(firstName: "Dato", lastName: "Dvali", birthDate: "28-12-2000", email: "ddval19@freeuni.edu.ge", address: "თბილისი, ისანი, ბერი გაბრიელ სალოსის ქუჩა", phoneNumber: "591902952", status: .active, degreeLevel: .bachelor, credits: 210, gpa: 3.34)
+//        draw()
+//        isLoading = false
+        @Injected var studentInfoUseCase: StudentInfoUseCase
+
+        studentInfoUseCase.getStudentInfo(userId: SSO.userInfo?.userId?.description ?? "")
+            .sink { [weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    self?.isLoading = false
+                    self?.statusBanner = .init(bannerType: .failure,
+                                               description: error.localizedDescription)
+                case .finished:
+                    self?.isLoading = false
+                    self?.draw()
+                }
+            } receiveValue: { [weak self] model in
+                self?.studentInfo = model
+            }.store(in: &subscriptions)
     }
     
     private func getTeacherInfo() {
-        teacherInfo = .init(firstName: "Dato", lastName: "Dvali", birthDate: "28-12-2000", email: "ddval19@freeuni.edu.ge", address: "თბილისი, ისანი, ბერი გაბრიელ სალოსის ქუჩა", phoneNumber: "591902952", position: "sdcds", status: "Active")
-        draw()
+//        teacherInfo = .init(firstName: "Dato", lastName: "Dvali", birthDate: "28-12-2000", email: "ddval19@freeuni.edu.ge", address: "თბილისი, ისანი, ბერი გაბრიელ სალოსის ქუჩა", phoneNumber: "591902952", position: "sdcds", status: "Active")
+//        draw()
         isLoading = false
-//        @Injected var teacherInfoUseCase: TeacherInfoUseCase
-//
-//        teacherInfoUseCase.getTeacherInfo(userId: SSO.userInfo?.userId?.description ?? "")
-//            .sink { [weak self] completion in
-//                switch completion {
-//                case .finished:
-//                    self?.isLoading = false
-//                    self?.draw()
-//                case .failure(let error):
-//                    self?.isLoading = false
-//                    self?.statusBanner = .init(bannerType: .failure,
-//                                               description: error.localizedDescription)
-//                }
-//            } receiveValue: { [weak self] model in
-//                self?.teacherInfo = model
-//            }.store(in: &subscriptions)
+        @Injected var teacherInfoUseCase: TeacherInfoUseCase
+
+        teacherInfoUseCase.getTeacherInfo(userId: SSO.userInfo?.userId?.description ?? "")
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    self?.isLoading = false
+                    self?.draw()
+                case .failure(let error):
+                    self?.isLoading = false
+                    self?.statusBanner = .init(bannerType: .failure,
+                                               description: error.localizedDescription)
+                }
+            } receiveValue: { [weak self] model in
+                self?.teacherInfo = model
+            }.store(in: &subscriptions)
     }
 }
 
@@ -377,27 +377,28 @@ extension ProfilePageViewModel {
 extension ProfilePageViewModel {
     
     private func handlePhoneNumberChangeAction() {
-        statusBanner = .init(bannerType: .success,
-                                   description: "ნომერი წარმატებით განახლდა!")
-        isPhoneNumberChanging = false
-        load()
-//        @Injected var updatePhoneNumberUseCase: UpdatePhoneNumberUseCase
-//
-//        updatePhoneNumberUseCase.updateStudentPhoneNumber(userId: SSO.userInfo?.generalID?.description ?? "",
-//                                                          phoneNumber: newPhoneNumber)
-//        .sink { [weak self] completion in
-//            switch completion {
-//            case .finished:
-//                self?.isPhoneNumberChanging = false
-//                self?.statusBanner = .init(bannerType: .success,
-//                                           description: "ნომერი წარმატებით განახლდა !")
-//                self?.load()
-//            case .failure(let error):
-//                self?.statusBanner = .init(bannerType: .failure,
-//                                           description: error.localizedDescription)
-//            }
-//        } receiveValue: { _ in
-//
-//        }.store(in: &subscriptions)
+//        statusBanner = .init(bannerType: .success,
+//                                   description: "ნომერი წარმატებით განახლდა!")
+        
+//        load()
+        @Injected var updatePhoneNumberUseCase: UpdatePhoneNumberUseCase
+
+        updatePhoneNumberUseCase.updateStudentPhoneNumber(userId: SSO.userInfo?.generalID?.description ?? "",
+                                                          phoneNumber: newPhoneNumber)
+        .sink { [weak self] completion in
+            self?.isPhoneNumberChanging = false
+            switch completion {
+            case .finished:
+                self?.statusBanner = .init(bannerType: .success,
+                                           description: "ნომერი წარმატებით განახლდა !")
+                self?.load()
+            case .failure(let error):
+                self?.statusBanner = .init(bannerType: .failure,
+                                           description: error.localizedDescription)
+                self?.draw()
+            }
+        } receiveValue: { _ in
+
+        }.store(in: &subscriptions)
     }
 }
