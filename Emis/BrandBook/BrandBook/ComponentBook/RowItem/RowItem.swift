@@ -40,7 +40,6 @@ public class RowItem: UIView {
         stackView.axis = .vertical
         stackView.alignment = .leading
         stackView.spacing = .XS
-//        stackView.height(equalTo: .XL6 + .XL6 + .XL6)
         stackView.distribution = .fillProportionally
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -89,9 +88,9 @@ public class RowItem: UIView {
         stackView.spacing = .S
         stackView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .L)
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.setContentCompressionResistancePriority(.init(1000), for: .horizontal)
+//        stackView.setContentCompressionResistancePriority(.init(1000), for: .horizontal)
         stackView.distribution = .fillProportionally
-        stackView.alignment = .center
+        stackView.alignment = .fill
         return stackView
     }()
     

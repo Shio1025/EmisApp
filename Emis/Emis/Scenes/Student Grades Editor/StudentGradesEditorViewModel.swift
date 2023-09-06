@@ -107,7 +107,7 @@ extension StudentGradesEditorViewModel {
             switch completion {
             case .finished:
                 DispatchQueue.main.async {
-                    self?.loadInfo()
+                    self?.draw()
                 }
             case .failure(_):
                 DispatchQueue.main.async {
@@ -186,28 +186,31 @@ extension StudentGradesEditorViewModel {
     }
     
     private func handleUpdateGrade(studentGradeId: Int64) {
-        editModeIndex = nil
-        grade = nil
+//        editModeIndex = nil
+//        grade = nil
         
-//        @Injected var updateGradeUseCase: updateGradeUseCase
-//        isLoading = true
-//        updateGradeUseCase.updateGrade(studentGradeId: studentGradeId.description, mark: grade?.description ?? "")
-//            .sink { [weak self] completion in
-//                self?.grade = nil
-//                self?.isLoading = false
-//                switch completion {
-//                case .finished:
-//                    DispatchQueue.main.async {
-//                        self?.loadInfo()
-//                    }
-//                case .failure(_):
-//                    DispatchQueue.main.async {
-//                        self?.statusBanner = .init(bannerType: .failure,
-//                                                   description: "ბოდიშის გიხდით შეფერხებისთვის")
-//                    }
-//                }
-//            } receiveValue: { _ in
-//
-//            }.store(in: &subscriptions)
+        @Injected var updateGradeUseCase: updateGradeUseCase
+        
+        isLoading = true
+        editModeIndex = nil
+        updateGradeUseCase.updateGrade(studentGradeId: studentGradeId.description, mark: grade?.description ?? "")
+            .sink { [weak self] completion in
+                self?.grade = nil
+                
+                self?.isLoading = false
+                switch completion {
+                case .finished:
+                    DispatchQueue.main.async {
+                        self?.loadInfo()
+                    }
+                case .failure(_):
+                    DispatchQueue.main.async {
+                        self?.statusBanner = .init(bannerType: .failure,
+                                                   description: "ბოდიშის გიხდით შეფერხებისთვის")
+                    }
+                }
+            } receiveValue: { _ in
+
+            }.store(in: &subscriptions)
     }
 }

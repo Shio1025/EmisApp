@@ -162,7 +162,7 @@ extension Navigator {
     
     public func bind(model: NavigatorViewModel) {
         currPage = 1
-        totalPages = model.totalPages
+        totalPages = model.totalPages == .zero ? 1 : model.totalPages
         
         textPublisher.sink { [weak self] model in
             self?.infoLabel.bind(with: model)

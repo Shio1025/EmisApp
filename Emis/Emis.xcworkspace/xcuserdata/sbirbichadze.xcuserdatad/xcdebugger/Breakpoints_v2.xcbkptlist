@@ -686,8 +686,8 @@
             filePath = "Emis/Scenes/ProfilePage/ProfilePageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "getStudentInfo()"
             landmarkType = "7">
          </BreakpointContent>
@@ -702,8 +702,8 @@
             filePath = "Emis/Scenes/ProfilePage/ProfilePageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "getStudentInfo()"
             landmarkType = "7">
          </BreakpointContent>
@@ -722,38 +722,6 @@
             endingLineNumber = "27"
             landmarkName = "getStudentInfo(userId:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "724CC3BF-CB06-428C-9D8E-E26AA8566CEC - df328340c6bcffcf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Core.StudentInfoGatewayImpl.getStudentInfo(userId: Swift.String) -&gt; Combine.AnyPublisher&lt;Core.StudentInfo, Swift.Error&gt;"
-                  moduleName = "Core"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/Core/Core/Gateways/Student/StudentInfoGateway.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "636">
-               </Location>
-               <Location
-                  uuid = "724CC3BF-CB06-428C-9D8E-E26AA8566CEC - df328340c6bcffcf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Core.StudentInfoGatewayImpl.getStudentInfo(userId: Swift.String) -&gt; Combine.AnyPublisher&lt;Core.StudentInfo, Swift.Error&gt;"
-                  moduleName = "Core"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/Core/Core/Gateways/Student/StudentInfoGateway.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "616">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -782,25 +750,9 @@
             filePath = "Emis/Scenes/ProfilePage/ProfilePageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "getStudentInfo()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7BDD0413-2D67-421B-901D-EF165EC2D5FE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Emis/Scenes/ProfilePage/ProfilePageViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
-            landmarkName = "getPhoneNumberSections(phoneNumber:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -814,8 +766,8 @@
             filePath = "Emis/Scenes/ProfilePage/ProfilePageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "396"
-            endingLineNumber = "396"
+            startingLineNumber = "397"
+            endingLineNumber = "397"
             landmarkName = "handlePhoneNumberChangeAction()"
             landmarkType = "7">
          </BreakpointContent>
@@ -862,8 +814,8 @@
             filePath = "Emis/Scenes/ProfilePage/ProfilePageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "getStudentInfo()"
             landmarkType = "7">
             <Locations>
@@ -898,6 +850,22 @@
                   offsetFromSymbolStart = "24">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A3C5AAF-0427-4E87-9014-14D2ADB6FC5C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Core/Core/Gateways/UpdatePhoneNumberGateway.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "updateStudentPhoneNumber(userId:phoneNumber:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -26,8 +26,8 @@ public class UpdatePhoneNumberGatewayImpl: UpdatePhoneNumberGateway {
                                         params: ["id": userId,
                                                  "phoneNumber": phoneNumber])
         
-        let endpoint = EndPoint<Empty>(url: url,
-                                       method: .put)
+        let endpoint = EndPoint<Bool?>(url: url,
+                                        method: .put)
         
         let publisher: AnyPublisher<Void, Error> = dataTransport.makeRequest(endpoint)
             .map { model in

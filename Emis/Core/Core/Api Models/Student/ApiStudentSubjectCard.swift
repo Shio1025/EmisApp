@@ -10,7 +10,6 @@ struct ApiSubjectInfo: Codable {
     let courseId: Int64
     let courseName: String
     let subjectCode: String
-    let grade: String
-    let mark: Double
-    let description: String
+    let grade: String?
+    let mark: Double?
 }

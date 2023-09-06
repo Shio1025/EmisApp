@@ -23,4 +23,10 @@ public final class Formatter {
         
         return ""
     }
+    
+    public static func formatDateToString(date: Date) -> String {
+       let dateFormatter = DateFormatter()
+       dateFormatter.dateFormat = "dd-MM-yyyy"
+       return dateFormatter.string(from: date)
+   }
 }

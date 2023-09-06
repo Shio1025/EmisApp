@@ -13,7 +13,7 @@ public protocol ApiURLProvider {
 public struct ApiUURLProviderImpl: ApiURLProvider {
     
     public func getURL(path: String,
-                params: [String: String]) -> URL? {
+                       params: [String: String]) -> URL? {
         var components = URLComponents()
         components.scheme = "https"
         components.host = domainURL
@@ -25,6 +25,6 @@ public struct ApiUURLProviderImpl: ApiURLProvider {
     }
     
     private var domainURL: String {
-        "d45d-217-147-224-170.ngrok-free.app"
+        "9424-185-115-5-241.ngrok-free.app"
     }
 }

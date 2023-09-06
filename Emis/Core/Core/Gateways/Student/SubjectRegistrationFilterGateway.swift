@@ -33,7 +33,7 @@ public class SubjectRegistrationFilterGatewayImpl: SubjectRegistrationFilterGate
                                                  "size": size.description])
         
         let endpoint = EndPoint<ApiSubjectRegistrationFilter>(url: url,
-                                                 method: .get)
+                                                              method: .get)
         
         let publisher: AnyPublisher<SubjectRegistrationFilter, Error> = dataTransport.makeRequest(endpoint)
             .map { model in

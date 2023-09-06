@@ -11,7 +11,7 @@ import Resolver
 
 public protocol UpdateMarkGateway {
     func updateGrade(studentGradeId: String,
-                            mark: String) -> AnyPublisher<Void, Error>
+                     mark: String) -> AnyPublisher<Void, Error>
 }
 
 public class UpdateMarkGatewayImpl: UpdateMarkGateway {
@@ -26,7 +26,7 @@ public class UpdateMarkGatewayImpl: UpdateMarkGateway {
                                         params: ["studentGradeId": studentGradeId,
                                                  "mark": mark])
         
-        let endpoint = EndPoint<Empty>(url: url,
+        let endpoint = EndPoint<Bool?>(url: url,
                                        method: .put)
         
         let publisher: AnyPublisher<Void, Error> = dataTransport.makeRequest(endpoint)

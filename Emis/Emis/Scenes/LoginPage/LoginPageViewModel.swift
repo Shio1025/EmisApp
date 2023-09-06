@@ -116,7 +116,7 @@ extension LoginPageViewModel {
     
     private func handleLogin() {
         SSO.userLoggedInSuccessfully(userEmail: login,
-                                     with: .init(userType: .student, userId: 1, generalID: 1))
+                                     with: .init(userType: .teacher, userId: 1, generalID: 2))
         router = .profile
 //        @Injected var loginUseCase: LoginUseCase
 //

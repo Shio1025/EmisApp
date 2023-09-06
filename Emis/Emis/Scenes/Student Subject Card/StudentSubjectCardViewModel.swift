@@ -166,7 +166,7 @@ extension StudentSubjectCardViewModel {
                                                                  bottom: .init(text: subject.subjectCode.description,
                                                                                font: .systemFont(ofSize: .M,
                                                                                                  weight: .light))),
-                                                    rightItem: .label(model: .init(text: "\(Formatter.formatNumber(number: subject.markInSubject)) - \(subject.grade)")),
+                                                    rightItem: .label(model: .init(text: "\(Formatter.formatNumber(number: subject.markInSubject ?? 0)) - \(subject.grade ?? "__")")),
                                                     tapAction: { [weak self] in
                 guard let self else { return }
                 self.router = .courseInfo(courseId: subject.courseId,

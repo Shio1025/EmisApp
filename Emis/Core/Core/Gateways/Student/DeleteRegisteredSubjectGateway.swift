@@ -26,8 +26,8 @@ public class DeleteRegisteredSubjectGatewayImpl: DeleteRegisteredSubjectGateway 
                                         params: ["studentId": studentId,
                                                  "courseId": courseId])
         
-        let endpoint = EndPoint<Empty>(url: url,
-                                                        method: .delete)
+        let endpoint = EndPoint<Bool?>(url: url,
+                                       method: .delete)
         
         let publisher: AnyPublisher<Void, Error> = dataTransport.makeRequest(endpoint)
             .map { model in

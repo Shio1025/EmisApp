@@ -24,7 +24,7 @@ public class GetRegisteredSubjectsGatewayImpl: GetRegisteredSubjectsGateway {
                                         params: ["studentId": studentId])
         
         let endpoint = EndPoint<[ApiRegisteredSubject]>(url: url,
-                                       method: .get)
+                                                        method: .get)
         
         let publisher: AnyPublisher<[RegisteredSubject], Error> = dataTransport.makeRequest(endpoint)
             .map { model in

@@ -33,16 +33,14 @@ public struct SubjectInfo {
         self.subjectCode = subjectCode
         self.grade = grade
         self.markInSubject = markInSubject
-        self.description = description
     }
     
     public let studentId: Int64
     public let courseId: Int64
     public let courseName: String
     public let subjectCode: String
-    public let grade: String
-    public let markInSubject: Double
-    public let description: String
+    public let grade: String?
+    public let markInSubject: Double?
     
     init(with model: ApiSubjectInfo) {
         self.studentId = model.studentId
@@ -51,6 +49,5 @@ public struct SubjectInfo {
         self.subjectCode = model.subjectCode
         self.grade = model.grade
         self.markInSubject = model.mark
-        self.description = model.description
     }
 }

@@ -51,6 +51,7 @@ final class ProfilePageViewModel {
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
+        isLoading = true
         load()
     }
     
@@ -109,8 +110,8 @@ extension ProfilePageViewModel {
                     self?.statusBanner = .init(bannerType: .failure,
                                                description: error.localizedDescription)
                 case .finished:
-                    self?.isLoading = false
                     self?.draw()
+                    self?.isLoading = false
                 }
             } receiveValue: { [weak self] model in
                 self?.studentInfo = model
@@ -120,15 +121,15 @@ extension ProfilePageViewModel {
     private func getTeacherInfo() {
 //        teacherInfo = .init(firstName: "Dato", lastName: "Dvali", birthDate: "28-12-2000", email: "ddval19@freeuni.edu.ge", address: "თბილისი, ისანი, ბერი გაბრიელ სალოსის ქუჩა", phoneNumber: "591902952", position: "sdcds", status: "Active")
 //        draw()
-        isLoading = false
+        
         @Injected var teacherInfoUseCase: TeacherInfoUseCase
 
         teacherInfoUseCase.getTeacherInfo(userId: SSO.userInfo?.userId?.description ?? "")
             .sink { [weak self] completion in
                 switch completion {
                 case .finished:
-                    self?.isLoading = false
                     self?.draw()
+                    self?.isLoading = false
                 case .failure(let error):
                     self?.isLoading = false
                     self?.statusBanner = .init(bannerType: .failure,
