@@ -109,9 +109,9 @@ extension MoreMenuViewModel {
         guard isLogged else { return [.GPACalculator] }
         switch SSO.userInfo?.userType {
         case .student:
-            return  [.changePassword, .GPACalculator, .logOut]
+            return  [ .GPACalculator, .logOut]
         case .teacher:
-            return [.changePassword, .logOut]
+            return [ .GPACalculator, .logOut]
         default:
             return []
         }

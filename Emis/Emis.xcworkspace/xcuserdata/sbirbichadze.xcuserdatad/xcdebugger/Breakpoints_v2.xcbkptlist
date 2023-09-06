@@ -23,22 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9324FE97-6AF4-468A-B968-A0855096BB26"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Emis/Scenes/LoginPage/LoginPageViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "handleLogin()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DAA9D49C-6B37-4420-8056-93E381EDC711"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -62,8 +46,8 @@
             filePath = "Emis/Scenes/LoginPage/LoginPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "handleLogin()"
             landmarkType = "7">
          </BreakpointContent>
@@ -766,8 +750,8 @@
             filePath = "Emis/Scenes/ProfilePage/ProfilePageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
             landmarkName = "handlePhoneNumberChangeAction()"
             landmarkType = "7">
          </BreakpointContent>
@@ -820,7 +804,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D6CDFE53-73B3-4FBB-B769-22F6BBA8FAA7 - b3ab897a66133b65"
+                  uuid = "D6CDFE53-73B3-4FBB-B769-22F6BBA8FAA7 - b3ab897a66133b02"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -830,12 +814,12 @@
                   urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/Emis/Scenes/ProfilePage/ProfilePageViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
                   offsetFromSymbolStart = "112">
                </Location>
                <Location
-                  uuid = "D6CDFE53-73B3-4FBB-B769-22F6BBA8FAA7 - 9ca7535f518934e4"
+                  uuid = "D6CDFE53-73B3-4FBB-B769-22F6BBA8FAA7 - 9ca7535f51893483"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -845,8 +829,8 @@
                   urlString = "file:///Users/sbirbichadze/Desktop/Final%20Project/EmisApp/Emis/Emis/Scenes/ProfilePage/ProfilePageViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
                   offsetFromSymbolStart = "24">
                </Location>
             </Locations>
@@ -865,6 +849,22 @@
             startingLineNumber = "25"
             endingLineNumber = "25"
             landmarkName = "updateStudentPhoneNumber(userId:phoneNumber:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E718FE6-2122-48A7-A3F1-7F2BD77C0DFF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkLayer/NetworkLayer/NetworkLayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "makeRequest(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

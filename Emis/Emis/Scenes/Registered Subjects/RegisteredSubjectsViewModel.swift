@@ -113,6 +113,11 @@ extension RegisteredSubjectsViewModel {
             
             rows.append(row)
         }
+        
+        if registeredSubjects.isEmpty {
+            rows.append(LocalLabelCellModel(model: .init(text: "შენ ჯერ არ გაქვს დარეგისტრირებული საგანი")))
+        }
+        
         rows.append(getRoundedFooterModel())
         
         return rows

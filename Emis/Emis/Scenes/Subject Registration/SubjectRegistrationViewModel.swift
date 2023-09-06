@@ -59,7 +59,9 @@ final class SubjectRegistrationViewModel {
     private var subscriptions = Set<AnyCancellable>()
     private var subjectRegistrationFilterModel: SubjectRegistrationFilter?
     
-    init() { }
+    init() {
+        getSubjects(by: .zero)
+    }
 }
 
 extension SubjectRegistrationViewModel {
@@ -237,6 +239,7 @@ extension SubjectRegistrationViewModel {
             case .finished:
                 self?.statusBanner = .init(bannerType: .success,
                                            description: "საგანზე წარმატებით დარეგისტრირდი")
+                self?.getSubjects(by: .zero)
             case .failure:
                 self?.statusBanner = .init(bannerType: .failure,
                                            description: "საგანზე ვერ დარეგისტრირდი")

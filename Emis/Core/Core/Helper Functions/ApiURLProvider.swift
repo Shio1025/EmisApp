@@ -25,6 +25,6 @@ public struct ApiUURLProviderImpl: ApiURLProvider {
     }
     
     private var domainURL: String {
-        "9424-185-115-5-241.ngrok-free.app"
+        "989b-217-147-224-170.ngrok-free.app"
     }
 }

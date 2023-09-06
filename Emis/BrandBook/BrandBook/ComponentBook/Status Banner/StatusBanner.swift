@@ -60,7 +60,9 @@ extension StatusBanner {
     
     public func bind(model: StatusBannerViewModel) {
         label.bind(with: .init(text: model.description,
-                               color: BrandBookManager.Color.General.white.uiColor))
+                               color: BrandBookManager.Color.General.white.uiColor,
+                               font: .systemFont(ofSize: .L,
+                                                 weight: .bold)))
         backgroundColor = model.bannerType.backgroundColor
     }
 }

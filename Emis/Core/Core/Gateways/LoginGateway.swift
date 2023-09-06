@@ -29,7 +29,7 @@ public class LoginGatewayImpl: LoginGateway {
                                         params: params)
         
         let endpoint = EndPoint<ApiLoginModel>(url: url,
-                                               method: .get)
+                                               method: .post)
         
         let publisher: AnyPublisher<LoginModel, Error> = dataTransport.makeRequest(endpoint)
             .map { apiLoginModel in

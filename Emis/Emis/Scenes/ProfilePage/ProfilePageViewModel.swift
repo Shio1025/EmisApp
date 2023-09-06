@@ -196,6 +196,7 @@ extension ProfilePageViewModel {
     private var studentPersonalInfoSection: [any CellModel]? {
         guard let userInfo = studentInfo else { return nil }
         var rows: [any CellModel] = []
+        rows.append(getSpacerCell())
         rows.append(getRoundedHeaderWithTitle(title: "პირადი მონაცემები"))
         
         rows.append(contentsOf: getPhoneNumberSections(phoneNumber: userInfo.phoneNumber))
@@ -325,6 +326,7 @@ extension ProfilePageViewModel {
         guard let userInfo = teacherInfo else { return nil }
         
         var rows: [any CellModel] = []
+        rows.append(getSpacerCell())
         rows.append(getRoundedHeaderWithTitle(title: "პერსონალური მონაცემები"))
         
         rows.append(contentsOf: getPhoneNumberSections(phoneNumber: userInfo.phoneNumber))
@@ -383,10 +385,12 @@ extension ProfilePageViewModel {
         
 //        load()
         @Injected var updatePhoneNumberUseCase: UpdatePhoneNumberUseCase
-
+        
+        isLoading = true
         updatePhoneNumberUseCase.updateStudentPhoneNumber(userId: SSO.userInfo?.generalID?.description ?? "",
                                                           phoneNumber: newPhoneNumber)
         .sink { [weak self] completion in
+            self?.isLoading = false
             self?.isPhoneNumberChanging = false
             switch completion {
             case .finished:
@@ -395,7 +399,7 @@ extension ProfilePageViewModel {
                 self?.load()
             case .failure(let error):
                 self?.statusBanner = .init(bannerType: .failure,
-                                           description: error.localizedDescription)
+                                           description: "ნომრის განახლება ვერ მოხერხდა")
                 self?.draw()
             }
         } receiveValue: { _ in

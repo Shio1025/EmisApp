@@ -68,7 +68,7 @@ extension StudentFinancesInfoController {
     }
     
     private func addConstraints() {
-        tableView.topNotSafe(toView: view)
+        tableView.top(toView: view)
         tableView.left(toView: view, constant: .S)
         tableView.right(toView: view, constant: .S)
         tableView.bottom(toView: view)
@@ -78,6 +78,7 @@ extension StudentFinancesInfoController {
         tableView.register(RowItemCell.self)
         tableView.register(RoundedHeaderWithTitle.self)
         tableView.register(RoundedFooter.self)
+        tableView.register(SpacerCell.self)
     }
 }
 

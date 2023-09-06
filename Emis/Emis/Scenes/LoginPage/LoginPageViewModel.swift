@@ -115,26 +115,23 @@ extension LoginPageViewModel {
     }
     
     private func handleLogin() {
-        SSO.userLoggedInSuccessfully(userEmail: login,
-                                     with: .init(userType: .teacher, userId: 1, generalID: 2))
-        router = .profile
-//        @Injected var loginUseCase: LoginUseCase
-//
-//        loginUseCase.loginUser(email: login,
-//                               password: password)
-//        .sink { [weak self] completion in
-//            switch completion {
-//            case .failure(let error):
-//                self?.statusBanner = .init(bannerType: .failure,
-//                                           description: error.localizedDescription)
-//            case .finished:
-//                self?.router = .profile
-//            }
-//            self?.isButtonLoading = false
-//        } receiveValue: { [weak self] model in
-//            self?.SSO.userLoggedInSuccessfully(userEmail: self?.login,
-//                                               with: model)
-//        }.store(in: &subscriptions)
+        @Injected var loginUseCase: LoginUseCase
+        
+        loginUseCase.loginUser(email: login,
+                               password: password)
+        .sink { [weak self] completion in
+            self?.isButtonLoading = false
+            switch completion {
+            case .failure(let error):
+                self?.statusBanner = .init(bannerType: .failure,
+                                           description: error.localizedDescription)
+            case .finished:
+                self?.router = .profile
+            }
+        } receiveValue: { [weak self] model in
+            self?.SSO.userLoggedInSuccessfully(userEmail: self?.login,
+                                               with: model)
+        }.store(in: &subscriptions)
     }
 }
 

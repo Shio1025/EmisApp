@@ -67,7 +67,9 @@ final class LibraryPageViewModel {
     private var subscriptions = Set<AnyCancellable>()
     private var libriryInfo: Library?
     
-    init() { }
+    init() {
+        getBooks(by: .zero)
+    }
 }
 
 extension LibraryPageViewModel {
@@ -88,8 +90,6 @@ extension LibraryPageViewModel {
 extension LibraryPageViewModel {
     
     private func getBooks(by index: Int) {
-        tableLoading = true
-
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
 //            self.libriryInfo = .init(content: [.init(id: 1, title: "პატარა პრინცი", author: "ანტუან დე სენტ-ეგზიუპერი", genres: ["საბავშვო", "სათავგადასავლო"])], totalElements: 1,
 //                                     totalPages: 1)
